@@ -1,0 +1,243 @@
+{
+  "module_id": "perspective_proportion_v1",
+  "title": "Renaissance Perspective & Proportional Scene Construction (Adult Track)",
+  "purpose": "Build rigorous spatial scaffolding for realistic + experimental geometric compositions.",
+  "prerequisites": [
+    "Comfort drawing basic solids (cube, cylinder, cone, sphere)",
+    "Familiar with straightedge & compass basics (perpendicular, equilateral triangle)",
+    "Understands similar triangles informally"
+  ],
+  "core_principles": [
+    "Picture Plane (PP)",
+    "Station Point (SP)",
+    "Horizon Line (HL) = eye level",
+    "Vanishing Point (VP) per principal set of parallel lines",
+    "Measuring Line (ML)",
+    "Ground Line (GL)",
+    "Cone of Vision (avoid distortion)",
+    "Scaling by Similar Triangles"
+  ],
+  "learning_sequence": [
+    {
+      "phase": "FOUNDATION_ORIENTATION",
+      "objectives": [
+        "Identify HL in master paintings",
+        "Differentiate eye level vs viewer height",
+        "Place simple box relative to HL (above/below)"
+      ],
+      "micro_lessons": [
+        {
+          "id": "HL_detection",
+            "task": "Overlay candidate horizon on artworks; validate by aligning head clusters or distant architectural edges."
+        },
+        {
+          "id": "PP_concept_card",
+          "task": "Explain picture plane as 'glass sheet'; trace object contact points."
+        }
+      ],
+      "exercises": [
+        "Draw 5 boxes: 2 above HL (see bottoms), 2 below HL (see tops), 1 straddling HL.",
+        "Annotate: which faces visible? why?"
+      ],
+      "assessment_focus": "Correct HL placement + consistent visible planes"
+    },
+    {
+      "phase": "SINGLE_POINT_PERSPECTIVE",
+      "objectives": [
+        "Use one VP for frontal planes",
+        "Employ measuring line to scale repeats (tiles, fence posts)",
+        "Establish depth via equal real spacing → diminishing intervals"
+      ],
+      "key_construction": {
+        "steps": [
+          "Draw HL, set VP center",
+          "Draw frontal rectangle (PP contact)",
+          "Project depth edges to VP",
+          "Place depth mark on receding edge using diagonal from corner to opposite front corner to replicate interval"
+        ],
+        "euclidean_link": "Similar triangles: depth interval ratio preserved along converging lines"
+      },
+      "exercises": [
+        "Tile floor: 6 x 8 grid using checker method (diagonal to subdivide).",
+        "Row of columns: first two drawn, remaining located via measuring line transfer.",
+        "Interior hallway with doorways at equal real spacing."
+      ],
+      "error_diagnostics": [
+        "Diverging lines (VP drift)",
+        "Inconsistent interval shrink (skip similar triangle logic)"
+      ]
+    },
+    {
+      "phase": "TWO_POINT_PERSPECTIVE",
+      "objectives": [
+        "Use VP_L & VP_R for horizontal edges",
+        "Maintain verticals true to page",
+        "Rotate object on ground plane mentally"
+      ],
+      "key_construction": {
+        "pivot_box_method": [
+          "Mark HL; choose VP_L, VP_R (within cone ~60°).",
+          "Draw vertical front edge.",
+          "Project top & bottom to both VPs.",
+          "Decide back extents; close rear vertical edges.",
+          "Add secondary boxes sharing same VPs for street rhythm."
+        ],
+        "scale_transfer": "Use vertical measuring pole in PP + diagonals to set consistent heights."
+      },
+      "exercises": [
+        "Row of shopfronts decreasing in depth.",
+        "Stacked boxes (shared vertical alignment).",
+        "Street corner: inset doorway recess."
+      ],
+      "extension": "Add cast shadows using light direction in plan + projecting to PP."
+    },
+    {
+      "phase": "THREE_POINT_PERSPECTIVE",
+      "objectives": [
+        "Introduce VP vertical (up or down for looking up / down)",
+        "Control distortion by pushing vertical VP far enough",
+        "Apply to tall architectural forms"
+      ],
+      "exercises": [
+        "Skyscraper worm’s-eye.",
+        "Tower bird’s-eye (HL high).",
+        "Bridge pylon with taper (reconcile vertical convergence)."
+      ],
+      "warnings": [
+        "Overly near VP causes fish-eye distortion",
+        "Do not mix vertical convergence with single-point grid inconsistently"
+      ]
+    },
+    {
+      "phase": "CURVILINEAR_OPTIONAL",
+      "objectives": [
+        "5-point (fisheye) conceptual: circle as 360° field",
+        "Map orthogonal directions to radial vanishing axes"
+      ],
+      "status": "Enrichment"
+    },
+    {
+      "phase": "MULTI_OBJECT_RELATIONAL_PROPORTION",
+      "objectives": [
+        "Scale figures in depth using ground line intersections",
+        "Align multiple objects to consistent HL/VP set",
+        "Place cylindrical + organic volumes inside bounding boxes"
+      ],
+      "methods": [
+        "Figure stride spacing: equal ground intervals → diminishing by convergence.",
+        "Use 'standing rectangle cage' before anatomy."
+      ],
+      "exercises": [
+        "Market scene: 6 figures receding; annotate height logic.",
+        "Still life: cube, sphere, cylinder sharing a tiled plane.",
+        "Arcade: repeating arches with consistent springline height."
+      ]
+    },
+    {
+      "phase": "RENAISSANCE_PROPORTION_SYSTEMS",
+      "objectives": [
+        "Use canon grids (8-head & 7.5-head variants)",
+        "Apply façade proportional rectangles (root 2, root 3, golden rectangle qualitative)",
+        "Overlay geometric armature (baroque diagonal, golden spiral suggestion)"
+      ],
+      "exercises": [
+        "Divide figure height into head units; compare master drawing.",
+        "Construct root-2 rectangle: square + diagonal swing.",
+        "Compose still life using golden area emphasis zones."
+      ],
+      "euclid_links": [
+        "Root rectangles from diagonal of unit square (Pythagorean relation).",
+        "Circle + pentagon → star diagonals (golden proportion emergence)."
+      ]
+    },
+    {
+      "phase": "ADVANCED_EUCLIDEAN_ARTISTIC_PROOFS",
+      "objectives": [
+        "Justify perspective depth scaling via similar triangles formally",
+        "Prove equal angular spacing → consistent rosette subdivision",
+        "Show duality of cube ↔ octahedron via midpoint locus",
+        "Derive horizon = locus of points with zero vertical parallax"
+      ],
+      "proof_prompts": [
+        "Given two parallel rails converging to VP, prove ratio of segment lengths matches ratio of projections (triangle similarity).",
+        "Why does constructing equilateral triangles on pentagon edges yield internal star intersection ratios recurring?"
+      ],
+      "assessment": "Written reasoning + diagram cleanliness"
+    },
+    {
+      "phase": "SCENE_SYNTHESIS",
+      "objectives": [
+        "Merge architectural grid + proportional figures + atmospheric depth",
+        "Introduce light logic: shadow vanishing points",
+        "Prepare for stylistic distortion (Cubist / Escher pivot)"
+      ],
+      "exercises": [
+        "Cloister interior: repetitive arches, receding figures, light shaft angle.",
+        "Urban corner: two-point base + inserted staircase in 3-point segment.",
+        "Gallery scene: sculptures on plinths with consistent ellipse orientation."
+      ],
+      "reflection_questions": [
+        "Which vanishing set governs each object?",
+        "Where did you intentionally break a rule?"
+      ]
+    }
+  ],
+  "atmospheric_perspective_layer": {
+    "stages": [
+      "Value compression with distance",
+      "Edge softness increase",
+      "Chroma drop in distance objects",
+      "Relative contrast shift foreground vs background"
+    ],
+    "exercises": [
+      "3-plane landscape: foreground tree (sharp), mid barn, far hills (pale).",
+      "City block fade (grays desaturate)."
+    ]
+  },
+  "scaling_formulas": {
+    "similar_triangle_depth": "[height_seen / height_real] = [distance_PP_to_object / distance_PP_to_station_point]",
+    "figure_scaling_ground": "Project top and bottom of nearest figure to VP; intercepts along ground line define subsequent figure heights."
+  },
+  "tools_progression": [
+    "Pencil + loose boxes",
+    "Ruler for horizon + principal edges",
+    "Compass (root rectangle, pentagon for golden hints)",
+    "Tracing overlay (error check)",
+    "Digital (optional): perspective guides layer"
+  ],
+  "mastery_checklist": {
+    "L1": "Correct HL & VP placement",
+    "L2": "Accurate single-point depth scaling",
+    "L3": "Two-point boxes with consistent convergence",
+    "L4": "Multiple objects coherent in shared grid",
+    "L5": "Figure scale in depth plausible",
+    "L6": "Proof articulation (one formal similar triangle argument)",
+    "L7": "Integrated scene: architecture + figures + light + proportion armature"
+  },
+  "common_errors": [
+    {"issue": "Widening convergence", "fix": "Extend lines—must meet at a single VP."},
+    {"issue": "Floating figures", "fix": "Align foot contact to ground plane receding lines."},
+    {"issue": "Inconsistent object heights in depth", "fix": "Use measuring pole + projection."},
+    {"issue": "Over-distorted 3-point", "fix": "Increase distance of vertical VP off page."}
+  ],
+  "mini_drills": [
+    "5 daily 2-minute boxes (random HL)",
+    "Ellipse alignment in perspective (major axis tilts toward VP)",
+    "Figure stick grids shrinking in depth"
+  ],
+  "video_script_outline": {
+    "hook": "Why your buildings warp",
+    "segment_1": "Horizon = eye level demo",
+    "segment_2": "One-point depth scaling (tile floor live build)",
+    "segment_3": "Two-point street corner",
+    "segment_4": "Measuring line trick",
+    "segment_5": "Figures in depth overlay",
+    "segment_6": "Root rectangle / golden armature quick pass",
+    "cta": "Next video: likeness geometry or impossible objects?"
+  },
+  "integration_forward_links": {
+    "portrait_module_hand_off": "Use perspective cage for head orientation",
+    "impossible_object_module": "Leverage rule mastery to intentionally violate plausible junctions",
+    "color_theory_future": "Atmospheric perspective ties to value + chroma planning"
+  }
+}

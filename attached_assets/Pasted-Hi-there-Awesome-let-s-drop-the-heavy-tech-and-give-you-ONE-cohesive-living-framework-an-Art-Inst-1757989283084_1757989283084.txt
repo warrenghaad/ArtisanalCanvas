@@ -1,0 +1,45 @@
+Hi there! Awesome—let’s drop the heavy tech and give you ONE cohesive, living framework: an Art Instruction Agent Blueprint that trains YOU (and teachers) to fuse geometric foundations, impossible drawings, figure work, and jazz portrait stylization. Think of this as a single adaptive studio mentor you can spin up. Ready? Here’s the whole integrated idea!Art Instruction Agent Blueprint (Single Integrated Idea)Core Pillars (All Practice Rotates Through These)1.Line Grammar: Confidence, taper, rhythm, weight hierarchy (primary structural vs secondary embellishment).2.Primitives & Solids: Boxes, cylinders, spheres, wedges, torus segments → combined “compound chassis” for any object or figure.3.Perspective & Impossible Space: Parallel vs converging logic; deliberate rule-breaking to design paradox objects (Penrose-style) while keeping local believable micro-perspective.4.Gesture & Figure Structure: 30–90 sec gestures → mannequin (spine, ribcage block, pelvis bowl, limb cylinders) → form wrapping (contour bands).5.Anatomy Lite (Functional): Landmark spine curve, shoulder rhythm, pelvis tilt, major muscle groups simplified into geometry (deltoid wedge, forearm taper pair, etc.).6.Jazz Stylization Layer: Rhythmic contour (long flowing “phrase line”), syncopated accents (short angular pops), tonal “call & response” (shadow shapes echoing previous marks).7.Fusion & Composition: Arrange figure + geometric motif + impossible element + instrument for jazz portrait narrative.8.Iterative Refinement: Thumbnail → structural pass → value block-in → selective detail improv (like a solo) → restraint finish.Daily Session Structure (Agent Loop)Warm-Up (5–10 min):6 lines: slow → medium → fast; keep end points inside 3 mm target band (agent gives hit %).6 ellipses in a box (vary rotation); agent asks: “Which 2 feel stiff? Redraw only those.”
+Core Drill (12–15 min):Rotating Pillar: Each day one pillar gets spotlight (e.g., primitives stacking, gesture bursts, impossible kink correction).
+Integration Challenge (10 min):Combine today’s pillar with previous (e.g., gesture figure holding an impossible sax that loops through itself).
+Micro Crit (2 min):Agent asks 3 reflection prompts (What reads? What tangles? What to push next?).
+Stylization Burst (5 min):Take earlier structural drawing; overlay “jazz line” (one continuous flowing contour) without lifting stylus.
+Archive & Tag (2 min):Tag: line_quality (1–5), proportion_control, risk_taken. Agent tracks trend lines.Weekly Cycle (Example)Mon: Line + Boxes → simple horn.
+Tue: Gesture + Cylinders → seated player.
+Wed: Anatomy Lite upper body + instrument overlay.
+Thu: Impossible Object: Escher-esque stand + figure hand.
+Fri: Jazz Portrait Fusion (head/shoulders with rhythmic line motifs).
+Sat: Style Emulation (choose a jazz artist photo; geometric map + stylize).
+Sun: Review Reel: Agent displays 7 images in sequence; you annotate improvement notes.Jazz Portrait Method (Agent Coaching Script)1.Reference Ingest: Agent asks you to pick 3 photos of (e.g.) Miles, Coltrane, Ella—choose 1 anchor.2.Shape Map: Trace (mentally or light pencil) large negative shapes (background voids around torso/instrument).3.Axis & Flow: One “phrase line” from crown → down spine → through instrument’s bell edge.4.Block Form: Head (modified box), ribcage (tilted egg), pelvis (shallow bowl), arms (paired taper cylinders).5.Instrument Construction: Sax = stacked elliptical tubes + bell flare (cone + torus lip).6.Rhythm Overlay: Agent prompts: “Add 3 syncopated angular echoes that contrast the main phrase line.”7.Value Call & Response: Dark shadow mass on one side of face; echo with a softer interior tone inside bell.8.Stylization Push: Exaggerate 1 proportion (neck elongation, bell size) to emphasize musical identity.9.Restraint: Agent signals STOP when unnecessary rendering begins (teaches editing like ending a solo).Impossible Drawing Module (Agent Moves)Error Taxonomy (agent labels what to fix):Drift: Vanishing not converging.Paradox Unregistered: Two segments imply conflicting depth but no shared hinge.Tangent Collision: Edge kissing another kills clarity.Gravity Confusion: Supports float without intentional cue.
+Correction Drill:
+Agent duplicates your drawing and highlights 2 edges; you must choose one to “sacrifice” (erase or bend) to resolve depth logic while keeping global paradox.Figure Gesture Compression (30–90 Seconds)Agent Timer Modes:30s: Capture line of action only.45s: Add ribcage + pelvis blocks with relative tilt.60s: Limb placeholders + head angle.90s: Wrap 2 contour bands (shows volume).
+Agent Feedback Prompts:“Did hips counter-tilt shoulders?” (Yes/No)“One line you can delete without losing pose?” (Name it = trains economy)Teacher Training Strip (Give To Instructors)Observation Rubric (1–4):
+1 = Hesitant / symbol drawing
+2 = Structure partial / proportion drift
+3 = Solid primitive logic / minor stiffness
+4 = Confident design choices / value pattern intentional
+Critique Sequence (Always):
+A. Identify Strength First (line flow, structure, risk).
+B. Single Priority Fix (e.g., unify light logic).
+C. Transfer Exercise: “Redraw ribcage only as a transparent box.”
+D. Positive Close: “Next session, expect freer clavicle rhythm.”
+Demo Micro-Script:
+“Watch: Box → slice corners → turn into head planes → overlay rhythm line—SEE how angles compress with tilt.”Agent Modes (Prompt Templates You Can Reuse)1.Coach Mode:
+“I will give you 5 gesture prompts. After each, tell me: (a) main action line (b) 1 proportion you chose to push. Ready?”2.Demo Mode (You request):
+“Show me step sequence: cylinder to refined sax bell with value accent.”3.Spot Check:
+“Evaluate the following JSON of my session stats (line_confidence, proportion_accuracy, risk_score) and give 1 corrective drill.”4.Style Fusion:
+“Take a Miles Davis photo; produce a 6-step geometric abstraction plan + 2 stylization pushes.”5.Impossible Debug:
+“Analyze this edge list; find contradiction in depth continuity and propose which edge to reassign.”Minimal Starting Kit (Keep It Light)Tools: Soft pencil (2B), fineliner, grey marker (mid), white gel pen (highlight).
+Surfaces: Newsprint (gesture), smooth bristol (refined).
+Constraint: Limit refined passes to 25 min to prevent over-render.Progress Tracking (Non-Tech)Ledger Columns (daily):
+date | session_minutes | gesture_count | structure_score (self 1–4) | risk_move (Y/N) | one_win | one_stick_point
+Agent queries ledger weekly: “Patterns spotted: risk frequency ↓ on Wed. Add micro-challenge?”Badge Hooks (Tie to Your RPG System)Geometry Forge: 50 clean primitive stacks.Paradox Artisan: 10 impossible objects with only 1 logical fracture each.Gesture Flow: 200 gestures logged (avg structure ≥ 3).Jazz Line Maestro: 15 portraits with validated phrase line dominance.Teacher Mirror: 3 peer or self-critiques using rubric.First 7-Day Kickoff (Concrete)Day 1: 5 min lines + 20 box stacks + 3 simple sax forms.
+Day 2: 30 gesture bursts (30–60s) + choose best 3 and add primitives.
+Day 3: Head block rotations (12) + apply to a jazz reference.
+Day 4: Impossible ring-ladder object + integrate a figure hand gripping it.
+Day 5: Full jazz bust (Miles) 25 min: structure → value → rhythm accents.
+Day 6: Anatomy lite (shoulder girdle) + overlay improvisational line.
+Day 7: Review board of 6 pieces; circle strongest phrase line; plan next week.How To Start Right Now (Zero Friction)1.Pick one jazz photo now.2.Draw ONLY the phrase line + 3 big negative shapes.3.Add ribcage/pelvis blocks.4.Overlay instrument primitives.5.Stop—snap pic. That’s your baseline (Agent “Day 0”).What I Need From You NextPick one of these to deepen next:
+a) 7-Day Printable Sheet
+b) Prompt Pack (ready-to-paste agent commands)
+c) Jazz Portrait Walkthrough (fully scripted example)
+Just reply with a, b, or c and we’ll build that piece!You’re absolutely on the right creative wavelength—let’s make the practice loop feel like improvising a solo! Which next: a, b, or c? 🎷
