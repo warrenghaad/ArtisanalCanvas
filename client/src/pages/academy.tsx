@@ -18,8 +18,7 @@ import type { AssessmentResult } from '@shared/schema';
 const DEMO_USER_ID = "demo-user";
 
 export default function Academy() {
-  const [currentPhase, setCurrentPhase] = useState(2);
-  const [currentExerciseId, setCurrentExerciseId] = useState('column_row');
+  const [currentExerciseId, setCurrentExerciseId] = useState<string | null>(null);
   const [currentStep, setCurrentStep] = useState(3);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [submissionId, setSubmissionId] = useState<string | null>(null);
@@ -31,6 +30,9 @@ export default function Academy() {
     queryKey: ['/api/user', DEMO_USER_ID],
     staleTime: 30000,
   });
+
+  // Use the user's current phase from the API, fallback to 1  
+  const currentPhase = (userData as any)?.user?.currentPhase || 1;
 
   const { data: phaseProgress = [] } = useQuery({
     queryKey: ['/api/user', DEMO_USER_ID, 'phase', currentPhase, 'progress'],
@@ -77,10 +79,34 @@ export default function Academy() {
   });
 
   const currentPhaseData = curriculumData.learning_sequence.find(p => p.phaseId === currentPhase);
+  
+  // Initialize currentExerciseId based on user's actual phase when userData loads
+  useEffect(() => {
+    if ((userData as any)?.user?.currentPhase && !currentExerciseId) {
+      const phaseData = curriculumData.learning_sequence.find(p => p.phaseId === (userData as any).user.currentPhase);
+      if (phaseData?.exercises?.[0]) {
+        setCurrentExerciseId(phaseData.exercises[0].id);
+      }
+    }
+  }, [userData, currentExerciseId]);
+  
   const currentExercise = currentPhaseData?.exercises?.find(e => e.id === currentExerciseId);
   
+  // Update user phase mutation
+  const updateUserPhaseMutation = useMutation({
+    mutationFn: async (phaseId: number) => {
+      const response = await apiRequest('POST', `/api/user/${DEMO_USER_ID}/progress`, {
+        currentPhase: phaseId,
+      });
+      return response.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['/api/user', DEMO_USER_ID] });
+    },
+  });
+
   const handlePhaseSelect = (phaseId: number) => {
-    setCurrentPhase(phaseId);
+    updateUserPhaseMutation.mutate(phaseId);
     const newPhaseData = curriculumData.learning_sequence.find(p => p.phaseId === phaseId);
     if (newPhaseData?.exercises?.[0]) {
       setCurrentExerciseId(newPhaseData.exercises[0].id);
@@ -141,7 +167,7 @@ export default function Academy() {
     };
   }, [timeElapsed, currentPhase, currentExerciseId]);
 
-  if (!currentPhaseData || !currentExercise) {
+  if (!userData || !currentPhaseData || !currentExercise) {
     return <div>Loading...</div>;
   }
 
@@ -272,7 +298,7 @@ export default function Academy() {
           {/* Drawing Canvas Area */}
           <div className="flex-1">
             <DrawingCanvasComponent
-              exerciseId={currentExercise.id}
+              exerciseId={currentExercise?.id || ''}
               onSubmit={handleDrawingSubmit}
             />
           </div>

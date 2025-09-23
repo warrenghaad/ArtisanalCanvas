@@ -8,11 +8,16 @@ export interface Line {
   end: Point;
 }
 
+export interface Stroke {
+  points: Point[];
+  id: string;
+}
+
 export interface DrawingState {
   horizonLine: number | null;
   vanishingPoints: Point[];
   constructionLines: Line[];
-  userStrokes: Path2D[];
+  userStrokes: Stroke[];
   currentTool: 'draw' | 'erase' | 'line' | 'guide';
   isDrawing: boolean;
 }
@@ -171,7 +176,14 @@ export class DrawingCanvas {
     this.ctx.strokeStyle = '#000000';
     this.ctx.lineWidth = 2;
     this.state.userStrokes.forEach(stroke => {
-      this.ctx.stroke(stroke);
+      if (stroke.points.length > 1) {
+        this.ctx.beginPath();
+        this.ctx.moveTo(stroke.points[0].x, stroke.points[0].y);
+        for (let i = 1; i < stroke.points.length; i++) {
+          this.ctx.lineTo(stroke.points[i].x, stroke.points[i].y);
+        }
+        this.ctx.stroke();
+      }
     });
   }
 
@@ -196,10 +208,13 @@ export class DrawingCanvas {
         this.addVanishingPoint({ x, y });
       }
     } else if (this.state.currentTool === 'draw') {
+      this.saveState(); // Save state before starting new stroke
       this.state.isDrawing = true;
-      const path = new Path2D();
-      path.moveTo(x, y);
-      this.state.userStrokes.push(path);
+      const newStroke: Stroke = {
+        points: [{ x, y }],
+        id: Date.now().toString() + Math.random().toString(36).substr(2, 9)
+      };
+      this.state.userStrokes.push(newStroke);
     }
   }
 
@@ -212,14 +227,13 @@ export class DrawingCanvas {
     
     const currentStroke = this.state.userStrokes[this.state.userStrokes.length - 1];
     if (currentStroke) {
-      currentStroke.lineTo(x, y);
+      currentStroke.points.push({ x, y });
       this.redraw();
     }
   }
 
   public handlePointerUp() {
     if (this.state.isDrawing) {
-      this.saveState();
       this.state.isDrawing = false;
     }
   }
