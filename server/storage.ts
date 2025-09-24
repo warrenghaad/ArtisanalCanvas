@@ -6,9 +6,16 @@ import {
   type PracticeSession,
   type InsertPracticeSession,
   type DrawingSubmission,
-  type InsertDrawingSubmission
+  type InsertDrawingSubmission,
+  users,
+  userProgress,
+  practiceSession,
+  drawingSubmission
 } from "@shared/schema";
 import { randomUUID } from "crypto";
+import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
+import { eq, and } from "drizzle-orm";
 
 export interface IStorage {
   // User management
@@ -33,148 +40,160 @@ export interface IStorage {
   updateDrawingSubmission(id: string, updates: Partial<DrawingSubmission>): Promise<DrawingSubmission | undefined>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private userProgress: Map<string, UserProgress>;
-  private practiceSessions: Map<string, PracticeSession>;
-  private drawingSubmissions: Map<string, DrawingSubmission>;
+// Create database connection
+const sql = neon(process.env.DATABASE_URL!);
+const db = drizzle(sql);
 
-  constructor() {
-    this.users = new Map();
-    this.userProgress = new Map();
-    this.practiceSessions = new Map();
-    this.drawingSubmissions = new Map();
-    
-    // Create default user for demo
-    this.createDefaultUser();
-  }
-
-  private async createDefaultUser() {
-    const defaultUser: User = {
-      id: "demo-user",
-      username: "demo",
-      password: "demo",
-      currentPhase: 2,
-      masteryLevel: 2,
-      totalPracticeTime: 3600,
-      createdAt: new Date(),
-    };
-    this.users.set(defaultUser.id, defaultUser);
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+    return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const result = await db.select().from(users).where(eq(users.username, username)).limit(1);
+    return result[0];
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { 
-      ...insertUser, 
-      id,
-      currentPhase: 1,
-      masteryLevel: 1,
-      totalPracticeTime: 0,
-      createdAt: new Date(),
-    };
-    this.users.set(id, user);
-    return user;
+    const result = await db.insert(users).values({
+      ...insertUser,
+      currentPhase: insertUser.currentPhase || 1,
+      masteryLevel: insertUser.masteryLevel || 1,
+      totalPracticeTime: insertUser.totalPracticeTime || 0,
+    }).returning();
+    return result[0];
   }
 
   async updateUser(id: string, updates: Partial<User>): Promise<User | undefined> {
-    const user = this.users.get(id);
-    if (!user) return undefined;
-    
-    const updatedUser = { ...user, ...updates };
-    this.users.set(id, updatedUser);
-    return updatedUser;
+    const result = await db.update(users).set(updates).where(eq(users.id, id)).returning();
+    return result[0];
   }
 
   async getUserProgress(userId: string): Promise<UserProgress[]> {
-    return Array.from(this.userProgress.values()).filter(
-      (progress) => progress.userId === userId
-    );
+    return await db.select().from(userProgress).where(eq(userProgress.userId, userId));
   }
 
   async getPhaseProgress(userId: string, phaseId: number): Promise<UserProgress[]> {
-    return Array.from(this.userProgress.values()).filter(
-      (progress) => progress.userId === userId && progress.phaseId === phaseId
+    return await db.select().from(userProgress).where(
+      and(eq(userProgress.userId, userId), eq(userProgress.phaseId, phaseId))
     );
   }
 
   async createUserProgress(insertProgress: InsertUserProgress): Promise<UserProgress> {
-    const id = randomUUID();
-    const progress: UserProgress = { 
-      ...insertProgress, 
-      id,
+    const result = await db.insert(userProgress).values({
+      ...insertProgress,
       completedAt: insertProgress.completed ? new Date() : null,
-    };
-    this.userProgress.set(id, progress);
-    return progress;
+    }).returning();
+    return result[0];
   }
 
   async updateUserProgress(id: string, updates: Partial<UserProgress>): Promise<UserProgress | undefined> {
-    const progress = this.userProgress.get(id);
-    if (!progress) return undefined;
-    
-    const updatedProgress = { 
-      ...progress, 
+    const result = await db.update(userProgress).set({
       ...updates,
-      completedAt: updates.completed ? new Date() : progress.completedAt,
-    };
-    this.userProgress.set(id, updatedProgress);
-    return updatedProgress;
+      completedAt: updates.completed ? new Date() : undefined,
+    }).where(eq(userProgress.id, id)).returning();
+    return result[0];
   }
 
   async getPracticeSessions(userId: string): Promise<PracticeSession[]> {
-    return Array.from(this.practiceSessions.values()).filter(
-      (session) => session.userId === userId
-    );
+    return await db.select().from(practiceSession).where(eq(practiceSession.userId, userId));
   }
 
   async createPracticeSession(insertSession: InsertPracticeSession): Promise<PracticeSession> {
-    const id = randomUUID();
-    const session: PracticeSession = { 
-      ...insertSession, 
-      id,
-      createdAt: new Date(),
-    };
-    this.practiceSessions.set(id, session);
-    return session;
+    const result = await db.insert(practiceSession).values(insertSession).returning();
+    return result[0];
   }
 
   async getDrawingSubmissions(userId: string, exerciseId?: string): Promise<DrawingSubmission[]> {
-    return Array.from(this.drawingSubmissions.values()).filter(
-      (submission) => 
-        submission.userId === userId && 
-        (!exerciseId || submission.exerciseId === exerciseId)
-    );
+    if (exerciseId) {
+      return await db.select().from(drawingSubmission).where(
+        and(eq(drawingSubmission.userId, userId), eq(drawingSubmission.exerciseId, exerciseId))
+      );
+    }
+    return await db.select().from(drawingSubmission).where(eq(drawingSubmission.userId, userId));
   }
 
   async createDrawingSubmission(insertSubmission: InsertDrawingSubmission): Promise<DrawingSubmission> {
-    const id = randomUUID();
-    const submission: DrawingSubmission = { 
-      ...insertSubmission, 
-      id,
-      createdAt: new Date(),
-    };
-    this.drawingSubmissions.set(id, submission);
-    return submission;
+    const result = await db.insert(drawingSubmission).values(insertSubmission).returning();
+    return result[0];
   }
 
   async updateDrawingSubmission(id: string, updates: Partial<DrawingSubmission>): Promise<DrawingSubmission | undefined> {
-    const submission = this.drawingSubmissions.get(id);
-    if (!submission) return undefined;
-    
-    const updatedSubmission = { ...submission, ...updates };
-    this.drawingSubmissions.set(id, updatedSubmission);
-    return updatedSubmission;
+    const result = await db.update(drawingSubmission).set(updates).where(eq(drawingSubmission.id, id)).returning();
+    return result[0];
   }
 }
 
-export const storage = new MemStorage();
+// Initialize database function
+export async function initializeDatabase() {
+  try {
+    let demoUser = await storage.getUserByUsername("demo");
+    if (!demoUser) {
+      demoUser = await storage.createUser({
+        username: "demo",
+        password: "demo",
+        currentPhase: 2,
+        masteryLevel: 2,
+        totalPracticeTime: 3600,
+      });
+      console.log('Demo user created successfully with ID:', demoUser.id);
+    } else {
+      console.log('Demo user already exists with ID:', demoUser.id);
+    }
+
+    // Check if demo user has progress data, if not create it
+    const existingProgress = await storage.getUserProgress(demoUser.id);
+    if (existingProgress.length === 0) {
+      console.log('Creating demo progress data...');
+      
+      // Create progress for Phase 1 (completed)
+      await storage.createUserProgress({
+        userId: demoUser.id,
+        phaseId: 1,
+        exerciseId: 'HL_detection',
+        completed: true,
+        score: 85,
+        timeSpent: 900, // 15 minutes
+        attempts: 2,
+        feedback: 'Good understanding of horizon line concepts'
+      });
+
+      await storage.createUserProgress({
+        userId: demoUser.id,
+        phaseId: 1,
+        exerciseId: 'PP_concept',
+        completed: true,
+        score: 92,
+        timeSpent: 600, // 10 minutes
+        attempts: 1,
+        feedback: 'Excellent grasp of picture plane fundamentals'
+      });
+
+      // Create some practice sessions
+      await storage.createPracticeSession({
+        userId: demoUser.id,
+        sessionType: 'exercise',
+        duration: 900,
+        phaseId: 1,
+        exerciseId: 'HL_detection',
+        notes: 'First attempt at horizon line exercises'
+      });
+
+      await storage.createPracticeSession({
+        userId: demoUser.id,
+        sessionType: 'drill',
+        duration: 120, // 2 minutes
+        phaseId: 2,
+        exerciseId: 'tile_floor',
+        notes: 'Daily practice drill'
+      });
+
+      console.log('Demo progress data created successfully');
+    }
+  } catch (error) {
+    console.error('Failed to initialize database:', error);
+  }
+}
+
+export const storage = new DatabaseStorage();

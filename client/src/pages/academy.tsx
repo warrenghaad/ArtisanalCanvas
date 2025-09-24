@@ -15,7 +15,7 @@ import { curriculumData } from '@/lib/curriculum-data';
 import { useToast } from '@/hooks/use-toast';
 import type { AssessmentResult } from '@shared/schema';
 
-const DEMO_USER_ID = "demo-user";
+const DEMO_USERNAME = "demo";
 
 export default function Academy() {
   const [currentExerciseId, setCurrentExerciseId] = useState<string | null>(null);
@@ -26,24 +26,26 @@ export default function Academy() {
   const queryClient = useQueryClient();
 
   // Fetch user data and progress
-  const { data: userData } = useQuery({
-    queryKey: ['/api/user', DEMO_USER_ID],
+  const { data: userData, isLoading: userDataLoading } = useQuery({
+    queryKey: ['/api/user/by-username', DEMO_USERNAME],
     staleTime: 30000,
   });
 
   // Use the user's current phase from the API, fallback to 1  
   const currentPhase = (userData as any)?.user?.currentPhase || 1;
 
+  const userId = (userData as any)?.user?.id;
   const { data: phaseProgress = [] } = useQuery({
-    queryKey: ['/api/user', DEMO_USER_ID, 'phase', currentPhase, 'progress'],
+    queryKey: ['/api/user', userId, 'phase', currentPhase, 'progress'],
     staleTime: 30000,
+    enabled: !!userId,
   });
 
   // Submit drawing mutation
   const submitDrawingMutation = useMutation({
     mutationFn: async (imageData: string) => {
       const response = await apiRequest('POST', '/api/drawing/submit', {
-        userId: DEMO_USER_ID,
+        userId: userId,
         exerciseId: currentExerciseId,
         imageData,
         submitted: false,
@@ -148,7 +150,7 @@ export default function Academy() {
     const saveSession = () => {
       if (timeElapsed > 60) { // Only save if more than 1 minute
         createSessionMutation.mutate({
-          userId: DEMO_USER_ID,
+          userId: userId,
           sessionType: 'exercise',
           duration: timeElapsed,
           phaseId: currentPhase,

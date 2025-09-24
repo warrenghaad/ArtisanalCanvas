@@ -1,12 +1,37 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
-import { storage } from "./storage";
+import { storage, initializeDatabase } from "./storage";
 import { assessDrawing, generateExerciseTips } from "./services/openai";
 import { insertPracticeSessionSchema, insertDrawingSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Initialize database storage with demo user
+  await initializeDatabase();
   
+  // Get user by username
+  app.get("/api/user/by-username/:username", async (req, res) => {
+    try {
+      const user = await storage.getUserByUsername(req.params.username);
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+      
+      const progress = await storage.getUserProgress(user.id);
+      const sessions = await storage.getPracticeSessions(user.id);
+      
+      res.json({
+        user,
+        progress,
+        sessions,
+        totalSessions: sessions.length,
+        totalPracticeTime: user.totalPracticeTime,
+      });
+    } catch (error) {
+      res.status(500).json({ error: "Failed to fetch user data" });
+    }
+  });
+
   // Get user profile and progress
   app.get("/api/user/:id", async (req, res) => {
     try {
