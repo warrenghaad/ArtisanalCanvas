@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Academy from "@/pages/academy";
 import ETextbookExplorer from "@/pages/etextbook-explorer";
 import CurriculumDashboard from "@/pages/curriculum-dashboard";
+import LearningHub from "@/pages/learning-hub";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/academy" component={Academy} />
       <Route path="/etextbooks" component={ETextbookExplorer} />
       <Route path="/curriculum" component={CurriculumDashboard} />
+      <Route path="/learning" component={LearningHub} />
       <Route component={NotFound} />
     </Switch>
   );

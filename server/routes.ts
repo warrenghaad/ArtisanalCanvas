@@ -249,6 +249,113 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: 'Failed to create student progress' });
     }
   });
+  
+  // Differentiated content delivery routes
+  app.get("/api/differentiated-content/:contentPath", async (req, res) => {
+    try {
+      const { contentPath } = req.params;
+      const { userId } = req.query;
+      
+      // Get student's current progress and differentiation path
+      const progress = await storage.getStudentContentProgress(
+        userId as string,
+        contentPath
+      );
+      
+      const differentiationPath = progress?.[0]?.differentiationPath || 'base';
+      
+      // For now, return mock differentiated content
+      // In production, this would fetch from a content repository
+      const content = {
+        path: contentPath,
+        differentiationLevel: differentiationPath,
+        content: getDifferentiatedContent(contentPath, differentiationPath),
+        nextLevel: getNextLevel(differentiationPath),
+        previousLevel: getPreviousLevel(differentiationPath)
+      };
+      
+      res.json(content);
+    } catch (error) {
+      console.error('Error fetching differentiated content:', error);
+      res.status(500).json({ error: 'Failed to fetch differentiated content' });
+    }
+  });
+  
+  app.post("/api/differentiation-path/update", async (req, res) => {
+    try {
+      const { userId, contentPath, newPath } = req.body;
+      
+      if (!['base', 'advanced', 'remedial', 'enrichment'].includes(newPath)) {
+        return res.status(400).json({ error: 'Invalid differentiation path' });
+      }
+      
+      // Update the student's differentiation path
+      const result = await storage.createStudentContentProgress({
+        userId,
+        contentPath,
+        differentiationPath: newPath,
+        completionStatus: 'in_progress',
+        metadata: { pathChangedAt: new Date().toISOString() }
+      });
+      
+      res.json({ success: true, updatedPath: newPath, result });
+    } catch (error) {
+      console.error('Error updating differentiation path:', error);
+      res.status(500).json({ error: 'Failed to update differentiation path' });
+    }
+  });
+  
+  // Helper functions for differentiated content
+  function getDifferentiatedContent(contentPath: string, level: string) {
+    const contentMap: Record<string, any> = {
+      base: {
+        title: "Standard Content",
+        description: "Core learning objectives and activities",
+        activities: ["Introduction", "Guided Practice", "Independent Practice", "Assessment"],
+        estimatedTime: 30
+      },
+      advanced: {
+        title: "Advanced Content",
+        description: "Extended learning with challenging applications",
+        activities: ["Quick Review", "Complex Problem Solving", "Project Work", "Peer Teaching"],
+        estimatedTime: 45
+      },
+      remedial: {
+        title: "Foundational Content",
+        description: "Additional support and scaffolding",
+        activities: ["Pre-requisite Review", "Step-by-Step Guidance", "Extra Practice", "Simplified Assessment"],
+        estimatedTime: 40
+      },
+      enrichment: {
+        title: "Enrichment Content",
+        description: "Creative extensions and real-world applications",
+        activities: ["Research Project", "Cross-curricular Connections", "Creative Expression", "Presentation"],
+        estimatedTime: 50
+      }
+    };
+    
+    return contentMap[level] || contentMap.base;
+  }
+  
+  function getNextLevel(currentLevel: string): string | null {
+    const progression: Record<string, string> = {
+      remedial: 'base',
+      base: 'advanced',
+      advanced: 'enrichment',
+      enrichment: null as any
+    };
+    return progression[currentLevel] || null;
+  }
+  
+  function getPreviousLevel(currentLevel: string): string | null {
+    const regression: Record<string, string> = {
+      enrichment: 'advanced',
+      advanced: 'base',
+      base: 'remedial',
+      remedial: null as any
+    };
+    return regression[currentLevel] || null;
+  }
 
   const httpServer = createServer(app);
   return httpServer;
