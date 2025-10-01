@@ -69,6 +69,7 @@ const perspectivePhases = [
 export default function ETextbookExplorer() {
   const [selectedPeriod, setSelectedPeriod] = useState('prehistory');
   const [selectedPhase, setSelectedPhase] = useState('phase-01');
+  const [selectedGrade, setSelectedGrade] = useState('4');
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
   const [selectedContent, setSelectedContent] = useState<any>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'tree'>('grid');
@@ -239,17 +240,38 @@ export default function ETextbookExplorer() {
           {/* Content Display */}
           <ScrollArea className="flex-1">
             <div className="p-6">
+              {/* Grade Selector */}
+              <div className="mb-4 flex items-center gap-4">
+                <label className="text-sm font-medium">Select Grade:</label>
+                <div className="flex gap-2">
+                  {['K', '1', '2', '3', '4', '5', '6', '7', '8'].map(grade => (
+                    <Button
+                      key={grade}
+                      variant={selectedGrade === grade ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => setSelectedGrade(grade)}
+                      data-testid={`button-grade-${grade}`}
+                    >
+                      Grade {grade}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+              
               {viewMode === 'grid' ? (
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {/* Sample content cards */}
-                  <Card className="cursor-pointer hover:shadow-lg transition-all">
+                  {/* Actual Grade Content Cards */}
+                  <Card 
+                    className="cursor-pointer hover:shadow-lg transition-all"
+                    data-testid="card-grade-content"
+                  >
                     <CardHeader className="p-4">
                       <div className="flex items-center justify-center p-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded">
                         <Brain className="w-12 h-12 text-white" />
                       </div>
                     </CardHeader>
                     <CardContent className="p-4">
-                      <h3 className="font-semibold">Art & Patterns</h3>
+                      <h3 className="font-semibold">Grade {selectedGrade} - Art & Patterns</h3>
                       <p className="text-sm text-muted-foreground mt-1">Visual arts and motifs</p>
                     </CardContent>
                   </Card>
