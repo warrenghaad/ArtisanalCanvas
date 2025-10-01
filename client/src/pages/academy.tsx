@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Palette, Bell, CheckCircle, Clock, Circle } from 'lucide-react';
+import { Palette, Bell, CheckCircle, Clock, Circle, GraduationCap, BookOpen } from 'lucide-react';
 import { curriculumData } from '@/lib/curriculum-data';
 import { useToast } from '@/hooks/use-toast';
 import type { AssessmentResult } from '@shared/schema';
@@ -58,7 +58,7 @@ export default function Academy() {
         title: "Drawing Submitted",
         description: "Your drawing has been saved. Get AI feedback when ready!",
       });
-      queryClient.invalidateQueries({ queryKey: ['/api/user', DEMO_USER_ID, 'drawings'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/user', userId, 'drawings'] });
     },
     onError: () => {
       toast({
@@ -76,7 +76,7 @@ export default function Academy() {
       return response.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/user', DEMO_USER_ID] });
+      queryClient.invalidateQueries({ queryKey: ['/api/user', userId] });
     },
   });
 
@@ -97,13 +97,13 @@ export default function Academy() {
   // Update user phase mutation
   const updateUserPhaseMutation = useMutation({
     mutationFn: async (phaseId: number) => {
-      const response = await apiRequest('POST', `/api/user/${DEMO_USER_ID}/progress`, {
+      const response = await apiRequest('POST', `/api/user/${userId}/progress`, {
         currentPhase: phaseId,
       });
       return response.json();
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/user', DEMO_USER_ID] });
+      queryClient.invalidateQueries({ queryKey: ['/api/user', userId] });
     },
   });
 
@@ -227,6 +227,28 @@ export default function Academy() {
                   {overallProgress}%
                 </div>
               </div>
+            </div>
+            
+            {/* Navigation Buttons */}
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => window.location.href = '/curriculum'}
+                data-testid="button-curriculum"
+              >
+                <GraduationCap className="w-4 h-4 mr-2" />
+                Curriculum
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={() => window.location.href = '/etextbooks'}
+                data-testid="button-etextbooks"
+              >
+                <BookOpen className="w-4 h-4 mr-2" />
+                eTextbooks
+              </Button>
             </div>
             
             {/* User Menu */}

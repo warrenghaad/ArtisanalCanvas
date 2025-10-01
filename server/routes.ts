@@ -175,6 +175,80 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: "Failed to fetch drawings" });
     }
   });
+  
+  // Curriculum Mapping routes
+  app.get("/api/curriculum/mappings/:gradeLevel", async (req, res) => {
+    try {
+      const { gradeLevel } = req.params;
+      const mappings = await storage.getCurriculumMappings(gradeLevel);
+      res.json(mappings);
+    } catch (error) {
+      console.error('Error fetching curriculum mappings:', error);
+      res.status(500).json({ error: 'Failed to fetch curriculum mappings' });
+    }
+  });
+  
+  app.get("/api/curriculum/mappings", async (req, res) => {
+    try {
+      const mappings = await storage.getCurriculumMappings();
+      res.json(mappings);
+    } catch (error) {
+      console.error('Error fetching all curriculum mappings:', error);
+      res.status(500).json({ error: 'Failed to fetch curriculum mappings' });
+    }
+  });
+  
+  // Historical Period routes
+  app.get("/api/historical-periods", async (req, res) => {
+    try {
+      const periods = await storage.getAllHistoricalPeriods();
+      res.json(periods);
+    } catch (error) {
+      console.error('Error fetching historical periods:', error);
+      res.status(500).json({ error: 'Failed to fetch historical periods' });
+    }
+  });
+  
+  app.get("/api/historical-periods/:periodId", async (req, res) => {
+    try {
+      const { periodId } = req.params;
+      const period = await storage.getHistoricalPeriodContent(periodId);
+      if (!period) {
+        return res.status(404).json({ error: 'Period not found' });
+      }
+      res.json(period);
+    } catch (error) {
+      console.error('Error fetching historical period:', error);
+      res.status(500).json({ error: 'Failed to fetch historical period' });
+    }
+  });
+  
+  // Student Content Progress routes
+  app.get("/api/student-progress/:userId", async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const { contentPath } = req.query;
+      const progress = await storage.getStudentContentProgress(
+        userId, 
+        contentPath as string | undefined
+      );
+      res.json(progress);
+    } catch (error) {
+      console.error('Error fetching student progress:', error);
+      res.status(500).json({ error: 'Failed to fetch student progress' });
+    }
+  });
+  
+  app.post("/api/student-progress", async (req, res) => {
+    try {
+      const progress = req.body;
+      const result = await storage.createStudentContentProgress(progress);
+      res.json(result);
+    } catch (error) {
+      console.error('Error creating student progress:', error);
+      res.status(500).json({ error: 'Failed to create student progress' });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;
