@@ -60,6 +60,7 @@ export interface IStorage {
   // Student content progress
   getStudentContentProgress(userId: string, contentPath?: string): Promise<StudentContentProgress[]>;
   createStudentContentProgress(progress: InsertStudentContentProgress): Promise<StudentContentProgress>;
+  getAllStudentProgress(): Promise<StudentContentProgress[]>;
   updateStudentContentProgress(id: string, updates: Partial<StudentContentProgress>): Promise<StudentContentProgress | undefined>;
 }
 
@@ -197,6 +198,10 @@ export class DatabaseStorage implements IStorage {
       lastAccessed: new Date()
     }).where(eq(studentContentProgress.id, id)).returning();
     return result[0];
+  }
+  
+  async getAllStudentProgress(): Promise<StudentContentProgress[]> {
+    return await db.select().from(studentContentProgress);
   }
 }
 

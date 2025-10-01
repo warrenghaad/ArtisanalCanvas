@@ -7,6 +7,7 @@ import Academy from "@/pages/academy";
 import ETextbookExplorer from "@/pages/etextbook-explorer";
 import CurriculumDashboard from "@/pages/curriculum-dashboard";
 import LearningHub from "@/pages/learning-hub";
+import AnalyticsDashboard from "@/pages/analytics-dashboard";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/etextbooks" component={ETextbookExplorer} />
       <Route path="/curriculum" component={CurriculumDashboard} />
       <Route path="/learning" component={LearningHub} />
+      <Route path="/analytics" component={AnalyticsDashboard} />
       <Route component={NotFound} />
     </Switch>
   );

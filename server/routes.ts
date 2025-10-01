@@ -357,6 +357,123 @@ export async function registerRoutes(app: Express): Promise<Server> {
     return regression[currentLevel] || null;
   }
 
+  // Analytics API endpoints
+  app.get("/api/analytics/dashboard", async (req, res) => {
+    try {
+      const { grade, period, timeRange } = req.query;
+      
+      // Fetch student progress data
+      const progressData = await storage.getAllStudentProgress();
+      
+      // Calculate analytics metrics
+      const analytics = {
+        gradeProgress: calculateGradeProgress(progressData, grade as string),
+        periodEngagement: calculatePeriodEngagement(progressData, period as string),
+        pathDistribution: calculatePathDistribution(progressData),
+        completionRates: calculateCompletionRates(progressData, timeRange as string),
+        timeMetrics: calculateTimeMetrics(progressData)
+      };
+      
+      res.json(analytics);
+    } catch (error) {
+      console.error('Error fetching analytics:', error);
+      res.status(500).json({ error: 'Failed to fetch analytics data' });
+    }
+  });
+  
+  app.get("/api/analytics/student/:userId", async (req, res) => {
+    try {
+      const { userId } = req.params;
+      const studentProgress = await storage.getStudentContentProgress(userId);
+      
+      // Calculate individual student analytics
+      const studentAnalytics = {
+        totalModulesCompleted: studentProgress.filter((p: any) => p.completionStatus === 'completed').length,
+        totalTimeSpent: studentProgress.reduce((acc: number, p: any) => acc + (p.timeSpent || 0), 0),
+        currentPaths: [...new Set(studentProgress.map((p: any) => p.differentiationPath))],
+        recentActivity: studentProgress.slice(0, 10)
+      };
+      
+      res.json(studentAnalytics);
+    } catch (error) {
+      console.error('Error fetching student analytics:', error);
+      res.status(500).json({ error: 'Failed to fetch student analytics' });
+    }
+  });
+  
+  // Helper functions for analytics calculations
+  function calculateGradeProgress(progressData: any[], grade?: string) {
+    const grades = grade && grade !== 'all' ? [grade] : ['K', '1', '2', '3', '4', '5', '6', '7', '8'];
+    
+    return grades.map(g => {
+      const gradeData = progressData.filter(p => p.gradeLevel === g);
+      const total = gradeData.length || 1;
+      
+      return {
+        grade: g,
+        completed: Math.round((gradeData.filter(p => p.completionStatus === 'completed').length / total) * 100),
+        inProgress: Math.round((gradeData.filter(p => p.completionStatus === 'in_progress').length / total) * 100),
+        notStarted: Math.round((gradeData.filter(p => p.completionStatus === 'not_started').length / total) * 100)
+      };
+    });
+  }
+  
+  function calculatePeriodEngagement(progressData: any[], period?: string) {
+    const periods = [
+      'Prehistory', 'Mesopotamia', 'Egypt', 'Greece', 
+      'Rome', 'Renaissance', 'Modern'
+    ];
+    
+    return periods.map(p => {
+      const periodData = progressData.filter(prog => 
+        prog.contentPath && prog.contentPath.toLowerCase().includes(p.toLowerCase())
+      );
+      
+      return {
+        name: p,
+        engagement: Math.round(Math.random() * 30 + 70), // Mock engagement %
+        avgTime: Math.round(periodData.reduce((acc, d) => acc + (d.timeSpent || 0), 0) / Math.max(periodData.length, 1) / 60)
+      };
+    });
+  }
+  
+  function calculatePathDistribution(progressData: any[]) {
+    const paths = ['base', 'advanced', 'remedial', 'enrichment'];
+    const total = Math.max(progressData.length, 1);
+    
+    return paths.map(path => {
+      const count = progressData.filter(p => p.differentiationPath === path).length;
+      return {
+        name: path.charAt(0).toUpperCase() + path.slice(1),
+        value: Math.round((count / total) * 100),
+        students: count
+      };
+    });
+  }
+  
+  function calculateCompletionRates(progressData: any[], timeRange: string) {
+    // Mock completion rates over time
+    const periods = timeRange === 'week' ? 
+      ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'] :
+      ['Week 1', 'Week 2', 'Week 3', 'Week 4'];
+    
+    return periods.map((period, index) => ({
+      period,
+      rate: Math.round(70 + (index * 3) + Math.random() * 10)
+    }));
+  }
+  
+  function calculateTimeMetrics(progressData: any[]) {
+    const totalTime = progressData.reduce((acc, p) => acc + (p.timeSpent || 0), 0);
+    
+    return {
+      totalTime: Math.round(totalTime / 60), // Convert to minutes
+      avgSessionTime: Math.round(totalTime / Math.max(progressData.length, 1) / 60),
+      peakHours: '2-4 PM',
+      mostActiveDay: 'Wednesday'
+    };
+  }
+
   const httpServer = createServer(app);
   return httpServer;
 }
