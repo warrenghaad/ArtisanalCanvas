@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, jsonb, timestamp, boolean } from "drizzle-orm/pg-core";
+import { pgTable, text, varchar, integer, jsonb, timestamp, boolean, decimal } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -106,3 +106,71 @@ export const assessmentResultSchema = z.object({
 });
 
 export type AssessmentResult = z.infer<typeof assessmentResultSchema>;
+
+// Grade-level curriculum mappings
+export const curriculumMapping = pgTable("curriculum_mapping", {
+  id: varchar("id", { length: 36 }).primaryKey().default(sql`gen_random_uuid()`),
+  gradeLevel: varchar("grade_level", { length: 20 }).notNull(), // K, 1, 2, 3, 4, 5, 6, 7, 8
+  historicalPeriod: varchar("historical_period", { length: 100 }).notNull(),
+  timeWeighting: decimal("time_weighting", { precision: 5, scale: 2 }).notNull(), // Percentage of year
+  focusAreas: text("focus_areas").array(), // Array of focus areas for this period/grade
+  objectives: jsonb("objectives"), // Learning objectives
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const insertCurriculumMappingSchema = createInsertSchema(curriculumMapping).omit({
+  id: true,
+  createdAt: true,
+  updatedAt: true,
+});
+
+export type InsertCurriculumMapping = z.infer<typeof insertCurriculumMappingSchema>;
+export type CurriculumMapping = typeof curriculumMapping.$inferSelect;
+
+// Historical Period content
+export const historicalPeriodContent = pgTable("historical_period_content", {
+  id: varchar("id", { length: 36 }).primaryKey().default(sql`gen_random_uuid()`),
+  periodId: varchar("period_id", { length: 100 }).notNull(),
+  periodName: varchar("period_name", { length: 200 }).notNull(),
+  dateRange: varchar("date_range", { length: 100 }),
+  description: text("description"),
+  artPatterns: jsonb("art_patterns"), // JSON structure for art patterns and motifs
+  mathematicalConcepts: jsonb("mathematical_concepts"), // Mathematical concepts for this period
+  mythsStories: jsonb("myths_stories"), // Cultural narratives
+  powerStructures: jsonb("power_structures"), // Government, social hierarchy
+  metadata: jsonb("metadata"), // Additional structured data
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertHistoricalPeriodContentSchema = createInsertSchema(historicalPeriodContent).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertHistoricalPeriodContent = z.infer<typeof insertHistoricalPeriodContentSchema>;
+export type HistoricalPeriodContent = typeof historicalPeriodContent.$inferSelect;
+
+// Student content progress tracking
+export const studentContentProgress = pgTable("student_content_progress", {
+  id: varchar("id", { length: 36 }).primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id", { length: 36 }).notNull().references(() => users.id),
+  contentPath: varchar("content_path", { length: 500 }).notNull(), // e.g., "/perspective-drawing/phase-01/module-01/lesson-001"
+  gradeLevel: varchar("grade_level", { length: 20 }),
+  completionStatus: varchar("completion_status", { length: 50 }).notNull(), // not_started, in_progress, completed
+  timeSpent: integer("time_spent").default(0), // Time in seconds
+  lastAccessed: timestamp("last_accessed").defaultNow(),
+  assessmentScores: jsonb("assessment_scores"), // Scores for different assessments
+  differentiationPath: varchar("differentiation_path", { length: 50 }), // base, advanced, remedial, enrichment
+  metadata: jsonb("metadata"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const insertStudentContentProgressSchema = createInsertSchema(studentContentProgress).omit({
+  id: true,
+  createdAt: true,
+  lastAccessed: true,
+});
+
+export type InsertStudentContentProgress = z.infer<typeof insertStudentContentProgressSchema>;
+export type StudentContentProgress = typeof studentContentProgress.$inferSelect;

@@ -1,9 +1,12 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Create deep directory structure for eTextbooks
 function createEtextbookStructure() {
-  const baseDir = 'etextbooks';
+  const baseDir = path.join(path.dirname(__dirname), 'etextbooks');
   
   // Main structure
   const structure = {
@@ -50,11 +53,27 @@ function createEtextbookStructure() {
           { id: 'module-03-complete-scenes', title: 'Complete Scenes', lessons: 8 }
         ])
       },
+      'historical-periods': {
+        'prehistory': createHistoricalPeriodStructure('Prehistory', '70,000 - 3,500 BCE'),
+        'mesopotamia': createHistoricalPeriodStructure('Mesopotamia', '3,500 - 539 BCE'),
+        'egypt': createHistoricalPeriodStructure('Ancient Egypt', '3,100 - 30 BCE'),
+        'greece': createHistoricalPeriodStructure('Ancient Greece', '800 - 146 BCE'),
+        'rome': createHistoricalPeriodStructure('Roman Empire', '753 BCE - 476 CE'),
+        'maya': createHistoricalPeriodStructure('Maya Civilization', '2,000 BCE - 1,500 CE'),
+        'china': createHistoricalPeriodStructure('Ancient China', '2,070 BCE - 220 CE'),
+        'islamic': createHistoricalPeriodStructure('Islamic Golden Age', '750 - 1,258 CE'),
+        'medieval': createHistoricalPeriodStructure('Medieval Europe', '476 - 1,453 CE'),
+        'renaissance': createHistoricalPeriodStructure('Renaissance', '1,300 - 1,600 CE'),
+        'industrial': createHistoricalPeriodStructure('Industrial Revolution', '1,760 - 1,840 CE'),
+        'modern': createHistoricalPeriodStructure('Modern Era', '1,900 - Present')
+      },
       'portrait-module': {
-        'config.json': ''
+        'config.json': '',
+        'metadata.json': ''
       },
       'impossible-objects': {
-        'config.json': ''
+        'config.json': '',
+        'metadata.json': ''
       }
     },
     'templates': {
@@ -68,6 +87,12 @@ function createEtextbookStructure() {
         'standard': {},
         'adaptive': {},
         'mobile': {}
+      },
+      'visual-curriculum': {
+        'period-explorer': {},
+        'myth-viewer': {},
+        'art-gallery': {},
+        'math-visualizer': {}
       }
     },
     'components': {
@@ -93,6 +118,55 @@ function createEtextbookStructure() {
   // Create the structure
   createDirectoryStructure(baseDir, structure);
   console.log('✅ eTextbook structure created successfully!');
+  console.log(`📁 Created deep directory structure with ${countDirectories(baseDir)} directories`);
+}
+
+function createHistoricalPeriodStructure(periodName, dates) {
+  return {
+    'config.json': '',
+    'metadata.json': '',
+    'overview': {
+      'introduction.md': '',
+      'timeline.json': '',
+      'key-figures.json': '',
+      'quick-facts.json': ''
+    },
+    'art-and-patterns': {
+      'visual-arts': {
+        'paintings': {},
+        'sculptures': {},
+        'architecture': {},
+        'decorative-arts': {}
+      },
+      'patterns-and-motifs': {},
+      'techniques': {},
+      'materials': {}
+    },
+    'mathematics': {
+      'concepts': {},
+      'discoveries': {},
+      'applications': {},
+      'notable-mathematicians': {}
+    },
+    'myths-and-stories': {
+      'creation-myths': {},
+      'hero-stories': {},
+      'religious-texts': {},
+      'folk-tales': {}
+    },
+    'power-structures': {
+      'government': {},
+      'social-hierarchy': {},
+      'military': {},
+      'economics': {}
+    },
+    'interactive': {
+      'galleries': {},
+      'simulations': {},
+      'exercises': {},
+      'assessments': {}
+    }
+  };
 }
 
 function createPhaseStructure(phaseNum, phaseName, modules) {
@@ -258,6 +332,25 @@ function createDirectoryStructure(basePath, structure) {
       createDirectoryStructure(fullPath, value);
     }
   }
+}
+
+function countDirectories(dir) {
+  let count = 0;
+  
+  function walk(currentPath) {
+    const items = fs.readdirSync(currentPath);
+    for (const item of items) {
+      const fullPath = path.join(currentPath, item);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory()) {
+        count++;
+        walk(fullPath);
+      }
+    }
+  }
+  
+  walk(dir);
+  return count;
 }
 
 // Run the script

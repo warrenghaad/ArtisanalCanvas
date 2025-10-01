@@ -7,10 +7,19 @@ import {
   type InsertPracticeSession,
   type DrawingSubmission,
   type InsertDrawingSubmission,
+  type CurriculumMapping,
+  type InsertCurriculumMapping,
+  type HistoricalPeriodContent,
+  type InsertHistoricalPeriodContent,
+  type StudentContentProgress,
+  type InsertStudentContentProgress,
   users,
   userProgress,
   practiceSession,
-  drawingSubmission
+  drawingSubmission,
+  curriculumMapping,
+  historicalPeriodContent,
+  studentContentProgress
 } from "@shared/schema";
 import { randomUUID } from "crypto";
 import { neon } from "@neondatabase/serverless";
@@ -38,6 +47,20 @@ export interface IStorage {
   getDrawingSubmissions(userId: string, exerciseId?: string): Promise<DrawingSubmission[]>;
   createDrawingSubmission(submission: InsertDrawingSubmission): Promise<DrawingSubmission>;
   updateDrawingSubmission(id: string, updates: Partial<DrawingSubmission>): Promise<DrawingSubmission | undefined>;
+  
+  // Curriculum mapping
+  getCurriculumMappings(gradeLevel?: string): Promise<CurriculumMapping[]>;
+  createCurriculumMapping(mapping: InsertCurriculumMapping): Promise<CurriculumMapping>;
+  
+  // Historical periods
+  getHistoricalPeriodContent(periodId: string): Promise<HistoricalPeriodContent | undefined>;
+  getAllHistoricalPeriods(): Promise<HistoricalPeriodContent[]>;
+  createHistoricalPeriodContent(content: InsertHistoricalPeriodContent): Promise<HistoricalPeriodContent>;
+  
+  // Student content progress
+  getStudentContentProgress(userId: string, contentPath?: string): Promise<StudentContentProgress[]>;
+  createStudentContentProgress(progress: InsertStudentContentProgress): Promise<StudentContentProgress>;
+  updateStudentContentProgress(id: string, updates: Partial<StudentContentProgress>): Promise<StudentContentProgress | undefined>;
 }
 
 // Create database connection
@@ -121,6 +144,58 @@ export class DatabaseStorage implements IStorage {
 
   async updateDrawingSubmission(id: string, updates: Partial<DrawingSubmission>): Promise<DrawingSubmission | undefined> {
     const result = await db.update(drawingSubmission).set(updates).where(eq(drawingSubmission.id, id)).returning();
+    return result[0];
+  }
+  
+  // Curriculum mapping methods
+  async getCurriculumMappings(gradeLevel?: string): Promise<CurriculumMapping[]> {
+    if (gradeLevel) {
+      return await db.select().from(curriculumMapping).where(eq(curriculumMapping.gradeLevel, gradeLevel));
+    }
+    return await db.select().from(curriculumMapping);
+  }
+  
+  async createCurriculumMapping(mapping: InsertCurriculumMapping): Promise<CurriculumMapping> {
+    const result = await db.insert(curriculumMapping).values(mapping).returning();
+    return result[0];
+  }
+  
+  // Historical period methods
+  async getHistoricalPeriodContent(periodId: string): Promise<HistoricalPeriodContent | undefined> {
+    const result = await db.select().from(historicalPeriodContent)
+      .where(eq(historicalPeriodContent.periodId, periodId)).limit(1);
+    return result[0];
+  }
+  
+  async getAllHistoricalPeriods(): Promise<HistoricalPeriodContent[]> {
+    return await db.select().from(historicalPeriodContent);
+  }
+  
+  async createHistoricalPeriodContent(content: InsertHistoricalPeriodContent): Promise<HistoricalPeriodContent> {
+    const result = await db.insert(historicalPeriodContent).values(content).returning();
+    return result[0];
+  }
+  
+  // Student content progress methods
+  async getStudentContentProgress(userId: string, contentPath?: string): Promise<StudentContentProgress[]> {
+    if (contentPath) {
+      return await db.select().from(studentContentProgress).where(
+        and(eq(studentContentProgress.userId, userId), eq(studentContentProgress.contentPath, contentPath))
+      );
+    }
+    return await db.select().from(studentContentProgress).where(eq(studentContentProgress.userId, userId));
+  }
+  
+  async createStudentContentProgress(progress: InsertStudentContentProgress): Promise<StudentContentProgress> {
+    const result = await db.insert(studentContentProgress).values(progress).returning();
+    return result[0];
+  }
+  
+  async updateStudentContentProgress(id: string, updates: Partial<StudentContentProgress>): Promise<StudentContentProgress | undefined> {
+    const result = await db.update(studentContentProgress).set({
+      ...updates,
+      lastAccessed: new Date()
+    }).where(eq(studentContentProgress.id, id)).returning();
     return result[0];
   }
 }

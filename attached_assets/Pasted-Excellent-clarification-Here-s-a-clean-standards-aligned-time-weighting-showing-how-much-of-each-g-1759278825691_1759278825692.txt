@@ -1,0 +1,37 @@
+Excellent clarification. Here’s a clean, standards-aligned time weighting showing how much of each grade’s yearly geometry+art block should focus on each historical period. Assumptions:
+- One full “Geometry+Art” year per grade.
+- Weightings indicate percent of that year’s geometry+art time.
+- Aligns with your band shifts and task types: K–1 exploratory; 2–3 classification/transformations; 4–5 formal vocabulary/measurement; 6–8 transformations/similarity/proof.
+- Periods included: Prehistory, Mesopotamia, Egypt, Indus Valley, China, Mesoamerica, Ancient Greece, Ancient Rome, Byzantine, Islamic World, Medieval Europe, Renaissance, Modern/Contemporary, Biomimicry.
+
+K–1 (play-based, patterns, symmetry, tactile)
+- Kindergarten: Prehistory 20%, Egypt 15%, Indus 10%, China 10%, Mesoamerica 10%, Ancient Greece 8%, Ancient Rome 7%, Byzantine 5%, Islamic World 7%, Medieval Europe 5%, Renaissance 2%, Modern/Contemporary 1%, Biomimicry 0%
+- Grade 1: Prehistory 10%, Mesopotamia 8%, Egypt 12%, Indus 8%, China 10%, Mesoamerica 10%, Ancient Greece 10%, Ancient Rome 8%, Byzantine 6%, Islamic World 8%, Medieval Europe 6%, Renaissance 3%, Modern/Contemporary 1%, Biomimicry 0%
+
+Grades 2–3 (vocabulary, classification, symmetry, simple tilings)
+- Grade 2: Mesopotamia 10%, Egypt 10%, Indus 10%, China 10%, Mesoamerica 10%, Ancient Greece 12%, Ancient Rome 10%, Byzantine 6%, Islamic World 10%, Medieval Europe 6%, Renaissance 4%, Modern/Contemporary 1%, Biomimicry 1%
+- Grade 3: Mesopotamia 8%, Egypt 8%, Indus 8%, China 8%, Mesoamerica 8%, Ancient Greece 14%, Ancient Rome 12%, Byzantine 6%, Islamic World 12%, Medieval Europe 6%, Renaissance 6%, Modern/Contemporary 2%, Biomimicry 2%
+
+Grades 4–5 (formal vocabulary, measurement, scale, tessellations)
+- Grade 4: Ancient Greece 14%, Ancient Rome 12%, Byzantine 8%, Islamic World 16%, Medieval Europe 8%, China 8%, Mesopotamia 6%, Egypt 6%, Indus 6%, Mesoamerica 6%, Renaissance 6%, Modern/Contemporary 2%, Biomimicry 2%
+- Grade 5: Ancient Greece 12%, Ancient Rome 12%, Byzantine 8%, Islamic World 18%, Medieval Europe 8%, China 6%, Mesopotamia 5%, Egypt 5%, Indus 5%, Mesoamerica 5%, Renaissance 8%, Modern/Contemporary 3%, Biomimicry 3%
+
+Grades 6–8 (transformations, similarity, proportions, circle geometry, multi-step proofs; design briefs)
+- Grade 6: Ancient Greece 12%, Ancient Rome 10%, Byzantine 6%, Islamic World 18%, Medieval Europe 6%, Renaissance 10%, China 6%, Mesopotamia 4%, Egypt 4%, Indus 4%, Mesoamerica 6%, Modern/Contemporary 8%, Biomimicry 6%
+- Grade 7: Ancient Greece 10%, Ancient Rome 8%, Byzantine 5%, Islamic World 16%, Medieval Europe 5%, Renaissance 12%, China 5%, Mesopotamia 3%, Egypt 3%, Indus 3%, Mesoamerica 6%, Modern/Contemporary 12%, Biomimicry 12%
+- Grade 8: Ancient Greece 8%, Ancient Rome 6%, Byzantine 4%, Islamic World 14%, Medieval Europe 4%, Renaissance 12%, China 4%, Mesopotamia 2%, Egypt 2%, Indus 2%, Mesoamerica 6%, Modern/Contemporary 18%, Biomimicry 18%
+
+Why this distribution works
+- Early grades anchor in sensory motifs and borders (Prehistory/Egypt/Indus/China/Mesoamerica), gradually introducing right angles, symmetry, and straight-vs-curved distinctions (Greece/Rome).
+- Middle grades emphasize constructive rules and measurement via eras with strong math–art structures (Islamic geometric design, Greco-Roman proportion, Byzantine radial partitions, Medieval interlace).
+- Upper grades prioritize transformation geometry and modeling, so Renaissance (perspective, proportion), Islamic tessellations (transformational rules), and Modern/Contemporary (abstraction, coordinate systems) gain weight; Biomimicry rises to support project-based synthesis and similarity/proportion.
+
+Adjustments you can apply
+- STEM-heavy cohort: shift +2–4% from i/g toward m/p within Rome, Islamic, Renaissance, Modern.
+- Arts magnet: add +3–5% to Byzantine, Medieval, Renaissance; subtract evenly from Mesopotamia/Indus/China.
+- Time-short semesters: collapse ≤4% eras into brief “motif capsules” across weeks.
+
+If you want, I can convert this into:
+- A printable pacing map by week for each grade.
+- A badge-point allocation sheet using these percentages.
+- A dashboard-ready CSV for your LMS/SIS.
