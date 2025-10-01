@@ -1,0 +1,1575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Curriculum Explorer - Historical Periods & Myths</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            background: #1a1a1a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid gold;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: gold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+            background: #2c3e50;
+        }
+        
+        .period-btn {
+            padding: 15px 25px;
+            border: 2px solid gold;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            color: gold;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .period-btn:hover {
+            background: gold;
+            color: #2c3e50;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .period-btn.active {
+            background: gold;
+            color: #2c3e50;
+            transform: scale(1.1);
+        }
+        
+        .content-area {
+            display: none;
+            padding: 40px 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s;
+        }
+        
+        .content-area.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .period-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(255,215,0,0.1), rgba(255,215,0,0.05));
+            border-radius: 10px;
+            border: 1px solid gold;
+        }
+        
+        .period-title {
+            font-size: 3em;
+            color: gold;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+        }
+        
+        .period-dates {
+            font-size: 1.3em;
+            color: #ecf0f1;
+            margin-bottom: 20px;
+        }
+        
+        .period-description {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ecf0f1;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: justify;
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+            padding: 20px;
+        }
+        
+        .image-card {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid gold;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .image-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        .image-placeholder {
+            height: 250px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .image-caption {
+            padding: 15px;
+            background: rgba(0,0,0,0.5);
+            color: gold;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .myth-section {
+            background: linear-gradient(135deg, rgba(155,89,182,0.1), rgba(142,68,173,0.1));
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid #9b59b6;
+        }
+        
+        .myth-title {
+            font-size: 2em;
+            color: #f39c12;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .myth-content {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #ecf0f1;
+            text-align: justify;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, rgba(52,152,219,0.1), rgba(41,128,185,0.1));
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #3498db;
+        }
+        
+        .info-card h3 {
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-card li {
+            padding: 5px 0;
+            color: #ecf0f1;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .info-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: gold;
+        }
+        
+        .quick-facts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        
+        .fact-box {
+            text-align: center;
+            padding: 15px;
+            min-width: 150px;
+        }
+        
+        .fact-number {
+            font-size: 2.5em;
+            color: gold;
+            font-weight: bold;
+        }
+        
+        .fact-label {
+            color: #95a5a6;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-bar {
+            height: 4px;
+            background: linear-gradient(90deg, gold, #f39c12);
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            top: -8px;
+            width: 20px;
+            height: 20px;
+            background: gold;
+            border-radius: 50%;
+            border: 3px solid #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏛️ Visual Curriculum Explorer</h1>
+        <p style="color: #ecf0f1; font-size: 1.1em;">Journey Through Civilizations: Art, Mathematics, Myths & Power</p>
+    </div>
+    
+    <div class="nav-buttons">
+        <button class="period-btn active" onclick="showPeriod('prehistory')">Prehistory</button>
+        <button class="period-btn" onclick="showPeriod('mesopotamia')">Mesopotamia</button>
+        <button class="period-btn" onclick="showPeriod('egypt')">Egypt</button>
+        <button class="period-btn" onclick="showPeriod('greece')">Greece</button>
+        <button class="period-btn" onclick="showPeriod('rome')">Rome</button>
+        <button class="period-btn" onclick="showPeriod('maya')">Maya</button>
+        <button class="period-btn" onclick="showPeriod('china')">China</button>
+        <button class="period-btn" onclick="showPeriod('islamic')">Islamic</button>
+        <button class="period-btn" onclick="showPeriod('medieval')">Medieval</button>
+        <button class="period-btn" onclick="showPeriod('renaissance')">Renaissance</button>
+        <button class="period-btn" onclick="showPeriod('industrial')">Industrial</button>
+        <button class="period-btn" onclick="showPeriod('modern')">Modern</button>
+    </div>
+    
+    <!-- PREHISTORY -->
+    <div class="content-area active" id="prehistory">
+        <div class="period-header">
+            <h2 class="period-title">🦴 Prehistory</h2>
+            <div class="period-dates">70,000 - 3,500 BCE</div>
+            <div class="period-description">
+                The dawn of human creativity and abstract thinking. From the first tally marks carved in bone to the magnificent cave paintings of Lascaux, prehistoric humans laid the foundation for all mathematics and art. They observed patterns in nature, tracked lunar cycles, and created the first symbolic representations of their world. This era saw the invention of counting, the discovery of fire's transformative power, and the birth of storytelling through visual narrative.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">40,000</div>
+                <div class="fact-label">Years of Cave Art</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">70,000</div>
+                <div class="fact-label">Oldest Tally Marks (BCE)</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">28</div>
+                <div class="fact-label">Day Lunar Counting</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Creation Stories & Sky Myths</h3>
+            <div class="myth-content">
+                Before written language, humans painted their myths on cave walls. Stories of the Great Hunt, where animals gave themselves to worthy hunters. Tales of the Sky Bear (Ursa Major) who guided travelers. The Moon Mother who taught women to count days. Fire-Bringer myths, telling how clever ancestors stole fire from the gods. These stories, told around fires for thousands of generations, explained natural phenomena and taught survival wisdom. Cave paintings show narrative sequences: the hunter's journey, the changing seasons, the dance of life and death.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Patterns</h3>
+                <ul>
+                    <li>Hand stencils (negative space)</li>
+                    <li>Animal paintings with movement</li>
+                    <li>Geometric dots and lines</li>
+                    <li>Natural pigments (ochre, charcoal)</li>
+                    <li>Venus figurines</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Tally mark counting</li>
+                    <li>Lunar cycle tracking</li>
+                    <li>One-to-one correspondence</li>
+                    <li>Basic addition (combining groups)</li>
+                    <li>Spatial reasoning for tools</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Controlled fire</li>
+                    <li>Stone tools & weapons</li>
+                    <li>Bone needles</li>
+                    <li>Pottery (late period)</li>
+                    <li>Primitive shelters</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Hunter-gatherer bands (25-50 people)</li>
+                    <li>Elder councils</li>
+                    <li>Shamanic leaders</li>
+                    <li>Matriarchal tendencies</li>
+                    <li>Egalitarian sharing</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🎨</div>
+                <div class="image-caption">Lascaux Cave Paintings - Bulls & Horses</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">✋</div>
+                <div class="image-caption">Hand Stencils - Cueva de las Manos</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🦴</div>
+                <div class="image-caption">Ishango Bone - Mathematical Tally Marks</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🗿</div>
+                <div class="image-caption">Venus of Willendorf - Fertility Symbol</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🔥</div>
+                <div class="image-caption">Fire Hearth Reconstruction</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏹</div>
+                <div class="image-caption">Atlatl - Spear Throwing Innovation</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MESOPOTAMIA -->
+    <div class="content-area" id="mesopotamia">
+        <div class="period-header">
+            <h2 class="period-title">🏺 Mesopotamia</h2>
+            <div class="period-dates">3,500 - 539 BCE</div>
+            <div class="period-description">
+                The "Land Between Two Rivers" - where civilization was born. Here, humans first controlled water through irrigation, invented the wheel, created writing, and established the first cities. Sumerians developed base-60 mathematics (still used for time), while Babylonians calculated compound interest and tracked planets. Their ziggurats reached toward heaven, their cylinder seals told stories in spirals, and their laws carved in stone created order from chaos. This is where mathematics became a tool of power and trade.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">3,200</div>
+                <div class="fact-label">BCE - First Writing</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">60</div>
+                <div class="fact-label">Base Number System</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">282</div>
+                <div class="fact-label">Laws of Hammurabi</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">The Epic of Gilgamesh</h3>
+            <div class="myth-content">
+                The world's first great literary work tells of King Gilgamesh of Uruk, two-thirds divine and one-third human. With his friend Enkidu, created by the gods from clay, he battles the monster Humbaba and the Bull of Heaven. When Enkidu dies, Gilgamesh seeks immortality, traveling to the end of the earth to meet Utnapishtim, survivor of the great flood. He learns that immortality lies not in living forever, but in the lasting legacy of great deeds and the cities we build. The epic explores friendship, mortality, the tension between civilization and nature, and humanity's place in the cosmos.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Architecture</h3>
+                <ul>
+                    <li>Cylinder seals with narratives</li>
+                    <li>Ziggurats (stepped pyramids)</li>
+                    <li>Cuneiform stylus technique</li>
+                    <li>Lapis lazuli & gold inlays</li>
+                    <li>Rosette and chevron patterns</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Base-60 (sexagesimal) system</li>
+                    <li>Place value notation</li>
+                    <li>Pythagorean triples (Plimpton 322)</li>
+                    <li>Compound interest calculations</li>
+                    <li>Astronomical predictions</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>The wheel & axle</li>
+                    <li>Cuneiform writing</li>
+                    <li>Irrigation systems</li>
+                    <li>Bronze metallurgy</li>
+                    <li>The plow</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>City-states (Ur, Uruk, Babylon)</li>
+                    <li>Priest-kings (lugal)</li>
+                    <li>Temple economy</li>
+                    <li>Code of Hammurabi</li>
+                    <li>Professional armies</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Ziggurat of Ur - Reaching Heaven</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📜</div>
+                <div class="image-caption">Cuneiform Tablet - First Writing</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🎭</div>
+                <div class="image-caption">Standard of Ur - War & Peace</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⭕</div>
+                <div class="image-caption">Cylinder Seal - Rolled Narratives</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚖️</div>
+                <div class="image-caption">Code of Hammurabi Stele</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🦁</div>
+                <div class="image-caption">Ishtar Gate - Babylon's Glory</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- EGYPT -->
+    <div class="content-area" id="egypt">
+        <div class="period-header">
+            <h2 class="period-title">🔺 Ancient Egypt</h2>
+            <div class="period-dates">3,100 - 30 BCE</div>
+            <div class="period-description">
+                The eternal kingdom where the Nile's predictable floods created a civilization obsessed with permanence and the afterlife. Egyptians perfected monumental architecture with pyramids aligned to stars, developed a sophisticated understanding of geometry for land surveying after floods, and created an art style that remained consistent for 3,000 years. Their hieroglyphic writing combined pictures with sounds, their mathematics included unit fractions and the 3-4-5 triangle, and their preservation techniques defied time itself.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">365</div>
+                <div class="fact-label">Day Calendar</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">2.3M</div>
+                <div class="fact-label">Blocks in Great Pyramid</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">3,000</div>
+                <div class="fact-label">Years of Pharaohs</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">The Journey of Ra & Osiris</h3>
+            <div class="myth-content">
+                Each day, Ra the sun god sails across the sky in his solar barque, bringing light to the world. At night, he journeys through the underworld, battling the chaos serpent Apophis. Meanwhile, Osiris, murdered by his brother Set and resurrected by his wife Isis, rules the underworld where he judges the dead. Hearts are weighed against the feather of Ma'at (truth and justice). Those found worthy join Osiris in the Field of Reeds; the unworthy are devoured by Ammit. This cosmic drama of death and rebirth mirrors the Nile's annual flood cycle, promising eternal life to those who live justly.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Symbols</h3>
+                <ul>
+                    <li>Hieroglyphic writing system</li>
+                    <li>Profile & frontal view canon</li>
+                    <li>Hierarchical scale</li>
+                    <li>Gold leaf & lapis lazuli</li>
+                    <li>Cartouches & ankh symbols</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Unit fractions (1/n)</li>
+                    <li>3-4-5 right triangle</li>
+                    <li>Volume of truncated pyramid</li>
+                    <li>365-day calendar</li>
+                    <li>Decimal counting</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Papyrus paper</li>
+                    <li>Sundials & water clocks</li>
+                    <li>Surgical instruments</li>
+                    <li>Cosmetics & perfumes</li>
+                    <li>Mummification</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Pharaoh as living god</li>
+                    <li>Theocratic state</li>
+                    <li>Vizier administration</li>
+                    <li>Priestly class</li>
+                    <li>Nome governors</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🔺</div>
+                <div class="image-caption">Great Pyramid of Giza</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">👑</div>
+                <div class="image-caption">Tutankhamun's Golden Mask</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🦅</div>
+                <div class="image-caption">Eye of Horus - Protection Symbol</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📜</div>
+                <div class="image-caption">Rosetta Stone - Key to Hieroglyphs</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Temple of Karnak - Hypostyle Hall</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚱️</div>
+                <div class="image-caption">Canopic Jars - Preservation</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- GREECE -->
+    <div class="content-area" id="greece">
+        <div class="period-header">
+            <h2 class="period-title">🏛️ Ancient Greece</h2>
+            <div class="period-dates">800 - 146 BCE</div>
+            <div class="period-description">
+                The birthplace of Western philosophy, democracy, and mathematical proof. Greeks transformed mathematics from practical tool to abstract beauty, seeking perfect proportions in art and architecture. They proved theorems, discovered irrational numbers, and calculated the Earth's circumference. The Parthenon embodies mathematical perfection with optical refinements. Their myths gave us tragic heroes and Olympic gods, while their philosophers asked "What is truth?" Their legacy: the idea that humans through reason can understand the universe.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">1.618</div>
+                <div class="fact-label">Golden Ratio (φ)</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">508</div>
+                <div class="fact-label">BCE - Democracy</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">300</div>
+                <div class="fact-label">BCE - Euclid's Elements</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">The Odyssey & Mount Olympus</h3>
+            <div class="myth-content">
+                The Greek pantheon lived atop Mount Olympus, led by Zeus the thunder god. Athena sprang from his head fully armed, goddess of wisdom and strategic warfare. Poseidon ruled the seas, Hades the underworld. These gods were petty, jealous, and powerful - very human in their flaws. The Odyssey tells of clever Odysseus's ten-year journey home from Troy, facing Cyclops, Sirens, and Scylla. His intelligence, not strength, saves him. Myths like Icarus flying too close to the sun, Pandora's box releasing evils, and Perseus slaying Medusa taught Greeks about hubris, curiosity, and courage.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Architecture</h3>
+                <ul>
+                    <li>Three classical orders</li>
+                    <li>Red & black figure pottery</li>
+                    <li>Contrapposto sculpture</li>
+                    <li>Golden ratio proportions</li>
+                    <li>Optical refinements</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Pythagorean theorem proof</li>
+                    <li>Irrational numbers (√2)</li>
+                    <li>Platonic solids</li>
+                    <li>Euclidean geometry</li>
+                    <li>Pi approximation</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Archimedes' screw</li>
+                    <li>Antikythera mechanism</li>
+                    <li>Lighthouse of Alexandria</li>
+                    <li>Steam-powered devices</li>
+                    <li>Catapults & cranes</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Democracy (Athens)</li>
+                    <li>Oligarchy (Sparta)</li>
+                    <li>City-states (polis)</li>
+                    <li>Citizens vs. non-citizens</li>
+                    <li>Philosopher kings (Plato)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Parthenon - Mathematical Perfection</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏺</div>
+                <div class="image-caption">Greek Amphora - Red Figure</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📐</div>
+                <div class="image-caption">Pythagorean Theorem Proof</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🗿</div>
+                <div class="image-caption">Discus Thrower - Ideal Form</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🎭</div>
+                <div class="image-caption">Theater of Epidaurus</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚙️</div>
+                <div class="image-caption">Antikythera Mechanism</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ROME -->
+    <div class="content-area" id="rome">
+        <div class="period-header">
+            <h2 class="period-title">🦅 Ancient Rome</h2>
+            <div class="period-dates">753 BCE - 476 CE</div>
+            <div class="period-description">
+                Masters of engineering and law who built an empire spanning three continents. Romans perfected the arch and dome, invented concrete that grows stronger over time, and created aqueduct systems that supplied millions with fresh water. Their road network connected the ancient world, their legal system influences modern law, and their military organization conquered the Mediterranean. While they adopted Greek mathematics and art, Romans were practical innovators who asked not "why?" but "how can this work better?"
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">50,000</div>
+                <div class="fact-label">Miles of Roads</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">1M</div>
+                <div class="fact-label">Rome's Population</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">500</div>
+                <div class="fact-label">Aqueduct Systems</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Romulus & Remus, and the Roman Pantheon</h3>
+            <div class="myth-content">
+                Rome's foundation myth tells of twin brothers Romulus and Remus, sons of Mars, raised by a she-wolf. Romulus killed Remus and founded Rome on seven hills. Romans adopted Greek gods but made them more disciplined and warlike: Zeus became Jupiter, Athena became Minerva, Ares became Mars. They added household gods (Lares and Penates) and deified emperors. Roman mythology emphasized duty (pietas), gravitas, and service to the state. Stories like Cincinnatus leaving his plow to save Rome, then returning to farming, embodied Roman values of civic duty over personal glory.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Architecture</h3>
+                <ul>
+                    <li>Arch & dome mastery</li>
+                    <li>Concrete innovation</li>
+                    <li>Colosseum design</li>
+                    <li>Aqueduct engineering</li>
+                    <li>Mosaic floors</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Roman numerals</li>
+                    <li>Practical geometry</li>
+                    <li>Surveying techniques</li>
+                    <li>Engineering calculations</li>
+                    <li>Abacus computing</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Concrete (opus caementicium)</li>
+                    <li>Hypocaust heating</li>
+                    <li>Sewage systems</li>
+                    <li>Surgical tools</li>
+                    <li>Bound books (codex)</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Republic → Empire</li>
+                    <li>Senate & consuls</li>
+                    <li>Emperor worship</li>
+                    <li>Patricians vs plebeians</li>
+                    <li>Provincial system</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🏟️</div>
+                <div class="image-caption">Colosseum - Engineering Marvel</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🌉</div>
+                <div class="image-caption">Pont du Gard Aqueduct</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Pantheon - Perfect Dome</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🛣️</div>
+                <div class="image-caption">Via Appia - Roman Road</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🦅</div>
+                <div class="image-caption">Roman Legionary Standard</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Roman Forum - Heart of Empire</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MAYA -->
+    <div class="content-area" id="maya">
+        <div class="period-header">
+            <h2 class="period-title">🌽 Maya Civilization</h2>
+            <div class="period-dates">2000 BCE - 1500 CE</div>
+            <div class="period-description">
+                Deep in Mesoamerican jungles, the Maya created one of the world's most sophisticated civilizations. They developed the concept of zero independently, created the most accurate calendar of the ancient world, and built pyramids aligned to astronomical events. Their vigesimal (base-20) counting system, hieroglyphic writing, and astronomical observations rival any Old World achievement. They tracked Venus with stunning accuracy and predicted eclipses centuries in advance.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">0</div>
+                <div class="fact-label">Independent Zero</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">365.242</div>
+                <div class="fact-label">Day Year Calculation</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">20</div>
+                <div class="fact-label">Base Number System</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Popol Vuh - The Creation Story</h3>
+            <div class="myth-content">
+                The gods created humans three times. First from mud - but they dissolved. Then from wood - but they had no souls and were destroyed by a flood. Finally, from maize dough came true humans. The Hero Twins, Hunahpu and Xbalanque, descended to Xibalba (underworld) to defeat the death lords through wit and ball game skills. Kukulkan, the feathered serpent, brought knowledge to humanity. The cosmos had thirteen heavens and nine underworlds, with the ceiba tree connecting all realms. Time was cyclical - each ending a new beginning.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Architecture</h3>
+                <ul>
+                    <li>Step pyramids (El Castillo)</li>
+                    <li>Elaborate stelae</li>
+                    <li>Jade & obsidian work</li>
+                    <li>Polychrome pottery</li>
+                    <li>Feathered serpent motifs</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Vigesimal (base-20) system</li>
+                    <li>Zero as placeholder</li>
+                    <li>Venus cycle calculations</li>
+                    <li>Long Count calendar</li>
+                    <li>Eclipse predictions</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Rubber balls</li>
+                    <li>Chocolate preparation</li>
+                    <li>Advanced astronomy</li>
+                    <li>Suspension bridges</li>
+                    <li>Water pressure tech</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Divine kings (k'uhul ajaw)</li>
+                    <li>City-states</li>
+                    <li>Priestly astronomers</li>
+                    <li>Warrior nobility</li>
+                    <li>Tribute system</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🔺</div>
+                <div class="image-caption">Chichen Itza - El Castillo</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📅</div>
+                <div class="image-caption">Maya Calendar Stone</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🌟</div>
+                <div class="image-caption">Dresden Codex - Venus Tables</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🎭</div>
+                <div class="image-caption">Jade Funeral Mask</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚽</div>
+                <div class="image-caption">Ball Court - Sacred Game</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🐍</div>
+                <div class="image-caption">Kukulkan - Feathered Serpent</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CHINA -->
+    <div class="content-area" id="china">
+        <div class="period-header">
+            <h2 class="period-title">🐉 Ancient China</h2>
+            <div class="period-dates">2070 BCE - 220 CE</div>
+            <div class="period-description">
+                The Middle Kingdom that saw itself as the center of civilization. China independently developed writing, bronze-working, and complex bureaucracy. They invented paper, gunpowder, the compass, and printing. Chinese mathematics focused on practical problems using counting rods and the abacus. The I Ching's binary system predates computers by millennia. Their art emphasized harmony with nature, while Confucian philosophy created a meritocratic examination system that lasted 2,000 years.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">105</div>
+                <div class="fact-label">CE - Paper Invented</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">64</div>
+                <div class="fact-label">I Ching Hexagrams</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">5,500</div>
+                <div class="fact-label">Miles - Great Wall</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Dragons, Phoenix, and the Mandate of Heaven</h3>
+            <div class="myth-content">
+                Chinese mythology begins with Pangu breaking from the cosmic egg, separating heaven and earth. The dragon, symbol of imperial power, controls water and weather. The phoenix represents the empress and rebirth. The Jade Emperor rules heaven's bureaucracy, mirroring earth's government. The Mandate of Heaven legitimizes rule - natural disasters signal heaven's displeasure with corrupt rulers. Journey to the West tells of Monkey King's rebellion against heaven and redemption through Buddhist pilgrimage. These myths reinforce order, hierarchy, and the balance of opposing forces (yin-yang).
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Crafts</h3>
+                <ul>
+                    <li>Porcelain & ceramics</li>
+                    <li>Silk painting & weaving</li>
+                    <li>Bronze vessels</li>
+                    <li>Jade carving</li>
+                    <li>Calligraphy styles</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Decimal rod numerals</li>
+                    <li>Negative numbers</li>
+                    <li>Pascal's triangle (Yang Hui)</li>
+                    <li>Magic squares</li>
+                    <li>Abacus calculation</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Paper & printing</li>
+                    <li>Gunpowder</li>
+                    <li>Magnetic compass</li>
+                    <li>Seismograph</li>
+                    <li>Cast iron</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Emperor - Son of Heaven</li>
+                    <li>Mandate of Heaven</li>
+                    <li>Confucian bureaucracy</li>
+                    <li>Examination system</li>
+                    <li>Dynastic cycles</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🏯</div>
+                <div class="image-caption">Forbidden City - Imperial Power</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🐉</div>
+                <div class="image-caption">Dragon - Imperial Symbol</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">☯️</div>
+                <div class="image-caption">Yin-Yang - Balance</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏺</div>
+                <div class="image-caption">Ming Porcelain Vase</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📜</div>
+                <div class="image-caption">I Ching - Book of Changes</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🧮</div>
+                <div class="image-caption">Chinese Abacus</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ISLAMIC -->
+    <div class="content-area" id="islamic">
+        <div class="period-header">
+            <h2 class="period-title">🌙 Islamic Golden Age</h2>
+            <div class="period-dates">8th - 13th Century CE</div>
+            <div class="period-description">
+                When Europe slept, the Islamic world blazed with intellectual light. The House of Wisdom in Baghdad became humanity's greatest library. Al-Khwarizmi gave us algebra and algorithms, while Islamic artists created infinite geometric patterns within finite spaces. They preserved Greek knowledge, improved Indian numerals, and added their own innovations. The astrolabe, surgical instruments, and optics advanced here. Their geometric patterns represent the infinite nature of Allah through mathematical beauty.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">820</div>
+                <div class="fact-label">CE - Algebra Invented</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">∞</div>
+                <div class="fact-label">Patterns in Finite Space</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">1,001</div>
+                <div class="fact-label">Arabian Nights Tales</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">One Thousand and One Nights</h3>
+            <div class="myth-content">
+                Scheherazade saves her life through storytelling, weaving tales within tales for 1,001 nights. Aladdin finds a lamp containing a djinn who grants wishes. Ali Baba discovers "Open Sesame" unlocks thieves' treasure cave. Sinbad sails seven voyages facing rocs, giant serpents, and magnetic mountains. These frame narratives from Persian, Indian, and Arab traditions teach through entertainment. Mathematical puzzles, moral lessons, and transformation stories reflect Islamic values of wisdom, justice, and divine providence. The nested structure mirrors geometric patterns - infinite complexity from simple rules.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Patterns</h3>
+                <ul>
+                    <li>Geometric tessellations</li>
+                    <li>Arabesques & calligraphy</li>
+                    <li>Girih tile systems</li>
+                    <li>Muqarnas (honeycomb vaults)</li>
+                    <li>No images - infinite patterns</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Algebra (al-jabr)</li>
+                    <li>Algorithms</li>
+                    <li>Trigonometry advances</li>
+                    <li>Decimal fractions</li>
+                    <li>Binomial theorem</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Astrolabe perfection</li>
+                    <li>Camera obscura</li>
+                    <li>Surgical instruments</li>
+                    <li>Windmills</li>
+                    <li>Coffee cultivation</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Caliphate system</li>
+                    <li>Religious law (Sharia)</li>
+                    <li>Scholarly meritocracy</li>
+                    <li>Trade guild networks</li>
+                    <li>Waqf (endowments)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🕌</div>
+                <div class="image-caption">Alhambra - Geometric Paradise</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⭐</div>
+                <div class="image-caption">8-Fold Star Pattern</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📐</div>
+                <div class="image-caption">Girih Tiles - 5 Shapes</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🌌</div>
+                <div class="image-caption">Astrolabe - Universe in Hand</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📖</div>
+                <div class="image-caption">Illuminated Quran Page</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Great Mosque of Cordoba</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MEDIEVAL -->
+    <div class="content-area" id="medieval">
+        <div class="period-header">
+            <h2 class="period-title">⚔️ Medieval Europe</h2>
+            <div class="period-dates">476 - 1453 CE</div>
+            <div class="period-description">
+                The age of castles, cathedrals, and quests. Medieval builders raised Gothic cathedrals with flying buttresses defying gravity, their stained glass windows teaching biblical stories in light. Monks preserved ancient knowledge while adding innovations like mechanical clocks and eyeglasses. The period saw the rise of guilds protecting craft secrets, the development of banking, and the birth of universities. Medieval art focused on spiritual rather than physical reality.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">1347</div>
+                <div class="fact-label">Black Death Year</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">160</div>
+                <div class="fact-label">Feet - Notre Dame Height</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">1088</div>
+                <div class="fact-label">First University (Bologna)</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Arthurian Legends & Grail Quest</h3>
+            <div class="myth-content">
+                King Arthur pulled Excalibur from stone, proving divine right to rule. His Knights of the Round Table - Lancelot, Gawain, Percival - embodied chivalric ideals: courage, courtesy, honor. The quest for the Holy Grail represented spiritual purification. Morgan le Fay and Merlin brought magic to Camelot. These tales merged Celtic mythology with Christian values. Dragons hoarded gold in caves, unicorns could only be tamed by virgins, and true love conquered death. Medieval bestiaries mixed real and mythical creatures, each teaching moral lessons.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Architecture</h3>
+                <ul>
+                    <li>Gothic cathedrals</li>
+                    <li>Flying buttresses</li>
+                    <li>Illuminated manuscripts</li>
+                    <li>Stained glass windows</li>
+                    <li>Tapestries & heraldry</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Arabic numerals adoption</li>
+                    <li>Fibonacci sequence</li>
+                    <li>Accounting systems</li>
+                    <li>Architectural geometry</li>
+                    <li>Calendar calculations</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Mechanical clocks</li>
+                    <li>Eyeglasses</li>
+                    <li>Windmills</li>
+                    <li>Three-field system</li>
+                    <li>Heavy plow</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Feudal hierarchy</li>
+                    <li>Divine right of kings</li>
+                    <li>Church authority</li>
+                    <li>Guild systems</li>
+                    <li>Knightly orders</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">⛪</div>
+                <div class="image-caption">Notre Dame Cathedral</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏰</div>
+                <div class="image-caption">Medieval Castle Keep</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📜</div>
+                <div class="image-caption">Book of Kells Illumination</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚔️</div>
+                <div class="image-caption">Knight's Armor & Sword</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🦄</div>
+                <div class="image-caption">Unicorn Tapestry</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⏰</div>
+                <div class="image-caption">Astronomical Clock</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- RENAISSANCE -->
+    <div class="content-area" id="renaissance">
+        <div class="period-header">
+            <h2 class="period-title">🎨 Renaissance</h2>
+            <div class="period-dates">14th - 17th Century</div>
+            <div class="period-description">
+                The "rebirth" when art and science became one. Leonardo da Vinci dissected corpses to paint perfect anatomy and designed flying machines. Brunelleschi discovered linear perspective, turning flat surfaces into infinite depth. The printing press democratized knowledge. Artists were mathematicians, engineers were artists, and humanists believed in human potential. The Renaissance proved that understanding nature's mathematics creates beauty, launching the Scientific Revolution.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">1450</div>
+                <div class="fact-label">Printing Press</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">1504</div>
+                <div class="fact-label">Mona Lisa Painted</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">374</div>
+                <div class="fact-label">Feet - Florence Dome</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Humanism & Classical Revival</h3>
+            <div class="myth-content">
+                Renaissance thinkers revived Prometheus, who stole fire (knowledge) for humanity, as symbol of human potential. They reinterpreted classical myths through humanist lens - gods as psychological forces, heroes as human ideals. Dante's Divine Comedy mapped the soul's journey through Hell, Purgatory, and Paradise using mathematical precision. The myth of the Renaissance artist emerged - the tortured genius like Michelangelo wrestling angels from marble. Alchemy promised transformation of base metals to gold, paralleling human perfectibility through knowledge.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Technique</h3>
+                <ul>
+                    <li>Linear perspective</li>
+                    <li>Sfumato & chiaroscuro</li>
+                    <li>Anatomical accuracy</li>
+                    <li>Oil painting techniques</li>
+                    <li>Mathematical proportions</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Perspective geometry</li>
+                    <li>Golden ratio application</li>
+                    <li>Parabolic trajectories</li>
+                    <li>Double-entry bookkeeping</li>
+                    <li>Cartography advances</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Printing press</li>
+                    <li>Telescope</li>
+                    <li>Flush toilet</li>
+                    <li>Parachute designs</li>
+                    <li>Double hull ships</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>City-state rivalry</li>
+                    <li>Patron system (Medici)</li>
+                    <li>Banking families</li>
+                    <li>Artist workshops</li>
+                    <li>Humanist courts</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🎨</div>
+                <div class="image-caption">Sistine Chapel Ceiling</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">👤</div>
+                <div class="image-caption">Vitruvian Man - Perfect Proportions</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏛️</div>
+                <div class="image-caption">Florence Cathedral Dome</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🖼️</div>
+                <div class="image-caption">School of Athens - Raphael</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📚</div>
+                <div class="image-caption">Gutenberg Bible</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🔬</div>
+                <div class="image-caption">Leonardo's Notebooks</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- INDUSTRIAL -->
+    <div class="content-area" id="industrial">
+        <div class="period-header">
+            <h2 class="period-title">⚙️ Industrial Revolution</h2>
+            <div class="period-dates">1760 - 1840</div>
+            <div class="period-description">
+                When humanity harnessed steam, everything changed. Factories replaced workshops, cities swallowed villages, and railways connected continents. Mathematics became the language of efficiency - calculating stress loads, optimizing production, predicting profits. The Crystal Palace showcased iron and glass architecture, photography captured reality, and electricity promised infinite power. This era created both unprecedented wealth and crushing poverty, inspiring new social theories and reform movements.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">1769</div>
+                <div class="fact-label">Steam Engine Patent</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">10x</div>
+                <div class="fact-label">Production Increase</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">1851</div>
+                <div class="fact-label">Crystal Palace Exhibition</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Progress Mythology & Frankenstein</h3>
+            <div class="myth-content">
+                The Industrial Age created its own mythology of inevitable progress. The "self-made man" rose from poverty through hard work. John Henry died racing the steam hammer, symbolizing humanity versus machine. Mary Shelley's Frankenstein warned of science without wisdom. The myth of the noble savage contrasted with civilized corruption. Ghost stories proliferated as gas lights pushed back darkness. Time itself became mythologized - punctuality as virtue, "time is money" as gospel. These myths grappled with rapid change, loss of tradition, and the promise and peril of human power over nature.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Design</h3>
+                <ul>
+                    <li>Iron architecture</li>
+                    <li>Photography invention</li>
+                    <li>Mass production aesthetics</li>
+                    <li>Impressionism reaction</li>
+                    <li>Arts and Crafts movement</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Statistical analysis</li>
+                    <li>Thermodynamics</li>
+                    <li>Engineering calculations</li>
+                    <li>Actuarial science</li>
+                    <li>Operations research</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Steam engine</li>
+                    <li>Telegraph</li>
+                    <li>Light bulb</li>
+                    <li>Telephone</li>
+                    <li>Internal combustion</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Industrial capitalists</li>
+                    <li>Factory system</li>
+                    <li>Labor unions</li>
+                    <li>Colonial empires</li>
+                    <li>Scientific management</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🚂</div>
+                <div class="image-caption">Steam Locomotive</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏭</div>
+                <div class="image-caption">Victorian Factory</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏗️</div>
+                <div class="image-caption">Crystal Palace - Iron & Glass</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">📷</div>
+                <div class="image-caption">First Photograph</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">💡</div>
+                <div class="image-caption">Edison's Light Bulb</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">⚙️</div>
+                <div class="image-caption">Difference Engine - Babbage</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODERN -->
+    <div class="content-area" id="modern">
+        <div class="period-header">
+            <h2 class="period-title">🚀 Modern Era</h2>
+            <div class="period-dates">20th - 21st Century</div>
+            <div class="period-description">
+                The age of relativity, quantum mechanics, and digital revolution. Einstein showed space-time bends, computers think in binary, and the internet connects billions. Modern art shattered perspective, architecture reached the clouds, and mathematics describes chaos and fractals. We've walked on the moon, decoded DNA, and created artificial intelligence. Yet we still seek meaning through stories, create beauty through patterns, and organize society through ancient power structures dressed in modern clothes.
+            </div>
+        </div>
+        
+        <div class="quick-facts">
+            <div class="fact-box">
+                <div class="fact-number">1969</div>
+                <div class="fact-label">Moon Landing</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">2.4B</div>
+                <div class="fact-label">Transistors per Chip</div>
+            </div>
+            <div class="fact-box">
+                <div class="fact-number">∞</div>
+                <div class="fact-label">Digital Possibilities</div>
+            </div>
+        </div>
+        
+        <div class="myth-section">
+            <h3 class="myth-title">Digital Mythology & Superheroes</h3>
+            <div class="myth-content">
+                Modern myths wear capes or live in cyberspace. Superheroes embody ancient archetypes with scientific origins - radioactive spiders, genetic mutations, alien technology. The Singularity promises digital transcendence. Climate change becomes apocalyptic narrative. The myth of disruption says technology solves everything. Social media creates personal mythologies - curated lives as modern masks. Science fiction from Star Wars to Matrix provides creation myths for digital age. These stories help us process rapid change, ethical dilemmas of power, and what remains human in transhuman futures.
+            </div>
+        </div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🎨 Art & Media</h3>
+                <ul>
+                    <li>Abstract expressionism</li>
+                    <li>Digital art & CGI</li>
+                    <li>Installation art</li>
+                    <li>Video games as art</li>
+                    <li>Generative algorithms</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>🔢 Mathematics</h3>
+                <ul>
+                    <li>Chaos theory</li>
+                    <li>Fractals</li>
+                    <li>Computer algorithms</li>
+                    <li>Quantum computing</li>
+                    <li>Machine learning</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>💡 Inventions</h3>
+                <ul>
+                    <li>Internet</li>
+                    <li>Smartphones</li>
+                    <li>CRISPR gene editing</li>
+                    <li>3D printing</li>
+                    <li>Renewable energy</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>👑 Power Structure</h3>
+                <ul>
+                    <li>Tech corporations</li>
+                    <li>Data as currency</li>
+                    <li>Global networks</li>
+                    <li>Surveillance capitalism</li>
+                    <li>Algorithmic governance</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="image-gallery">
+            <div class="image-card">
+                <div class="image-placeholder">🌐</div>
+                <div class="image-caption">World Wide Web</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🧬</div>
+                <div class="image-caption">DNA Double Helix</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🏗️</div>
+                <div class="image-caption">Burj Khalifa - Touching Sky</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🎮</div>
+                <div class="image-caption">Virtual Reality Worlds</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🤖</div>
+                <div class="image-caption">Artificial Intelligence</div>
+            </div>
+            <div class="image-card">
+                <div class="image-placeholder">🚀</div>
+                <div class="image-caption">SpaceX - New Frontiers</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showPeriod(period) {
+            // Hide all content areas
+            document.querySelectorAll('.content-area').forEach(area => {
+                area.classList.remove('active');
+            });
+            
+            // Remove active from all buttons
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected period
+            document.getElementById(period).classList.add('active');
+            
+            // Add active to clicked button
+            event.target.classList.add('active');
+            
+            // Scroll to top smoothly
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

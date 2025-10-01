@@ -1,0 +1,30 @@
+Geometry & Art Through Human History: Curriculum Map
+Focused on Motifs/Shapes/Patterns and Their Complexity
+
+Unit (Motif/Shape/Pattern)	Subunit (Historical Context)	Geometric Concept & Complexity	Subject(s)	K/1 Activities	2/3 Activities	4/5 Activities	MS Activities
+Spiral	Ancient (Prehistoric/Egypt)	Simple curve, natural form (shells)	Art, Science	Draw spirals in sand or paper; find in nature (snails)	Paint spiral pottery; connect to Nile life (water cycles)	Draw spiral tomb art; discuss life/death symbolism	Research spiral in ancient math (Archimedes); analyze cultural meanings
+Indigenous Americas	Complex repetition, storytelling	Art, Math, Culture	Trace spiral patterns; listen to creation stories	Create spiral designs on "pottery"; tell a story with it	Design spiral motifs for storytelling; study repetition	Analyze spiral math (growth patterns); compare cultural uses
+Biomimicry/Modern	Fibonacci, logarithmic spiral	Math, Science, Design	Color nautilus shell prints; nature walk	Build spiral models (paper shells); discuss nature's designs	Research Fibonacci in plants; draw nature-inspired spirals	Engineer spiral-based designs (turbines); study biomimicry applications
+Symmetry	Ancient Egypt	Bilateral symmetry, balance	Art, Math	Fold paper for mirror images; draw Eye of Horus	Create symmetrical lotus designs; build balanced "temples"	Design symmetrical gods; analyze balance in art	Study symmetry in pyramid design; connect to stability/math
+Islamic World	Radial symmetry, intricate patterns	Art, Math, Culture	Color symmetrical tiles; shape puzzles	Draw star patterns with symmetry; discuss unity	Create radial designs; explore cultural meanings	Analyze symmetry in architecture (domes); connect to mathematical proofs
+Modern Architecture	Asymmetry vs. symmetry in design	Art, Engineering	Build balanced block towers; draw "cool buildings"	Design symmetrical homes; discuss "breaking rules"	Compare symmetrical vs. asymmetrical buildings; model one	Research architects (Gehry); analyze symmetry's role in stability/aesthetics
+Tessellation	Ancient Rome	Basic repeating shapes, mosaics	Art, Math	Make simple tile patterns with blocks	Design floor mosaics with paper shapes; no gaps	Create animal mosaic patterns; discuss Roman life	Study tessellation geometry; recreate Roman floor plans
+Islamic World	Complex polygons, interlocking stars	Math, Art, Culture	Puzzle pieces for star tiles; color patterns	Draw tessellated stars; connect to faith (unity)	Design mosque floor patterns; analyze shapes used	Research tessellation math (angles); connect to cultural expression
+Modern (Escher/Biomimicry)	Irregular tessellations, nature-inspired	Math, Art, Science	Color Escher prints; find repeating shapes	Draw fish/bird tessellations; discuss illusions	Create nature-inspired tessellations; study animal camouflage	Analyze Escher's math (transformations); design biomimetic patterns
+Perspective/Grid	Ancient Egypt	Simple grids, flat representation	Art, Math	Draw on graph paper; make "tomb scenes"	Use grids for tomb art; discuss "flat" style	Replicate Egyptian grid art; compare to real life	Research grid systems in planning; analyze lack of depth in art
+Renaissance	1-point perspective, depth	Art, Math	Draw "roads" that get smaller; color scenes	Practice 1-point hallways; paint cityscapes	Draw rooms in perspective; analyze Da Vinci sketches	Study linear perspective math; recreate famous Renaissance works
+Cubism/Modern	Multiple perspectives, fragmented grids	Art, Design	Collage faces from many angles	Draw objects from 3 views; cut/paste cubist art	Create cubist portraits; discuss "breaking rules"	Analyze Cubism's geometry; compare to Renaissance; research Picasso
+Fractal	West Africa/Somalia	Self-similarity, repeating patterns	Math, Art, Culture	Draw repeating tree shapes; weave simple mats	Design fractal villages; connect to stories (Anansi)	Map fractal patterns in textiles; discuss community	Study fractal geometry; research African architecture (repetition)
+Biomimicry/Modern	Infinite complexity, nature's efficiency	Math, Science, Design	Color leaf vein patterns; nature hunt	Build fractal models (paper trees); discuss strength	Research fractals in lungs/trees; draw nature designs	Analyze fractal equations; engineer fractal-inspired tech (antennas)
+Key Notes on Structure
+Unit: The core motif/shape/pattern (e.g., Spiral, Symmetry) is the through-line, showing its evolution.
+Subunit: Historical/cultural context where the motif appears, highlighting shifts in complexity or application.
+Geometric Concept & Complexity: Describes the motif's form and how it grows more sophisticated over time.
+Subject(s): Interdisciplinary connections (Art, Math, Science, etc.).
+Grade Cohorts: Activities build from recognition (K/1) to creation (2/3), analysis (4/5), and deep research/engineering (MS).
+Implementation Guide
+This curriculum map centers the geometric idea as the "hero," showing students how shapes and patterns transform across human history in response to cultural, environmental, and technological needs. Each unit explores a single motif through increasing complexity and diverse applications.
+
+Teachers can move either vertically (following one motif through history) or horizontally (exploring a historical period through multiple motifs).
+
+Explain
