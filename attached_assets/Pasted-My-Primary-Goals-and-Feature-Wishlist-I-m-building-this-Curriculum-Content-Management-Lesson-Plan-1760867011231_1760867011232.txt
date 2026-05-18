@@ -1,0 +1,199 @@
+My Primary Goals and Feature Wishlist
+
+I'm building this Curriculum Content Management & Lesson Planning System entirely around my own needs and vision as a solo K-8 curriculum developer. Rather than guessing what might be required, I'm focusing directly on the components and experiences I want in my daily workflow, split into feature-focused categories instead of assumptions or hypothetical requirements.
+
+Content Organization & Retrieval
+
+
+
+
+
+Mass Ingestion: Ability to upload and organize a huge research library (~30GB+), including PDFs, ePubs, images, and various doc types, quickly and painlessly.
+
+
+
+Deep Tagging: Everything should be easy to tag by grade level, content type, concept, and my own flexible attributes. I want fast manual tagging now, with space for more AI-assist later.
+
+
+
+Paragraph-Level Search: Find that "one great diagram" or juicy quote—precision search, not just by file or page, but by the smallest useful snippet.
+
+
+
+Bidirectional Linking: Always know which lesson drew from which resource, and be able to track back from a source passage to every lesson it appears in.
+
+Lesson Building & Drafting
+
+
+
+
+
+Flexible Lesson Editor: Compose lessons from tagged snippets—drag, drop, edit, remix. Format for slides, scripts, activities, or custom types.
+
+
+
+Connected Curriculum Calendar: Map lessons to a living calendar. See lessons as a timeline and rearrange with drag-and-drop.
+
+
+
+One Workspace, Multiple Panels: Work with source material, lesson draft, and standards map side-by-side, with window resizing and custom saved layouts.
+
+
+
+Instant Suggestions: Get context-aware recommended content—"see also" ideas from my library as I build lessons.
+
+Visual & Media Assets
+
+
+
+
+
+Image Extraction & Catalogued Use: Pull every diagram, photo, or illustration from research, tag them by concept and reusability, and suggest where I might use them.
+
+
+
+Image-Driven Activities: Spotlight an image and snap it into an activity template or problem set right from the asset browser.
+
+Automations & Intelligence
+
+
+
+
+
+AI-Assisted Tagging: Use AI to scan new uploads for grade relevance, concepts, and cross-references, but with me always having the final say.
+
+
+
+Lesson Draft Generator: Feed in standards, topic, and grade, and get a draft lesson pack that combines my own materials. Always editable, never locked-in.
+
+
+
+Smart Content Suggestions: As I select a topic, pull relevant resources, snippets, and images, preview them, and slot them into my lesson.
+
+Export & Sharing
+
+
+
+
+
+Multi-Format Export: Spin out lessons to Google Slides, printable teacher and student docs, social media snippets, or interactive e-books—all in a couple of clicks from one source draft.
+
+
+
+Instant Activity Sheets: Select an activity and hit "Export as Worksheet" for quick classroom use.
+
+Storage, Backup & Workflow
+
+
+
+
+
+Hybrid Storage: Keep the full archive in the cloud, but work on active projects locally—everything auto-syncs based on usage.
+
+
+
+Robust Tag & Annotation Sync: Never lose my tags, highlights, or lesson edits—full backup and restore.
+
+
+
+Workflow Automation: Let file uploads, document scans, and nightly backups run on their own. Batch process new content and track what's getting used.
+
+
+
+Performance First: Quick loading—even with thousands of files. Only bring content into memory/layout as needed.
+
+Technical Stack Preferences (Solo Focused)
+
+
+
+
+
+Simple Cloud Storage (Google Cloud): Cheap, scalable, familiar.
+
+
+
+Firebase/Firestore for Fast Metadata: Easy to query, auto-sync.
+
+
+
+Replit for Fast Web Prototyping: Everything in one workspace.
+
+
+
+AI: Anthropic Claude for tagging/drafting, with human-guided prompts.
+
+
+
+Frontend: React with shadcn/ui, PDF.js, and multi-panel support.
+
+
+
+Backend: Node.js/Express simplicity.
+
+How I Plan to Build It
+
+I'm structuring my roadmap around steady, usable progress—not just big launches. I want:
+
+
+
+
+
+A solid PDF/source viewer and tagging system before anything fancy.
+
+
+
+Integrations with AI / Claude only once basic annotation and search are stable.
+
+
+
+Drag-and-drop lesson calendar and multi-panel workspace as a usability backbone.
+
+
+
+Automated lesson drafting and smart suggestions layered in as my tag data grows.
+
+
+
+Rock-solid backup, sync, and cloud/local balance at every stage.
+
+Tagging Concept (Flexible Example)
+
+{
+  documentId: "...",
+  sourceFile: "...",
+  tags: {
+    gradeLevels: [3, 4],
+    concepts: ["area models"],
+    contentTypes: ["activity"],
+    custom: ["math-art connection"]
+  },
+  highlights: [{ page: 18, text: "...", purpose: "slide" }],
+  links: ["lesson-uuid"]
+}
+
+
+
+Next Steps for Me:
+
+
+
+
+
+Sketch out UI wireframes for the calendar and multi-panel workspace
+
+
+
+Map database schema for flexible tags and highlights
+
+
+
+Start implementing file ingestion and basic tagging
+
+
+
+Research best practices for local/cloud sync workflows
+
+
+
+Draft my first set of AI prompt templates for tagging and lesson creationPlan user testing milestones for feedback on UI and featuresDevelop a roadmap for iterative AI feature integrationEnsure data privacy and compliance frameworks are establishedBegin assembling a beta user group from educator communities to validate usability and value.
+
