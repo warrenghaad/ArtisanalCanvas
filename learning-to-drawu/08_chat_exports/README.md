@@ -9,6 +9,10 @@ Each exported chat should eventually produce one or more of the following:
 - lesson notes
 - drills
 - visual index entries
+- visualization exports
 - repo-ready markdown
 - unresolved questions
 - next actions
+
+Immediate visualization exports go in:
+`/learning-to-drawu/08_chat_exports/visualizations`

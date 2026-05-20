@@ -51,3 +51,7 @@ If the chat produced repo-ready text, place it in:
 `/learning-to-drawu/08_chat_exports/git_output_candidates`
 
 This is the staging area before moving material into the main curriculum folders.
+
+## Step 6: Export Visualizations Immediately
+If the chat or workflow produces visualization files, place them in:
+`/learning-to-drawu/08_chat_exports/visualizations`

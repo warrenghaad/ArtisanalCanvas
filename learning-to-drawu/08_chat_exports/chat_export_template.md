@@ -19,6 +19,7 @@ Fast public practice / Slow analytical study / Emotional processing / Memory rec
 ## Drawing Problems Identified
 ## Drills Created
 ## Visual Index Candidates
+## Visualization Exports
 ## Repo Files This Should Update
 ## Git Output Candidate
 ## Unresolved Questions
