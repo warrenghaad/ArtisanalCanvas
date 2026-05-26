@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "bqiBmzDIiJADTpkLW3Hkn"
+uri = "file://client/public/images/artifact_mesopotamian.png"
+type = "image"
+title = "Mesopotamian clay tablet with geometric patterns"
+
+[[generated]]
+id = "5K_N6j1iqPe6Hxchu8WOJ"
+uri = "file://client/public/images/artifact_mesoamerican.png"
+type = "image"
+title = "Mesoamerican geometric jade mask"
+
+[[generated]]
+id = "uOB3XiR_kApHqWL-hHcvc"
+uri = "file://client/public/images/artifact_greek.png"
+type = "image"
+title = "Greek geometric period pottery"
+
+[[generated]]
+id = "-sys_dx_wWLBvuJJP4ho9"
+uri = "file://client/public/images/artifact_motion.png"
+type = "image"
+title = "Digital motion study of an artifact"
