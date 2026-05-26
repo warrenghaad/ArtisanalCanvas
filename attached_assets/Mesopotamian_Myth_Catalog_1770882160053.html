@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesopotamian Myths &amp; Geometric Design Catalog</title>
+    <style>
+        :root {
+  /* Primitive Color Tokens */
+  --color-white: rgba(255, 255, 255, 1);
+  --color-black: rgba(0, 0, 0, 1);
+  --color-cream-50: rgba(252, 252, 249, 1);
+  --color-cream-100: rgba(255, 255, 253, 1);
+  --color-gray-200: rgba(245, 245, 245, 1);
+  --color-gray-300: rgba(167, 169, 169, 1);
+  --color-gray-400: rgba(119, 124, 124, 1);
+  --color-slate-500: rgba(98, 108, 113, 1);
+  --color-brown-600: rgba(94, 82, 64, 1);
+  --color-charcoal-700: rgba(31, 33, 33, 1);
+  --color-charcoal-800: rgba(38, 40, 40, 1);
+  --color-slate-900: rgba(19, 52, 59, 1);
+  --color-teal-300: rgba(50, 184, 198, 1);
+  --color-teal-400: rgba(45, 166, 178, 1);
+  --color-teal-500: rgba(33, 128, 141, 1);
+  --color-teal-600: rgba(29, 116, 128, 1);
+  --color-teal-700: rgba(26, 104, 115, 1);
+  --color-teal-800: rgba(41, 150, 161, 1);
+  --color-red-400: rgba(255, 84, 89, 1);
+  --color-red-500: rgba(192, 21, 47, 1);
+  --color-orange-400: rgba(230, 129, 97, 1);
+  --color-orange-500: rgba(168, 75, 47, 1);
+
+  /* RGB versions for opacity control */
+  --color-brown-600-rgb: 94, 82, 64;
+  --color-teal-500-rgb: 33, 128, 141;
+  --color-slate-900-rgb: 19, 52, 59;
+  --color-slate-500-rgb: 98, 108, 113;
+  --color-red-500-rgb: 192, 21, 47;
+  --color-red-400-rgb: 255, 84, 89;
+  --color-orange-500-rgb: 168, 75, 47;
+  --color-orange-400-rgb: 230, 129, 97;
+
+  /* Background color tokens (Light Mode) */
+  --color-bg-1: rgba(59, 130, 246, 0.08);
+  --color-bg-2: rgba(245, 158, 11, 0.08);
+  --color-bg-3: rgba(34, 197, 94, 0.08);
+  --color-bg-4: rgba(239, 68, 68, 0.08);
+  --color-bg-5: rgba(147, 51, 234, 0.08);
+  --color-bg-6: rgba(249, 115, 22, 0.08);
+  --color-bg-7: rgba(236, 72, 153, 0.08);
+  --color-bg-8: rgba(6, 182, 212, 0.08);
+
+  /* Semantic Color Tokens (Light Mode) */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-cream-100);
+  --color-text: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-500);
+  --color-primary: var(--color-teal-500);
+  --color-primary-hover: var(--color-teal-600);
+  --color-primary-active: var(--color-teal-700);
+  --color-secondary: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-secondary-hover: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-secondary-active: rgba(var(--color-brown-600-rgb), 0.25);
+  --color-border: rgba(var(--color-brown-600-rgb), 0.2);
+  --color-btn-primary-text: var(--color-cream-50);
+  --color-card-border: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-card-border-inner: rgba(var(--color-brown-600-rgb), 0.12);
+  --color-error: var(--color-red-500);
+  --color-success: var(--color-teal-500);
+  --color-warning: var(--color-orange-500);
+  --color-info: var(--color-slate-500);
+  --color-focus-ring: rgba(var(--color-teal-500-rgb), 0.4);
+  --color-select-caret: rgba(var(--color-slate-900-rgb), 0.8);
+
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  --color-success-rgb: 33, 128, 141;
+  --color-error-rgb: 192, 21, 47;
+  --color-warning-rgb: 168, 75, 47;
+  --color-info-rgb: 98, 108, 113;
+
+  /* Typography */
+  --font-family-base: "FKGroteskNeue", "Geist", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 12px;
+  --font-size-base: 14px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 18px;
+  --font-size-2xl: 20px;
+  --font-size-3xl: 24px;
+  --font-size-4xl: 30px;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 550;
+  --font-weight-bold: 600;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --letter-spacing-tight: -0.01em;
+
+  /* Spacing */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-base: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+    0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+    0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03);
+
+  /* Animation */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gray-400-rgb: 119, 124, 124;
+    --color-teal-300-rgb: 50, 184, 198;
+    --color-gray-300-rgb: 167, 169, 169;
+    --color-gray-200-rgb: 245, 245, 245;
+
+    --color-bg-1: rgba(29, 78, 216, 0.15);
+    --color-bg-2: rgba(180, 83, 9, 0.15);
+    --color-bg-3: rgba(21, 128, 61, 0.15);
+    --color-bg-4: rgba(185, 28, 28, 0.15);
+    --color-bg-5: rgba(107, 33, 168, 0.15);
+    --color-bg-6: rgba(194, 65, 12, 0.15);
+    --color-bg-7: rgba(190, 24, 93, 0.15);
+    --color-bg-8: rgba(8, 145, 178, 0.15);
+
+    --color-background: var(--color-charcoal-700);
+    --color-surface: var(--color-charcoal-800);
+    --color-text: var(--color-gray-200);
+    --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+    --color-primary: var(--color-teal-300);
+    --color-primary-hover: var(--color-teal-400);
+    --color-primary-active: var(--color-teal-800);
+    --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+    --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+    --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+    --color-error: var(--color-red-400);
+    --color-success: var(--color-teal-300);
+    --color-warning: var(--color-orange-400);
+    --color-info: var(--color-gray-300);
+    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-btn-primary-text: var(--color-slate-900);
+    --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+    --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+    --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+    --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+    --color-success-rgb: var(--color-teal-300-rgb);
+    --color-error-rgb: var(--color-red-400-rgb);
+    --color-warning-rgb: var(--color-orange-400-rgb);
+    --color-info-rgb: var(--color-gray-300-rgb);
+  }
+}
+
+@font-face {
+  font-family: 'FKGroteskNeue';
+  src: url('https://r2cdn.perplexity.ai/fonts/FKGroteskNeue.woff2')
+    format('woff2');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 280px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-24);
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--space-32);
+  overflow-y: auto;
+}
+
+/* Header */
+.header {
+  margin-bottom: var(--space-32);
+}
+
+.header h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.header p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+/* Filter Section */
+.filter-section {
+  margin-bottom: var(--space-24);
+}
+
+.filter-section h3 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.filter-btn {
+  padding: var(--space-6) var(--space-12);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-standard);
+  font-weight: var(--font-weight-medium);
+}
+
+.filter-btn:hover {
+  background: var(--color-secondary-hover);
+  border-color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
+  border-color: var(--color-primary);
+}
+
+.grade-btn {
+  font-weight: var(--font-weight-semibold);
+}
+
+.grade-btn[data-grade="3"].active {
+  background: #34c759;
+  border-color: #34c759;
+}
+
+.grade-btn[data-grade="4"].active {
+  background: #007aff;
+  border-color: #007aff;
+}
+
+.grade-btn[data-grade="5"].active {
+  background: #af52de;
+  border-color: #af52de;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  margin-top: var(--space-16);
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.reset-btn:hover {
+  background: var(--color-secondary-hover);
+}
+
+/* Search */
+.search-box {
+  width: 100%;
+  padding: var(--space-10) var(--space-12);
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  color: var(--color-text);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-16);
+}
+
+.search-box:focus {
+  outline: var(--focus-outline);
+  border-color: var(--color-primary);
+}
+
+/* Myth Grid */
+.myths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-24);
+}
+
+.myth-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.myth-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+
+.myth-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: var(--color-bg-1);
+}
+
+.myth-content {
+  padding: var(--space-16);
+}
+
+.myth-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-8);
+  color: var(--color-text);
+}
+
+.myth-deity {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-12);
+}
+
+.myth-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+}
+
+.tag {
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-secondary);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.tag.grade {
+  font-weight: var(--font-weight-semibold);
+}
+
+.tag.grade-3 {
+  background: rgba(52, 199, 89, 0.15);
+  color: #34c759;
+}
+
+.tag.grade-4 {
+  background: rgba(0, 122, 255, 0.15);
+  color: #007aff;
+}
+
+.tag.grade-5 {
+  background: rgba(175, 82, 222, 0.15);
+  color: #af52de;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-24);
+  overflow-y: auto;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  padding: var(--space-24);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+  z-index: 10;
+}
+
+.modal-close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  background: var(--color-secondary);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) var(--ease-standard);
+}
+
+.modal-close:hover {
+  background: var(--color-secondary-hover);
+}
+
+.modal-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-4);
+}
+
+.modal-deity {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.modal-body {
+  padding: var(--space-24);
+}
+
+.modal-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-base);
+  margin-bottom: var(--space-24);
+  background: var(--color-bg-1);
+}
+
+.modal-section {
+  margin-bottom: var(--space-24);
+}
+
+.modal-section h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-12);
+  color: var(--color-text);
+}
+
+.modal-section p,
+.modal-section ul {
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.modal-section ul {
+  list-style-position: inside;
+  padding-left: var(--space-16);
+}
+
+.modal-section li {
+  margin-bottom: var(--space-8);
+}
+
+.grade-stories {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.grade-story {
+  padding: var(--space-16);
+  background: var(--color-bg-1);
+  border-radius: var(--radius-base);
+  border-left: 4px solid var(--color-primary);
+}
+
+.grade-story.grade-3 {
+  border-left-color: #34c759;
+}
+
+.grade-story.grade-4 {
+  border-left-color: #007aff;
+}
+
+.grade-story.grade-5 {
+  border-left-color: #af52de;
+}
+
+.grade-story h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-8);
+  color: var(--color-text-secondary);
+}
+
+.connections-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.connection-tag {
+  padding: var(--space-6) var(--space-12);
+  background: var(--color-bg-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.geometric-elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.geometric-tag {
+  padding: var(--space-6) var(--space-12);
+  background: var(--color-bg-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.activity-box {
+  padding: var(--space-16);
+  background: var(--color-bg-4);
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-border);
+}
+
+.no-results {
+  text-align: center;
+  padding: var(--space-32);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .main-content {
+    padding: var(--space-16);
+  }
+  
+  .myths-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sidebar {
+    display: none;
+  }
+  
+  .myth-card {
+    page-break-inside: avoid;
+  }
+  
+  .modal-overlay {
+    position: relative;
+    background: white;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+            <div class="header" style="margin-bottom: var(--space-24);">
+                <h2 style="font-size: var(--font-size-xl); margin-bottom: var(--space-8);">Mesopotamian Mythology</h2>
+                <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Interactive catalog for grades 3-5</p>
+            </div>
+
+            <input type="text" class="search-box" id="searchBox" placeholder="Search myths or deities...">
+
+            <div class="filter-section">
+                <h3>Grade Level</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn grade-btn" data-grade="3" onclick="toggleGrade(3)">Grade 3</button>
+                    <button class="filter-btn grade-btn" data-grade="4" onclick="toggleGrade(4)">Grade 4</button>
+                    <button class="filter-btn grade-btn" data-grade="5" onclick="toggleGrade(5)">Grade 5</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Geometric Shape</h3>
+                <div class="filter-buttons" id="shapeFilters">
+                    <button class="filter-btn" onclick="toggleFilter('shape', '8-Pointed Star')">8-Point Star</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Solar Disk')">Circle/Disk</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Crescent Moon')">Crescent</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Goat-Fish & Wave Patterns')">Wave/Spiral</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Grid/Order vs. Spiral/Chaos')">Grid</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Sacred Tree')">Tree</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Rosette (rotational symmetry)')">Rosette</button>
+                    <button class="filter-btn" onclick="toggleFilter('shape', 'Spiral & Wheel')">Wheel</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Category</h3>
+                <div class="filter-buttons" id="categoryFilters">
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Divine Power')">Divine Power</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Cosmic Order')">Cosmic Order</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Creation & Conflict')">Creation</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Nature & Seasons')">Nature</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Afterlife & Underworld')">Afterlife</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Cosmic Structure')">Structure</button>
+                    <button class="filter-btn" onclick="toggleFilter('category', 'Pattern & Symbolism')">Symbolism</button>
+                </div>
+            </div>
+
+            <button class="reset-btn" onclick="resetFilters()">Reset All Filters</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header">
+                <h1>Ancient Mesopotamian Myths &amp; Geometric Designs</h1>
+                <p>Explore the connections between ancient stories and mathematical patterns</p>
+            </div>
+
+            <div class="myths-grid" id="mythsGrid">
+                <!-- Myth cards will be dynamically inserted here -->
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                No myths match your current filters. Try adjusting your selection.
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+        <div class="modal" id="mythModal">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-deity" id="modalDeity"></p>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Myth Data
+        const myths = [
+            {
+                id: 'ishtar_star',
+                name: 'Inanna/Ishtar: The Eight-Pointed Star',
+                deity: 'Ishtar (Sumerian: Inanna)',
+                category: 'Divine Power',
+                gradeLevel: [3, 4, 5],
+                symbol: '8-Pointed Star',
+                geometricElements: ['Overlapping squares', 'Cardinal/intercardinal points', 'Rotational symmetry'],
+                shortStory: "Ishtar is the Queen of Heaven, the most powerful goddess among gods and mortals. She represents love, war, passion, and transformation. Her symbol, the eight-pointed star, appears in the night sky and marks her presence. Ancient people wore her symbol for protection and power.",
+                grade3Story: "Ishtar is a powerful queen who watches over love and courage. Her special symbol is a beautiful eight-pointed star.",
+                grade4Story: "Ishtar, called Inanna by the Sumerians, is the goddess of love and war. Her eight-pointed star represents the four directions plus the four between them, showing how she rules all of heaven.",
+                grade5Story: "Inanna/Ishtar embodies transformation and power. The eight-pointed star combines the four cardinal directions (north, south, east, west) with the four intercardinal directions, representing her complete dominion over the heavens and her influence in all directions.",
+                drawingActivity: "Draw a large circle. Make a cross through it (north-south and east-west lines). Then add four diagonal lines between them. You've created the 8-pointed star! Try adding triangles in each point or decorating with patterns.",
+                discussionQ3: "Why do you think the star has 8 points instead of 4?",
+                discussionQ4: "How might ancient people have seen Ishtar in the night sky?",
+                discussionQ5: "What qualities of a goddess require 8 points on a star instead of less?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1762951244/search_images/41868cce9362d69a628fbce34881e731394e58ef.jpg'
+            },
+            {
+                id: 'shamash_sun',
+                name: 'Shamash: The Sun\'s Golden Disk',
+                deity: 'Shamash (Sumerian: Utu)',
+                category: 'Cosmic Order',
+                gradeLevel: [3, 4, 5],
+                symbol: 'Solar Disk',
+                geometricElements: ['Circle (wholeness)', 'Radiating lines/rays', 'Triangular forms'],
+                shortStory: "Shamash is the sun god who travels across the sky each day, bringing light and justice to the world. Each morning he rides his chariot across the heavens, and each night he descends into the underworld to judge the dead. His symbol is the golden disk with rays of light.",
+                grade3Story: "Shamash is the sun god. Every day he rides across the sky in his chariot, bringing light. At night he goes under the earth to judge whether people were good or bad.",
+                grade4Story: "Shamash, the sun god, represents justice and truth. His daily journey across the sky symbolizes the triumph of light over darkness and order over chaos. He sees everything mortals do and judges them fairly.",
+                grade5Story: "Shamash embodies cosmic order and divine justice. His journey follows a predictable path (an early understanding of astronomical cycles), and his role as night-judge reveals Mesopotamian beliefs about accountability and moral order even in the afterlife.",
+                drawingActivity: "Draw a large circle for the sun. Add rays around it like a flower or star. You can make them triangular or wavy. Color it gold or yellow!",
+                discussionQ3: "What happens when Shamash stops traveling across the sky at night?",
+                discussionQ4: "Why is justice connected to the sun and light?",
+                discussionQ5: "How does Shamash's journey reflect the Mesopotamians' understanding of natural cycles?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197253/search_images/8d94ff1696d848ec653d8c6b5006e8470691237d.jpg'
+            },
+            {
+                id: 'sin_moon',
+                name: 'Sin: The Moon\'s Wisdom',
+                deity: 'Sin (Sumerian: Nanna)',
+                category: 'Cosmic Order',
+                gradeLevel: [3, 4, 5],
+                symbol: 'Crescent Moon',
+                geometricElements: ['Curved line', 'Crescent shape', 'Phases of the moon'],
+                shortStory: "Sin is the moon god, keeper of time and wisdom. He measures the months and guides travelers through the darkness. The crescent moon is his symbol, changing shape as he travels through the sky, reminding people that time always moves forward.",
+                grade3Story: "Sin is the moon god. He lights up the night sky and helps people see in the dark. The moon changes shape, and Sin's shape changes too as he moves across the sky.",
+                grade4Story: "Sin represents wisdom and time-keeping. The Mesopotamians used the moon's cycles to create their calendar, so Sin was essential to organizing their year and seasons. His crescent is one of the oldest symbols of divinity.",
+                grade5Story: "Sin embodies time, cycles, and nocturnal knowledge. As a time-keeper, he was vital to agricultural and religious calendars. The moon's visible phases (waxing, full, waning, new) provided the fundamental measurement of months and years.",
+                drawingActivity: "Draw a crescent by making two curved lines that almost make a circle but have a gap. Can you draw all four moon phases? New (dark), Crescent, Full, and Waning?",
+                discussionQ3: "Why does the moon change shape?",
+                discussionQ4: "How did people use the moon to measure time?",
+                discussionQ5: "What would calendars be like without the moon's patterns?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197253/search_images/1712efd942344ecd3112cf73907c283742e1b5fd.jpg'
+            },
+            {
+                id: 'enki_water',
+                name: 'Enki: God of Water & Wisdom',
+                deity: 'Enki (Akkadian: Ea)',
+                category: 'Divine Power',
+                gradeLevel: [3, 4, 5],
+                symbol: 'Goat-Fish & Wave Patterns',
+                geometricElements: ['Spirals (flowing water)', 'Zigzag lines (waves)', 'Curves and flowing forms', 'Hybrid creature (combination)'],
+                shortStory: "Enki is the god of fresh water, wisdom, and creation. He holds the cosmic knowledge needed to maintain order in the universe. His symbol is the curious goat-fish, a creature that combines two animals, representing his mysterious and creative nature. Wave patterns and spirals also represent him.",
+                grade3Story: "Enki is a friendly god who loves water and knows many secrets. His special creature is a goat with a fish tail! Water spirals and wave lines show where Enki is.",
+                grade4Story: "Enki represents both practical knowledge (engineering, crafts) and secret wisdom. His wavy and spiral symbols show how water flows, and the goat-fish combination shows that Enki blends different things to create something new.",
+                grade5Story: "Enki personifies creative intelligence and fluid adaptation. The goat-fish represents synthesis—combining earthly (goat) with aquatic (fish) nature. His association with spiraling water reflects the recursive, fractal patterns found throughout nature.",
+                drawingActivity: "Draw zigzag lines across a page to represent water waves. Then draw spirals. Can you design a repeating wave pattern like a border? Try combining waves and spirals!",
+                discussionQ3: "Why would a god who knows secrets have a strange creature as his symbol?",
+                discussionQ4: "How do spirals and waves show Enki's connection to wisdom?",
+                discussionQ5: "Why would Enki's watery nature make him creative and wise?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197253/search_images/1baf4509ce3e5e0c4283253445b30fae66128bd2.jpg'
+            },
+            {
+                id: 'marduk_order',
+                name: 'Marduk: Order Defeats Chaos',
+                deity: 'Marduk',
+                category: 'Creation & Conflict',
+                gradeLevel: [4, 5],
+                symbol: 'Grid/Order vs. Spiral/Chaos',
+                geometricElements: ['Rectangular grids (order)', 'Spirals (chaos)', 'Straight lines vs. curves', 'Geometric vs. organic forms'],
+                shortStory: "In the beginning, there was only Tiamat, a dragon of chaos and disorder. Marduk, a younger god representing order, challenged her to battle. Marduk created order from chaos, dividing Tiamat's body to create the earth and sky. His victory established the cosmic order that keeps the universe functioning.",
+                grade4Story: "Marduk is a hero god who fought against Tiamat, a dragon of chaos. He won the battle and used her body to create the world. His victory created order so that the world could have rules and structure.",
+                grade5Story: "The creation myth of Enuma Elish depicts a fundamental cosmological principle: order (represented by geometric patterns and Marduk) must overcome chaos (represented by organic, spiraling Tiamat). This reflects Mesopotamian anxiety about maintaining cosmic equilibrium through proper ritual and adherence to law.",
+                drawingActivity: "On one side of paper, draw grid patterns and straight lines (order). On the other side, draw spirals and chaotic curves (chaos). Create artwork showing order and chaos together or one defeating the other.",
+                discussionQ4: "Why did Marduk need to defeat Tiamat to create the world?",
+                discussionQ5: "What does this myth teach about how societies maintain order?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197253/search_images/12687bd80a8b9b1ecd1fcf3a95e6f23a39e866b0.jpg'
+            },
+            {
+                id: 'tree_of_life',
+                name: 'The Tree of Life: All Creation',
+                deity: 'Cosmic Symbol (not tied to one deity)',
+                category: 'Cosmic Structure',
+                gradeLevel: [3, 4, 5],
+                symbol: 'Sacred Tree',
+                geometricElements: ['Bilateral symmetry', 'Triangular branches', 'Radial arrangement', 'Vertical axis (connection)'],
+                shortStory: "The Tree of Life is a sacred symbol representing all living things and the connection between earth, heaven, and the underworld. It appears on cylinder seals, reliefs, and temple decorations. Its roots reach into the earth, its trunk stands in the mortal realm, and its branches reach toward heaven.",
+                grade3Story: "The Tree of Life is a magical tree that connects the earth below with the heavens above. It's a symbol of all life and growth.",
+                grade4Story: "The Tree of Life represents the cosmic order. Its roots represent stability and the underworld, its trunk represents the material world we live in, and its branches reach up to heaven. It connects all three realms.",
+                grade5Story: "The Tree serves as a cosmological map and symbol of interconnection. Its structure reflects hierarchical thinking in Mesopotamian cosmology: the underworld (roots), the material/mortal realm (trunk), and the divine realm (branches). It also represents universal growth and the sustenance of life.",
+                drawingActivity: "Draw a tree with a strong vertical line for the trunk. Make branches that split evenly on both sides (symmetrical). Decorate branches with leaves, flowers, or geometric patterns. Color your tree!",
+                discussionQ3: "What do the roots, trunk, and branches of the Tree of Life represent?",
+                discussionQ4: "Why would ancient people draw a tree to show the whole universe?",
+                discussionQ5: "How does the Tree of Life show the connection between different worlds?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197253/search_images/5d80691eab80393a26bd062a2c1136a04ed309f8.jpg'
+            },
+            {
+                id: 'rosette_pattern',
+                name: 'The Rosette: Circle of Life',
+                deity: 'Ishtar & Cosmic Principle',
+                category: 'Pattern & Symbolism',
+                gradeLevel: [3, 4, 5],
+                symbol: 'Rosette (rotational symmetry)',
+                geometricElements: ['Circle (wholeness, unity)', 'Rotational symmetry (6, 8, or 12-fold)', 'Petals/radiating forms', 'Repeating pattern'],
+                shortStory: "The rosette is a beautiful geometric pattern used throughout Mesopotamian art. Often connected to Ishtar, it represents the cycles of life, the beauty of creation, and divine perfection. Its perfect symmetry shows how the divine world maintains harmony and order.",
+                grade3Story: "Rosettes are flowers made of geometric shapes! They have petals arranged in a perfect circle. They show beauty and perfection in nature and heaven.",
+                grade4Story: "Rosette patterns use rotational symmetry, meaning you can spin them around and they look the same. Ancient artists used rosettes on seals and art to represent the cyclical nature of life and the perfection of the divine realm.",
+                grade5Story: "Rosettes demonstrate sophisticated understanding of rotational geometry. The number of petals (6, 8, 12) may correlate to astronomical or religious significance. The pattern's mathematical precision reflects Mesopotamian beliefs about divine order manifesting in natural forms.",
+                drawingActivity: "Draw a circle. Make a dot in the center. Use that center point to draw petals around the circle using compass or freehand. Color each petal! Try different numbers of petals (6, 8, 12).",
+                discussionQ3: "Why would artists make flowers out of geometric shapes?",
+                discussionQ4: "What does perfect symmetry tell us about how the Mesopotamians viewed the divine?",
+                discussionQ5: "How many different rosette patterns can you create with different numbers of petals?",
+                image: 'https://www.aramcoworld.com/-/media/aramco-world/articles/2022/art-of-islamic-patterns-mamluk-rosette-images/image-2.jpg'
+            },
+            {
+                id: 'dumuzid_seasons',
+                name: 'Dumuzid: The Eternal Cycle',
+                deity: 'Dumuzid (Akkadian: Tammuz)',
+                category: 'Nature & Seasons',
+                gradeLevel: [4, 5],
+                symbol: 'Spiral & Wheel',
+                geometricElements: ['Spirals (upward and downward)', 'Wheel pattern (cycles)', 'Ascending/descending curves', 'Seasonal wheels'],
+                shortStory: "Dumuzid is the vegetation god whose death and rebirth explains the changing seasons. Each year, he descends to the underworld and returns to the surface, bringing growth and harvest. This cyclical myth reflects the agricultural calendar crucial to Mesopotamian survival and connects divine action to natural phenomena.",
+                grade4Story: "Dumuzid is a god who dies and comes back to life every year. His death explains winter and his return brings spring and harvest. This pattern repeats forever, like a wheel turning.",
+                grade5Story: "Dumuzid embodies seasonal regeneration and the dependence of civilization on agricultural cycles. His myth provides mythological explanation for observable natural phenomena (seasonal plants, temperature changes) and establishes ritual calendar markers critical to planting and harvest.",
+                drawingActivity: "Draw a spiral that goes outward (spring growth), then another spiral that goes inward (fall harvest and death). Create a wheel with four sections: Spring (Dumuzid returns), Summer (growth), Fall (harvest), Winter (Dumuzid descends).",
+                discussionQ4: "How do spirals represent growth and decline?",
+                discussionQ5: "What would agriculture be like without understanding seasonal cycles?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1764197252/search_images/ac332e4bf6ee644072be968606ac7a8c83a5ac92.jpg'
+            },
+            {
+                id: 'ereshkigal_underworld',
+                name: 'Ereshkigal: The Underworld Below',
+                deity: 'Ereshkigal',
+                category: 'Afterlife & Underworld',
+                gradeLevel: [4, 5],
+                symbol: 'Underground Grid',
+                geometricElements: ['Rectangular grid (chambers)', 'Horizontal bands (layers)', 'Enclosed spaces', 'Parallel lines'],
+                shortStory: "Ereshkigal is the queen of the underworld, ruling over the land of the dead where all mortals eventually go. Her realm is structured and ordered, divided into chambers and levels. Though fearsome, she maintains the necessary balance of cosmic order by governing the realm of death.",
+                grade4Story: "Ereshkigal is the queen of the underworld where people go after they die. Her kingdom is organized into chambers and levels. She makes sure everyone follows the rules.",
+                grade5Story: "Ereshkigal represents the structural organization of the afterlife. Her gridded underworld reflects Mesopotamian ordering principles—even death is structured and organized according to divine law, not chaos. This suggests comfort in predictable cosmic order.",
+                drawingActivity: "Draw a grid pattern with squares and rectangles to represent the chambers of the underworld. Add horizontal bands to show different levels. You can add small details inside each chamber.",
+                discussionQ4: "What does a gridded pattern tell us about order and control?",
+                discussionQ5: "How does Ereshkigal's kingdom compare to the world of the living?",
+                image: 'https://pplx-res.cloudinary.com/image/upload/v1763818281/search_images/86be0f04b8fc14f91dd3b45f9a093b97e2e9c8bf.jpg'
+            }
+        ];
+
+        // State
+        let currentFilters = {
+            grades: [],
+            shapes: [],
+            categories: []
+        };
+        let searchTerm = '';
+
+        // Initialize
+        function init() {
+            renderMyths();
+            
+            // Add search listener
+            document.getElementById('searchBox').addEventListener('input', (e) => {
+                searchTerm = e.target.value.toLowerCase();
+                renderMyths();
+            });
+        }
+
+        // Toggle filters
+        function toggleGrade(grade) {
+            const index = currentFilters.grades.indexOf(grade);
+            if (index > -1) {
+                currentFilters.grades.splice(index, 1);
+            } else {
+                currentFilters.grades.push(grade);
+            }
+            updateFilterUI();
+            renderMyths();
+        }
+
+        function toggleFilter(type, value) {
+            const filterArray = type === 'shape' ? currentFilters.shapes : currentFilters.categories;
+            const index = filterArray.indexOf(value);
+            
+            if (index > -1) {
+                filterArray.splice(index, 1);
+            } else {
+                filterArray.push(value);
+            }
+            
+            updateFilterUI();
+            renderMyths();
+        }
+
+        function resetFilters() {
+            currentFilters = {
+                grades: [],
+                shapes: [],
+                categories: []
+            };
+            searchTerm = '';
+            document.getElementById('searchBox').value = '';
+            updateFilterUI();
+            renderMyths();
+        }
+
+        function updateFilterUI() {
+            // Update grade buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                const grade = parseInt(btn.dataset.grade);
+                if (currentFilters.grades.includes(grade)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            // Update other filter buttons
+            document.querySelectorAll('.filter-btn:not(.grade-btn)').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            currentFilters.shapes.forEach(shape => {
+                const btn = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent.includes(shape.split(' ')[0]));
+                if (btn) btn.classList.add('active');
+            });
+            
+            currentFilters.categories.forEach(cat => {
+                const btn = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent === cat || b.textContent === cat.split(' ')[0]);
+                if (btn) btn.classList.add('active');
+            });
+        }
+
+        // Filter myths
+        function filterMyths() {
+            return myths.filter(myth => {
+                // Grade filter
+                if (currentFilters.grades.length > 0) {
+                    if (!currentFilters.grades.some(grade => myth.gradeLevel.includes(grade))) {
+                        return false;
+                    }
+                }
+                
+                // Shape filter
+                if (currentFilters.shapes.length > 0) {
+                    if (!currentFilters.shapes.includes(myth.symbol)) {
+                        return false;
+                    }
+                }
+                
+                // Category filter
+                if (currentFilters.categories.length > 0) {
+                    if (!currentFilters.categories.includes(myth.category)) {
+                        return false;
+                    }
+                }
+                
+                // Search filter
+                if (searchTerm) {
+                    const searchable = `${myth.name} ${myth.deity} ${myth.category} ${myth.symbol}`.toLowerCase();
+                    if (!searchable.includes(searchTerm)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+        }
+
+        // Render myths
+        function renderMyths() {
+            const filteredMyths = filterMyths();
+            const grid = document.getElementById('mythsGrid');
+            const noResults = document.getElementById('noResults');
+            
+            if (filteredMyths.length === 0) {
+                grid.style.display = 'none';
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            grid.style.display = 'grid';
+            noResults.style.display = 'none';
+            
+            grid.innerHTML = filteredMyths.map(myth => `
+                <div class="myth-card" onclick="openModal('${myth.id}')">
+                    <img src="${myth.image}" alt="${myth.name}" class="myth-image">
+                    <div class="myth-content">
+                        <h3 class="myth-title">${myth.name}</h3>
+                        <p class="myth-deity">${myth.deity}</p>
+                        <div class="myth-tags">
+                            ${myth.gradeLevel.map(grade => `<span class="tag grade grade-${grade}">Grade ${grade}</span>`).join('')}
+                            <span class="tag">${myth.symbol}</span>
+                            <span class="tag">${myth.category}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Modal functions
+        function openModal(mythId) {
+            const myth = myths.find(m => m.id === mythId);
+            if (!myth) return;
+            
+            document.getElementById('modalTitle').textContent = myth.name;
+            document.getElementById('modalDeity').textContent = myth.deity;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <img src="${myth.image}" alt="${myth.name}" class="modal-image">
+                
+                <div class="modal-section">
+                    <h3>The Story</h3>
+                    <p>${myth.shortStory}</p>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Grade-Level Stories</h3>
+                    <div class="grade-stories">
+                        ${myth.grade3Story ? `
+                            <div class="grade-story grade-3">
+                                <h4>Grade 3</h4>
+                                <p>${myth.grade3Story}</p>
+                            </div>
+                        ` : ''}
+                        ${myth.grade4Story ? `
+                            <div class="grade-story grade-4">
+                                <h4>Grade 4</h4>
+                                <p>${myth.grade4Story}</p>
+                            </div>
+                        ` : ''}
+                        ${myth.grade5Story ? `
+                            <div class="grade-story grade-5">
+                                <h4>Grade 5</h4>
+                                <p>${myth.grade5Story}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Geometric Elements</h3>
+                    <div class="geometric-elements">
+                        ${myth.geometricElements.map(el => `<span class="geometric-tag">${el}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Drawing Activity</h3>
+                    <div class="activity-box">
+                        <p>${myth.drawingActivity}</p>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h3>Discussion Questions</h3>
+                    <ul>
+                        ${myth.discussionQ3 ? `<li><strong>Grade 3:</strong> ${myth.discussionQ3}</li>` : ''}
+                        ${myth.discussionQ4 ? `<li><strong>Grade 4:</strong> ${myth.discussionQ4}</li>` : ''}
+                        ${myth.discussionQ5 ? `<li><strong>Grade 5:</strong> ${myth.discussionQ5}</li>` : ''}
+                    </ul>
+                </div>
+            `;
+            
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target.id === 'modalOverlay') {
+                closeModal();
+            }
+        }
+
+        // Initialize on load
+        init();
+    </script>
+</body>
+</html>
