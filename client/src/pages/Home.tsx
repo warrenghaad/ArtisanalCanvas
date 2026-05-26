@@ -65,34 +65,76 @@ export default function Home() {
       {/* Artifact Grid */}
       <section className="py-24 px-6 md:px-12 max-w-[1400px] mx-auto">
         <div className="flex justify-between items-end mb-16 border-b border-border pb-8">
-          <h2 className="font-display text-4xl md:text-5xl">Recent Ingestions</h2>
+          <h2 className="font-display text-4xl md:text-5xl">Curated Civilizations</h2>
           <Button variant="ghost" className="rounded-none uppercase tracking-widest text-xs gap-2">
-            View All <ArrowRight className="w-4 h-4" />
+            View Archive <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           
           <ArtifactCard 
-            image="/images/artifact_mesopotamian.png"
-            title="Mesopotamian Tablet"
-            civilization="Sumerian"
+            image="/images/artifact_prehistory.png"
+            title="Carved Bone Tool"
+            civilization="Prehistory"
             geometry="Atomic"
-            id="ART-001"
+            id="PRE-01"
           />
           <ArtifactCard 
-            image="/images/artifact_mesoamerican.png"
-            title="Jade Death Mask"
-            civilization="Olmec"
+            image="/images/artifact_mesopotamian.png"
+            title="Clay Tablet"
+            civilization="Mesopotamia"
+            geometry="Structural"
+            id="MES-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_egypt.png"
+            title="Predynastic Jar"
+            civilization="Egypt"
+            geometry="Molecular"
+            id="EGY-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_india.png"
+            title="Steatite Seal"
+            civilization="Indus Valley"
             geometry="Cultural"
-            id="ART-002"
+            id="IND-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_china.png"
+            title="Bronze Ding"
+            civilization="Shang Dynasty"
+            geometry="Functional"
+            id="CHN-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_persia.png"
+            title="Gold Rhyton"
+            civilization="Persia"
+            geometry="Cultural"
+            id="PER-01"
           />
           <ArtifactCard 
             image="/images/artifact_greek.png"
             title="Geometric Krater"
-            civilization="Hellenic"
+            civilization="Greece"
             geometry="Molecular"
-            id="ART-003"
+            id="GRK-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_rome.png"
+            title="Mosaic Fragment"
+            civilization="Rome"
+            geometry="Atomic"
+            id="ROM-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_islamic.png"
+            title="Brass Astrolabe"
+            civilization="Islamic Golden Age"
+            geometry="Functional"
+            id="ISL-01"
           />
 
         </div>

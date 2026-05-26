@@ -24,3 +24,45 @@ id = "-sys_dx_wWLBvuJJP4ho9"
 uri = "file://client/public/images/artifact_motion.png"
 type = "image"
 title = "Digital motion study of an artifact"
+
+[[generated]]
+id = "V8QaVgdc_aPvXzvhF8z8N"
+uri = "file://client/public/images/artifact_prehistory.png"
+type = "image"
+title = "Paleolithic carved bone artifact"
+
+[[generated]]
+id = "mve73pYBYRoKimKNz6EjX"
+uri = "file://client/public/images/artifact_india.png"
+type = "image"
+title = "Indus Valley steatite seal"
+
+[[generated]]
+id = "lhBMy0ePS52sInLmju9lD"
+uri = "file://client/public/images/artifact_china.png"
+type = "image"
+title = "Shang Dynasty bronze vessel"
+
+[[generated]]
+id = "2uzCY7p0mvveuJKkrwIwQ"
+uri = "file://client/public/images/artifact_persia.png"
+type = "image"
+title = "Persian Achaemenid gold rhyton"
+
+[[generated]]
+id = "qOL4xZqjHF4S7DbkA9kxp"
+uri = "file://client/public/images/artifact_rome.png"
+type = "image"
+title = "Roman geometric mosaic fragment"
+
+[[generated]]
+id = "ZzBP26DQOLGdunKAAymmS"
+uri = "file://client/public/images/artifact_egypt.png"
+type = "image"
+title = "Egyptian predynastic pottery"
+
+[[generated]]
+id = "26WCC4hBJOnO9e8JBFkY5"
+uri = "file://client/public/images/artifact_islamic.png"
+type = "image"
+title = "Islamic brass astrolabe"
