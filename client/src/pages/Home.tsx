@@ -204,7 +204,7 @@ function ArtifactCard({ image, title, civilization, geometry, id }: { image: str
         <img 
           src={image} 
           alt={title} 
-          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0"
+          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4 bg-background/90 backdrop-blur px-3 py-1 font-sans text-xs uppercase tracking-widest">
           {geometry}
