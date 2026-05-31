@@ -66,3 +66,15 @@ id = "26WCC4hBJOnO9e8JBFkY5"
 uri = "file://client/public/images/artifact_islamic.png"
 type = "image"
 title = "Islamic brass astrolabe"
+
+[[generated]]
+id = "JgCDAHC_dz-t-NDhPYeyX"
+uri = "file://client/public/images/artifact_dark_ages.png"
+type = "image"
+title = "Anglo-Saxon geometric gold brooch"
+
+[[generated]]
+id = "9Nm1roJXEwmknZzD_iKFd"
+uri = "file://client/public/images/artifact_renaissance.png"
+type = "image"
+title = "Renaissance geometric intarsia panel"

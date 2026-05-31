@@ -136,6 +136,20 @@ export default function Home() {
             geometry="Functional"
             id="ISL-01"
           />
+          <ArtifactCard 
+            image="/images/artifact_dark_ages.png"
+            title="Garnet Fibula"
+            civilization="Early Medieval Europe"
+            geometry="Structural"
+            id="MED-01"
+          />
+          <ArtifactCard 
+            image="/images/artifact_renaissance.png"
+            title="Polyhedral Intarsia"
+            civilization="Renaissance"
+            geometry="Atomic"
+            id="REN-01"
+          />
 
         </div>
       </section>
