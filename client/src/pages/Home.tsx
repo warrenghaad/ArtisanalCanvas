@@ -55,9 +55,11 @@ export default function Home() {
             <Button size="lg" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary bg-primary text-primary-foreground hover:bg-transparent hover:text-primary transition-all duration-300">
               Enter Archive
             </Button>
-            <Button size="lg" variant="outline" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-              Start Analysis
-            </Button>
+            <Link href="/analysis">
+              <Button size="lg" variant="outline" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+                Start Analysis
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
