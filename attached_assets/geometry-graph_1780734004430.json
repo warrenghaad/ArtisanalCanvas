@@ -1,0 +1,2713 @@
+{
+  "nodes": [
+    {
+      "id": "gea.point",
+      "label": "Point",
+      "kind": "GEA",
+      "metadata": {
+        "category": "mark"
+      }
+    },
+    {
+      "id": "gea.dot",
+      "label": "Dot",
+      "kind": "GEA",
+      "metadata": {
+        "category": "mark"
+      }
+    },
+    {
+      "id": "gea.line",
+      "label": "Line",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.parallel_lines",
+      "label": "Parallel Lines",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.intersecting_lines",
+      "label": "Intersecting Lines",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.angle",
+      "label": "Angle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.right_angle",
+      "label": "Right Angle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.arc",
+      "label": "Arc",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.curve",
+      "label": "Curve",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.spiral",
+      "label": "Spiral",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.circle",
+      "label": "Circle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.oval",
+      "label": "Oval",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.crescent",
+      "label": "Crescent",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.triangle",
+      "label": "Triangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.right_triangle",
+      "label": "Right Triangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.square",
+      "label": "Square",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.rectangle",
+      "label": "Rectangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.diamond",
+      "label": "Diamond",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.rhombus",
+      "label": "Rhombus",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.pentagon",
+      "label": "Pentagon",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.hexagon",
+      "label": "Hexagon",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.octagon",
+      "label": "Octagon",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.star",
+      "label": "Star",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.eight_point_star",
+      "label": "Eight-Point Star",
+      "kind": "GEA",
+      "metadata": {
+        "category": "polygon"
+      }
+    },
+    {
+      "id": "gea.rosette_seed",
+      "label": "Rosette Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.grid_seed",
+      "label": "Grid Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.wave",
+      "label": "Curve/Wave",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.zigzag",
+      "label": "Zigzag",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.chevron",
+      "label": "Chevron",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.cross",
+      "label": "Cross",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.radial_line",
+      "label": "Radial Line",
+      "kind": "GEA",
+      "metadata": {
+        "category": "line_family"
+      }
+    },
+    {
+      "id": "gea.concentric_circle",
+      "label": "Concentric Circle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "curve_family"
+      }
+    },
+    {
+      "id": "gea.cylinder_seed",
+      "label": "Cylinder Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "volumetric_seed"
+      }
+    },
+    {
+      "id": "gea.rectangular_prism_seed",
+      "label": "Rectangular Prism Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "volumetric_seed"
+      }
+    },
+    {
+      "id": "gea.sphere_seed",
+      "label": "Sphere Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "volumetric_seed"
+      }
+    },
+    {
+      "id": "gea.cone_seed",
+      "label": "Cone Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "volumetric_seed"
+      }
+    },
+    {
+      "id": "gea.pyramid_seed",
+      "label": "Pyramid Seed",
+      "kind": "GEA",
+      "metadata": {
+        "category": "volumetric_seed"
+      }
+    },
+    {
+      "id": "gea.petzinger.aviform",
+      "label": "Aviform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.claviform",
+      "label": "Claviform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.cordiform",
+      "label": "Cordiform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.crosshatch",
+      "label": "Crosshatch",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.cruciform",
+      "label": "Cruciform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.cupule",
+      "label": "Cupule",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.dot",
+      "label": "Dot",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.finger_fluting",
+      "label": "Finger Fluting",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.half_circle",
+      "label": "Half Circle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.line",
+      "label": "Line",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.open_angle",
+      "label": "Open Angle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.oval",
+      "label": "Oval",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.penniform",
+      "label": "Penniform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.pectiform",
+      "label": "Pectiform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.quadrangle",
+      "label": "Quadrangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.scalariform",
+      "label": "Scalariform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.serpentiform",
+      "label": "Serpentiform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.spiral",
+      "label": "Spiral",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.tectiform",
+      "label": "Tectiform",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.triangle",
+      "label": "Triangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.zigzag",
+      "label": "Zigzag",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.circle",
+      "label": "Circle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.rectangle",
+      "label": "Rectangle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.grid",
+      "label": "Grid",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.parallel_lines",
+      "label": "Parallel Lines",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.convergent_lines",
+      "label": "Convergent Lines",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.nested_angle",
+      "label": "Nested Angle",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.branch",
+      "label": "Branch",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.fan",
+      "label": "Fan",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.hook",
+      "label": "Hook",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.ladder",
+      "label": "Ladder",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gea.petzinger.radial_mark",
+      "label": "Radial Mark",
+      "kind": "GEA",
+      "metadata": {
+        "category": "petzinger_sign"
+      }
+    },
+    {
+      "id": "gem.sun_disk",
+      "label": "Sun Disk",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.rayed_circle",
+      "label": "Rayed Circle",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.concentric_circle_system",
+      "label": "Concentric Circle System",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.crescent_and_star",
+      "label": "Crescent and Star",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.eight_point_star",
+      "label": "Eight-Point Star System",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.rosette",
+      "label": "Rosette",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.grid",
+      "label": "Grid",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.lattice",
+      "label": "Lattice",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEM"
+      }
+    },
+    {
+      "id": "gem.tessellation_triangle",
+      "label": "Triangle Tessellation",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.tessellation_square",
+      "label": "Square Tessellation",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.tessellation_hexagon",
+      "label": "Hexagon Tessellation",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.meander",
+      "label": "Meander",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEM"
+      }
+    },
+    {
+      "id": "gem.wave_border",
+      "label": "Wave Border",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.zigzag_border",
+      "label": "Zigzag Border",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.stepped_profile",
+      "label": "Stepped Profile",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.ziggurat_profile",
+      "label": "Ziggurat Profile",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEM"
+      }
+    },
+    {
+      "id": "gem.winged_disk",
+      "label": "Winged Disk",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEA"
+      }
+    },
+    {
+      "id": "gem.cylinder_seal_register",
+      "label": "Cylinder Seal Register",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEA"
+      }
+    },
+    {
+      "id": "gem.tablet_layout",
+      "label": "Tablet Layout",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEA"
+      }
+    },
+    {
+      "id": "gem.rectangular_text_field",
+      "label": "Rectangular Text Field",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.architectural_plan_rectilinear",
+      "label": "Rectilinear Architectural Plan",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEA"
+      }
+    },
+    {
+      "id": "gem.radial_symmetry_system",
+      "label": "Radial Symmetry System",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEA"
+      }
+    },
+    {
+      "id": "gem.reflection_symmetry_pair",
+      "label": "Reflection Symmetry Pair",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.rotation_mechanism_schema",
+      "label": "Rotation Mechanism Schema",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.composite_3d_guardian_body",
+      "label": "Composite 3D Guardian Body",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEM+GEM"
+      }
+    },
+    {
+      "id": "gem.house_profile",
+      "label": "House / Shrine Profile",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gem.square_triangle_composite",
+      "label": "Square-Triangle Composite",
+      "kind": "GEM",
+      "metadata": {
+        "composition_type": "GEA+GEA"
+      }
+    },
+    {
+      "id": "gek.center",
+      "label": "Center",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.radius",
+      "label": "Radius",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.diameter",
+      "label": "Diameter",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.circumference",
+      "label": "Circumference",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.equidistance",
+      "label": "Equidistance",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.angle",
+      "label": "Angle",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.right_angle",
+      "label": "Right Angle",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.parallelism",
+      "label": "Parallelism",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.perpendicularity",
+      "label": "Perpendicularity",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.symmetry",
+      "label": "Symmetry",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.reflection_symmetry",
+      "label": "Reflection Symmetry",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.rotational_symmetry",
+      "label": "Rotational Symmetry",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.translation",
+      "label": "Translation",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.tessellation",
+      "label": "Tessellation",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.proportion",
+      "label": "Proportion",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.ratio",
+      "label": "Ratio",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.modularity",
+      "label": "Modularity",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.scaling",
+      "label": "Scaling",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.nesting",
+      "label": "Nesting",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.extrusion",
+      "label": "Extrusion",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.projection",
+      "label": "Projection",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.rotation_as_motion",
+      "label": "Rotation as Motion",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.volume_from_surface",
+      "label": "Volume from Surface",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.carrier_surface_mapping",
+      "label": "Carrier Surface Mapping",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.spatial_partitioning",
+      "label": "Spatial Partitioning",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.inscription_field",
+      "label": "Inscription Field",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.register_alignment",
+      "label": "Register Alignment",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.structural_stability",
+      "label": "Structural Stability",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.load_distribution",
+      "label": "Load Distribution",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.calendrical_cycle",
+      "label": "Calendrical Cycle",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.astronomical_observation",
+      "label": "Astronomical Observation",
+      "kind": "GEK"
+    },
+    {
+      "id": "gek.center_radius_relation",
+      "label": "Center-Radius Relation",
+      "kind": "GEK"
+    },
+    {
+      "id": "gephr.divine_order",
+      "label": "Divine Order",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.solar_justice",
+      "label": "Solar Justice",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.lunar_change",
+      "label": "Lunar Change",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.fertility_bloom",
+      "label": "Fertility / Sacred Bloom",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.sacred_center",
+      "label": "Sacred Center",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.boundary",
+      "label": "Boundary",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.authority",
+      "label": "Authority",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.stability",
+      "label": "Stability",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.record_keeping",
+      "label": "Record Keeping",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.heavenly_order",
+      "label": "Heavenly Order",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.protection",
+      "label": "Protection",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.abundance",
+      "label": "Abundance",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.cosmic_cycle",
+      "label": "Cosmic Cycle",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.balance",
+      "label": "Balance",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.reflection",
+      "label": "Reflection",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.transformation",
+      "label": "Transformation",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.ascent",
+      "label": "Ascent",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.underworld_descent",
+      "label": "Underworld Descent",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.kingship",
+      "label": "Kingship",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.institutional_memory",
+      "label": "Institutional Memory",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.ritual_repetition",
+      "label": "Ritual Repetition",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.divine_visibility",
+      "label": "Divine Visibility",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.civic_order",
+      "label": "Civic Order",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.enclosure",
+      "label": "Enclosure",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gephr.threshold_guardianship",
+      "label": "Threshold Guardianship",
+      "kind": "GEpHR"
+    },
+    {
+      "id": "gecd.mesopotamia.shamash_sun_disk",
+      "label": "Shamash + Circle + Sun Disk",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Old Babylonian to Neo-Babylonian reference range",
+        "role": "symbolic_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.ritual_object.shamash_solar_emblem_sun_disk",
+      "label": "Shamash solar emblem / sun disk",
+      "kind": "carrier",
+      "metadata": {
+        "type": "ritual_object",
+        "label": "Shamash solar emblem / sun disk",
+        "material": "stone, clay, or seal impression",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.sin_lunar_crescent",
+      "label": "Sin + Crescent + Lunar Symbol",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Old Babylonian to Neo-Babylonian reference range",
+        "role": "symbolic_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.image.lunar_crescent_emblem",
+      "label": "Lunar crescent emblem",
+      "kind": "carrier",
+      "metadata": {
+        "type": "image",
+        "label": "Lunar crescent emblem",
+        "material": "stone, clay, or seal impression",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "label": "Ishtar/Inanna + Eight-Point Star / Rosette",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Sumerian to Neo-Assyrian reference range",
+        "role": "symbolic_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.image.ishtar_inanna_star_or_rosette_motif",
+      "label": "Ishtar/Inanna star or rosette motif",
+      "kind": "carrier",
+      "metadata": {
+        "type": "image",
+        "label": "Ishtar/Inanna star or rosette motif",
+        "material": "seal impression, relief, or tablet iconography",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.marduk_square_four_corners",
+      "label": "Marduk + Square + Four Corners / Ordered Space",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Babylonian reference range",
+        "role": "institutionalized_pattern"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.image.ordered_four_corner_space_motif",
+      "label": "Ordered four-corner space motif",
+      "kind": "carrier",
+      "metadata": {
+        "type": "image",
+        "label": "Ordered four-corner space motif",
+        "material": "tablet, plan, or ritual diagram",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "label": "Nabu + Rectangle + Clay Tablet / Writing Field",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Old Babylonian to Neo-Babylonian reference range",
+        "role": "technical_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.tablet.clay_tablet_writing_field",
+      "label": "Clay tablet writing field",
+      "kind": "carrier",
+      "metadata": {
+        "type": "tablet",
+        "label": "Clay tablet writing field",
+        "material": "clay",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.enlil_triangle_stability",
+      "label": "Enlil + Triangle + Stability / Sky-Earth Separation",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Sumerian to Old Babylonian reference range",
+        "role": "symbolic_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.image.triangular_stability_separation_motif",
+      "label": "Triangular stability / separation motif",
+      "kind": "carrier",
+      "metadata": {
+        "type": "image",
+        "label": "Triangular stability / separation motif",
+        "material": "relief, diagram, or teaching image",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "label": "Nergal + Right Triangle + Right-Angle / Underworld Descent",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Old Babylonian to Neo-Assyrian reference range",
+        "role": "symbolic_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.image.right_angle_descent_diagram_underworld_teaching_motif",
+      "label": "Right-angle descent diagram / underworld teaching motif",
+      "kind": "carrier",
+      "metadata": {
+        "type": "image",
+        "label": "Right-angle descent diagram / underworld teaching motif",
+        "material": "diagram or relief placeholder",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "label": "Enki + Composite Shapes + Invention Workshop",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Sumerian to Old Babylonian reference range",
+        "role": "invention"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.tool.invention_workshop_composite_carrier",
+      "label": "Invention workshop composite carrier",
+      "kind": "carrier",
+      "metadata": {
+        "type": "tool",
+        "label": "Invention workshop composite carrier",
+        "material": "mixed tools, vessels, tablet surfaces",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "label": "Ziggurat + Stepped Profile + Architectural Stacking",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Ur III to Neo-Babylonian reference range",
+        "role": "architectural_system"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.architecture.ziggurat_stepped_architectural_system",
+      "label": "Ziggurat stepped architectural system",
+      "kind": "carrier",
+      "metadata": {
+        "type": "architecture",
+        "label": "Ziggurat stepped architectural system",
+        "material": "mudbrick, baked brick",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "label": "Cylinder Seal + Rotational Inscription + Administrative Carrier",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Uruk to Old Babylonian reference range",
+        "role": "technical_artifact"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.seal.cylinder_seal_rotational_register",
+      "label": "Cylinder seal rotational register",
+      "kind": "carrier",
+      "metadata": {
+        "type": "seal",
+        "label": "Cylinder seal rotational register",
+        "material": "stone cylinder seal, clay impression",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.potters_wheel_rotation",
+      "label": "Potter’s Wheel + Circle + Rotational Mechanism",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Uruk to Early Dynastic reference range",
+        "role": "invention"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.tool.potter_s_wheel_rotational_mechanism",
+      "label": "Potter’s wheel rotational mechanism",
+      "kind": "carrier",
+      "metadata": {
+        "type": "tool",
+        "label": "Potter’s wheel rotational mechanism",
+        "material": "clay-working wheel / turntable placeholder",
+        "location": "Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    },
+    {
+      "id": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "label": "Lamassu + Composite 3D Guardian Body",
+      "kind": "GECD",
+      "metadata": {
+        "civilization": "Mesopotamia",
+        "period": "Neo-Assyrian reference range",
+        "role": "architectural_system"
+      }
+    },
+    {
+      "id": "carrier.mesopotamia.architecture.lamassu_threshold_guardian_body",
+      "label": "Lamassu threshold guardian body",
+      "kind": "carrier",
+      "metadata": {
+        "type": "architecture",
+        "label": "Lamassu threshold guardian body",
+        "material": "stone relief/sculpture",
+        "location": "Assyria / Northern Mesopotamia",
+        "source_url": "TODO: add museum/catalogue URL",
+        "source_citation": "TODO: add source citation"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "gea.circle",
+      "target": "gem.sun_disk",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.sun_disk",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gem.rayed_circle",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.rayed_circle",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gem.concentric_circle_system",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.concentric_circle",
+      "target": "gem.concentric_circle_system",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.crescent",
+      "target": "gem.crescent_and_star",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.star",
+      "target": "gem.crescent_and_star",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.cross",
+      "target": "gem.eight_point_star",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.eight_point_star",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.eight_point_star",
+      "target": "gem.eight_point_star",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gem.rosette",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rosette_seed",
+      "target": "gem.rosette",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.rosette",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.parallel_lines",
+      "target": "gem.grid",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.grid_seed",
+      "target": "gem.grid",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.grid",
+      "target": "gem.lattice",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.lattice",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.triangle",
+      "target": "gem.tessellation_triangle",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.parallel_lines",
+      "target": "gem.tessellation_triangle",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.square",
+      "target": "gem.tessellation_square",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.parallel_lines",
+      "target": "gem.tessellation_square",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.hexagon",
+      "target": "gem.tessellation_hexagon",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.parallel_lines",
+      "target": "gem.tessellation_hexagon",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gem.meander",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.zigzag_border",
+      "target": "gem.meander",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.wave",
+      "target": "gem.wave_border",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.wave_border",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.zigzag",
+      "target": "gem.zigzag_border",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.zigzag_border",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gem.stepped_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.square",
+      "target": "gem.stepped_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gem.stepped_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.pyramid_seed",
+      "target": "gem.ziggurat_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.stepped_profile",
+      "target": "gem.ziggurat_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gem.ziggurat_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.sun_disk",
+      "target": "gem.winged_disk",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.chevron",
+      "target": "gem.winged_disk",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.curve",
+      "target": "gem.winged_disk",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.rectangular_text_field",
+      "target": "gem.cylinder_seal_register",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.cylinder_seed",
+      "target": "gem.cylinder_seal_register",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.cylinder_seal_register",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.rectangular_text_field",
+      "target": "gem.tablet_layout",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.grid",
+      "target": "gem.tablet_layout",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gem.tablet_layout",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gem.rectangular_text_field",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.rectangular_text_field",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.grid",
+      "target": "gem.architectural_plan_rectilinear",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gem.architectural_plan_rectilinear",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gem.architectural_plan_rectilinear",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gem.radial_symmetry_system",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.radial_symmetry_system",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.rosette",
+      "target": "gem.radial_symmetry_system",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.line",
+      "target": "gem.reflection_symmetry_pair",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.cross",
+      "target": "gem.reflection_symmetry_pair",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gem.rotation_mechanism_schema",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gem.rotation_mechanism_schema",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.cylinder_seed",
+      "target": "gem.rotation_mechanism_schema",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.sphere_seed",
+      "target": "gem.composite_3d_guardian_body",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.rectangular_prism_seed",
+      "target": "gem.composite_3d_guardian_body",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.cone_seed",
+      "target": "gem.composite_3d_guardian_body",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gem.reflection_symmetry_pair",
+      "target": "gem.composite_3d_guardian_body",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.square",
+      "target": "gem.house_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.triangle",
+      "target": "gem.house_profile",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.square",
+      "target": "gem.square_triangle_composite",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.triangle",
+      "target": "gem.square_triangle_composite",
+      "type": "combines_into",
+      "label": "component"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gecd.mesopotamia.shamash_sun_disk",
+      "type": "appears_on",
+      "label": "ritual_object"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gecd.mesopotamia.shamash_sun_disk",
+      "type": "appears_on",
+      "label": "ritual_object"
+    },
+    {
+      "source": "gem.sun_disk",
+      "target": "gecd.mesopotamia.shamash_sun_disk",
+      "type": "appears_on",
+      "label": "ritual_object"
+    },
+    {
+      "source": "gem.rayed_circle",
+      "target": "gecd.mesopotamia.shamash_sun_disk",
+      "type": "appears_on",
+      "label": "ritual_object"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "carrier.mesopotamia.ritual_object.shamash_solar_emblem_sun_disk",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gephr.solar_justice",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gephr.divine_visibility",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gephr.divine_order",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gek.center",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gek.radius",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gek.rotational_symmetry",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gek.astronomical_observation",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "precedes"
+    },
+    {
+      "source": "gecd.mesopotamia.shamash_sun_disk",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "enables"
+    },
+    {
+      "source": "gea.crescent",
+      "target": "gecd.mesopotamia.sin_lunar_crescent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gea.arc",
+      "target": "gecd.mesopotamia.sin_lunar_crescent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.crescent_and_star",
+      "target": "gecd.mesopotamia.sin_lunar_crescent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "carrier.mesopotamia.image.lunar_crescent_emblem",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "gephr.lunar_change",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "gephr.cosmic_cycle",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "gek.projection",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "gek.calendrical_cycle",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.sin_lunar_crescent",
+      "target": "gek.astronomical_observation",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gea.eight_point_star",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gea.rosette_seed",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.eight_point_star",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.rosette",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.radial_symmetry_system",
+      "target": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "carrier.mesopotamia.image.ishtar_inanna_star_or_rosette_motif",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gephr.heavenly_order",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gephr.fertility_bloom",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gephr.divine_visibility",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gek.rotational_symmetry",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gek.center",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ishtar_eight_point_star_rosette",
+      "target": "gek.modularity",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gea.square",
+      "target": "gecd.mesopotamia.marduk_square_four_corners",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gecd.mesopotamia.marduk_square_four_corners",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.grid",
+      "target": "gecd.mesopotamia.marduk_square_four_corners",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.architectural_plan_rectilinear",
+      "target": "gecd.mesopotamia.marduk_square_four_corners",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "carrier.mesopotamia.image.ordered_four_corner_space_motif",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gephr.divine_order",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gephr.civic_order",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gephr.authority",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gek.right_angle",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gek.spatial_partitioning",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gek.perpendicularity",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "gek.structural_stability",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "carrier.mesopotamia.image.ordered_four_corner_space_motif",
+      "type": "institutionalizes_as",
+      "label": "institutionalized_pattern"
+    },
+    {
+      "source": "gecd.mesopotamia.marduk_square_four_corners",
+      "target": "carrier.mesopotamia.image.ordered_four_corner_space_motif",
+      "type": "repeats_as",
+      "label": "repetition/register system"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "type": "appears_on",
+      "label": "tablet"
+    },
+    {
+      "source": "gea.line",
+      "target": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "type": "appears_on",
+      "label": "tablet"
+    },
+    {
+      "source": "gem.rectangular_text_field",
+      "target": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "type": "appears_on",
+      "label": "tablet"
+    },
+    {
+      "source": "gem.tablet_layout",
+      "target": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "type": "appears_on",
+      "label": "tablet"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "carrier.mesopotamia.tablet.clay_tablet_writing_field",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gephr.record_keeping",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gephr.institutional_memory",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gephr.civic_order",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gek.inscription_field",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gek.register_alignment",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gek.spatial_partitioning",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gek.carrier_surface_mapping",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "carrier.mesopotamia.tablet.clay_tablet_writing_field",
+      "type": "institutionalizes_as",
+      "label": "technical_artifact"
+    },
+    {
+      "source": "gea.triangle",
+      "target": "gecd.mesopotamia.enlil_triangle_stability",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.square_triangle_composite",
+      "target": "gecd.mesopotamia.enlil_triangle_stability",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "carrier.mesopotamia.image.triangular_stability_separation_motif",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "gephr.stability",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "gephr.ascent",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "gek.angle",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "gek.structural_stability",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enlil_triangle_stability",
+      "target": "gek.load_distribution",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gea.right_triangle",
+      "target": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gem.stepped_profile",
+      "target": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "type": "appears_on",
+      "label": "image"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "carrier.mesopotamia.image.right_angle_descent_diagram_underworld_teaching_motif",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gephr.underworld_descent",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gephr.transformation",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gek.right_angle",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gek.perpendicularity",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gek.proportion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.nergal_right_triangle_descent",
+      "target": "gek.load_distribution",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gea.triangle",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gea.cylinder_seed",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gem.rotation_mechanism_schema",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gem.rectangular_text_field",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gem.square_triangle_composite",
+      "target": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "carrier.mesopotamia.tool.invention_workshop_composite_carrier",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gephr.transformation",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gephr.abundance",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gek.extrusion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gek.rotation_as_motion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gek.volume_from_surface",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gek.carrier_surface_mapping",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "contains"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "contains"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "carrier.mesopotamia.tool.invention_workshop_composite_carrier",
+      "type": "extrudes_into",
+      "label": "2D->3D"
+    },
+    {
+      "source": "gecd.mesopotamia.enki_invention_workshop_composite",
+      "target": "carrier.mesopotamia.tool.invention_workshop_composite_carrier",
+      "type": "mechanizes_into",
+      "label": "2D->3D"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.square",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.pyramid_seed",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.right_angle",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gem.stepped_profile",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gem.ziggurat_profile",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "carrier.mesopotamia.architecture.ziggurat_stepped_architectural_system",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gephr.ascent",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gephr.divine_visibility",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gephr.authority",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gek.modularity",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gek.scaling",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gek.load_distribution",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gek.structural_stability",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gecd.mesopotamia.marduk_square_four_corners",
+      "type": "enables"
+    },
+    {
+      "source": "gem.stepped_profile",
+      "target": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "type": "precedes",
+      "label": "derived_from"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "carrier.mesopotamia.architecture.ziggurat_stepped_architectural_system",
+      "type": "extrudes_into",
+      "label": "2D->3D"
+    },
+    {
+      "source": "gea.cylinder_seed",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gea.rectangle",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gea.line",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gem.cylinder_seal_register",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gem.rotation_mechanism_schema",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gem.rectangular_text_field",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "appears_on",
+      "label": "seal"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "carrier.mesopotamia.seal.cylinder_seal_rotational_register",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gephr.institutional_memory",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gephr.authority",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gephr.record_keeping",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gek.carrier_surface_mapping",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gek.rotation_as_motion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gek.register_alignment",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gek.inscription_field",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "enables"
+    },
+    {
+      "source": "gecd.mesopotamia.nabu_clay_tablet_rectangle",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "precedes",
+      "label": "derived_from"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "carrier.mesopotamia.seal.cylinder_seal_rotational_register",
+      "type": "mechanizes_into",
+      "label": "2D->4D_temporal_motion"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "carrier.mesopotamia.seal.cylinder_seal_rotational_register",
+      "type": "institutionalizes_as",
+      "label": "technical_artifact"
+    },
+    {
+      "source": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "target": "carrier.mesopotamia.seal.cylinder_seal_rotational_register",
+      "type": "repeats_as",
+      "label": "repetition/register system"
+    },
+    {
+      "source": "gea.circle",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gea.radial_line",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gea.cylinder_seed",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gem.rotation_mechanism_schema",
+      "target": "gecd.mesopotamia.potters_wheel_rotation",
+      "type": "appears_on",
+      "label": "tool"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "carrier.mesopotamia.tool.potter_s_wheel_rotational_mechanism",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gephr.cosmic_cycle",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gephr.transformation",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gek.center",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gek.radius",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gek.rotation_as_motion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gek.extrusion",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gek.volume_from_surface",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "gecd.mesopotamia.cylinder_seal_rotational_inscription",
+      "type": "enables"
+    },
+    {
+      "source": "gecd.mesopotamia.potters_wheel_rotation",
+      "target": "carrier.mesopotamia.tool.potter_s_wheel_rotational_mechanism",
+      "type": "mechanizes_into",
+      "label": "2D->4D_temporal_motion"
+    },
+    {
+      "source": "gea.rectangular_prism_seed",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.sphere_seed",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.cone_seed",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gea.cross",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gem.composite_3d_guardian_body",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gem.reflection_symmetry_pair",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "appears_on",
+      "label": "architecture"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "carrier.mesopotamia.architecture.lamassu_threshold_guardian_body",
+      "type": "appears_on",
+      "label": "carrier anchor"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gephr.protection",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gephr.threshold_guardianship",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gephr.authority",
+      "type": "symbolizes",
+      "label": "Day A metaphor register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gek.volume_from_surface",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gek.reflection_symmetry",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gek.structural_stability",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "gek.load_distribution",
+      "type": "formalizes_as",
+      "label": "Day B function register"
+    },
+    {
+      "source": "gecd.mesopotamia.ziggurat_stepped_profile",
+      "target": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "type": "contains"
+    },
+    {
+      "source": "gecd.mesopotamia.lamassu_composite_guardian_body",
+      "target": "carrier.mesopotamia.architecture.lamassu_threshold_guardian_body",
+      "type": "extrudes_into",
+      "label": "2D->3D"
+    }
+  ]
+}
