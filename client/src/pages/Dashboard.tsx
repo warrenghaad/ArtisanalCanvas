@@ -120,6 +120,66 @@ export default function Dashboard() {
             </div>
           </TabsContent>
 
+          <TabsContent value="generate" className="space-y-8 animate-in fade-in-50 duration-500">
+            <h2 className="font-serif text-3xl mb-8">On-Demand Curation</h2>
+            <div className="max-w-3xl border border-border p-8 bg-card/20 space-y-6">
+              <div className="space-y-2">
+                <label className="font-sans uppercase tracking-widest text-xs text-muted-foreground">Aesthetic Geometry Parameter</label>
+                <div className="flex gap-4">
+                  <div className="relative flex-1">
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <input 
+                      type="text" 
+                      placeholder="e.g., 'Brutalist concrete intersections', 'Hellenistic radial symmetry'" 
+                      className="w-full h-12 bg-background border border-border pl-12 pr-4 font-serif text-lg focus:outline-none focus:border-primary transition-colors"
+                      data-testid="input-generation-prompt"
+                    />
+                  </div>
+                  <Button 
+                    className="h-12 px-8 rounded-none uppercase tracking-widest text-xs flex items-center gap-2"
+                    onClick={handleGenerate}
+                    disabled={isGenerating}
+                    data-testid="button-generate"
+                  >
+                    {isGenerating ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <Wand2 className="w-4 h-4" />
+                    )}
+                    {isGenerating ? 'Synthesizing...' : 'Generate'}
+                  </Button>
+                </div>
+              </div>
+
+              {hasGenerated && !isGenerating && (
+                <div className="pt-8 border-t border-border animate-in fade-in slide-in-from-bottom-4 duration-700">
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="font-serif text-xl">Synthesis Complete</h3>
+                    <Badge variant="outline" className="rounded-none font-mono text-[10px] uppercase">Confidence: 0.94</Badge>
+                  </div>
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="aspect-square bg-muted relative overflow-hidden group border border-border">
+                      <img src="/images/artifact_mesopotamian.png" alt="Generated variation 1" className="object-cover w-full h-full opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                         <div className="font-mono text-xs text-white">Variant A - Structural Focus</div>
+                      </div>
+                    </div>
+                    <div className="aspect-square bg-muted relative overflow-hidden group border border-border">
+                      <img src="/images/artifact_greek.png" alt="Generated variation 2" className="object-cover w-full h-full opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                         <div className="font-mono text-xs text-white">Variant B - Surface Topology</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex justify-end gap-4">
+                    <Button variant="outline" className="rounded-none uppercase tracking-widest text-xs" data-testid="button-discard">Discard</Button>
+                    <Button className="rounded-none uppercase tracking-widest text-xs" data-testid="button-send-approval">Send to Approval Gate</Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </TabsContent>
+
           <TabsContent value="batch" className="space-y-8 animate-in fade-in-50 duration-500">
             <h2 className="font-serif text-3xl mb-8">Ingestion & Batch Jobs</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
