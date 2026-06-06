@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex gap-8 text-sm uppercase tracking-widest font-sans font-medium">
           <Link href="/archive" className="hover:opacity-60 transition-opacity">Archive</Link>
           <Link href="/analysis" className="hover:opacity-60 transition-opacity">Analysis</Link>
-          <Link href="/motion" className="hover:opacity-60 transition-opacity">Motion Studies</Link>
+          <Link href="/dashboard" className="hover:opacity-60 transition-opacity text-primary">Curation</Link>
         </div>
       </nav>
 
@@ -52,9 +52,11 @@ export default function Home() {
              transition={{ duration: 0.6, delay: 0.8 }}
              className="flex gap-4 justify-center pt-8"
           >
-            <Button size="lg" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary bg-primary text-primary-foreground hover:bg-transparent hover:text-primary transition-all duration-300">
-              Enter Archive
-            </Button>
+            <Link href="/dashboard">
+              <Button size="lg" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary bg-primary text-primary-foreground hover:bg-transparent hover:text-primary transition-all duration-300">
+                Launch Dashboard
+              </Button>
+            </Link>
             <Link href="/analysis">
               <Button size="lg" variant="outline" className="rounded-none uppercase tracking-widest text-xs px-8 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 Start Analysis
