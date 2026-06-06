@@ -1,12 +1,23 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, X, AlertTriangle, Activity, Settings, Database, Image as ImageIcon } from "lucide-react";
+import { ArrowLeft, Check, X, AlertTriangle, Activity, Settings, Database, Image as ImageIcon, Search, Wand2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 
 export default function Dashboard() {
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [hasGenerated, setHasGenerated] = useState(false);
+
+  const handleGenerate = () => {
+    setIsGenerating(true);
+    setTimeout(() => {
+      setIsGenerating(false);
+      setHasGenerated(true);
+    }, 2500);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -32,12 +43,15 @@ export default function Dashboard() {
       {/* Main Content */}
       <main className="max-w-[1600px] mx-auto p-6 md:p-12">
         <Tabs defaultValue="approvals" className="w-full">
-          <TabsList className="grid grid-cols-4 rounded-none h-14 bg-muted mb-12">
+          <TabsList className="grid grid-cols-5 rounded-none h-14 bg-muted mb-12 overflow-x-auto">
             <TabsTrigger value="approvals" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Approval Gates
             </TabsTrigger>
             <TabsTrigger value="activity" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Live Feed
+            </TabsTrigger>
+            <TabsTrigger value="generate" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              On-Demand
             </TabsTrigger>
             <TabsTrigger value="batch" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Batch Jobs
