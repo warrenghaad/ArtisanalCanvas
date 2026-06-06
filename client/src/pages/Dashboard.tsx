@@ -1,10 +1,33 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Check, X, AlertTriangle, Activity, Settings, Database, Image as ImageIcon, Search, Wand2, Loader2 } from "lucide-react";
+import { ArrowLeft, Check, X, AlertTriangle, Activity, Settings, Database, Image as ImageIcon, Search, Wand2, Loader2, LineChart as ChartIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+
+const trajectoryData = [
+  { period: 'Antiquity', structural: 20, ornamental: 80, radial: 10 },
+  { period: 'Classical', structural: 45, ornamental: 50, radial: 30 },
+  { period: 'Hellenistic', structural: 30, ornamental: 90, radial: 45 },
+  { period: 'Byzantine', structural: 60, ornamental: 75, radial: 55 },
+  { period: 'Islamic', structural: 55, ornamental: 95, radial: 85 },
+  { period: 'Romanesque', structural: 85, ornamental: 40, radial: 60 },
+  { period: 'Gothic', structural: 95, ornamental: 30, radial: 50 },
+  { period: 'Modern', structural: 100, ornamental: 10, radial: 20 },
+];
+
+const lineageData = [
+  { era: '3000 BCE', complexity: 15 },
+  { era: '2000 BCE', complexity: 25 },
+  { era: '1000 BCE', complexity: 40 },
+  { era: '0 CE', complexity: 65 },
+  { era: '1000 CE', complexity: 80 },
+  { era: '1500 CE', complexity: 70 },
+  { era: '1900 CE', complexity: 95 },
+  { era: '2000 CE', complexity: 120 },
+];
 
 export default function Dashboard() {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -55,6 +78,9 @@ export default function Dashboard() {
             </TabsTrigger>
             <TabsTrigger value="batch" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Batch Jobs
+            </TabsTrigger>
+            <TabsTrigger value="trajectories" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              Trajectories
             </TabsTrigger>
             <TabsTrigger value="settings" className="rounded-none font-sans uppercase tracking-widest text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
               Parameters
@@ -203,6 +229,74 @@ export default function Dashboard() {
                   <div className="flex justify-between text-sm font-mono"><span className="text-muted-foreground">Storage</span><span>Local / JSON</span></div>
                 </div>
                 <Button variant="outline" className="w-full rounded-none uppercase tracking-widest text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground">Start Scrape</Button>
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="trajectories" className="space-y-8 animate-in fade-in-50 duration-500">
+            <h2 className="font-serif text-3xl mb-8">Lineages & Trajectories</h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Chart 1 */}
+              <div className="border border-border p-6 bg-card/20 hover:border-primary/50 transition-colors">
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h3 className="font-sans text-lg uppercase tracking-widest font-bold">Morphological Dominance</h3>
+                    <p className="font-serif text-muted-foreground text-sm mt-1">Structural vs Ornamental traits over historical periods</p>
+                  </div>
+                  <ChartIcon className="w-5 h-5 text-muted-foreground" />
+                </div>
+                <div className="h-[300px] w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={trajectoryData} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" vertical={false} />
+                      <XAxis dataKey="period" stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
+                      <YAxis stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
+                      <RechartsTooltip 
+                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 12 }}
+                        itemStyle={{ color: 'white' }}
+                      />
+                      <Line type="monotone" dataKey="structural" stroke="#ffffff" strokeWidth={2} dot={{ r: 3, fill: '#000', stroke: '#fff' }} activeDot={{ r: 5 }} />
+                      <Line type="monotone" dataKey="ornamental" stroke="#666666" strokeWidth={2} dot={{ r: 3, fill: '#000', stroke: '#666' }} activeDot={{ r: 5 }} />
+                      <Line type="monotone" dataKey="radial" stroke="#3b82f6" strokeWidth={2} dot={false} activeDot={{ r: 5 }} />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+                <div className="flex gap-4 mt-6 border-t border-border pt-4">
+                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-white border border-border"></span><span className="font-mono text-[10px] uppercase">Structural</span></div>
+                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-[#666666] border border-border"></span><span className="font-mono text-[10px] uppercase">Ornamental</span></div>
+                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-blue-500 border border-border"></span><span className="font-mono text-[10px] uppercase">Radial</span></div>
+                </div>
+              </div>
+
+              {/* Chart 2 */}
+              <div className="border border-border p-6 bg-card/20 hover:border-primary/50 transition-colors">
+                <div className="flex justify-between items-start mb-8">
+                  <div>
+                    <h3 className="font-sans text-lg uppercase tracking-widest font-bold">Geometric Complexity Index</h3>
+                    <p className="font-serif text-muted-foreground text-sm mt-1">Aggregated complexity of curated artifacts</p>
+                  </div>
+                  <Activity className="w-5 h-5 text-muted-foreground" />
+                </div>
+                <div className="h-[300px] w-full">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart data={lineageData} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
+                      <defs>
+                        <linearGradient id="colorComplexity" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="5%" stopColor="#ffffff" stopOpacity={0.3}/>
+                          <stop offset="95%" stopColor="#ffffff" stopOpacity={0}/>
+                        </linearGradient>
+                      </defs>
+                      <CartesianGrid strokeDasharray="1 4" stroke="rgba(255,255,255,0.1)" vertical={true} horizontal={false} />
+                      <XAxis dataKey="era" stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={{stroke: 'rgba(255,255,255,0.2)'}} />
+                      <YAxis stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
+                      <RechartsTooltip 
+                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 12 }}
+                      />
+                      <Area type="step" dataKey="complexity" stroke="#ffffff" strokeWidth={1} fillOpacity={1} fill="url(#colorComplexity)" />
+                    </AreaChart>
+                  </ResponsiveContainer>
+                </div>
               </div>
             </div>
           </TabsContent>
