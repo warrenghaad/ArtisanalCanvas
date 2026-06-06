@@ -233,67 +233,57 @@ export default function Dashboard() {
             </div>
           </TabsContent>
 
-          <TabsContent value="trajectories" className="space-y-8 animate-in fade-in-50 duration-500">
-            <h2 className="font-serif text-3xl mb-8">Lineages & Trajectories</h2>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <TabsContent value="trajectories" className="space-y-16 animate-in fade-in-50 duration-500 pt-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Chart 1 */}
-              <div className="border border-border p-6 bg-card/20 hover:border-primary/50 transition-colors">
-                <div className="flex justify-between items-start mb-8">
+              <div className="group">
+                <div className="flex justify-between items-end mb-12 border-b border-border pb-4">
                   <div>
-                    <h3 className="font-sans text-lg uppercase tracking-widest font-bold">Morphological Dominance</h3>
-                    <p className="font-serif text-muted-foreground text-sm mt-1">Structural vs Ornamental traits over historical periods</p>
+                    <h3 className="font-sans text-sm uppercase tracking-widest text-muted-foreground mb-1">Fig. 1</h3>
+                    <h4 className="font-serif text-2xl">Morphological Dominance</h4>
                   </div>
-                  <ChartIcon className="w-5 h-5 text-muted-foreground" />
                 </div>
-                <div className="h-[300px] w-full">
+                <div className="h-[400px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={trajectoryData} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" vertical={false} />
-                      <XAxis dataKey="period" stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
-                      <YAxis stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
+                      <XAxis dataKey="period" stroke="#666" tick={{fontFamily: 'monospace', fontSize: 10, fill: '#666'}} tickLine={false} axisLine={false} />
+                      <YAxis stroke="#666" tick={{fontFamily: 'monospace', fontSize: 10, fill: '#666'}} tickLine={false} axisLine={false} />
                       <RechartsTooltip 
-                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 12 }}
+                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 10, textTransform: 'uppercase' }}
                         itemStyle={{ color: 'white' }}
+                        cursor={{ stroke: '#333', strokeWidth: 1, strokeDasharray: '4 4' }}
                       />
-                      <Line type="monotone" dataKey="structural" stroke="#ffffff" strokeWidth={2} dot={{ r: 3, fill: '#000', stroke: '#fff' }} activeDot={{ r: 5 }} />
-                      <Line type="monotone" dataKey="ornamental" stroke="#666666" strokeWidth={2} dot={{ r: 3, fill: '#000', stroke: '#666' }} activeDot={{ r: 5 }} />
-                      <Line type="monotone" dataKey="radial" stroke="#3b82f6" strokeWidth={2} dot={false} activeDot={{ r: 5 }} />
+                      <Line type="linear" dataKey="structural" stroke="#ffffff" strokeWidth={1} dot={{ r: 2, fill: '#fff', stroke: 'none' }} activeDot={{ r: 0 }} />
+                      <Line type="linear" dataKey="ornamental" stroke="#666666" strokeWidth={1} dot={{ r: 2, fill: '#666', stroke: 'none' }} activeDot={{ r: 0 }} />
+                      <Line type="linear" dataKey="radial" stroke="#333333" strokeWidth={1} dot={{ r: 2, fill: '#333', stroke: 'none' }} activeDot={{ r: 0 }} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
-                <div className="flex gap-4 mt-6 border-t border-border pt-4">
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-white border border-border"></span><span className="font-mono text-[10px] uppercase">Structural</span></div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-[#666666] border border-border"></span><span className="font-mono text-[10px] uppercase">Ornamental</span></div>
-                  <div className="flex items-center gap-2"><span className="w-3 h-3 bg-blue-500 border border-border"></span><span className="font-mono text-[10px] uppercase">Radial</span></div>
+                <div className="flex gap-8 mt-8 justify-center">
+                  <div className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-white"></span><span className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">Structural</span></div>
+                  <div className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-[#666]"></span><span className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">Ornamental</span></div>
+                  <div className="flex items-center gap-3"><span className="w-1.5 h-1.5 bg-[#333]"></span><span className="font-mono text-[10px] uppercase text-muted-foreground tracking-widest">Radial</span></div>
                 </div>
               </div>
 
               {/* Chart 2 */}
-              <div className="border border-border p-6 bg-card/20 hover:border-primary/50 transition-colors">
-                <div className="flex justify-between items-start mb-8">
+              <div className="group">
+                <div className="flex justify-between items-end mb-12 border-b border-border pb-4">
                   <div>
-                    <h3 className="font-sans text-lg uppercase tracking-widest font-bold">Geometric Complexity Index</h3>
-                    <p className="font-serif text-muted-foreground text-sm mt-1">Aggregated complexity of curated artifacts</p>
+                    <h3 className="font-sans text-sm uppercase tracking-widest text-muted-foreground mb-1">Fig. 2</h3>
+                    <h4 className="font-serif text-2xl">Complexity Index</h4>
                   </div>
-                  <Activity className="w-5 h-5 text-muted-foreground" />
                 </div>
-                <div className="h-[300px] w-full">
+                <div className="h-[400px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={lineageData} margin={{ top: 5, right: 5, bottom: 5, left: -20 }}>
-                      <defs>
-                        <linearGradient id="colorComplexity" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#ffffff" stopOpacity={0.3}/>
-                          <stop offset="95%" stopColor="#ffffff" stopOpacity={0}/>
-                        </linearGradient>
-                      </defs>
-                      <CartesianGrid strokeDasharray="1 4" stroke="rgba(255,255,255,0.1)" vertical={true} horizontal={false} />
-                      <XAxis dataKey="era" stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={{stroke: 'rgba(255,255,255,0.2)'}} />
-                      <YAxis stroke="rgba(255,255,255,0.5)" tick={{fontFamily: 'monospace', fontSize: 10}} tickLine={false} axisLine={false} />
+                      <XAxis dataKey="era" stroke="#666" tick={{fontFamily: 'monospace', fontSize: 10, fill: '#666'}} tickLine={false} axisLine={false} />
+                      <YAxis stroke="#666" tick={{fontFamily: 'monospace', fontSize: 10, fill: '#666'}} tickLine={false} axisLine={false} />
                       <RechartsTooltip 
-                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 12 }}
+                        contentStyle={{ backgroundColor: 'black', border: '1px solid #333', borderRadius: 0, fontFamily: 'monospace', fontSize: 10, textTransform: 'uppercase' }}
+                        cursor={{ stroke: '#333', strokeWidth: 1, strokeDasharray: '4 4' }}
                       />
-                      <Area type="step" dataKey="complexity" stroke="#ffffff" strokeWidth={1} fillOpacity={1} fill="url(#colorComplexity)" />
+                      <Area type="step" dataKey="complexity" stroke="#ffffff" strokeWidth={1} fillOpacity={0.05} fill="#ffffff" />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
