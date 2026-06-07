@@ -1,0 +1,72 @@
+[
+  {
+    "id": "gea.point",
+    "label": "Point",
+    "category": "basic_shape",
+    "dimensional_seed": "0D",
+    "formal_properties": ["dimensionless"],
+    "visual_features": ["center"],
+    "recognition_keywords": ["dot", "center", "origin"],
+    "aliases": ["dot"],
+    "possible_geks": ["gek.center"],
+    "possible_gephrs": ["gephr.sacred_center"],
+    "svg_hint": "<circle cx='0' cy='0' r='1' fill='currentColor' />",
+    "notes": "The fundamental geometric seed."
+  },
+  {
+    "id": "gea.line",
+    "label": "Line",
+    "category": "line_family",
+    "dimensional_seed": "1D",
+    "formal_properties": ["length", "direction"],
+    "visual_features": ["straight", "continuous"],
+    "recognition_keywords": ["stroke", "dash", "segment"],
+    "aliases": ["segment"],
+    "possible_geks": ["gek.distance", "gek.connection"],
+    "possible_gephrs": ["gephr.boundary", "gephr.path"],
+    "svg_hint": "<line x1='0' y1='0' x2='10' y2='0' stroke='currentColor' />",
+    "notes": "The fundamental 1D element."
+  },
+  {
+    "id": "gea.circle",
+    "label": "Circle",
+    "category": "basic_shape",
+    "dimensional_seed": "2D",
+    "formal_properties": ["constant_radius", "rotational_symmetry"],
+    "visual_features": ["round", "closed", "curved"],
+    "recognition_keywords": ["round", "disk", "ring", "loop"],
+    "aliases": ["disk"],
+    "possible_geks": ["gek.center", "gek.radius", "gek.diameter", "gek.circumference"],
+    "possible_gephrs": ["gephr.divine_order", "gephr.solar_justice", "gephr.cosmic_cycle", "gephr.enclosure"],
+    "svg_hint": "<circle cx='0' cy='0' r='10' fill='none' stroke='currentColor' />",
+    "notes": "Perfect rotational symmetry."
+  },
+  {
+    "id": "gea.square",
+    "label": "Square",
+    "category": "polygon",
+    "dimensional_seed": "2D",
+    "formal_properties": ["four_equal_sides", "four_right_angles", "reflection_symmetry"],
+    "visual_features": ["box", "rectilinear", "closed"],
+    "recognition_keywords": ["box", "four_sided", "grid_unit"],
+    "aliases": ["box"],
+    "possible_geks": ["gek.right_angle", "gek.parallelism", "gek.perpendicularity", "gek.tessellation"],
+    "possible_gephrs": ["gephr.stability", "gephr.civic_order", "gephr.earth"],
+    "svg_hint": "<rect x='-5' y='-5' width='10' height='10' fill='none' stroke='currentColor' />",
+    "notes": "The foundational unit of the grid."
+  },
+  {
+    "id": "gea.triangle",
+    "label": "Triangle",
+    "category": "polygon",
+    "dimensional_seed": "2D",
+    "formal_properties": ["three_sides", "three_angles"],
+    "visual_features": ["pointed", "wedge"],
+    "recognition_keywords": ["pyramid", "wedge", "point"],
+    "aliases": ["wedge"],
+    "possible_geks": ["gek.angle", "gek.structural_stability", "gek.proportion"],
+    "possible_gephrs": ["gephr.stability", "gephr.ascent", "gephr.hierarchy"],
+    "svg_hint": "<polygon points='0,-10 10,10 -10,10' fill='none' stroke='currentColor' />",
+    "notes": "The most stable 2D polygon."
+  }
+]

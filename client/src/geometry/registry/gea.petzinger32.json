@@ -1,0 +1,290 @@
+[
+  {
+    "id": "gea.petzinger.aviform",
+    "label": "Aviform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["bird-shape"],
+    "recognition_keywords": ["bird", "wing", "flight"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.claviform",
+    "label": "Claviform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["club-shape"],
+    "recognition_keywords": ["club", "key", "knob"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.cordiform",
+    "label": "Cordiform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["heart-shape"],
+    "recognition_keywords": ["heart", "lobe"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.crosshatch",
+    "label": "Crosshatch",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["grid", "net"],
+    "recognition_keywords": ["intersecting", "grid", "lines"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.cruciform",
+    "label": "Cruciform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["cross"],
+    "recognition_keywords": ["cross", "intersecting", "x", "plus"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.cupule",
+    "label": "Cupule",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["depression", "pit"],
+    "recognition_keywords": ["hole", "dent", "circle"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.dot",
+    "label": "Dot",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["point"],
+    "recognition_keywords": ["spot", "mark", "point"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.finger_fluting",
+    "label": "Finger Fluting",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["macaroni", "meander"],
+    "recognition_keywords": ["lines", "parallel", "wavy", "fingers"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.half_circle",
+    "label": "Half Circle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["semi-circle"],
+    "recognition_keywords": ["arch", "dome", "curve"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.line",
+    "label": "Line",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["stroke", "mark"],
+    "recognition_keywords": ["straight", "dash", "segment"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.open_angle",
+    "label": "Open Angle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["v-shape", "chevron"],
+    "recognition_keywords": ["angle", "corner", "v"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.oval",
+    "label": "Oval",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["ellipse"],
+    "recognition_keywords": ["egg", "round", "stretched"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.penniform",
+    "label": "Penniform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["feather-shape", "branch"],
+    "recognition_keywords": ["feather", "leaf", "tree", "fern"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.pectiform",
+    "label": "Pectiform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["comb-shape"],
+    "recognition_keywords": ["comb", "teeth", "rake"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.quadrangle",
+    "label": "Quadrangle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["rectangle", "square", "four-sided"],
+    "recognition_keywords": ["box", "four", "corners"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.scalariform",
+    "label": "Scalariform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["ladder-shape"],
+    "recognition_keywords": ["ladder", "rungs", "steps"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.serpentiform",
+    "label": "Serpentiform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["snake-shape"],
+    "recognition_keywords": ["snake", "wavy", "s-curve"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.spiral",
+    "label": "Spiral",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["coil", "vortex"],
+    "recognition_keywords": ["swirl", "curl", "circle"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.tectiform",
+    "label": "Tectiform",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["roof-shape", "tent"],
+    "recognition_keywords": ["house", "roof", "hut", "shelter"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.triangle",
+    "label": "Triangle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["three-sided"],
+    "recognition_keywords": ["wedge", "point", "three"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.zigzag",
+    "label": "Zigzag",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["chevron-series"],
+    "recognition_keywords": ["jagged", "lightning", "teeth"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.circle",
+    "label": "Circle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["ring", "loop"],
+    "recognition_keywords": ["round", "hole", "disk"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.rectangle",
+    "label": "Rectangle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["box", "oblong"],
+    "recognition_keywords": ["long", "box", "four"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.grid",
+    "label": "Grid",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["mesh", "lattice"],
+    "recognition_keywords": ["intersecting", "squares", "net"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.parallel_lines",
+    "label": "Parallel Lines",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["stripes", "bars"],
+    "recognition_keywords": ["lines", "side-by-side", "multiple"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.convergent_lines",
+    "label": "Convergent Lines",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["v-shape", "arrow"],
+    "recognition_keywords": ["meeting", "point", "lines"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.nested_angle",
+    "label": "Nested Angle",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["chevron-stack"],
+    "recognition_keywords": ["v", "inside", "stack"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.branch",
+    "label": "Branch",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["tree-shape", "fork"],
+    "recognition_keywords": ["tree", "fork", "split"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.fan",
+    "label": "Fan",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["radial", "sunburst"],
+    "recognition_keywords": ["spread", "lines", "arc"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.hook",
+    "label": "Hook",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["crook", "J-shape"],
+    "recognition_keywords": ["curve", "bend", "j"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.ladder",
+    "label": "Ladder",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["scalariform"],
+    "recognition_keywords": ["steps", "rungs", "climb"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  },
+  {
+    "id": "gea.petzinger.radial_mark",
+    "label": "Radial Mark",
+    "category": "petzinger_sign",
+    "source_family": "petzinger_universal_signs",
+    "aliases": ["starburst", "asterisk"],
+    "recognition_keywords": ["center", "outward", "star"],
+    "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+  }
+]

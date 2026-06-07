@@ -1,0 +1,44 @@
+[
+  {
+    "id": "gem.sun_disk",
+    "label": "Sun Disk",
+    "composition_type": "GEA+GEA",
+    "components": ["gea.circle", "gea.radial_line"],
+    "composition_rule": "radial repetition around center",
+    "formal_properties": ["rotational_symmetry", "center_point", "radial_repetition"],
+    "visual_features": ["rays", "center_disk"],
+    "possible_carriers": ["stele", "cylinder_seal", "relief", "jewelry"],
+    "possible_geks": ["gek.center", "gek.radius", "gek.rotational_symmetry"],
+    "possible_gephrs": ["gephr.solar_justice", "gephr.divine_order", "gephr.kingship"],
+    "historical_examples": ["gecd.mesopotamia.shamash_sun_disk"],
+    "notes": "Fundamental solar symbol."
+  },
+  {
+    "id": "gem.rosette",
+    "label": "Rosette",
+    "composition_type": "GEA+GEA",
+    "components": ["gea.circle", "gea.petal_shape"],
+    "composition_rule": "radial repetition around center",
+    "formal_properties": ["rotational_symmetry", "center_point", "radial_repetition"],
+    "visual_features": ["petals", "flower_shape", "center_dot"],
+    "possible_carriers": ["architectural_frieze", "jewelry", "vessel", "seal"],
+    "possible_geks": ["gek.center", "gek.tessellation", "gek.rotational_symmetry", "gek.proportion"],
+    "possible_gephrs": ["gephr.fertility_bloom", "gephr.divine_visibility", "gephr.abundance"],
+    "historical_examples": [],
+    "notes": "Associated with Ishtar/Inanna."
+  },
+  {
+    "id": "gem.grid",
+    "label": "Grid",
+    "composition_type": "GEA+GEA",
+    "components": ["gea.parallel_lines", "gea.intersecting_lines", "gea.square"],
+    "composition_rule": "orthogonal intersection creating uniform cells",
+    "formal_properties": ["tessellation", "translation_symmetry", "parallelism", "perpendicularity"],
+    "visual_features": ["cells", "mesh", "matrix"],
+    "possible_carriers": ["tablet", "urban_plan", "textile", "architectural_plan"],
+    "possible_geks": ["gek.spatial_partitioning", "gek.modularity", "gek.proportion"],
+    "possible_gephrs": ["gephr.civic_order", "gephr.record_keeping", "gephr.institutional_memory"],
+    "historical_examples": [],
+    "notes": "The foundation of administrative order and urban planning."
+  }
+]

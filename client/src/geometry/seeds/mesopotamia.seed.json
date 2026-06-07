@@ -1,0 +1,28 @@
+[
+  {
+    "id": "gecd.mesopotamia.shamash_sun_disk",
+    "label": "Shamash Sun Disk",
+    "civilization": "Mesopotamia",
+    "period": "Neo-Babylonian",
+    "elements": ["gea.circle", "gea.triangle", "gea.wave"],
+    "molecules": ["gem.sun_disk", "gem.four_point_star"],
+    "carrier": {
+      "type": "tablet",
+      "label": "Tablet of Shamash",
+      "material": "Stone"
+    },
+    "dimension": {
+      "spatial_mode": "relief",
+      "from_dimension": "2D",
+      "to_dimension": "2D"
+    },
+    "registers": {
+      "metaphor": {
+        "gephr_ids": ["gephr.solar_justice", "gephr.divine_order"]
+      },
+      "function": {
+        "gek_ids": ["gek.center", "gek.radius", "gek.rotational_symmetry"]
+      }
+    }
+  }
+]

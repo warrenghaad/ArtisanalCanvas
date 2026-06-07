@@ -1,0 +1,533 @@
+You are Codex working inside my Project EUCLID / Geo-Arts Curriculum repository.
+
+Your task is to create a backend-ready geometric ontology and historical nesting system for:
+
+1. GEA = Geometric Element Atomic
+   - Irreducible geometric primitives.
+   - Includes basic geometry primitives and the 32 Petzinger universal Ice Age signs / insignia.
+   - Examples: point, line, angle, arc, circle, oval, crescent, triangle, square, rectangle, chevron, cross, zigzag, spiral, dot cluster, ladder, tectiform, penniform, claviform, etc.
+
+2. GEM = Geometric Element Molecular
+   - Any recurring compound made from two or more GEAs.
+   - GEM may be:
+     - GEA + GEA
+     - GEA + GEM
+     - GEM + GEM
+   - Examples: rosette, 8-point star, mandala, tessellation, lattice, grid, meander, stepped pyramid profile, sun disk with rays, winged disk, cylinder seal border system.
+
+3. GECD = Geometric Element × Carrier × Dimension
+   - A historically documentable node where a geometric element or molecular compound appears on or inside a material, ritual, architectural, technical, or institutional carrier.
+   - Example:
+     - Element: circle
+     - Carrier: Shamash tablet / sun disk / cylinder seal / potter’s wheel
+     - Dimension: 2D relief, 3D vessel, rotational mechanism, architectural plan
+   - GECD nodes are the historical anchors of the system.
+
+4. GEK = Geometric Element Knowledge / Concept
+   - Functional or mathematical truths revealed through accumulated use of GEAs/GEMs.
+   - Examples: radius, diameter, rotational symmetry, reflection symmetry, tessellation, proportion, extrusion, nesting, tiling, modular repetition.
+
+5. GEpHR = Geometric Element Presentation / Metaphor / Human Register
+   - Meaning-bearing uses of geometry.
+   - Examples: circle as divine justice, crescent as lunar change, rosette as fertility or sacred bloom, triangle as stability, square as order, rectangle as record-keeping, symmetry as balance.
+
+The goal is to instantiate a full registry and inference pipeline that can track how geometric elements begin as primitives, combine into molecular forms, nest into artifacts, become functional inventions, and accumulate into historical geometric intelligence over time.
+
+Important project constraints:
+- Do not rename canonical EUCLID vocabulary.
+- Preserve the distinction between Day A metaphor-register and Day B function-register.
+- Do not collapse metaphor into function or function into metaphor.
+- Treat the same geometric form as readable in multiple registers.
+- Time is the exogenous variable.
+- Geometry is the autoregressive accumulated substrate.
+- GECD nodes are historical evidence anchors.
+- Artifacts and inventions should never be recreated if a record already exists; update, merge, or extend existing records instead.
+
+Build the following system.
+
+PART 1: Create canonical registry files
+
+Create these files:
+
+/src/geometry/registry/gea.basic.json
+/src/geometry/registry/gea.petzinger32.json
+/src/geometry/registry/gem.patterns.json
+/src/geometry/registry/gecd.nodes.schema.json
+/src/geometry/registry/gek.concepts.json
+/src/geometry/registry/gephr.meanings.json
+/src/geometry/registry/nesting.rules.json
+/src/geometry/registry/history.timeline.schema.json
+
+Each registry item must include:
+
+For GEA:
+{
+  "id": "gea.circle",
+  "label": "Circle",
+  "category": "basic_shape | petzinger_sign | mark | line_family | curve_family | polygon | volumetric_seed",
+  "dimensional_seed": "0D | 1D | 2D | 3D",
+  "formal_properties": [],
+  "visual_features": [],
+  "recognition_keywords": [],
+  "aliases": [],
+  "possible_geks": [],
+  "possible_gephrs": [],
+  "svg_hint": "",
+  "notes": ""
+}
+
+For GEM:
+{
+  "id": "gem.rosette",
+  "label": "Rosette",
+  "composition_type": "GEA+GEA | GEA+GEM | GEM+GEM",
+  "components": ["gea.circle", "gea.radial_line"],
+  "composition_rule": "radial repetition around center",
+  "formal_properties": ["rotational_symmetry", "center_point", "radial_repetition"],
+  "visual_features": [],
+  "possible_carriers": [],
+  "possible_geks": [],
+  "possible_gephrs": [],
+  "historical_examples": [],
+  "notes": ""
+}
+
+For GECD:
+{
+  "id": "gecd.mesopotamia.shamash_sun_disk",
+  "label": "Shamash Sun Disk",
+  "civilization": "Mesopotamia",
+  "period": "",
+  "date_range": {
+    "start_bce": null,
+    "end_bce": null,
+    "confidence": "low | medium | high"
+  },
+  "elements": ["gea.circle"],
+  "molecules": ["gem.sun_disk"],
+  "carrier": {
+    "type": "artifact | architecture | inscription | tool | ritual_object | image | invention | urban_plan | textile | seal | tablet | vessel",
+    "label": "",
+    "material": "",
+    "location": "",
+    "source_url": "",
+    "source_citation": ""
+  },
+  "dimension": {
+    "spatial_mode": "mark | surface | relief | volume | rotation | projection | modular_system | mechanism | architectural_space",
+    "from_dimension": "0D | 1D | 2D | 3D",
+    "to_dimension": "1D | 2D | 3D | 4D_temporal_motion"
+  },
+  "registers": {
+    "metaphor": {
+      "gephr_ids": [],
+      "claim": "",
+      "confidence": "low | medium | high"
+    },
+    "function": {
+      "gek_ids": [],
+      "claim": "",
+      "confidence": "low | medium | high"
+    }
+  },
+  "magic_signature": {
+    "M": null,
+    "A": null,
+    "G": null,
+    "I": null,
+    "C": null,
+    "evidence_basis": ""
+  },
+  "nesting": {
+    "contains": [],
+    "contained_by": [],
+    "precedes": [],
+    "enables": [],
+    "derived_from": []
+  },
+  "historical_role": "early_mark | symbolic_artifact | technical_artifact | invention | architectural_system | institutionalized_pattern | mathematical_formalization",
+  "notes": ""
+}
+
+PART 2: Populate the basic GEA registry
+
+Populate gea.basic.json with at least:
+
+- point
+- dot
+- line
+- parallel_lines
+- intersecting_lines
+- angle
+- right_angle
+- arc
+- curve
+- spiral
+- circle
+- oval
+- crescent
+- triangle
+- right_triangle
+- square
+- rectangle
+- diamond
+- rhombus
+- pentagon
+- hexagon
+- octagon
+- star
+- eight_point_star
+- rosette_seed
+- grid_seed
+- wave
+- zigzag
+- chevron
+- cross
+- radial_line
+- concentric_circle
+- cylinder_seed
+- rectangular_prism_seed
+- sphere_seed
+- cone_seed
+- pyramid_seed
+
+PART 3: Populate Petzinger 32 sign registry
+
+Create gea.petzinger32.json with 32 entries using stable IDs.
+
+Use this provisional list unless a better source-controlled list already exists in the repo:
+
+- aviform
+- claviform
+- cordiform
+- crosshatch
+- cruciform
+- cupule
+- dot
+- finger_fluting
+- half_circle
+- line
+- open_angle
+- oval
+- penniform
+- pectiform
+- quadrangle
+- scalariform
+- serpentiform
+- spiral
+- tectiform
+- triangle
+- zigzag
+- circle
+- rectangle
+- grid
+- parallel_lines
+- convergent_lines
+- nested_angle
+- branch
+- fan
+- hook
+- ladder
+- radial_mark
+
+For each Petzinger sign:
+- Add aliases.
+- Add visual recognition keywords.
+- Map it to the closest basic GEA when possible.
+- Add a field:
+  "source_family": "petzinger_universal_signs"
+- Add a field:
+  "certainty_note": "Provisional registry; verify against canonical Petzinger source list."
+
+PART 4: Populate GEM patterns
+
+Create molecular entries for at least:
+
+- gem.sun_disk
+- gem.rayed_circle
+- gem.concentric_circle_system
+- gem.crescent_and_star
+- gem.eight_point_star
+- gem.rosette
+- gem.grid
+- gem.lattice
+- gem.tessellation_triangle
+- gem.tessellation_square
+- gem.tessellation_hexagon
+- gem.meander
+- gem.wave_border
+- gem.zigzag_border
+- gem.stepped_profile
+- gem.ziggurat_profile
+- gem.winged_disk
+- gem.cylinder_seal_register
+- gem.tablet_layout
+- gem.rectangular_text_field
+- gem.architectural_plan_rectilinear
+- gem.radial_symmetry_system
+- gem.reflection_symmetry_pair
+- gem.rotation_mechanism_schema
+- gem.composite_3d_guardian_body
+
+Each GEM must explicitly list components and composition rules.
+
+PART 5: Create nesting rules
+
+Create nesting.rules.json.
+
+Rules must describe how elements combine:
+
+Examples:
+{
+  "id": "rule.radial_repetition",
+  "input": ["gea.radial_line", "gea.circle"],
+  "output_candidates": ["gem.sun_disk", "gem.rayed_circle", "gem.rosette"],
+  "condition": "components repeat around a center point",
+  "adds_geks": ["gek.rotational_symmetry", "gek.center_radius_relation"],
+  "possible_gephrs": ["gephr.solar_power", "gephr.divine_order"]
+}
+
+Include rules for:
+- radial repetition
+- concentric nesting
+- linear repetition
+- bilateral reflection
+- rotational symmetry
+- tiling / tessellation
+- extrusion from 2D to 3D
+- inscription on carrier
+- mechanization through rotation
+- modular stacking
+- enclosure / boundary-making
+- gridding / partitioning
+- compression into symbol
+- expansion into architecture
+
+PART 6: Create GEK concepts
+
+Create gek.concepts.json with entries for:
+
+- center
+- radius
+- diameter
+- circumference
+- equidistance
+- angle
+- right_angle
+- parallelism
+- perpendicularity
+- symmetry
+- reflection_symmetry
+- rotational_symmetry
+- translation
+- tessellation
+- proportion
+- ratio
+- modularity
+- scaling
+- nesting
+- extrusion
+- projection
+- rotation_as_motion
+- volume_from_surface
+- carrier_surface_mapping
+- spatial_partitioning
+- inscription_field
+- register_alignment
+- structural_stability
+- load_distribution
+- calendrical_cycle
+- astronomical_observation
+
+PART 7: Create GEpHR meaning registry
+
+Create gephr.meanings.json with entries for:
+
+- divine_order
+- solar_justice
+- lunar_change
+- fertility_bloom
+- sacred_center
+- boundary
+- authority
+- stability
+- record_keeping
+- heavenly_order
+- protection
+- abundance
+- cosmic_cycle
+- balance
+- reflection
+- transformation
+- ascent
+- underworld_descent
+- kingship
+- institutional_memory
+- ritual_repetition
+- divine_visibility
+- civic_order
+- enclosure
+- threshold_guardianship
+
+Each GEpHR must include:
+- associated GEAs
+- associated GEMs
+- likely civilizations
+- Day A relevance
+- visual affordance explanation
+- caution field: "Do not claim universality without source evidence."
+
+PART 8: Build TypeScript types and utilities
+
+Create:
+
+/src/geometry/types.ts
+/src/geometry/loadRegistry.ts
+/src/geometry/compose.ts
+/src/geometry/detectNesting.ts
+/src/geometry/gecdMerge.ts
+/src/geometry/timeline.ts
+/src/geometry/exportGraph.ts
+
+Functions needed:
+
+loadAllGeometryRegistries()
+- Loads all registry JSON files.
+- Validates them against schemas.
+
+composeGeometry(inputs)
+- Accepts list of GEA/GEM IDs.
+- Returns possible GEM outputs based on nesting rules.
+
+detectNesting(gecdNode)
+- Reads a GECD node.
+- Detects nested GEAs/GEMs from its elements, molecules, carrier, and dimension.
+
+mergeGECD(existingNode, newEvidence)
+- Never duplicates.
+- If same element + carrier + civilization + approximate date, merge evidence.
+- Preserve source history.
+
+buildGeometryTimeline(nodes)
+- Groups GECDs by:
+  - time
+  - civilization
+  - element
+  - molecule
+  - carrier type
+  - dimension shift
+  - GEK emergence
+  - GEpHR emergence
+
+exportGraph(nodes)
+- Output nodes and edges suitable for graph visualization.
+- Edges:
+  - contains
+  - combines_into
+  - appears_on
+  - extrudes_into
+  - mechanizes_into
+  - symbolizes
+  - formalizes_as
+  - enables
+  - precedes
+  - repeats_as
+  - institutionalizes_as
+
+PART 9: Build sample seed nodes
+
+Create /src/geometry/seeds/mesopotamia.seed.json.
+
+Include sample GECDs drawn from the curriculum architecture:
+
+1. Shamash + Circle + sun disk
+2. Sin + Crescent + lunar symbol
+3. Ishtar/Inanna + 8-point star / rosette
+4. Marduk + Square + four corners / ordered space
+5. Nabu + Rectangle + clay tablet / writing field
+6. Enlil + Triangle + stability / sky-earth separation
+7. Nergal + Right Triangle + right-angle / underworld descent or structural angle
+8. Enki + Composite Shapes + invention workshop
+9. Ziggurat + stepped profile + architectural stacking
+10. Cylinder seal + rotational inscription + administrative carrier
+11. Potter’s wheel + circle + rotational mechanism
+12. Lamassu + composite 3D guardian body
+
+Each seed node must clearly distinguish:
+- Day A metaphor reading
+- Day B function/math reading
+- GEAs
+- GEMs
+- carrier
+- dimension shift
+- GEK
+- GEpHR
+- source placeholders
+
+PART 10: Add tests
+
+Create tests for:
+
+- GEA registry loads.
+- Petzinger registry loads.
+- GEM components refer to valid GEAs/GEMs.
+- Nesting rules refer to valid inputs and outputs.
+- composeGeometry(["gea.circle", "gea.radial_line"]) returns sun disk / rosette / rayed circle candidates.
+- composeGeometry(["gea.square", "gea.triangle"]) returns possible house/ziggurat/stepped composite candidates if rules exist.
+- mergeGECD does not duplicate equivalent records.
+- timeline groups nodes by element and carrier.
+- graph export includes proper edges.
+
+PART 11: Add CLI scripts
+
+Add package scripts:
+
+"geometry:validate"
+"geometry:seed"
+"geometry:timeline"
+"geometry:graph"
+
+Create a CLI:
+
+/scripts/geometry-cli.ts
+
+Commands:
+
+validate
+- validates registries
+
+compose --ids gea.circle,gea.radial_line
+- prints possible GEMs
+
+timeline --civilization Mesopotamia
+- prints GECD timeline
+
+graph --out geometry-graph.json
+- exports graph
+
+PART 12: Output requirements
+
+After implementation, print:
+
+1. Files created.
+2. Registry counts:
+   - GEA basic count
+   - GEA Petzinger count
+   - GEM count
+   - GEK count
+   - GEpHR count
+   - GECD seed count
+3. Test results.
+4. Any assumptions made.
+5. Any TODOs requiring human historical verification.
+
+Do not overbuild UI.
+Do not add unrelated buttons, dashboards, analytics, or decorative components.
+This is a registry and ontology substrate first.
+
+Priority:
+1. Correct ontology.
+2. No duplicates.
+3. Clear merge/update behavior.
+4. Historical nesting graph.
+5. Future-ready for Obsidian, Notion, and visual graph export.

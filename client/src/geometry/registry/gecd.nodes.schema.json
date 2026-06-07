@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GECD Node Schema",
+  "type": "object",
+  "properties": {
+    "id": { "type": "string" },
+    "label": { "type": "string" },
+    "civilization": { "type": "string" },
+    "period": { "type": "string" },
+    "date_range": {
+      "type": "object",
+      "properties": {
+        "start_bce": { "type": ["number", "null"] },
+        "end_bce": { "type": ["number", "null"] },
+        "confidence": { "enum": ["low", "medium", "high"] }
+      }
+    },
+    "elements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "molecules": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "carrier": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "label": { "type": "string" },
+        "material": { "type": "string" },
+        "location": { "type": "string" },
+        "source_url": { "type": "string" },
+        "source_citation": { "type": "string" }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "properties": {
+        "spatial_mode": { "type": "string" },
+        "from_dimension": { "type": "string" },
+        "to_dimension": { "type": "string" }
+      }
+    },
+    "registers": {
+      "type": "object",
+      "properties": {
+        "metaphor": {
+          "type": "object",
+          "properties": {
+            "gephr_ids": { "type": "array", "items": { "type": "string" } },
+            "claim": { "type": "string" },
+            "confidence": { "enum": ["low", "medium", "high"] }
+          }
+        },
+        "function": {
+          "type": "object",
+          "properties": {
+            "gek_ids": { "type": "array", "items": { "type": "string" } },
+            "claim": { "type": "string" },
+            "confidence": { "enum": ["low", "medium", "high"] }
+          }
+        }
+      }
+    },
+    "magic_signature": {
+      "type": "object",
+      "properties": {
+        "M": { "type": ["number", "null"] },
+        "A": { "type": ["number", "null"] },
+        "G": { "type": ["number", "null"] },
+        "I": { "type": ["number", "null"] },
+        "C": { "type": ["number", "null"] },
+        "evidence_basis": { "type": "string" }
+      }
+    },
+    "nesting": {
+      "type": "object",
+      "properties": {
+        "contains": { "type": "array", "items": { "type": "string" } },
+        "contained_by": { "type": "array", "items": { "type": "string" } },
+        "precedes": { "type": "array", "items": { "type": "string" } },
+        "enables": { "type": "array", "items": { "type": "string" } },
+        "derived_from": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "historical_role": { "type": "string" },
+    "notes": { "type": "string" }
+  },
+  "required": ["id", "label", "civilization"]
+}

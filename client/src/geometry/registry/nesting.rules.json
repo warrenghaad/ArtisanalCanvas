@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rule.radial_repetition",
+    "input": ["gea.radial_line", "gea.circle"],
+    "output_candidates": ["gem.sun_disk", "gem.rayed_circle", "gem.rosette"],
+    "condition": "components repeat around a center point",
+    "adds_geks": ["gek.rotational_symmetry", "gek.center", "gek.radius"],
+    "possible_gephrs": ["gephr.solar_justice", "gephr.divine_order"]
+  },
+  {
+    "id": "rule.orthogonal_intersection",
+    "input": ["gea.parallel_lines", "gea.intersecting_lines"],
+    "output_candidates": ["gem.grid", "gem.lattice"],
+    "condition": "sets of parallel lines intersect at right angles",
+    "adds_geks": ["gek.parallelism", "gek.perpendicularity", "gek.spatial_partitioning"],
+    "possible_gephrs": ["gephr.civic_order", "gephr.record_keeping"]
+  }
+]
