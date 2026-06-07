@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
-import { CentralPanel } from './panels/CentralPanel';
-import { PrismSelector } from '../../studio/prism/PrismSelector';
+import { PrismCube } from '../../studio/prism/PrismCube';
+import { DockContainer } from '../../studio/dock/DockContainer';
 
 export default function InfiniteCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -96,12 +96,16 @@ export default function InfiniteCanvas() {
         </div>
       </animated.div>
       
-      {/* Side Panel for Tools */}
-      <CentralPanel />
+      {/* 3D Prism Context Selector */}
+      <PrismCube />
       
-      {/* Bottom Left Prism Context Selector */}
-      <PrismSelector />
+      {/* Bottom Dock Tray */}
+      <DockContainer />
       
+      {/* Absolute HUD */}
+      <div className="fixed top-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none">
+        Project EUCLID // Spatial Room
+      </div>
     </div>
   );
 }

@@ -13,6 +13,8 @@ export interface PrismContext {
 export interface StudioState {
   prismContext: PrismContext;
   setPrismContext: (context: Partial<PrismContext>) => void;
+  isDockVisible: boolean;
+  toggleDock: () => void;
 }
 
 export const useStudioStore = create<StudioState>((set) => ({
@@ -25,4 +27,6 @@ export const useStudioStore = create<StudioState>((set) => ({
     set((state) => ({ 
       prismContext: { ...state.prismContext, ...context } 
     })),
+  isDockVisible: true,
+  toggleDock: () => set((state) => ({ isDockVisible: !state.isDockVisible })),
 }));
