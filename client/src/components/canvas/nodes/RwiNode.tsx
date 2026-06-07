@@ -1,8 +1,8 @@
 import { BaseNode } from "./BaseNode";
 
-export function RwiNode({ x, y }: { x: number, y: number }) {
+export function RwiNode({ x, y }: { x?: number, y?: number }) {
   return (
-    <BaseNode x={x} y={y} title="RWI Curator Bot" width={420}>
+    <BaseNode x={x} y={y} title="RWI Curator Bot">
       <div className="space-y-6">
         <div className="bg-muted p-4 font-serif italic text-lg leading-relaxed border-l-2 border-primary">
           "I have scanned the Mesopotamian artifacts. The recurrence of the structural grid implies early bureaucratic control."

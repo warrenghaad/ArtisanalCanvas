@@ -1,9 +1,9 @@
 import { BaseNode } from "./BaseNode";
 import { Search, ChevronRight } from "lucide-react";
 
-export function CodexNode({ x, y }: { x: number, y: number }) {
+export function CodexNode({ x, y }: { x?: number, y?: number }) {
   return (
-    <BaseNode x={x} y={y} title="Codex Ontology" width={450}>
+    <BaseNode x={x} y={y} title="Codex Ontology">
       <div className="space-y-6">
         <p className="leading-relaxed">
           The geometric registry substrate. Connects shapes and concepts across civilizations.

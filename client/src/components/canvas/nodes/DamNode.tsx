@@ -1,9 +1,9 @@
 import { BaseNode } from "./BaseNode";
 import { Box, Play, Download, Settings, Image as ImageIcon } from "lucide-react";
 
-export function DamNode({ x, y }: { x: number, y: number }) {
+export function DamNode({ x, y }: { x?: number, y?: number }) {
   return (
-    <BaseNode x={x} y={y} title="DAM / Curation Engine" width={500}>
+    <BaseNode x={x} y={y} title="DAM / Curation Engine">
       <div className="space-y-6">
         <div className="flex justify-between items-center">
           <div className="font-mono text-xs uppercase tracking-widest text-primary">Curation Status</div>

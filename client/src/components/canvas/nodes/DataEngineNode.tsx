@@ -1,9 +1,9 @@
 import { BaseNode } from "./BaseNode";
 import { GitCommit, Settings2 } from "lucide-react";
 
-export function DataEngineNode({ x, y }: { x: number, y: number }) {
+export function DataEngineNode({ x, y }: { x?: number, y?: number }) {
   return (
-    <BaseNode x={x} y={y} title="Data Engine Pipeline" width={380}>
+    <BaseNode x={x} y={y} title="Data Engine Pipeline">
       <div className="space-y-6">
         <p className="text-sm font-sans text-muted-foreground">
           Node pipeline orchestrator. Maps relationships across the Euclidean grid.

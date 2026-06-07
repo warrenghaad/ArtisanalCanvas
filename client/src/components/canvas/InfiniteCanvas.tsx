@@ -1,12 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
-import { CodexNode } from './nodes/CodexNode';
-import { RwiNode } from './nodes/RwiNode';
-import { DamNode } from './nodes/DamNode';
-import { ThroughlineNode } from './nodes/ThroughlineNode';
-import { AdminNode } from './nodes/AdminNode';
-import { DataEngineNode } from './nodes/DataEngineNode';
+import { CentralPanel } from './panels/CentralPanel';
 
 export default function InfiniteCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,10 +46,11 @@ export default function InfiniteCanvas() {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 w-full h-full bg-background text-foreground overflow-hidden cursor-move"
+      className="fixed inset-0 w-full h-full text-foreground overflow-hidden cursor-move"
       style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0)',
-        backgroundSize: '40px 40px'
+        backgroundColor: '#050A15', // Very dark blue
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0)',
+        backgroundSize: '60px 60px'
       }}
     >
       <animated.div
@@ -68,17 +64,12 @@ export default function InfiniteCanvas() {
         }}
       >
         <div className="absolute inset-0 relative">
-          <ThroughlineNode x={-800} y={-400} />
-          <CodexNode x={-200} y={-600} />
-          <DataEngineNode x={400} y={-500} />
-          <DamNode x={-600} y={100} />
-          <RwiNode x={0} y={200} />
-          <AdminNode x={600} y={150} />
+          <CentralPanel x={100} y={100} />
         </div>
       </animated.div>
       
       {/* Absolute HUD */}
-      <div className="fixed bottom-6 left-6 font-mono text-[10px] text-muted-foreground uppercase tracking-widest pointer-events-none">
+      <div className="fixed bottom-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none">
         Project EUCLID // Canvas Coordinates
       </div>
     </div>
