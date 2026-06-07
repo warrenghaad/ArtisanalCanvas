@@ -8,6 +8,11 @@ This is a full-stack web application for an art instruction academy focused on R
 
 Preferred communication style: Simple, everyday language.
 
+## Reference Links
+
+- Repository: https://github.com/warrenghaad/ArtisanalCanvas
+- Claude session: https://claude.ai/code/session_011CUeHH1zwHM8jC3tNjZyEe
+
 ## System Architecture
 
 ### Frontend Architecture
