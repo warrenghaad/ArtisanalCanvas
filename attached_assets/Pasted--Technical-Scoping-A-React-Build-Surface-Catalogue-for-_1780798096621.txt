@@ -1,0 +1,205 @@
+# Technical Scoping: A React “Build Surface & Catalogue” for an Educational Curriculum Project
+
+## TL;DR
+
+- **Build it in React + Vite with @dnd-kit (legacy `@dnd-kit/core` 6.3.1) for drag-and-drop, TanStack Table v8 + TanStack Virtual for the multi-view database surface, and Supabase (Postgres + Storage) as the backend — but keep an offline-capable client cache (IndexedDB via Zustand `persist`) so the app stays snappy with a growing image library.** This is the fastest path to a working, performant catalogue for a solo builder.
+- **Do NOT use react-beautiful-dnd** — Atlassian deprecated it on npm and archived the GitHub repo on Aug 18, 2025.  The clearest 2026 choice is `@dnd-kit/core` for kanban-style sortable card interactions; `@dnd-kit/react` (“next”) is what the maintainer is investing in but is still pre-1.0 (0.4.0, beta-tagged), and `@atlaskit/pragmatic-drag-and-drop` is the better pick only if you outgrow dnd-kit’s collision-detection costs at thousands of simultaneously-rendered items.
+- **For ~7,665 seed images growing into the tens of thousands, virtualization is non-negotiable.** Use TanStack Virtual (or `react-virtuoso`) with Supabase’s on-the-fly image transformation URLs to serve WebP thumbnails from the edge CDN; pre-cache view state and a small “working set” of selections in IndexedDB so the app is local-first-feeling even with a cloud backend. Estimated solo build time: **6–10 weeks for a usable v1**, plus ongoing curatorial work.
+
+-----
+
+## Key Findings
+
+### 1. Drag-and-drop in 2026: dnd-kit is the default, with two caveats
+
+- `react-beautiful-dnd` is dead. Atlassian’s own deprecation issue says: *“⚠️ We have now deprecated react-beautiful-dnd on npm. You will now get console warnings when installing react-beautiful-dnd from npm.”*  The GitHub repo was archived **Aug 18, 2025** (read-only).  
+- `@hello-pangea/dnd` (the community fork that drop-in replaces react-beautiful-dnd) added React 19 support in **v18.0.0 on Feb 9, 2025**, but has had **no release since v18.0.1 (also Feb 9, 2025)**. Issue activity continues, but the project itself describes its lead as stepping back: *“Alex is no longer personally maintaning this project. The other wonderful maintainers are carrying this project forward.”*  Treat it as a stable stopgap, not a forward investment.
+- `@dnd-kit/core` (legacy) is at **6.3.1**, last published roughly a year ago,   but still pulls **~11.97M weekly downloads**  (npmtrends, retrieved Jun 5 2026) — it is overwhelmingly the de-facto React DnD library for new projects.
+- `@dnd-kit/react` (the “next” rewrite by Claudéric Demers) is the official forward path. In GitHub Discussion #1803 (Sep 22, 2025), the maintainer said: *“Highly recommend following next.dndkit.com as that is where I am investing all development efforts. It is production ready but some APIs may change in the future before the 1.0.0 release.”*  It sits at **0.4.0 (Apr 13, 2026)** with a 0.5.0 beta in May 2026;  npm flags it as “Code Beta.” 
+- `@atlaskit/pragmatic-drag-and-drop` (Atlassian’s replacement, **1.8.1** as of mid-May 2026,  ~896K weekly downloads and trending up ~10% month-over-month per Socket.dev)  is *“a low level drag and drop toolchain”*  built on the native HTML5 API. Its bundle is ~4.7 kB core  and it powers Trello/Jira/Confluence.  The performance gap vs dnd-kit only matters at scales where you’re dragging across hundreds of droppable targets simultaneously. 
+
+**Recommendation for this project:** Start with `@dnd-kit/core` 6.3.1 + `@dnd-kit/sortable`. It handles the three motions you need — sortable card grid, drag card from catalogue into a lesson-day slot, and reorder within a lesson — with the best documentation and the largest answer corpus on Stack Overflow. Plan to migrate to `@dnd-kit/react` when it hits 1.0, but don’t bet a v1 ship date on it.
+
+### 2. Multi-view database UI (“one dataset, many views”) — TanStack Table + a view-state model
+
+The Notion/Airtable pattern is to keep **one canonical dataset** (rows + typed columns) and let *views* declare a projection + sort + filter + grouping + display mode (table, board, gallery, calendar). AppFlowy’s open-source architecture is the cleanest public reference. Its docs explicitly note: *“Currently, AppFlowy has three types of views that share the same database. A single database can have multiple views and these views can be converted to each other.”*  Its web implementation is *“a three-tier architecture: Data Fetching Layer, Data Processing Layer, and Data Rendering Layer”*  with the rendering layer being React.
+
+For the rendering layer, **TanStack Table v8** is the right tool. It is explicitly headless (“logic only, you bring the UI”) and ships sorting, multi-sort, global+column filters, pagination, row grouping, aggregation, row selection, column ordering/visibility/resizing, and is virtualizable.  The TanStack docs even invite this exact use case: *“Feeling tenacious enough to build your own Sheets/Excel/AirTable clone? Be our guest 😉.”*  A reference implementation exists — `s-d-le/tanstack-react-table-mega-example` — wiring TanStack Table to a Notion-style backend with **@dnd-kit for column reordering**. 
+
+The view-state model is small and worth getting right early:
+
+```ts
+type View = {
+  id: string;
+  type: 'table' | 'gallery' | 'board' | 'calendar';
+  filters: FilterClause[];
+  sort: SortClause[];
+  groupBy?: ColumnId;     // board view groups by this; table view shows as section headers
+  visibleColumns: ColumnId[];
+  columnOrder: ColumnId[];
+  // type-specific:
+  galleryCoverField?: ColumnId;
+  boardColumns?: { value: string; order: number }[];
+};
+```
+
+Persist this in the database alongside rows; the UI is then a pure function of `(rows, currentView)`. Switching from table to gallery is just changing the renderer, not refetching.
+
+**Why not AG Grid or Glide Data Grid?** AG Grid Community is heavy (~200 KB+)  and gates pivot/clipboard/master-detail behind Enterprise pricing. Glide Data Grid is excellent for true spreadsheet UIs (canvas-rendered, 50+ columns) but is overkill for a card-centric catalogue. TanStack Table + your own minimal cell components keeps total bundle weight manageable and integrates cleanly with dnd-kit and TanStack Virtual from the same maintainer.
+
+### 3. Image-heavy gallery performance — virtualize, transform on demand, cache thumbnails
+
+For ~7,665 images today and growth into the tens of thousands, you must not render all DOM nodes. Concretely:
+
+- **Use TanStack Virtual** (`useVirtualizer`) for both grid and masonry. Its docs include a masonry example: *“For people in the future, here is an example on how to virtualize a masonry layout: <https://tanstack.com/virtual/latest/docs/framework/react/examples/variable>”*  and its homepage advertises *“limitless virtualization for vertical, horizontal, and grid-style layouts.”*  It’s headless, ~3 kB, and works inside any layout you draw.
+- **Alternative: `react-virtuoso`** if you want batteries-included infinite scrolling with measured-on-the-fly items. Both options keep DOM size to ~30 visible cells regardless of catalogue size.
+- **Thumbnails on demand:** with Supabase, use **Image Transformations** — the URL itself encodes resize/format: `…/storage/v1/render/image/public/<bucket>/<file>?width=400&quality=80`. The transformed image is *“applied at the CDN level and cached”*,  and Supabase auto-converts to WebP for supporting browsers. Pricing is per “origin image” transformed (~$5 per 1,000), not per request, with a Pro-plan quota. Pre-warm a single 400 px thumbnail variant on upload so the first scroll-through doesn’t trigger a transform burst.
+- **Lazy decoding in `<img>`:** `loading="lazy" decoding="async"` on every card; use a 32-byte blurhash placeholder or LQIP if you want progressive feel; set explicit width/height to avoid layout thrash inside virtualized rows.
+- **Avoid `react-beautiful-dnd`-style “physics” libraries here** — they re-measure on drag-over and stutter against virtualized lists. dnd-kit’s `DragOverlay` decouples the dragged element from the DOM position,  which is what you want for a virtualized grid.
+
+### 4. Backend: Supabase vs self-contained local — pick Supabase, design for offline-feel
+
+Your project has three properties that all push toward Supabase:
+
+1. **Images are the bulk of bytes.** Storing 7,665 images (and growing) in IndexedDB or as filesystem blobs becomes painful fast. Supabase Storage gives you S3-compatible object storage + a global CDN (“Serve from over 285 cities globally”)  + RLS-backed access policies in the same Postgres you use for metadata. Per Supabase: *“Storage is more than a file server—it’s a complete media delivery system. With RLS for security, transformations for optimization, and CDN for speed.”* 
+1. **You’re already setting up a Supabase schema** in a parallel workstream. Splitting that effort across two databases (Postgres for cloud, SQLite for local) means writing schema, migrations, and queries twice.
+1. **You want momentum.** As one solo-dev comparison put it: *“Supabase is faster to ship with because auth, storage, and APIs come included. SQLite is faster to set up as a database, but you build everything else yourself. For a weekend hackathon or rapid MVP, Supabase’s bundled services save days of development time.”* 
+
+But there’s a legitimate critique of pure cloud: round-trips kill snappiness when you’re rearranging cards. The answer is **hybrid local-first, not “one or the other”:**
+
+- **Canonical store:** Supabase Postgres for artifacts + tags + views + lessons; Supabase Storage for image originals + transformed thumbnails.
+- **Client cache:** Zustand (~1 KB) with the `persist` middleware backed by IndexedDB (`idb-keyval`) — caches metadata, selection sets in progress, and view state. The Zustand pattern is well-documented; their docs show exactly this with `idb-keyval`.
+- **Optional later:** If round-trip latency becomes the bottleneck, drop in a sync engine. The current 2025–2026 landscape:
+  - **ElectricSQL** + PGlite for full local Postgres-in-the-browser with sync from your cloud Postgres. *“You can use Postgres Sync to sync between a cloud Postgres and an embedded PGlite instance.”*  Best fit because you’re already on Postgres.
+  - **PowerSync** for the most production-hardened bidirectional sync.
+  - **Replicache** is now in maintenance mode: *“After five years … Replicache is now in maintenance mode. We have open-sourced the code and no longer charge for its use. We have shifted focus to Zero.”* 
+  
+  Don’t adopt a sync engine on day one. Add it only if the cloud round-trip starts to hurt UX, because each one adds real conceptual overhead.
+
+**Why not full local-only (SQLite via better-sqlite3 / Electron / PGlite-only):** you lose CDN-accelerated image delivery, lose easy multi-device continuity, and burden the browser with 7,665+ image blobs. PGlite is impressive (*“a complete WASM build of Postgres that’s under 3MB Gzipped”*),  and is excellent as a *cache* of cloud data, but as the sole store for an image-heavy catalogue it just relocates the problem.
+
+### 5. Tagging schema and faceted filtering
+
+Your tags are multi-dimensional and orthogonal (civilization × geometric element × carrier type × …). The canonical Postgres patterns:
+
+- **Schema:** an `artifacts` table with a `tags JSONB` column, plus a normalized `artifact_tags(artifact_id, dimension, value)` table for fast facet aggregation. Add a GIN index on `tags` for containment queries.
+- **Counts per facet value:** PostgreSQL’s `ts_stat` over a tsvector column gives you per-tag document counts very cheaply, and is index-accelerated.  Cybertec’s `pgfaceting` extension uses roaring bitmaps  to count facets on a 100M-document table; per Cybertec’s blog *“Faceting large result sets in PostgreSQL”*: *“even when you are selecting 60M rows you will be able to count up the results in 155ms. And this is not using any parallelism yet, just one core.”*  That’s massive headroom relative to your dataset size.
+- **Client side:** for catalogues under ~50K rows you can ship the whole metadata table to the client and use **ItemsJS** (*“Ultra-fast faceted search: Process and filter data with blazing speed. Simple full-text search. Relevance scoring. Facet filtering and sorting.”*)  — it returns facet buckets with counts in a single call, supports per-facet AND/OR conjunctions,  and re-renders facet UIs on selection. This gives you Algolia-like instant filtering without the SaaS.
+- **UI:** a left rail of collapsible `Facet` sections (one per dimension), each rendering checkbox lists with live counts; selecting any facet immediately filters the grid view. The `@knaw-huc/faceted-search-react` library implements this exact pattern  if you want a head start.
+
+### 6. Selection → export flow
+
+Treat selection as a shopping cart that builds into a structured lesson plan:
+
+- **Selection store:** A separate Zustand store (`useSelectionStore`) holding `{ pickedItems: Item[], lessonSlots: Record<string, Item[]> }`, persisted to IndexedDB. The Zustand cart pattern is canonical and only ~40 lines (see the `useCartStore` examples — `addItem`, `removeItem`, `clearCart`, computed totals via selectors).
+- **Builder UI:** Right-side dock (or modal) showing the lesson template (e.g., “Day 1 / Day 2 / …” or “Warm-up / Activity / Reflection”). Each slot is a `useDroppable`; each catalogue card is `useDraggable`. dnd-kit’s `DragOverlay` makes the dragged card look correct over the virtualized grid.
+- **Export:** A single “Export Lesson” button serializes the selection store to JSON and a generated Markdown file (front-matter + per-slot sections). Hand that to the lesson-production downstream pipeline. Keep the JSON schema stable from day one — it’s the contract between this app and everything downstream.
+
+### 7. Human-in-the-loop image verification — a review queue, not a modal
+
+Because you’ve adopted a “zero trust” stance on automated content–image pairing, treat verification as a first-class data state, not an afterthought. The 2026 HITL playbook from multiple sources converges on:
+
+- **States:** every artifact has a `verification_status ∈ {unverified, approved, rejected, needs_info}` and a `verified_by` + `verified_at`.
+- **Review UI:** a dedicated “Inbox” view (just another view on the same dataset, filtered to `unverified`) that shows the image large alongside its proposed metadata, with **Approve / Reject / Request info** buttons. The Mavik Labs review-queue pattern is a good reference: *“Clear states: pending → approved/rejected → retried, with SLAs at each step.”* 
+- **Keyboard-driven flow:** `J/K` to next/prev, `A` approve, `R` reject — a power-user flow matters when you’re working through 7,665 items.
+- **Audit log:** immutable record of decisions (`verification_events` table), so you can spot-check or undo. This is the “audit log: immutable record of decisions and artifacts”  pattern.
+- **Gallery view filters by default to `approved` only;** unverified items only appear in the review inbox so they can never accidentally end up in a lesson plan.
+
+-----
+
+## Details
+
+### Recommended stack (concrete versions)
+
+|Layer                   |Pick                                                                       |Why                                                                                                           |
+|------------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+|Framework               |**React 18.3** + **Vite** + TypeScript                                     |Mature, fast HMR, no SSR needed for this internal tool                                                        |
+|Routing                 |TanStack Router or React Router 6                                          |Either is fine; TanStack Router gives end-to-end type safety on search params (good for shareable filter URLs)|
+|State                   |**Zustand** + `persist` → IndexedDB                                        |~1 KB, no providers, painless. Separate stores for: catalogue filters/views, selection cart, auth             |
+|Server state            |**TanStack Query**                                                         |Cache + dedup of Supabase calls                                                                               |
+|DnD                     |**`@dnd-kit/core` 6.3.1 + `@dnd-kit/sortable`**                            |Documented, ~11.97M weekly downloads,  supports your three motions                                            |
+|Table/views logic       |**TanStack Table v8**                                                      |Headless logic for sort/filter/group/order across all view types                                              |
+|Virtualization          |**TanStack Virtual** (`@tanstack/react-virtual`)                           |Same author family, same API style; masonry example exists                                                    |
+|Faceting                |**ItemsJS** in the browser (small catalogue) → PostgreSQL `ts_stat` (large)|Algolia-style instant facets without SaaS                                                                     |
+|UI primitives           |**shadcn/ui** + Tailwind                                                   |Copy-paste components, no library lock-in                                                                     |
+|Backend                 |**Supabase** (Postgres + Storage + Auth)                                   |One platform; RLS keeps “draft” lesson plans private; on-the-fly image transforms                             |
+|Image delivery          |Supabase Storage Image Transformations → WebP @ CDN                        |URL-encoded resize; cached at edge                                                                            |
+|Sync (Phase 2, optional)|**ElectricSQL + PGlite**                                                   |Postgres → Postgres sync if/when latency hurts                                                                |
+
+### Phased build sequence (solo developer)
+
+**Phase 0 — Schema & ingest (Week 1)**
+
+- Finalize Supabase tables: `artifacts`, `tags`, `artifact_tags`, `views`, `lessons`, `lesson_items`, `verification_events`.
+- Write a Node script that walks the 7,665 extracted images, uploads originals to a `originals` bucket, requests a 400 px thumbnail variant once (warming the CDN), and inserts a row per image with metadata from your research outputs.
+- Add a museum-API ingest function for incremental adds. The Smithsonian Open Access dataset is enormous and growing: the Smithsonian’s own repo cites ~11M records, while the Harvard Library Innovation Lab mirror (updated Mar 27 2026) reports *“More than 17 million metadata records, constituting over 47 GB, are included.”*  The Met API likewise gives JSON metadata + public-domain image URLs for ~492,000 Open Access works. 
+
+**Phase 1 — Gallery + verification (Weeks 2–3)**
+
+- Build the gallery view with TanStack Virtual masonry, lazy-loading WebP thumbnails from Supabase.
+- Build the verification inbox: keyboard-driven J/K/A/R, writes to `verification_events`, flips `verification_status`.
+- Ship a working verification loop *before* you build views/filters. This is the asset that needs the most human time and should not be blocked by other features.
+
+**Phase 2 — Multi-view database surface (Weeks 4–5)**
+
+- Wire TanStack Table to the same dataset.
+- Implement view switcher (table / gallery / board) — table and gallery share renderers, board is `groupBy` + dnd-kit columns.
+- Filters, sort, column ordering, saved views (`views` table).
+
+**Phase 3 — Selection & lesson builder (Weeks 6–7)**
+
+- Right-rail lesson template editor.
+- dnd-kit drag from gallery → lesson slot.
+- JSON + Markdown export.
+- Zustand selection store persisted to IndexedDB so partial work survives refresh.
+
+**Phase 4 — Polish + ingest pipeline tightening (Weeks 8–10)**
+
+- Faceted filter UI with live counts (ItemsJS).
+- Keyboard shortcuts everywhere.
+- Bulk operations (multi-select tag editing).
+- Optional: ElectricSQL/PGlite cache layer if performance demands it.
+
+**Effort estimate:** A working v1 is achievable in **6–8 weeks** of focused solo development with the recommended stack; **10 weeks** is more realistic if you also need to iterate on the verification UX with non-technical reviewers. The biggest schedule risk is *not* the code — it’s the verification labor on 7,665 items.
+
+### What changes if you go local-only
+
+If you decide momentum is worth more than cloud features:
+
+- **Stack swap:** Electron shell + better-sqlite3 + filesystem image storage + IndexedDB for view state.
+- **Lose:** CDN-accelerated images, easy multi-device, automatic image resizing, easy authenticated sharing.
+- **Gain:** Zero network dependency, no monthly bill, full data ownership.
+- **Migration path:** if you start with Supabase, you can always export Postgres + download Storage bucket to a local Postgres or SQLite later. Going local→cloud later is harder because you’d have to re-upload images and add an auth model that didn’t exist.
+
+For an educational curriculum project that will likely want sharing/collaboration eventually, **start cloud**. The escape hatch is `pg_dump` and a directory of JPEGs.
+
+-----
+
+## Recommendations (decision-ready, with thresholds)
+
+1. **This week:** Lock the data model in Supabase. Tables: `artifacts(id, source, source_id, title, image_path, thumb_path, verification_status, …)`, `tags(id, dimension, value)`, `artifact_tags(artifact_id, tag_id)`, `views(id, name, type, config jsonb)`, `lessons(id, title, structure jsonb)`, `lesson_items(lesson_id, slot, artifact_id, order)`, `verification_events(artifact_id, decision, reviewer, decided_at)`. RLS: owner-only on `lessons`, public-read on approved `artifacts`.
+1. **Bootstrap stack:** `npm create vite@latest -- --template react-ts`; add `@supabase/supabase-js`, `@tanstack/react-query`, `@tanstack/react-table`, `@tanstack/react-virtual`, `@dnd-kit/core`, `@dnd-kit/sortable`, `zustand`, `idb-keyval`, `itemsjs`, `tailwindcss`, `shadcn/ui`. **Do not** install `react-beautiful-dnd`, `react-dnd`, or `@hello-pangea/dnd` — those are dead-ends for a 2026 project.
+1. **Build verification BEFORE views.** It’s the path to actually trusting the data. The review inbox is week-2 work.
+1. **Ship gallery + verification → use it for two days yourself → only then build the lesson builder.** This is the highest-leverage feedback loop for a solo builder.
+1. **Thresholds that should change the plan:**
+- If catalogue grows past **~50K images** and client-side ItemsJS faceting hits >200 ms re-filter latency → move faceting to Postgres `ts_stat` or pgfaceting.
+- If round-trip latency for filter changes consistently exceeds **150 ms** → add ElectricSQL + PGlite as a read cache (Phase 4+).
+- If your monthly Supabase bill exceeds **$50** purely from image-transformation egress → pre-generate two fixed thumbnail variants (400 px, 1200 px) at upload time and stop using on-the-fly transforms; the per-1000-origin-image charge model only wins if you keep variants low.
+- If `@dnd-kit/react` reaches 1.0 stable before you ship → still don’t migrate mid-project; do it as a maintenance task post-launch.
+1. **Open-source references worth reading before you write code:**
+- AppFlowy’s `DatabaseView` component architecture (TypeScript + React + Yjs)
+- `s-d-le/tanstack-react-table-mega-example` (TanStack + dnd-kit column reordering)
+- TanStack Virtual’s masonry example
+- Supabase’s own image-resizing blog post for the CDN cache model
+
+-----
+
+## Caveats
+
+- **`@dnd-kit/core` is in “stable but quiet” mode.** It still works perfectly, but Claudéric’s energy is on `@dnd-kit/react`. If you need a bug fix that doesn’t exist, you’ll likely have to fork or patch. The risk is low for typical kanban/sortable use cases.
+- **`@dnd-kit/react` is officially “production ready” per the maintainer but pre-1.0 and beta-tagged on npm.** APIs may still shift. For a solo dev shipping in 6–10 weeks, the API churn risk outweighs the modernity benefit; for a project shipping in 6 months, re-evaluate.
+- **Supabase Image Transformations are Pro-plan and above** (currently **$25/month per project**,  which bundles Auth ~50K MAU, Storage ~100 GB, Edge Functions ~2M invocations, Realtime ~200 concurrent connections,  plus the Postgres DB with RLS). Plan for the Pro tier from the start.
+- **Smithsonian and Met Open Access images are CC0**, but other museums’ APIs may not be. Build a `license` column into `artifacts` from day one and surface it in the verification UI; do not let a non-CC0 image leak into a published lesson plan.
+- **“Zero trust” on image-content pairing is operationally expensive.** 7,665 manual approvals at ~10 s/item is roughly 21 hours of focused work. Build the inbox keyboard flow well; it will repay the time.
+- **Replicache is in maintenance mode** (per Rocicorp’s own page) — if you read older local-first guides recommending it, prefer ElectricSQL, PowerSync, or Zero instead.
+- **Numbers verified at the time of research (June 2026):** weekly downloads, version numbers, and pricing can shift quickly. Re-check `@dnd-kit/react`, the Supabase Pro plan, and the size of the Smithsonian Open Access mirror before locking the stack.

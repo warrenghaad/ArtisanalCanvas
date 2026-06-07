@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useStudioStore } from '../state/useStudioStore';
+import { useStudioStore, EngineId, FunctionalityId } from '../state/useStudioStore';
 import { ChevronLeft, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
 
 export function PrismCube() {
@@ -16,22 +16,45 @@ export function PrismCube() {
   };
 
   const faces = [
-    { id: 'meta-navigation', label: 'Meta-Nav', transform: 'translateZ(100px)' },
-    { id: 'research-drafting', label: 'Research', transform: 'rotateY(90deg) translateZ(100px)' },
-    { id: 'drafting-building', label: 'Drafting', transform: 'rotateY(180deg) translateZ(100px)' },
-    { id: 'building-production', label: 'Building', transform: 'rotateY(-90deg) translateZ(100px)' },
-    { id: 'production-final', label: 'Production', transform: 'rotateX(90deg) translateZ(100px)' },
-    { id: 'inspect-repair-debug', label: 'Debug', transform: 'rotateX(-90deg) translateZ(100px)' },
+    { id: 'gallery', label: 'Gallery', transform: 'translateZ(100px)' },
+    { id: 'constellation', label: 'Constellation', transform: 'rotateY(90deg) translateZ(100px)' },
+    { id: 'mirror', label: 'Mirror', transform: 'rotateY(180deg) translateZ(100px)' },
+    { id: 'trace', label: 'Trace', transform: 'rotateY(-90deg) translateZ(100px)' },
+    { id: 'lesson-seed', label: 'Lesson Seed', transform: 'rotateX(90deg) translateZ(100px)' },
+    { id: 'atlas', label: 'Atlas', transform: 'rotateX(-90deg) translateZ(100px)' },
   ];
 
-  // Tool sets (engines x functionalities) mapping to the 16 cubies
-  // E.g., RWI Bot, Codex, Assembler, etc.
-  const tools = [
-    "RWI", "Graph", "Asmblr", "Final",
-    "Scope", "Cmpare", "Trnsfm", "Vldate",
-    "Codex", "DAM", "Rules", "Ontol",
-    "Debug", "Trace", "Audit", "Sync"
+  // Map 16 tools to combinations of engine and functionality for the store
+  const tools: { label: string; engine: EngineId; functionality: FunctionalityId }[] = [
+    { label: "RWI", engine: "rwi", functionality: "search-scope" },
+    { label: "Graph", engine: "graphnode", functionality: "inspect-compare" },
+    { label: "Asmblr", engine: "assembler", functionality: "arrange-transform" },
+    { label: "Final", engine: "frontend-final-use", functionality: "preview-validate" },
+    { label: "Scope", engine: "graphnode", functionality: "search-scope" },
+    { label: "Cmpare", engine: "rwi", functionality: "inspect-compare" },
+    { label: "Trnsfm", engine: "assembler", functionality: "arrange-transform" },
+    { label: "Vldate", engine: "frontend-final-use", functionality: "preview-validate" },
+    { label: "Codex", engine: "graphnode", functionality: "inspect-compare" },
+    { label: "DAM", engine: "rwi", functionality: "arrange-transform" },
+    { label: "Rules", engine: "assembler", functionality: "preview-validate" },
+    { label: "Ontol", engine: "graphnode", functionality: "search-scope" },
+    { label: "Debug", engine: "rwi", functionality: "inspect-compare" },
+    { label: "Trace", engine: "graphnode", functionality: "arrange-transform" },
+    { label: "Audit", engine: "assembler", functionality: "preview-validate" },
+    { label: "Sync", engine: "frontend-final-use", functionality: "search-scope" }
   ];
+
+  const handleCubieClick = (workspaceId: string, tool: typeof tools[0]) => {
+    // Update the global state with the new context
+    setPrismContext({
+      workspace: workspaceId as any,
+      engine: tool.engine,
+      functionality: tool.functionality
+    });
+    
+    // Ensure dock is visible when a tool is selected
+    useStudioStore.setState({ isDockVisible: true });
+  };
 
   return (
     <div 
@@ -55,21 +78,34 @@ export function PrismCube() {
             }}
           >
             {/* Face Header */}
-            <div className="text-center font-mono text-[10px] uppercase tracking-widest text-primary bg-primary/10 border-b border-primary/30 py-1.5 shadow-inner">
+            <div className={`text-center font-mono text-[10px] uppercase tracking-widest py-1.5 shadow-inner border-b transition-colors
+              ${prismContext.workspace === face.id 
+                ? 'bg-primary text-primary-foreground border-primary' 
+                : 'bg-primary/10 text-primary border-primary/30'}`}
+            >
               {face.label}
             </div>
             
             {/* 16 Cubies (4x4 Grid) */}
             <div className="grid grid-cols-4 grid-rows-4 gap-[2px] flex-1 p-2 bg-muted/20">
-              {tools.map((tool, i) => (
-                <button 
-                  key={i} 
-                  className="bg-background/80 hover:bg-primary hover:text-primary-foreground border border-border/50 flex items-center justify-center text-[8px] font-mono transition-all duration-200 uppercase"
-                  onClick={() => console.log(`Triggered ${tool} on ${face.label}`)}
-                >
-                  {tool}
-                </button>
-              ))}
+              {tools.map((tool, i) => {
+                const isActive = prismContext.workspace === face.id && 
+                               prismContext.engine === tool.engine && 
+                               prismContext.functionality === tool.functionality;
+                
+                return (
+                  <button 
+                    key={i} 
+                    className={`border flex items-center justify-center text-[8px] font-mono transition-all duration-200 uppercase
+                      ${isActive 
+                        ? 'bg-primary text-primary-foreground border-primary shadow-[0_0_10px_rgba(var(--primary),0.5)]' 
+                        : 'bg-background/80 hover:bg-primary/50 text-foreground border-border/50'}`}
+                    onClick={() => handleCubieClick(face.id, tool)}
+                  >
+                    {tool.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
         ))}

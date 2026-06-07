@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type WorkspaceId = 'meta-navigation' | 'research-drafting' | 'drafting-building' | 'building-production' | 'production-final' | 'inspect-repair-debug';
+export type WorkspaceId = 'gallery' | 'constellation' | 'mirror' | 'trace' | 'lesson-seed' | 'atlas';
 export type EngineId = 'graphnode' | 'rwi' | 'assembler' | 'frontend-final-use';
 export type FunctionalityId = 'search-scope' | 'inspect-compare' | 'arrange-transform' | 'preview-validate';
 
@@ -19,7 +19,7 @@ export interface StudioState {
 
 export const useStudioStore = create<StudioState>((set) => ({
   prismContext: {
-    workspace: 'research-drafting',
+    workspace: 'gallery',
     engine: 'graphnode',
     functionality: 'inspect-compare'
   },
@@ -27,6 +27,6 @@ export const useStudioStore = create<StudioState>((set) => ({
     set((state) => ({ 
       prismContext: { ...state.prismContext, ...context } 
     })),
-  isDockVisible: true,
+  isDockVisible: false,
   toggleDock: () => set((state) => ({ isDockVisible: !state.isDockVisible })),
 }));
