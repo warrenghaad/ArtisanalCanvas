@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
 import { CentralPanel } from './panels/CentralPanel';
+import { PrismSelector } from '../../studio/prism/PrismSelector';
 
 export default function InfiniteCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -98,10 +99,9 @@ export default function InfiniteCanvas() {
       {/* Side Panel for Tools */}
       <CentralPanel />
       
-      {/* Absolute HUD */}
-      <div className="fixed bottom-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none">
-        Project EUCLID // Canvas Coordinates
-      </div>
+      {/* Bottom Left Prism Context Selector */}
+      <PrismSelector />
+      
     </div>
   );
 }
