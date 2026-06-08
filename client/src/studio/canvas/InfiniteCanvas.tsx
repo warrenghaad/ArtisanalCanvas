@@ -1,11 +1,14 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
 import { PrismCube } from '../../studio/prism/PrismCube';
 import { DockContainer } from '../../studio/dock/DockContainer';
+import InteractiveGeometryResearchEngine from './InteractiveGeometryResearchEngine';
+import { useStudioStore } from '../../studio/state/useStudioStore';
 
 export default function InfiniteCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { prismContext } = useStudioStore();
   
   const [{ x, y, scale }, api] = useSpring(() => ({
     x: 0,
@@ -54,6 +57,9 @@ export default function InfiniteCanvas() {
         backgroundSize: '60px 60px'
       }}
     >
+      {/* 3D Engine is placed underneath the UI */}
+      <InteractiveGeometryResearchEngine context={prismContext} />
+
       <animated.div
         style={{
           x,
@@ -61,34 +67,13 @@ export default function InfiniteCanvas() {
           scale,
           transformOrigin: '0 0',
           width: '100%',
-          height: '100%'
+          height: '100%',
+          pointerEvents: 'none' // Allow clicks to pass through to the 3D canvas
         }}
       >
         <div className="absolute inset-0 relative flex items-center justify-center pointer-events-none">
-          {/* Main geometry visualization goes here */}
           <div className="relative w-full h-full max-w-4xl max-h-[800px] flex items-center justify-center opacity-80">
-            {/* Geometric forms */}
-            <svg width="600" height="600" viewBox="0 0 600 600" className="absolute">
-              <circle cx="300" cy="300" r="250" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 8" className="text-primary/30" />
-              <rect x="150" y="150" width="300" height="300" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary/40 animate-[spin_60s_linear_infinite]" />
-              <polygon points="300,50 550,483 50,483" fill="none" stroke="currentColor" strokeWidth="1" className="text-primary/50 animate-[spin_40s_linear_infinite_reverse]" style={{ transformOrigin: '300px 338px' }} />
-              
-              {/* Connecting lines */}
-              <line x1="300" y1="50" x2="300" y2="550" stroke="currentColor" strokeWidth="1" className="text-primary/20" />
-              <line x1="50" y1="300" x2="550" y2="300" stroke="currentColor" strokeWidth="1" className="text-primary/20" />
-              
-              {/* Center point */}
-              <circle cx="300" cy="300" r="4" fill="currentColor" className="text-primary" />
-              
-              {/* Data points */}
-              <circle cx="150" cy="150" r="3" fill="currentColor" className="text-primary/80" />
-              <circle cx="450" cy="150" r="3" fill="currentColor" className="text-primary/80" />
-              <circle cx="150" cy="450" r="3" fill="currentColor" className="text-primary/80" />
-              <circle cx="450" cy="450" r="3" fill="currentColor" className="text-primary/80" />
-              <circle cx="300" cy="50" r="3" fill="currentColor" className="text-primary/80" />
-            </svg>
-            
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 mt-12 mix-blend-screen">
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 mt-12 mix-blend-screen pointer-events-none">
               <h1 className="text-7xl font-display font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">MORPHOLOGY</h1>
               <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary/80">Monumental Brutalism & Geometric Forms</p>
             </div>
@@ -97,13 +82,14 @@ export default function InfiniteCanvas() {
       </animated.div>
       
       {/* 3D Prism Context Selector */}
-      <PrismCube />
-      
-      {/* Bottom Dock Tray */}
-      <DockContainer />
+      <div className="pointer-events-none absolute inset-0 z-50">
+        <PrismCube />
+        {/* Bottom Dock Tray */}
+        <DockContainer />
+      </div>
       
       {/* Absolute HUD */}
-      <div className="fixed top-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none">
+      <div className="fixed top-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none z-50">
         Project EUCLID // Spatial Room
       </div>
     </div>

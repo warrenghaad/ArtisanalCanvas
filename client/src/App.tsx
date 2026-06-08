@@ -3,7 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import InfiniteCanvas from "@/components/canvas/InfiniteCanvas";
+import InfiniteCanvas from "@/studio/canvas/InfiniteCanvas";
 import Dashboard from "@/pages/Dashboard";
 import NotFound from "@/pages/not-found";
 

@@ -16,12 +16,12 @@ export function PrismCube() {
   };
 
   const faces = [
-    { id: 'gallery', label: 'Gallery', transform: 'translateZ(100px)' },
-    { id: 'constellation', label: 'Constellation', transform: 'rotateY(90deg) translateZ(100px)' },
-    { id: 'mirror', label: 'Mirror', transform: 'rotateY(180deg) translateZ(100px)' },
-    { id: 'trace', label: 'Trace', transform: 'rotateY(-90deg) translateZ(100px)' },
-    { id: 'lesson-seed', label: 'Lesson Seed', transform: 'rotateX(90deg) translateZ(100px)' },
-    { id: 'atlas', label: 'Atlas', transform: 'rotateX(-90deg) translateZ(100px)' },
+    { id: 'meta-navigation', label: 'Meta-Nav', transform: 'translateZ(100px)' },
+    { id: 'research-drafting', label: 'Research', transform: 'rotateY(90deg) translateZ(100px)' },
+    { id: 'drafting-building', label: 'Drafting', transform: 'rotateY(180deg) translateZ(100px)' },
+    { id: 'building-production', label: 'Building', transform: 'rotateY(-90deg) translateZ(100px)' },
+    { id: 'production-final', label: 'Production', transform: 'rotateX(90deg) translateZ(100px)' },
+    { id: 'inspect-repair-debug', label: 'Debug', transform: 'rotateX(-90deg) translateZ(100px)' },
   ];
 
   // Map 16 tools to combinations of engine and functionality for the store
