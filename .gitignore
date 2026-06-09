@@ -4,3 +4,11 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Primitive Cell Studio: generated binaries / manifests stay local by default.
+# (Folder structure is preserved via assets/**/.gitkeep)
+assets/generated/*
+!assets/generated/.gitkeep
+assets/manifests/*
+!assets/manifests/.gitkeep
+.env
