@@ -2,7 +2,6 @@ import { useRef, useEffect } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { useGesture } from '@use-gesture/react';
 import { PrismCube } from '../../studio/prism/PrismCube';
-import { DockContainer } from '../../studio/dock/DockContainer';
 import InteractiveGeometryResearchEngine from './InteractiveGeometryResearchEngine';
 import { useStudioStore } from '../../studio/state/useStudioStore';
 
@@ -50,11 +49,12 @@ export default function InfiniteCanvas() {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 w-full h-full text-foreground overflow-hidden cursor-move"
+      className="fixed inset-0 w-full h-full overflow-hidden cursor-move dark"
       style={{
         backgroundColor: '#050A15', // Very dark blue
         backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0)',
-        backgroundSize: '60px 60px'
+        backgroundSize: '60px 60px',
+        color: 'white'
       }}
     >
       {/* 3D Engine is placed underneath the UI */}
@@ -71,25 +71,15 @@ export default function InfiniteCanvas() {
           pointerEvents: 'none' // Allow clicks to pass through to the 3D canvas
         }}
       >
-        <div className="absolute inset-0 relative flex items-center justify-center pointer-events-none">
-          <div className="relative w-full h-full max-w-4xl max-h-[800px] flex items-center justify-center opacity-80">
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 mt-12 mix-blend-screen pointer-events-none">
-              <h1 className="text-7xl font-display font-light tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">MORPHOLOGY</h1>
-              <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary/80">Monumental Brutalism & Geometric Forms</p>
-            </div>
-          </div>
-        </div>
       </animated.div>
       
       {/* 3D Prism Context Selector */}
       <div className="pointer-events-none absolute inset-0 z-50">
         <PrismCube />
-        {/* Bottom Dock Tray */}
-        <DockContainer />
       </div>
       
       {/* Absolute HUD */}
-      <div className="fixed top-6 left-6 font-mono text-[10px] text-muted-foreground/50 uppercase tracking-widest pointer-events-none z-50">
+      <div className="fixed top-6 left-6 font-mono text-[10px] text-white/50 uppercase tracking-widest pointer-events-none z-50">
         Project EUCLID // Spatial Room
       </div>
     </div>
