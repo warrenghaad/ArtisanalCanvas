@@ -1,0 +1,375 @@
+# Line All Richie Project Space Instruction Set and Learning Progression Cube
+
+## Executive summary
+
+The most reliable way to make the Line All Richie swarm consistent is to treat it as a small stateful operating system, not a loose set of prompts. Concretely, that means one agent owns session memory, one agent routes the next move, every substantive response resumes from prior state when available, and every session closes with a durable **Running Project Sum** that is ready to append to a ledger. That design aligns with cognitive apprenticeship’s core instructional methods—modeling, coaching, scaffolding and fading, articulation, reflection, and exploration—and with the engineering principle that growing systems need intentional, non-duplicated state rather than multiple competing summaries. citeturn7view1turn7view3turn7view4turn7view5turn9view0turn9view2turn6view6
+
+The second non-negotiable is a **visual contract**: every cube point and every spatial claim should produce at least one repo-safe visual artifact. GitHub already renders Mermaid in Markdown and supports rendered Markdown, SVG, PNG/JPG, PDF, CSV/TSV, and Mermaid files in repositories; SVG is text-based and scales cleanly; Canvas is useful for scripted 2D drawing and animation; React Three Fiber is a React renderer for Three.js that makes 3D scenes reusable and stateful; Storybook captures rendered UI states and documentation; and GitHub Pages can publish the interactive layer directly from repository files. citeturn6view1turn12view0turn6view2turn10view0turn6view0turn18view0turn18view2
+
+For the “Christmas tree” cube metaphor, the strongest design is a three-axis coordinate system—**form scope**, **spatial transform**, and **expressive load**—stacked into five tiers: **trunk**, **branches**, **ornaments**, **garlands**, and **star**. Early tiers should emphasize worked examples, controlled drills, and global-before-local conceptual maps; later tiers should increase diversity, invite exploration, and add self-generated variants, because those patterns are strongly associated with earlier skill acquisition, deliberate improvement, and generation-based learning benefits. citeturn6view8turn19view0turn9view0turn9view1turn9view2turn19view1turn19view2
+
+The recommended implementation path is hybrid. In the short term, create `PROJECT_INSTRUCTIONS.md`, `SESSION_LEDGER.md`, `cube-points-index.md`, and a starter `emotion-texture-atlas.md`, then seed the repo with a small, high-quality set of static visuals and reusable Markdown templates. In the medium term, add Vite, React, Storybook, and static SVG assets. In the longer term, add a selective React Three Fiber layer only for the cube points that genuinely require spatial rotation or camera-based demonstration. citeturn6view7turn18view0turn18view1turn18view2turn6view0
+
+## Research basis
+
+This report treats your exact production stack as intentionally open, and it grounds recommendations in official GitHub, MDN, React, Three.js, React Three Fiber, Storybook, GitHub Pages, and Vite documentation, plus established learning-science sources from ERIC and peer-reviewed meta-analyses. The pedagogical core is especially relevant here: cognitive apprenticeship provides a model for visible expert process and staged independence; worked examples are especially useful in early skill acquisition; deliberate practice frames improvement as targeted, effortful iteration; and generation research supports the later addition of abductive or self-generated variants once the learner has a stable base model. citeturn11view0turn6view1turn12view0turn6view2turn10view0turn6view0turn18view0turn18view2turn6view9turn6view8turn19view0turn19view1turn19view2
+
+That research mix matters because your project is not just “a drawing tutor.” It is a **durable studio system**. Durable studio systems need two kinds of rigor at once: pedagogical sequencing and software operational discipline. The learner must encounter tasks in an order that moves from global structure to local detail and from controlled examples to exploration, while the software side must preserve state, avoid contradictory summaries, expose reusable visual components, and emit GitHub-ready artifacts rather than diffuse prose. citeturn9view0turn9view1turn9view2turn6view6turn18view0turn18view1
+
+## Session continuity contract
+
+A consistent project space should begin every substantial response by reconstructing the **current working state**: what happened last session, what remains unfinished, what the user most likely wants now, and what should be updated in the ledger. That behavior is not just convenient; it operationalizes reflection and exploration from cognitive apprenticeship, because the learner is explicitly comparing present work to prior work and then choosing whether to continue, branch, critique, export, or build. The memory-writing side should be owned by a single role so that summaries do not diverge. citeturn7view4turn7view5turn9view2turn6view6
+
+| Agent | Start behavior | Main responsibility | End artifact | Failure to avoid |
+|---|---|---|---|---|
+| Studio Director | Read latest session state and identify mode | Route the response as Continue, Branch, Critique, Export, or Build | One explicit next move | Restarting from generic basics |
+| Session Archivist | Read last session summary and unfinished exports | Produce a concise state reconstruction | Updated Running Project Sum block | Conflicting or duplicate memory |
+| Visualizer | Inspect whether the concept is spatial or structural | Supply at least one visual for each cube point or spatial claim | Repo-safe visual asset or visual spec | Naked spatial explanation |
+| Form and Spatial Coach | Determine primitive, plane, and perspective demands | Teach structure, rotation, proportion, and viewpoint | Drill plus correction target | Decoration before volume |
+| Expression and Texture Coach | Determine emotional or social reading | Translate affect into edge, weight, rhythm, spacing, and texture | Texture map or expression drill | Emotion labels without visual mechanism |
+| Field Sketch Coach | Determine public-place execution constraints | Turn lessons into discreet time-boxed field drills | 30 sec, 2 min, 5 min, or 15 min exercise | Exercises too slow for field use |
+| Critique Agent | Read drawing objective and evidence | Use a stable critique rubric | Corrective feedback with a preserve clause | Generic praise or generic negativity |
+| GitHub Librarian | Check candidate exports and file fit | Emit canonical Markdown and file-ready templates | Chosen export artifact | Repo-unfriendly formatting |
+
+The table above operationalizes cognitive apprenticeship’s staged methods and applies a single-writer state rule to memory, which is consistent with React’s advice to structure state intentionally and avoid redundant copies as applications grow. citeturn7view1turn7view3turn7view4turn7view5turn9view0turn9view2turn6view6
+
+A minimal enforceable project-space instruction block can therefore be written like this:
+
+```md
+At the start of every substantial response:
+
+1. Consult available prior chats, the latest Running Project Sum, and any unfinished GitHub candidate exports.
+2. Reconstruct the last active thread in 2–4 lines.
+3. Determine the current mode:
+   - Continue
+   - Branch
+   - Critique
+   - Export
+   - Build visual/component
+4. Follow the user's stated desire if clear; otherwise infer the most likely mode from the current thread.
+5. Do not restart from generic drawing basics unless the resumed state truly requires it.
+
+During every substantial response:
+
+1. Include at least one visual if the concept is spatial, structural, expressive, or part of the Learning Progression Cube.
+2. Give one concrete execution task or drill.
+3. If a reusable visual primitive is implied, mark it as an Animation Studio Candidate.
+4. If a file is implied, name the candidate GitHub export.
+
+At the end of every substantial response:
+
+1. Output a Running Project Sum using the required structure.
+2. Treat that summary as the canonical ledger delta ready to append to SESSION_LEDGER.md.
+3. If the user says Export this for GitHub, emit a clean Markdown artifact instead of a conversational answer.
+```
+
+The output contract should normalize around a small number of predictable shapes. A teaching response should usually be **Concept → Visual → How to Draw It → Drill → Animation Studio Candidate → Running Project Sum**. A critique response should usually be **What Reads First → Strongest Emotional Signal → Clear Structure → Structural Collapse → Line/Texture Success → One Specific Correction → One Specific Drill → One Thing to Preserve → Running Project Sum**. An export response should usually be **Title → Purpose → Context → Core Concept → Rules → Examples → Visual Requirements → Exercises or Applications → Open Questions → Suggested Filename → Running Project Sum**. That format keeps the swarm execution-focused and maps well to deliberate practice, worked examples, and reflective comparison. citeturn19view0turn6view8turn7view4
+
+## Visual first contract
+
+The visual rule should be binary and strict: **if the claim is about orientation, rotation, planes, perspective, line direction, line weight, negative space, social distance, or composition, the answer is incomplete until a visual is present**. A good operational standard is that every cube point gets two visual layers whenever possible: one **repo-safe static layer** and one **optional interactive layer**. Static layers survive chat, Markdown, diffs, and archival. Interactive layers matter when the same cube point will be reused across many lessons. citeturn6view1turn12view0turn6view2turn10view0turn6view0turn18view0turn18view2
+
+| Format | Best use | Repo-safe | Interactive layer | Example asset |
+|---|---|---|---|---|
+| ASCII | Fast explanations inside chat and Markdown | Yes | No | Cube turn, gaze vector, table plane |
+| Mermaid | Flows, timelines, dependency maps | Yes | Limited | Rollout plan, swarm routing |
+| Static SVG | Crisp instructional diagrams | Yes | No in raw repo view | Face planes, head box, grid overlays |
+| Canvas output | Stroke demos, texture motion, line rhythm | PNG/GIF yes; live canvas via site | Yes | Pressure drill sequences |
+| React Three Fiber | True spatial rotation and reusable 3D components | Via Storybook or Pages | Yes | Rotating cube, rotating head box |
+| Storyboard sheet | Lesson sequencing and shot planning | Yes as SVG/PNG/PDF | No | Animation spec for drill sequence |
+| Image generation prompt | Rapid ideation and mood visualization | Prompt text yes | External render step | Emotion scene prompt bank |
+
+This format taxonomy follows the actual affordances of the tools. GitHub can render Mermaid directly in Markdown and can render many non-code files including SVG, PNG/JPG, PDFs, CSV/TSV, and Mermaid files; SVG is text-based, searchable, and scalable; Canvas is designed for JavaScript-driven graphics and animation; React Three Fiber expresses Three.js scenes as reusable React components that respond to state; Storybook treats stories as rendered component states and can auto-document them; and GitHub Pages can host the resulting HTML/CSS/JavaScript layer from the repository. One important constraint is that GitHub’s repo view does **not** run inline scripting or animation inside SVG, so interactive SVG behavior should live in Storybook or GitHub Pages, with a static SVG fallback committed to the repo. citeturn6view1turn12view0turn6view2turn10view0turn6view0turn18view0turn18view2
+
+The three example cube-point visuals below illustrate the standard you want.
+
+**Cube point example one**
+
+```text
+CP-221  Head turn as rotating box
+
+Front              Three-quarter              Profile
++---------+        +---------+----+          +----+
+|    |    |        |   /     |   /|          |    |
+|    |    |  --->  |  /      |  / |  --->    |    |
+|____|____|        |_/_______|_/  |          |____|
+                   |         |/   |
+                   +---------+----+
+
+Meaning:
+The center line behaves more like an edge as the head turns.
+Drill:
+Draw 5 yaw steps from front to profile using only box logic.
+```
+
+**Cube point example two**
+
+```text
+CP-231  Cup as cylinder on table plane
+
+horizon -------------------------------
+
+      \             |             /
+       \            |            /
+        \           |           /
+         \          |          /
+          +---------+---------+
+         /         ( )        /
+        /          | |       /
+       /___________|_|______/
+
+Meaning:
+The cup sits on a perspective plane; the ellipse changes with eye level.
+Drill:
+Draw the same cup at 3 eye levels on the same table grid.
+```
+
+**Cube point example three**
+
+```text
+CP-454  Broken connection in a public scene
+
+   gaze --->                 <--- gaze
+
+    o                              o
+   /|\                            /|\
+   / \                            / \
+
+ [cup]    x x x  negative gap    [phone]
+
+Meaning:
+The emotional narrative is carried by broken gaze, object barriers,
+and empty space between figures.
+Drill:
+Sketch 3 versions of the same pair: neutral, connected, broken.
+```
+
+Those visuals are intentionally simple because the fallback standard should always survive plain Markdown. Then, if a point becomes central to the library, it can graduate into an SVG, Storybook story, or React Three Fiber component. citeturn11view0turn12view0turn18view0turn18view2
+
+If you want an image-generation layer for ideation, a clean prompt pattern is useful:
+
+```text
+Minimal monochrome instructional diagram, English labels, clean white background,
+show a human head simplified as a rotating cube with front, 3/4, and profile states,
+include center line, brow line, eye line, and jaw block, educational studio style.
+```
+
+```text
+Instructional drawing sheet, café table in perspective, one cup cylinder repeated at
+three eye levels, black ink lines only, clear vanishing directions, margin notes in English,
+designed for an intermediate drawing curriculum.
+```
+
+```text
+Observational composition study, two seated figures in public space with emotional distance,
+objects placed as barriers, broken eye contact, negative space emphasized, line drawing only,
+mood of disconnection without caricature, educational poster style.
+```
+
+## Learning progression cube
+
+The most execution-ready cube is a coordinate system with three axes. **Axis X** is **form scope**. **Axis Y** is **spatial transform**. **Axis Z** is **expressive load**. Each cube point can therefore be indexed as `CP-XYZ`, where a coordinate expresses both prerequisite difficulty and output type. This makes it possible to track lessons, drills, visuals, and component specs with one shared naming system. The sequencing logic should follow cognitive apprenticeship’s “increasing complexity,” “increasing diversity,” and “global before local” principles, while early points use worked examples and later points introduce deliberate practice and self-generated variants. citeturn9view0turn9view1turn9view2turn6view8turn19view0turn19view1turn19view2
+
+```text
+                 z  expressive load
+                 ^
+                 |
+            +---------+
+           /|        /|
+          +---------+ |
+          | |       | |
+x form -> | +-------|-+
+scope     |/        |/
+          +---------+
+               \
+                \ y spatial transform
+```
+
+A practical axis definition is:
+
+| Axis | Scale |
+|---|---|
+| Form scope | 1 mark, 2 primitive, 3 compound form, 4 subject, 5 scene |
+| Spatial transform | 1 frontal, 2 turned, 3 perspective, 4 occlusion, 5 multi-object or multi-figure network |
+| Expressive load | 1 neutral, 2 affect cue, 3 texture rhetoric, 4 relation or narrative, 5 authorial distortion |
+
+The tier system can then sit on top of the cube as the “Christmas tree” metaphor.
+
+| Tier | Formal goal | Typical cube range | Default deliverables | Rule bending permission |
+|---|---|---|---|---|
+| Trunk | Stable marks, primitives, axes, and line control | Low X, low Y, low Z | ASCII/SVG primitives, pressure drills, simple worked examples | None beyond minor line variation |
+| Branches | Rotation and combination of forms | Mid X, mid Y, low Z | Rotating boxes, cylinders, head blocks, table grids | Bend only one spatial variable at a time |
+| Ornaments | Expression and texture overlays | Mid X, mid Y, mid Z | Facial-plane overlays, edge maps, emotion-texture studies | Bend texture while preserving structure |
+| Garlands | Social relation, scene assembly, public observation | High X, high Y, mid/high Z | Relationship maps, object barriers, scene thumbnails | Bend composition while preserving readability |
+| Star | Personal language, stylization, abductive play | Any X/Y with high Z | Variant boards, deliberate distortions, authored studies | Full bend allowed after baseline control version |
+
+This tier logic is not arbitrary. “Global before local” supports giving the learner a conceptual map before small details; increasing complexity and increasing diversity justify widening the task range over time; worked examples are especially appropriate in the early stages of skill acquisition; and generation research supports later stages in which the learner creates variants rather than only studying or copying fixed demonstrations. citeturn9view2turn9view0turn9view1turn6view8turn19view1turn19view2
+
+The best role for **ornaments** is as overlays, not as alternate curricula. An ornament can add emotional tone, medium choice, time pressure, public-setting constraint, or distortion rule to any cube point without changing the underlying coordinate. For example, `CP-231` can stay “cup as cylinder on table plane,” while the ornament changes it into **vulnerability**, **flattery**, **antipathy**, or **broken connection** through line rhythm, density, interruption, or object placement. That preserves curricular coherence while still allowing personal voice. citeturn9view1turn19view1turn19view2
+
+For abductive or generative play, the most useful protocol is **Control → Bend → Recover**. First the learner draws the canonical version. Then the learner intentionally bends one rule—perhaps line continuity, proportion, perspective consistency, or edge hardness—to test a hypothesis about emotional effect. Then the learner restores one invariant, such as silhouette readability or plane logic, so the drawing does not collapse into vagueness. That protocol fits both deliberate practice and generation research because it forces explicit comparison, purposeful variation, and reflection on why the variant is better or worse. citeturn19view0turn7view4turn7view5turn19view1turn19view2
+
+## Execution map and GitHub artifacts
+
+To make the cube executable, each important point should map to four things at once: a static visual, a drill, a reusable component or primitive, and a GitHub export target. That is the bridge between conversation and build system. Storybook’s model is helpful here because a **story** is a rendered component state and can be documented, tested, and shared in isolation; React and React Three Fiber are helpful because they let those component states be controlled explicitly through props and state. citeturn18view0turn18view1turn6view0turn6view4turn6view5
+
+| Cube point | Meaning | Drill | Component or primitive | Story states | Export target |
+|---|---|---|---|---|---|
+| CP-111 | Pressure and taper as controlled line event | 20 lines from whisper to full pressure | `LinePressureStrip` | light, medium, heavy, broken | `cube-points-index.md` |
+| CP-221 | Head as rotating box | 5 yaw steps from front to profile | `RotatingHeadCube` | front, 3/4, profile, over-rotated | `component-specs/RotatingHeadCube.md` |
+| CP-231 | Cylinder on table plane | 3 eye levels, same cup, same plane | `PerspectiveTableGrid` | high eye line, mid, low | `cube-points-index.md` |
+| CP-322 | Face planes wrapped on form | Brow-eye-mouth wrap drill | `FacialPlaneMask` | neutral, tilt up, tilt down | `cube-points-index.md` |
+| CP-343 | Texture as emotional rhetoric | Same form, 4 texture treatments | `EmotionTextureField` | vulnerable, flattering, abrasive, withheld | `emotion-texture-atlas.md` |
+| CP-454 | Broken connection between figures | 3 narrative distances in 2 minutes each | `SocialDistanceMap` | neutral, connected, broken | `emotion-texture-atlas.md` |
+| CP-465 | Public-scene object triangulation | People plus tableware plus barriers | `SceneTriangleComposer` | open, blocked, asymmetrical | `cube-points-index.md` |
+| CP-555 | Personal distortion with preserved readability | Control, bend, recover triptych | `VariantSwitcher` | canonical, bent, recovered | `PROJECT_INSTRUCTIONS.md` or future style doc |
+
+The mapping above fits official component-driven tooling well: Storybook supports isolated component states and docs; React favors explicit state; Three.js and React Three Fiber support scene, camera, renderer, and animation-based demonstrations when true spatial motion is necessary. citeturn18view0turn18view1turn6view6turn6view4turn6view0
+
+A reusable component spec template should be strict.
+
+| Field | Required content | Why it matters |
+|---|---|---|
+| Name | Stable component name | Keeps asset references and docs aligned |
+| Purpose | One-sentence instructional role | Prevents vague feature creep |
+| Inputs | Props and controls | Makes states reproducible |
+| Visual states | Named snapshots | Matches Storybook and ledger references |
+| Invariants | What must remain true | Protects readability when rules bend |
+| Interactions | Sliders, toggles, camera, playback | Defines what makes it live |
+| Related cube points | Which coordinates this serves | Keeps curriculum and code connected |
+| Drill mapping | Practice that uses the component | Prevents detached tech demos |
+| Static fallback | SVG, PNG, or ASCII version | Ensures repo-safe teaching asset |
+| Acceptance criteria | What counts as done | Makes development testable |
+
+That structure is directly compatible with Storybook’s emphasis on rendered component states and automatic documentation, and with React’s emphasis on explicit state transitions rather than ad hoc UI mutation. citeturn18view0turn6view6
+
+The five requested GitHub files should have explicit templates.
+
+| File | Required sections | Update trigger |
+|---|---|---|
+| `PROJECT_INSTRUCTIONS.md` | Purpose, Session Continuity Rules, Visual Contract, Output Modes, Export Commands, Running Project Sum format | Only when project operating rules change |
+| `SESSION_LEDGER.md` | Current State, Latest Thread, Session Entries, Candidate Exports, Open Questions, Next Best Action | Every substantial session |
+| `cube-points-index.md` | Cube ID, Tier, Meaning, Prerequisites, Visual Asset, Drill, Component, Status | Every new cube point or completed visual |
+| `emotion-texture-atlas.md` | Emotion term, Mark logic, Edge behavior, Density, Rhythm, Negative space cues, Public-scene use, Drill | Every new emotion-texture mapping |
+| `component-specs/RotatingHeadCube.md` | Purpose, Inputs, Visual States, Invariants, Interactions, Storybook stories, Static fallback, Acceptance criteria | Whenever component design changes |
+
+GitHub’s Markdown and non-code file support make this practical: rendered Markdown supports GFM, diagrams, and rich prose views; repositories can render Mermaid, SVG, PDF, and image files; and once the structure stabilizes, the repository can even be turned into a template repository for future curriculum or swarm variants. citeturn11view0turn6view1turn12view0turn18view3
+
+A simple `SESSION_LEDGER.md` entry block should look like this:
+
+```md
+## 2026-05-20
+
+**Last session / current thread**
+Short reconstruction of the active thread.
+
+**New concepts added**
+- ...
+
+**Visuals requested or needed**
+- ...
+
+**GitHub candidate exports**
+- ...
+
+**Open questions**
+- ...
+
+**Next best action**
+- ...
+```
+
+Because you asked for owner-controlled export, the response contract should be manual by default: the assistant emits the exact ledger delta or canonical file text, and you choose what to paste into GitHub. That preserves authorship control and avoids pretending the agent has repository write access.
+
+## Roadmap and tradeoffs
+
+The implementation roadmap should move from **stable documentation** to **reusable static visuals** and only then to **interactive spatial components**. Vite is a good medium-term development base because it targets fast modern frontend workflows with strong HMR and production bundling; Storybook is well suited once you want isolated visual states and docs; GitHub Pages can publish the interactive front end when you are ready to expose the visual library from the repository; and if you adopt React Three Fiber, you should align its version with the React major version it supports. citeturn6view7turn18view0turn18view2turn6view0
+
+| Horizon | Dates | Deliverables | Completion criteria |
+|---|---|---|---|
+| Short term | May 20 to June 3, 2026 | `PROJECT_INSTRUCTIONS.md`, `SESSION_LEDGER.md`, `cube-points-index.md`, starter `emotion-texture-atlas.md`, 8–12 canonical cube points with ASCII or SVG visuals | Project can resume cleanly across sessions and export one file on request |
+| Medium term | June 4 to July 15, 2026 | Vite + React + Storybook scaffold, SVG visual pack, `RotatingHeadCube` spec, 3–5 reusable components, first public-scene drills | Core cube points have both static and component forms |
+| Long term | July 16 to October 15, 2026 | Selective React Three Fiber layer, GitHub Pages or Storybook publish, 40–50 cube points, richer texture atlas, variant system for generative play | Cube library behaves like a reusable studio system, not a one-off tutor |
+
+GitHub can render Mermaid directly in Markdown, so the rollout itself can live in the repository as a self-documenting roadmap. citeturn6view1turn12view0
+
+```mermaid
+gantt
+    title Line All Richie rollout
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+
+    section Project contract
+    PROJECT_INSTRUCTIONS.md           :a1, 2026-05-20, 5d
+    SESSION_LEDGER.md                 :a2, after a1, 3d
+    cube-points-index.md seed         :a3, after a1, 7d
+
+    section Static visual layer
+    ASCII and SVG starter pack        :b1, 2026-05-27, 14d
+    emotion-texture-atlas v1          :b2, 2026-06-03, 14d
+    RotatingHeadCube spec             :b3, 2026-06-03, 10d
+
+    section Component layer
+    Vite React Storybook scaffold     :c1, 2026-06-17, 7d
+    primitive components v1           :c2, after c1, 14d
+    reusable stories and docs         :c3, after c2, 10d
+
+    section Interactive spatial layer
+    React Three Fiber prototypes      :d1, 2026-07-15, 21d
+    GitHub Pages or Storybook publish :d2, after d1, 7d
+
+    section Curriculum expansion
+    public scene drills pack          :e1, 2026-07-29, 21d
+    cube coverage to 50 points        :e2, 2026-08-05, 45d
+```
+
+Two tradeoffs matter most.
+
+| Ledger option | Strengths | Weaknesses | Recommendation |
+|---|---|---|---|
+| Single `SESSION_LEDGER.md` | Fastest resume path; one canonical place to look | Can grow noisy over time | Good for current state only |
+| Dated session files | Better archive and audit trail | Slower to resume; more files to scan | Good for long projects |
+| Hybrid | Top-level current ledger plus dated snapshots | Slightly more discipline required | Best default |
+
+GitHub’s Markdown tooling supports rendered prose, source view, line-level review in source view, and linkable headers in rendered view, which makes a hybrid structure especially practical: use one top-level current-state ledger for quick resume, then snapshot older sessions into dated files when the top file becomes unwieldy. citeturn12view0turn11view0
+
+| Stack option | Best for | Advantages | Limits | Recommendation |
+|---|---|---|---|---|
+| SVG first | Instructional diagrams and repo-native docs | Crisp, scalable, searchable, easy to diff | Static in repo; no inline animation in GitHub view | Start here |
+| Canvas | Stroke rhythm, texture motion, freehand demos | Strong for scripted drawing and animation | Less naturally diffable as code-facing educational diagram unless exported | Add selectively |
+| React Three Fiber | Cube rotation, camera-dependent form teaching, spatial demos | Reusable 3D React components tied to state | More complexity, React/version pairing, WebGL/browser dependency | Use only where 3D truly matters |
+| Hybrid SVG + Storybook + selective R3F | Curriculum plus reusable interactive layer | Best balance of permanence and interactivity | Requires discipline in asset boundaries | Best long-term architecture |
+
+That recommendation follows the documented affordances: SVG is text-based and scales cleanly, but GitHub will not execute inline SVG animation; Canvas focuses on 2D graphics and animation; React Three Fiber provides reusable Three.js scenes inside React; Storybook captures and documents UI states; GitHub Pages can host the interactive layer straight from repository files. citeturn6view2turn12view0turn10view0turn6view0turn18view0turn18view2
+
+The main open design questions are therefore not whether the system can work—it can—but where to place complexity. The hybrid answers are the strongest: **hybrid memory** for the ledger, **hybrid visuals** for the asset stack, and **selective interactivity** for only the cube points that truly justify it.
+
+## Running project sum
+
+**Last session / current thread**
+- The project owner asked for a deep-research design of a consistent, execution-focused Project Space Instruction Set and a multi-tiered Learning Progression Cube for the Line All Richie agentic swarm, with explicit emphasis on session continuity, visual-first teaching, GitHub export artifacts, and implementation tradeoffs. The report recommends a stateful operating contract, a mandatory visual contract, a three-axis cube with five “tree” tiers, and a hybrid documentation-plus-component architecture. citeturn7view1turn7view4turn9view0turn9view2turn6view1turn18view0turn18view2
+
+**New concepts added**
+- Added a strict continuity model with a **single memory-writer rule**, role-separated swarm responsibilities, and a mandatory **Running Project Sum** after every substantial response. citeturn6view6turn7view1turn7view4
+- Defined a visual contract in which **every cube point and every spatial claim requires a visual**, with accepted formats including ASCII, Mermaid, SVG, Canvas outputs, Storybook states, React Three Fiber components, storyboards, and image-generation prompts. citeturn6view1turn12view0turn6view2turn10view0turn6view0turn18view0turn18view2
+- Formalized the **Learning Progression Cube** with three axes—form scope, spatial transform, expressive load—and five tiers: trunk, branches, ornaments, garlands, and star. citeturn9view0turn9view1turn9view2turn6view8turn19view0turn19view1turn19view2
+- Added the **Control → Bend → Recover** protocol for abductive and generative rule-bending after baseline mastery. citeturn19view0turn7view4turn7view5turn19view1turn19view2
+
+**Visuals requested or needed**
+- Immediate repo-safe visuals are needed for the starter cube points, especially `CP-221` Rotating Head Cube, `CP-231` Cup on Table Plane, and `CP-454` Broken Connection Map. Static SVG or ASCII should come first, with Storybook or React Three Fiber reserved for reusable spatial points. citeturn6view2turn12view0turn18view0turn6view0
+- The repo should include both instructional visuals and implementation visuals: ASCII for chat continuity, Mermaid for planning, SVG for diagrams, and Storybook or GitHub Pages for interactive demonstrations. citeturn6view1turn12view0turn18view0turn18view2
+
+**GitHub candidate exports**
+- `PROJECT_INSTRUCTIONS.md` for the operating contract, swarm roles, session continuity rules, visual contract, output modes, and export commands. citeturn11view0turn6view1turn18view3
+- `SESSION_LEDGER.md` for current state plus appendable session deltas in the required Running Project Sum format. citeturn12view0turn11view0
+- `cube-points-index.md` for coordinate-based cube tracking across visuals, drills, and components. citeturn18view0turn18view1
+- `emotion-texture-atlas.md` for mapping terms like vulnerability, flattery, antipathy, and broken connection into mark logic, edge behavior, and scene use. This mapping is a project design recommendation, supported pedagogically by later-stage diversity, exploration, and generation. citeturn9view1turn7view5turn19view1turn19view2
+- `component-specs/RotatingHeadCube.md` as the first reusable component spec, with Storybook states and static fallback diagrams. citeturn18view0turn6view0turn6view4
+
+**Open questions**
+- Should the ledger be maintained as a single `SESSION_LEDGER.md`, as dated files, or as a hybrid? The report recommends hybrid because GitHub’s Markdown workflow supports rendered prose, source review, and linkable headers. citeturn12view0turn11view0
+- Should the animation studio be SVG-first, Canvas-first, or React Three Fiber-first? The report recommends SVG-first with selective Storybook and React Three Fiber for the subset of cube points that genuinely need spatial rotation. citeturn6view2turn12view0turn10view0turn6view0turn18view0
+- Should cube IDs be purely numeric coordinates like `CP-221`, or semantic hybrids like `HEAD-ROT-3Q`? Both are viable; the numeric scheme is better for indexing, while the semantic scheme is better for human browsing. This remains an open project design choice.
+
+**Next best action**
+- Create and approve the first canonical artifacts in this order: `PROJECT_INSTRUCTIONS.md`, `SESSION_LEDGER.md`, `cube-points-index.md`, a starter `emotion-texture-atlas.md`, and `component-specs/RotatingHeadCube.md`; then seed the cube with 8–12 high-value starter points using ASCII or SVG before adding Storybook and React Three Fiber. citeturn18view3turn18view0turn6view7turn18view2turn6view0
