@@ -1,0 +1,73 @@
+name: Line All Richie Curriculum Swarm Task
+description: Request a lesson, drill, progression, visual map, or critique artifact.
+title: "[Line All Richie] "
+labels:
+  - line-all-richie
+  - curriculum
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to create a GitHub-ready curriculum artifact. Progressions are optional. Use `untracked` if no progression is selected.
+  - type: input
+    id: active_progression
+    attributes:
+      label: Active progression
+      description: Optional. Example: primitive-generative-drawing, public-sketching-fieldbook, or untracked.
+      placeholder: untracked
+  - type: input
+    id: progression_phase
+    attributes:
+      label: Progression phase
+      description: Optional. Example: Isolate, Operate, Manufacture, Mutate, Deform.
+      placeholder: optional phase
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      description: What should the learner draw or study?
+      placeholder: vase made from pattern bands
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should the swarm produce or teach?
+      placeholder: Create a 15-minute drill where pattern manufactures the object.
+    validations:
+      required: true
+  - type: input
+    id: emotional_focus
+    attributes:
+      label: Emotional or expressive focus
+      description: Optional.
+      placeholder: tension, loneliness, confidence, motion, humor
+  - type: dropdown
+    id: output_type
+    attributes:
+      label: Output type
+      options:
+        - lesson
+        - drill
+        - progression card
+        - visual-system spec
+        - critique checklist
+        - reference brief
+        - animation component spec
+    validations:
+      required: true
+  - type: textarea
+    id: visual_needed
+    attributes:
+      label: Visual explanation needed
+      description: Describe the desired visual map, diagram, storyboard, or component.
+      placeholder: primitive relationship matrix plus pattern deformation map
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints or notes
+      description: Anything the swarm must preserve, avoid, or emphasize.
+      placeholder: Do not make this a required progression. Keep it drawable in public.
