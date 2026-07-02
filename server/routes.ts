@@ -4,11 +4,20 @@ import { storage, initializeDatabase } from "./storage";
 import { assessDrawing, generateExerciseTips } from "./services/openai";
 import { insertPracticeSessionSchema, insertDrawingSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
+import { studioRouter } from "./studio/routes";
+import { seedStudioPrimitives } from "./studio/seed";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize database storage with demo user
   await initializeDatabase();
-  
+
+  // Mount the Primitive Cell Studio surface (additive; preserves the Academy).
+  app.use("/api/studio", studioRouter);
+  // Seed the base geometric + sacred primitive library (best-effort, idempotent).
+  seedStudioPrimitives().catch((err) =>
+    console.error("[studio] primitive seeding skipped:", err),
+  );
+
   // Get user by username
   app.get("/api/user/by-username/:username", async (req, res) => {
     try {

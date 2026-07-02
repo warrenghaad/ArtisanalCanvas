@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PrimitiveManifest",
+  "description": "Decomposition of a drawing subject into reusable primitive forms, produced BEFORE any image is generated. Mirrors primitiveManifestSchema in shared/schema.ts.",
+  "type": "object",
+  "required": ["subject", "learningGoal", "level", "primitives"],
+  "properties": {
+    "subject": { "type": "string" },
+    "learningGoal": { "type": "string" },
+    "level": { "type": "integer", "minimum": 1, "maximum": 10 },
+    "skillFamily": { "type": "string" },
+    "primitives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "type", "role"],
+        "properties": {
+          "name": { "type": "string" },
+          "type": { "type": "string" },
+          "role": { "type": "string" },
+          "category": { "enum": ["geometric", "sacred", "figure", "other"] }
+        }
+      }
+    },
+    "axes": { "type": "array", "items": { "type": "string" } },
+    "planes": { "type": "array", "items": { "type": "string" } },
+    "hinges": { "type": "array", "items": { "type": "string" } },
+    "rhythmLines": { "type": "array", "items": { "type": "string" } },
+    "valueColorStructure": { "type": "array", "items": { "type": "string" } },
+    "reusableCellsToSave": { "type": "array", "items": { "type": "string" } },
+    "imageOutputs": { "type": "array", "items": { "type": "string" } }
+  },
+  "example": {
+    "subject": "three-quarter face showing skeptical expression",
+    "learningGoal": "facial expression through primitive construction",
+    "level": 5,
+    "skillFamily": "face_expression",
+    "primitives": [
+      { "name": "bounding box", "type": "box", "role": "overall volume envelope", "category": "geometric" },
+      { "name": "skull mass", "type": "sphere/egg", "role": "main cranial volume", "category": "figure" },
+      { "name": "brow ridge", "type": "wedge", "role": "expression hinge", "category": "figure" }
+    ],
+    "reusableCellsToSave": ["three_quarter_skull_mass", "brow_wedge", "mouth_muzzle", "jaw_hinge"],
+    "imageOutputs": ["construction_plate", "ghosted_overlay", "finished_reference", "practice_card"]
+  }
+}
