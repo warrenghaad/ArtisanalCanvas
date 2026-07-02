@@ -2,7 +2,7 @@
 
 **ArtisanalCanvas** is a visual learning and drawing studio: a Vite + React + TypeScript application with an Express backend, designed for drawing practice, curriculum navigation, eTextbook exploration, analytics, AI-assisted assessment, and an evolving infinite-canvas studio surface.
 
-The project’s north star is to turn drawing instruction into something visible, interactive, and spatial:
+The project's north star is to turn drawing instruction into something visible, interactive, and spatial:
 
 ```txt
 reference -> decomposition -> construction steps -> drawing practice -> assessment -> revision
@@ -158,26 +158,35 @@ Every major drawing lesson should provide visible instructional structure:
 
 SVG should not be the default for expressive drawing instruction.
 
-SVG is acceptable for clean 2D structures:
+**SVG is for line as construction. Raster and Canvas are for line as touch, pressure, depth, value, texture, ornament, atmosphere, and hand intelligence.**
 
+SVG is appropriate for clean construction logic:
+
+- 1D line systems that construct clear 2D shapes
 - proportion grids
+- compass/ruler geometry
 - mathematical curves
 - flat geometric diagrams
-- simple tiling patterns
+- simple tiling maps
+- unit-cell diagrams
 - repeat-unit pattern logic
 
-SVG should not stand alone for:
+SVG should not be the primary asset when the educational point is:
 
 - line depth
 - shadow mass
+- hatching as value
+- cross-contour depth
+- ornamental line fields
 - painterly tone
 - charcoal or graphite texture
 - edge softness
 - expressive line weight
+- material surface
 - photographic decomposition
 - atmospheric depth
 
-For those, prefer raster images, Canvas overlays, layered PNG/JPG/WebP assets, or annotated visual worksheets.
+For those, prefer raster drawings, Canvas overlays, layered PNG/JPG/WebP assets, annotated visual worksheets, or interactive overlays that preserve line weight, density, pressure, hatching, cross-contour, and mark hierarchy.
 
 ---
 
@@ -237,24 +246,3 @@ Every implementation task should report:
 - whether any guardrail may have been violated
 
 ---
-
-## Project relationship
-
-ArtisanalCanvas is the application surface.
-
-It can receive curriculum and drawing concepts from companion repositories or documents such as:
-
-- line-based drawing progressions
-- grid-to-cube learning systems
-- primitive-form studios
-- visual decomposition protocols
-- pattern-generation instructions
-- classical drawing prompts
-
-The app should turn those materials into interactive learning surfaces.
-
----
-
-## License
-
-MIT, matching the current package metadata.
