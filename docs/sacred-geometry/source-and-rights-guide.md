@@ -6,7 +6,7 @@ This guide keeps ArtisanalCanvas from becoming a beautiful but legally haunted p
 
 | Tier | Asset type | Repo use | Notes |
 | --- | --- | --- | --- |
-| Tier A | Original diagrams created for ArtisanalCanvas | Commit directly | Best for SVG construction diagrams, repeat units, grids, and worksheets. |
+| Tier A | Original diagrams created for ArtisanalCanvas | Commit directly | Best for flat-construction vectors, repeat units, grids, unit-cell maps, and worksheets. |
 | Tier B | Public domain / CC0 museum images | Commit if license metadata is stored | Verify object page, rights statement, creator/date, accession number, source URL. |
 | Tier C | Museum reference images not clearly open | Link only, do not commit image | Use as source cards and study links. Build original overlays separately. |
 | Tier D | Contemporary artist/craft/architecture images | Link only unless explicit permission | Avoid copying into repo. Use descriptive source notes. |
@@ -20,7 +20,16 @@ For every visual asset, store these fields somewhere:
 {
   assetId: string;
   conceptId: string;
-  assetType: 'reference-board' | 'construction-svg' | 'step-worksheet' | 'decomposition-overlay' | 'material-raster' | 'canvas-interaction' | 'perspective-projection' | 'context-card';
+  assetType:
+    | 'reference-board'
+    | 'flat-construction-vector'
+    | 'expressive-linework-raster'
+    | 'step-worksheet'
+    | 'decomposition-overlay'
+    | 'material-raster'
+    | 'canvas-interaction'
+    | 'perspective-projection'
+    | 'context-card';
   rightsTier: 'original' | 'public-domain' | 'cc0' | 'linked-reference-only' | 'permission-required' | 'cultural-context-required';
   sourceUrl?: string;
   institution?: string;
@@ -33,7 +42,35 @@ For every visual asset, store these fields somewhere:
 }
 ```
 
-## 3. Open-access source banks
+## 3. Visual format rule
+
+**SVG is for line as construction. Raster and Canvas are for line as touch, pressure, depth, value, texture, ornament, atmosphere, and hand intelligence.**
+
+Use `flat-construction-vector` when the asset teaches:
+
+- 1D line systems that construct clear 2D shapes
+- proportion grids
+- compass/ruler geometry
+- flat polygons
+- unit cells
+- simple tiling maps
+- repeat-unit pattern logic
+
+Use `expressive-linework-raster` when the asset teaches:
+
+- pressure variation
+- hatching as value
+- cross-contour depth
+- ornamental line fields
+- line density
+- expressive line weight
+- graphite, charcoal, ink, or brush texture
+- hand-made mark hierarchy
+- atmospheric or emotional force carried by the line
+
+Do not treat `flat-construction-vector` as the universal output format for sacred/aesthetic geometry. It is a construction layer, not the full visual experience.
+
+## 4. Open-access source banks
 
 These are good first places to look for rights-safe or well-cited visual references.
 
@@ -97,7 +134,7 @@ These are good first places to look for rights-safe or well-cited visual referen
 - Best for: ancient Near East, Greece, Rome, Mesoamerica, Indus/South Asia, China, Africa.
 - Use for: reference links and metadata. Verify image rights on each object page before storing images.
 
-## 4. Source query recipes
+## 5. Source query recipes
 
 Use these query patterns in source-board tasks.
 
@@ -146,7 +183,7 @@ site:metmuseum.org jali screen South Asia geometry
 site:metmuseum.org kolam rangoli dot grid pattern
 ```
 
-## 5. Cultural-context guardrails
+## 6. Cultural-context guardrails
 
 ### Sacred script and devotional forms
 
@@ -173,7 +210,7 @@ site:metmuseum.org kolam rangoli dot grid pattern
 - If included, present historical South Asian auspicious context clearly and note modern misappropriation in other contexts.
 - Prefer contextual source-object study.
 
-## 6. Image generation rules
+## 7. Image generation rules
 
 When generating original visuals for the repo:
 
@@ -183,8 +220,9 @@ When generating original visuals for the repo:
 4. Use generic materials when source image rights are unclear.
 5. For museum-object overlays, keep the overlay file separate from the source image unless image rights allow local storage.
 6. Store source URLs in source-board markdown rather than embedding protected images.
+7. Choose the asset format based on the teaching goal: vector for construction logic, raster/Canvas for expressive line, depth, material, and ornament.
 
-## 7. Per-asset source-board template
+## 8. Per-asset source-board template
 
 ```md
 # Source Board: {Concept Title}
@@ -206,7 +244,8 @@ When generating original visuals for the repo:
 ## Visual plan
 
 - Reference-board:
-- Construction SVG:
+- Flat-construction vector:
+- Expressive-linework raster:
 - Decomposition overlay:
 - Material raster:
 - Canvas interaction:
@@ -219,7 +258,7 @@ When generating original visuals for the repo:
 - What student-facing language should say:
 ```
 
-## 8. Metadata tags
+## 9. Metadata tags
 
 Use these tags to help future search and GraphNode routing.
 
@@ -253,7 +292,8 @@ geometry:calligraphic-grid
 geometry:material-translation
 
 asset:reference-board
-asset:construction-svg
+asset:flat-construction-vector
+asset:expressive-linework-raster
 asset:step-worksheet
 asset:decomposition-overlay
 asset:material-raster
@@ -262,7 +302,7 @@ asset:perspective-projection
 asset:context-card
 ```
 
-## 9. Minimum metadata for committed images
+## 10. Minimum metadata for committed images
 
 Every committed visual file should have a neighboring `.md` or manifest record with:
 
@@ -274,18 +314,20 @@ Every committed visual file should have a neighboring `.md` or manifest record w
 - geometry family tag
 - rights tier
 - source/inspiration note
+- asset type
 - whether it is original, reconstructed, generated, or reference-derived
 - allowed repo use
 - student-facing caution if sacred/context-sensitive
 
-## 10. Review checklist before merge
+## 11. Review checklist before merge
 
 - [ ] Does the asset have a concept ID?
 - [ ] Is the rights tier clear?
+- [ ] Is the asset type `flat-construction-vector`, `expressive-linework-raster`, or another precise category?
 - [ ] If museum-derived, is the object source recorded?
 - [ ] If sacred/context-sensitive, is there a context card?
-- [ ] Is the file type appropriate? SVG for clean geometry, raster/Canvas for material and shadow.
-- [ ] Does the asset teach construction, not just surface decoration?
-- [ ] Can a student reproduce the pattern from primitives?
+- [ ] Is the file type appropriate? Vector for clean construction logic; raster/Canvas for pressure, hatching, shadow, line hierarchy, texture, and material.
+- [ ] Does the asset teach construction, mark behavior, or material behavior rather than decoration alone?
+- [ ] Can a student reproduce the pattern from primitives or mark operations?
 - [ ] Does it avoid overclaiming mystical meaning?
 - [ ] Does it preserve current Academy routes and repo guardrails?
