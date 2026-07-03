@@ -337,6 +337,10 @@ export const critiqueSchema = z.object({
   reusableCells: z.array(z.string()).default([]),
   suggestedCorrectionPrompt: z.string().optional(),
   canonStatus: z.enum(STUDIO_STATUSES),
+  // True only when the critique judged the actual rendered image (via vision),
+  // not manifest metadata alone. The Canon Clerk refuses to promote to
+  // "reviewed" unless this is true.
+  basedOnImage: z.boolean().default(false),
 });
 export type Critique = z.infer<typeof critiqueSchema>;
 

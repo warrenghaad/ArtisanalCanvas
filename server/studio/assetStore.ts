@@ -32,10 +32,12 @@ export async function saveGeneratedImage(base64: string, id = randomUUID()): Pro
 }
 
 // Persist a JSON manifest alongside the generated image for portability/export.
+// A short unique suffix is appended so repeated runs with the same subject never
+// overwrite each other's manifest (preserving local export history).
 export async function saveManifest(name: string, data: unknown): Promise<string> {
   await ensureDirs();
-  const safe = name.replace(/[^a-z0-9-_]+/gi, "_").slice(0, 80) || randomUUID();
-  const filePath = path.join(ASSET_SUBDIRS.manifests, `${safe}.json`);
+  const safe = name.replace(/[^a-z0-9-_]+/gi, "_").slice(0, 60) || "manifest";
+  const filePath = path.join(ASSET_SUBDIRS.manifests, `${safe}-${randomUUID().slice(0, 8)}.json`);
   await fs.writeFile(filePath, JSON.stringify(data, null, 2));
   return path.relative(process.cwd(), filePath);
 }
