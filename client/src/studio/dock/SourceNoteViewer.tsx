@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import type { SourceNote, AssetType } from "../types";
 import { ASSET_TYPE_LABELS, ASSET_TYPE_DESCRIPTIONS } from "../types";
 
@@ -230,6 +230,11 @@ export function SourceNoteViewer({
     filterByAssetType ?? ""
   );
   const [search, setSearch] = useState("");
+
+  // Sync asset filter when the parent prop changes.
+  useEffect(() => {
+    setAssetFilter(filterByAssetType ?? "");
+  }, [filterByAssetType]);
 
   const visible = notes.filter((n) => {
     if (assetFilter && !n.assetTypes.includes(assetFilter)) return false;

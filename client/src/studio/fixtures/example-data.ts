@@ -287,7 +287,7 @@ export const SCREEN_SHADOW_SPEC: CanvasInteractionSpec = {
       id: "shadow-opacity",
       type: "slider",
       label: "Shadow Opacity",
-      min: 10, max: 90, default: 55, step: 5,
+      min: 0.1, max: 0.9, default: 0.55, step: 0.05,
       affects: "shadow-projection",
     },
   ],

@@ -109,12 +109,12 @@ function ControlsBar({ spec, values, onControlChange }: ControlsBarProps) {
                 min={ctrl.min}
                 max={ctrl.max}
                 step={ctrl.step ?? 1}
-                value={values[ctrl.id] as number ?? ctrl.default}
+                value={( values[ctrl.id] ?? ctrl.default) as number}
                 onChange={(e) => onControlChange(ctrl.id, Number(e.target.value))}
                 className="w-24 accent-amber-500"
                 aria-label={ctrl.label}
               />
-              <span className="w-8 text-gray-500 tabular-nums">{values[ctrl.id] as number}</span>
+              <span className="w-8 text-gray-500 tabular-nums">{(values[ctrl.id] ?? ctrl.default) as number}</span>
             </label>
           );
         }

@@ -16,6 +16,11 @@ const DOCK_VIEWERS = [
 
 type DockViewerId = (typeof DOCK_VIEWERS)[number]["id"];
 
+// Dock layout constants — keep in sync.
+const DOCK_TOTAL_HEIGHT = 320;
+const DOCK_TAB_BAR_HEIGHT = 40;
+const DOCK_PANEL_HEIGHT = DOCK_TOTAL_HEIGHT - DOCK_TAB_BAR_HEIGHT;
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Studio page
 // ─────────────────────────────────────────────────────────────────────────────
@@ -110,7 +115,7 @@ export default function StudioPage() {
         </main>
 
         {/* Bottom dock */}
-        <div className="shrink-0 border-t border-gray-200 bg-white" style={{ height: dockOpen ? "320px" : "40px" }}>
+        <div className="shrink-0 border-t border-gray-200 bg-white" style={{ height: dockOpen ? `${DOCK_TOTAL_HEIGHT}px` : `${DOCK_TAB_BAR_HEIGHT}px` }}>
           {/* Dock tab bar */}
           <div className="flex items-center px-2 border-b border-gray-200 h-10">
             <div className="flex gap-1 flex-1">
@@ -146,7 +151,7 @@ export default function StudioPage() {
 
           {/* Dock panel */}
           {dockOpen && (
-            <div className="h-full overflow-hidden" style={{ height: "280px" }}>
+            <div className="h-full overflow-hidden" style={{ height: `${DOCK_PANEL_HEIGHT}px` }}>
               {/* Source Notes viewer */}
               {activeDock === "source-notes" && (
                 <div id="dock-source-notes" className="h-full overflow-hidden">
