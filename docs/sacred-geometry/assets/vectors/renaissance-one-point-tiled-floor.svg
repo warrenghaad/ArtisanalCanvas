@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 380" width="480" height="380"
+  role="img" aria-label="Renaissance one-point perspective tiled floor diagram showing a grid of squares converging to a single vanishing point on the horizon line">
+  <title>Renaissance One-Point Perspective — Tiled Floor Construction</title>
+  <desc>Classic Renaissance one-point perspective floor diagram: a grid of equal squares on a horizontal plane, all edges converging to a single vanishing point (VP) on the horizon line. Construction lines shown for the depth intervals. Flat-construction-vector asset.</desc>
+
+  <rect width="480" height="380" fill="#f8f5ef"/>
+
+  <!--
+    Setup:
+    - Picture plane bottom: y=340 (foreground)
+    - Horizon line: y=100
+    - Vanishing point VP: (240, 100)
+    - Station point (viewer): (240, 340+distPP) — implied
+    
+    Floor tile grid:
+    - 8 vertical columns, equal spacing at picture plane
+    - Spacing = 40px at y=340 → x positions: 80,120,160,200,240,280,320,360,400 (9 verticals)
+    - Depth lines: spacing on picture plane = 40, but on diagonal = use measuring point
+    
+    Simplified: I'll place horizontal tile lines at y values derived from
+    the standard "distance point" construction for 45° tiles.
+    
+    For one-point perspective with VP=(240,100), picture plane at y=340:
+    - Orthogonals (lines going to VP) from x=80,120,160,200,240,280,320,360,400
+    - Transversals (horizontal lines) at y=340,300,268,244,226,212,202,194,188 (geometric foreshortening)
+    
+    Using the formula: y_n = horizon + (PP_y - horizon) * d/(d+n*unit)
+    where d = eye distance = 240 (same as picture plane width / 2)
+    
+    Horizon y = 100, PP y = 340, h = 340-100 = 240, d = 240 (= distance from eye to PP)
+    
+    y_n = 100 + 240 * d/(d + n*40) where n = 0,1,2,3,4,5,6
+    
+    n=0: y = 100 + 240*(240/240) = 100+240 = 340
+    n=1: y = 100 + 240*(240/280) = 100+205.7 = 305.7 ≈ 306
+    n=2: y = 100 + 240*(240/320) = 100+180   = 280
+    n=3: y = 100 + 240*(240/360) = 100+160   = 260
+    n=4: y = 100 + 240*(240/400) = 100+144   = 244
+    n=5: y = 100 + 240*(240/440) = 100+130.9 = 231
+    n=6: y = 100 + 240*(240/480) = 100+120   = 220
+    n=7: y = 100 + 240*(240/520) = 100+110.8 = 211
+    n=8: y = 100 + 240*(240/560) = 100+102.9 = 203
+    n=9: y = 100 + 240*(240/600) = 100+96    = 196
+    
+    Tile x positions at picture plane (y=340): 80,120,160,200,240,280,320,360,400 (9 lines = 8 columns)
+  -->
+
+  <!-- Sky / above horizon -->
+  <rect x="0" y="0" width="480" height="100" fill="#e8f0f8"/>
+  <!-- Floor / below horizon -->
+  <rect x="0" y="100" width="480" height="280" fill="#e8e0d0"/>
+
+  <!-- Horizon line -->
+  <line x1="0" y1="100" x2="480" y2="100" stroke="#8b7355" stroke-width="1.5"/>
+  <text x="8" y="97" font-family="serif" font-size="10" fill="#5a4a30">horizon line</text>
+
+  <!-- Orthogonals from picture-plane verticals to VP -->
+  <g stroke="#b0a090" stroke-width="0.8">
+    <line x1="80"  y1="340" x2="240" y2="100"/>
+    <line x1="120" y1="340" x2="240" y2="100"/>
+    <line x1="160" y1="340" x2="240" y2="100"/>
+    <line x1="200" y1="340" x2="240" y2="100"/>
+    <line x1="240" y1="340" x2="240" y2="100"/>
+    <line x1="280" y1="340" x2="240" y2="100"/>
+    <line x1="320" y1="340" x2="240" y2="100"/>
+    <line x1="360" y1="340" x2="240" y2="100"/>
+    <line x1="400" y1="340" x2="240" y2="100"/>
+  </g>
+
+  <!-- Transversals (foreshortened horizontal lines) -->
+  <g stroke="#8b7355" stroke-width="0.8">
+    <line x1="80" y1="340" x2="400" y2="340"/>
+    <line x1="80" y1="306" x2="400" y2="306"/>
+    <line x1="80" y1="280" x2="400" y2="280"/>
+    <line x1="80" y1="260" x2="400" y2="260"/>
+    <line x1="80" y1="244" x2="400" y2="244"/>
+    <line x1="80" y1="231" x2="400" y2="231"/>
+    <line x1="80" y1="220" x2="400" y2="220"/>
+    <line x1="80" y1="211" x2="400" y2="211"/>
+    <line x1="80" y1="203" x2="400" y2="203"/>
+    <line x1="80" y1="196" x2="400" y2="196"/>
+  </g>
+
+  <!-- Alternate tile shading: checkerboard fill using path clips -->
+  <!-- Shade alternate tiles in each row for visual clarity -->
+  <!-- Row 0 (y=306 to 340): shade tiles at columns 0,2,4,6 (even) -->
+  <g fill="rgba(180,160,120,0.35)">
+    <!-- Row 0 shaded tiles -->
+    <polygon points="80,340 120,340 127.3,306 108.7,306"/>
+    <polygon points="160,340 200,340 211.5,306 148.5,306"/>
+    <polygon points="240,340 280,340 295.8,306 224.2,306"/>
+    <polygon points="320,340 360,340 380,306 300,306"/>
+    <!-- Row 1 shaded tiles (y=280 to 306) -->
+    <polygon points="108.7,306 148.5,306 153,280 116,280"/>
+    <polygon points="211.5,306 251.2,306 256,280 207,280"/>
+    <polygon points="295.8,306 335.5,306 342,280 289,280"/>
+    <!-- Row 2 (y=260 to 280) -->
+    <polygon points="116,280 153,280 156,260 120,260"/>
+    <polygon points="207,280 256,280 258,260 204,260"/>
+    <polygon points="289,280 342,280 344,260 288,260"/>
+  </g>
+
+  <!-- Vanishing point marker -->
+  <circle cx="240" cy="100" r="5" fill="#c0392b" stroke="#fff" stroke-width="1"/>
+  <text x="247" y="98" font-family="serif" font-size="10" fill="#c0392b">VP</text>
+
+  <!-- VP construction rays (bold) -->
+  <line x1="240" y1="100" x2="80"  y2="340" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="4 4"/>
+  <line x1="240" y1="100" x2="400" y2="340" stroke="#c0392b" stroke-width="0.8" stroke-dasharray="4 4"/>
+
+  <!-- Picture plane label -->
+  <line x1="80" y1="342" x2="400" y2="342" stroke="#4a90b8" stroke-width="1.5"/>
+  <text x="240" y="354" text-anchor="middle" font-family="serif" font-size="9" fill="#4a90b8">picture plane (PP)</text>
+
+  <!-- Width annotation -->
+  <line x1="80" y1="358" x2="120" y2="358" stroke="#555" stroke-width="1"/>
+  <text x="100" y="370" text-anchor="middle" font-family="serif" font-size="9" fill="#555">1 unit</text>
+
+  <!-- Footer -->
+  <text x="240" y="376" text-anchor="middle" font-family="serif" font-size="10" fill="#7a6a54">
+    Renaissance One-Point Floor · Horizon + VP + Orthogonals + Foreshortened Transversals
+  </text>
+</svg>

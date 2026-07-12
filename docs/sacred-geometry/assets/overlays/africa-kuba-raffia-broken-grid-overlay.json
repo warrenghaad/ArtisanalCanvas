@@ -1,0 +1,158 @@
+{
+  "_type": "decomposition-overlay",
+  "_version": "1.0",
+  "id": "africa-kuba-raffia-broken-grid-overlay",
+  "conceptId": "africa-kuba-raffia",
+  "title": "Kuba Raffia Cloth — Broken Grid Decomposition Overlay",
+  "description": "Structural analysis overlay for Kuba raffia textile geometry. Reveals the underlying grid, axis system, value groupings, and mark-density zones that produce the characteristic broken-grid visual rhythm of Kuba cut-pile and embroidered cloths.",
+  "referenceAsset": "raster/africa-kuba-raffia-texture-study.webp",
+  "sourceNote": "source-boards/africa-kuba-raffia-sources.md",
+  "layers": [
+    {
+      "id": "base-grid",
+      "label": "Base Square Grid",
+      "description": "The underlying regular square grid on which all pattern units are registered. Kuba raffia uses a consistent module, typically 1–2cm per square in original cloth.",
+      "renderStyle": {
+        "strokeColor": "#4a90d9",
+        "strokeWidth": 0.8,
+        "strokeDasharray": [3, 3],
+        "fillOpacity": 0,
+        "opacity": 0.7
+      },
+      "geometry": {
+        "type": "regular-grid",
+        "unitWidth": 20,
+        "unitHeight": 20,
+        "origin": [0, 0]
+      },
+      "defaultVisible": true
+    },
+    {
+      "id": "primary-axes",
+      "label": "Primary Horizontal and Vertical Axes",
+      "description": "The dominant structural axes that anchor the repeat unit. In Kuba cloth, these are typically the warp/weft directions of the raffia weave.",
+      "renderStyle": {
+        "strokeColor": "#c0392b",
+        "strokeWidth": 1.5,
+        "opacity": 0.85
+      },
+      "geometry": {
+        "type": "axis-lines",
+        "axes": [
+          { "type": "horizontal", "yFraction": 0.5 },
+          { "type": "vertical",   "xFraction": 0.5 }
+        ]
+      },
+      "defaultVisible": false
+    },
+    {
+      "id": "diagonal-axes",
+      "label": "Diagonal Tension Axes",
+      "description": "45° diagonal axes that produce the characteristic dynamic tension in Kuba pattern. These diagonals are NOT the structural weave axes but emerge from the pattern geometry itself, creating the 'broken' visual rhythm.",
+      "renderStyle": {
+        "strokeColor": "#8e44ad",
+        "strokeWidth": 1,
+        "strokeDasharray": [4, 2],
+        "opacity": 0.7
+      },
+      "geometry": {
+        "type": "axis-lines",
+        "axes": [
+          { "type": "diagonal-45" },
+          { "type": "diagonal-135" }
+        ]
+      },
+      "defaultVisible": false
+    },
+    {
+      "id": "repeat-unit",
+      "label": "Repeat Unit Boundary",
+      "description": "The minimal repeat unit of the Kuba pattern. Kuba cloth often uses multiple staggered repeat units that offset by half a unit, producing the brick-shifted visual rhythm.",
+      "renderStyle": {
+        "strokeColor": "#e67e22",
+        "strokeWidth": 2,
+        "fillColor": "rgba(230,126,34,0.05)",
+        "opacity": 1.0
+      },
+      "geometry": {
+        "type": "rectangle",
+        "widthUnits": 6,
+        "heightUnits": 6,
+        "offsetX": 0,
+        "offsetY": 0
+      },
+      "defaultVisible": true
+    },
+    {
+      "id": "value-groups",
+      "label": "Value / Tone Groups",
+      "description": "Three-zone value grouping: dark cut-pile zones (high density), mid-tone embroidered zones, and light ground zones. The contrast ratio and zone sizes create the visual weight and rhythm of the cloth.",
+      "renderStyle": {
+        "zoneColors": {
+          "dark": "rgba(40,20,0,0.35)",
+          "mid":  "rgba(140,90,40,0.25)",
+          "light": "rgba(220,200,160,0.15)"
+        },
+        "borderColor": "rgba(40,20,0,0.5)",
+        "borderWidth": 0.5
+      },
+      "geometry": {
+        "type": "zone-map",
+        "zones": [
+          { "id": "zone-dark-1",  "gridRect": [0,0,2,2],  "value": "dark" },
+          { "id": "zone-mid-1",   "gridRect": [2,0,2,2],  "value": "mid" },
+          { "id": "zone-light-1", "gridRect": [4,0,2,2],  "value": "light" },
+          { "id": "zone-mid-2",   "gridRect": [0,2,2,2],  "value": "mid" },
+          { "id": "zone-light-2", "gridRect": [2,2,2,2],  "value": "light" },
+          { "id": "zone-dark-2",  "gridRect": [4,2,2,2],  "value": "dark" },
+          { "id": "zone-light-3", "gridRect": [0,4,2,2],  "value": "light" },
+          { "id": "zone-dark-3",  "gridRect": [2,4,2,2],  "value": "dark" },
+          { "id": "zone-mid-3",   "gridRect": [4,4,2,2],  "value": "mid" }
+        ]
+      },
+      "defaultVisible": false
+    },
+    {
+      "id": "mark-density",
+      "label": "Mark-Density Contours",
+      "description": "Contour lines showing regions of high, medium, and low cut-pile density. Dense regions appear to advance visually; sparse regions recede. This creates depth without perspective.",
+      "renderStyle": {
+        "strokeColor": "#27ae60",
+        "strokeWidth": 1,
+        "opacity": 0.75,
+        "labelDensityLevels": true
+      },
+      "geometry": {
+        "type": "density-contour",
+        "levels": ["high", "medium", "low"],
+        "contourSmoothing": false
+      },
+      "defaultVisible": false
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-broken-grid",
+      "text": "The 'broken grid' quality comes from offsetting the repeat unit by half a module in alternating rows, combined with asymmetric value distribution. No cell in the cloth is identical to its neighbor in both form AND value.",
+      "position": { "xFraction": 0.5, "yFraction": 0.05 }
+    },
+    {
+      "id": "note-cultural",
+      "text": "Kuba cloth (Democratic Republic of Congo) is made by men and women collaboratively: men weave the raffia cloth ground, women add embroidery and cut-pile. The geometric vocabulary is collectively maintained and continuously innovated.",
+      "position": { "xFraction": 0.5, "yFraction": 0.95 }
+    }
+  ],
+  "keyboardShortcuts": {
+    "1": "toggle base-grid",
+    "2": "toggle primary-axes",
+    "3": "toggle diagonal-axes",
+    "4": "toggle repeat-unit",
+    "5": "toggle value-groups",
+    "6": "toggle mark-density"
+  },
+  "curriculumLinks": [
+    "africa-kuba-raffia",
+    "cross-cultural-textile-grid",
+    "africa-bogolan-mudcloth"
+  ]
+}

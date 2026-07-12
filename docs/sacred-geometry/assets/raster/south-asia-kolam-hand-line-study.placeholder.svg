@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" height="240"
+  role="img" aria-label="Kolam production placeholder: three-state layout guide showing dot grid, partial loop, and completed loop">
+  <title>Kolam Placeholder — Compositional Layout Guide</title>
+  <rect width="600" height="240" fill="#f8f5ef"/>
+
+  <!-- State 1: Dot grid only -->
+  <rect x="5" y="5" width="185" height="185" fill="#fff" stroke="#ccc" stroke-width="1"/>
+  <text x="97" y="202" text-anchor="middle" font-family="serif" font-size="10" fill="#888">1. dot grid (pullis)</text>
+  <!-- 5×5 dot grid, spacing=32, start=(25,25) -->
+  <g fill="#555">
+    <circle cx="25" cy="25" r="3"/><circle cx="57" cy="25" r="3"/><circle cx="89" cy="25" r="3"/><circle cx="121" cy="25" r="3"/><circle cx="153" cy="25" r="3"/>
+    <circle cx="25" cy="57" r="3"/><circle cx="57" cy="57" r="3"/><circle cx="89" cy="57" r="3"/><circle cx="121" cy="57" r="3"/><circle cx="153" cy="57" r="3"/>
+    <circle cx="25" cy="89" r="3"/><circle cx="57" cy="89" r="3"/><circle cx="89" cy="89" r="3"/><circle cx="121" cy="89" r="3"/><circle cx="153" cy="89" r="3"/>
+    <circle cx="25" cy="121" r="3"/><circle cx="57" cy="121" r="3"/><circle cx="89" cy="121" r="3"/><circle cx="121" cy="121" r="3"/><circle cx="153" cy="121" r="3"/>
+    <circle cx="25" cy="153" r="3"/><circle cx="57" cy="153" r="3"/><circle cx="89" cy="153" r="3"/><circle cx="121" cy="153" r="3"/><circle cx="153" cy="153" r="3"/>
+  </g>
+
+  <!-- State 2: Partial loop -->
+  <rect x="205" y="5" width="185" height="185" fill="#fff" stroke="#ccc" stroke-width="1"/>
+  <text x="297" y="202" text-anchor="middle" font-family="serif" font-size="10" fill="#888">2. loop in progress (~40%)</text>
+  <!-- Dots faint -->
+  <g fill="#bbb">
+    <circle cx="225" cy="25" r="2.5"/><circle cx="257" cy="25" r="2.5"/><circle cx="289" cy="25" r="2.5"/><circle cx="321" cy="25" r="2.5"/><circle cx="353" cy="25" r="2.5"/>
+    <circle cx="225" cy="57" r="2.5"/><circle cx="257" cy="57" r="2.5"/><circle cx="289" cy="57" r="2.5"/><circle cx="321" cy="57" r="2.5"/><circle cx="353" cy="57" r="2.5"/>
+    <circle cx="225" cy="89" r="2.5"/><circle cx="257" cy="89" r="2.5"/><circle cx="289" cy="89" r="2.5"/><circle cx="321" cy="89" r="2.5"/><circle cx="353" cy="89" r="2.5"/>
+    <circle cx="225" cy="121" r="2.5"/><circle cx="257" cy="121" r="2.5"/><circle cx="289" cy="121" r="2.5"/><circle cx="321" cy="121" r="2.5"/><circle cx="353" cy="121" r="2.5"/>
+    <circle cx="225" cy="153" r="2.5"/><circle cx="257" cy="153" r="2.5"/><circle cx="289" cy="153" r="2.5"/><circle cx="321" cy="153" r="2.5"/><circle cx="353" cy="153" r="2.5"/>
+  </g>
+  <!-- Partial loop path approximation -->
+  <path d="M225,41 Q241,25 257,41 Q273,57 257,73 Q241,89 225,73 Q209,57 225,41"
+    fill="none" stroke="#3a2a18" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M289,25 Q305,25 321,25 Q337,41 321,57 Q305,73 289,57 Q273,41 289,25"
+    fill="none" stroke="#3a2a18" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="297" y="175" text-anchor="middle" font-family="serif" font-size="8" fill="#c0392b">artist continues here →</text>
+
+  <!-- State 3: Completed kolam -->
+  <rect x="405" y="5" width="185" height="185" fill="#fff" stroke="#ccc" stroke-width="1"/>
+  <text x="497" y="202" text-anchor="middle" font-family="serif" font-size="10" fill="#888">3. completed loop</text>
+  <!-- Dots faint, visible through loop -->
+  <g fill="#bbb">
+    <circle cx="425" cy="25" r="2.5"/><circle cx="457" cy="25" r="2.5"/><circle cx="489" cy="25" r="2.5"/><circle cx="521" cy="25" r="2.5"/><circle cx="553" cy="25" r="2.5"/>
+    <circle cx="425" cy="57" r="2.5"/><circle cx="457" cy="57" r="2.5"/><circle cx="489" cy="57" r="2.5"/><circle cx="521" cy="57" r="2.5"/><circle cx="553" cy="57" r="2.5"/>
+    <circle cx="425" cy="89" r="2.5"/><circle cx="457" cy="89" r="2.5"/><circle cx="489" cy="89" r="2.5"/><circle cx="521" cy="89" r="2.5"/><circle cx="553" cy="89" r="2.5"/>
+    <circle cx="425" cy="121" r="2.5"/><circle cx="457" cy="121" r="2.5"/><circle cx="489" cy="121" r="2.5"/><circle cx="521" cy="121" r="2.5"/><circle cx="553" cy="121" r="2.5"/>
+    <circle cx="425" cy="153" r="2.5"/><circle cx="457" cy="153" r="2.5"/><circle cx="489" cy="153" r="2.5"/><circle cx="521" cy="153" r="2.5"/><circle cx="553" cy="153" r="2.5"/>
+  </g>
+  <!-- Stylized completed loop -->
+  <path d="M489,9 Q520,9 553,41 Q553,73 521,105 Q489,137 457,105 Q425,73 425,41 Q425,9 489,9 Z"
+    fill="none" stroke="#3a2a18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M489,25 Q521,25 521,57 Q521,89 489,89 Q457,89 457,57 Q457,25 489,25 Z"
+    fill="none" stroke="#3a2a18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Footer note -->
+  <text x="300" y="228" text-anchor="middle" font-family="serif" font-size="9" fill="#888">
+    PLACEHOLDER — Replace with artist-drawn pressure-sensitive raster (WebP). See .brief.md.
+  </text>
+</svg>

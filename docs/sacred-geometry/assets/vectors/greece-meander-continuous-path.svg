@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200"
+  role="img" aria-label="Greek meander key pattern: a continuous right-angle spiral band shown in two rows">
+  <title>Greek Meander — Continuous Path Key Pattern</title>
+  <desc>The classical Greek meander (Greek key / running fret) as a continuous right-angle spiral band. One full period shown in the top row with construction grid; clean band shown in the bottom row. Flat-construction-vector asset.</desc>
+
+  <rect width="400" height="200" fill="#f8f5ef"/>
+
+  <!-- Construction grid (top half) -->
+  <g stroke="#d0c8b8" stroke-width="0.5">
+    <!-- Vertical lines every 20px from 0 to 400 -->
+    <line x1="0"   y1="0"   x2="0"   y2="100"/>
+    <line x1="20"  y1="0"   x2="20"  y2="100"/>
+    <line x1="40"  y1="0"   x2="40"  y2="100"/>
+    <line x1="60"  y1="0"   x2="60"  y2="100"/>
+    <line x1="80"  y1="0"   x2="80"  y2="100"/>
+    <line x1="100" y1="0"   x2="100" y2="100"/>
+    <line x1="120" y1="0"   x2="120" y2="100"/>
+    <line x1="140" y1="0"   x2="140" y2="100"/>
+    <line x1="160" y1="0"   x2="160" y2="100"/>
+    <line x1="180" y1="0"   x2="180" y2="100"/>
+    <line x1="200" y1="0"   x2="200" y2="100"/>
+    <line x1="220" y1="0"   x2="220" y2="100"/>
+    <line x1="240" y1="0"   x2="240" y2="100"/>
+    <line x1="260" y1="0"   x2="260" y2="100"/>
+    <line x1="280" y1="0"   x2="280" y2="100"/>
+    <line x1="300" y1="0"   x2="300" y2="100"/>
+    <line x1="320" y1="0"   x2="320" y2="100"/>
+    <line x1="340" y1="0"   x2="340" y2="100"/>
+    <line x1="360" y1="0"   x2="360" y2="100"/>
+    <line x1="380" y1="0"   x2="380" y2="100"/>
+    <line x1="400" y1="0"   x2="400" y2="100"/>
+    <!-- Horizontal lines every 20px -->
+    <line x1="0" y1="0"   x2="400" y2="0"/>
+    <line x1="0" y1="20"  x2="400" y2="20"/>
+    <line x1="0" y1="40"  x2="400" y2="40"/>
+    <line x1="0" y1="60"  x2="400" y2="60"/>
+    <line x1="0" y1="80"  x2="400" y2="80"/>
+    <line x1="0" y1="100" x2="400" y2="100"/>
+  </g>
+
+  <!--
+    Greek meander: period = 80px, height = 80px (within 20–80 y-band for 20px stroke width).
+    Path: single continuous line of width 20 on a 20px grid.
+    One period: Enter left at (0,60), go right to (40,60), down to (40,80), left to (20,80),
+    up to (20,20), right to (60,20), down to (60,40), left to (40,40) ... then continue.
+    
+    Tracing as a filled polygon (20px wide path on 20px grid):
+    The filled meander band shape for one 80px period:
+  -->
+
+  <!-- Top row: meander WITH construction grid overlay -->
+  <!-- Meander as polyline (stroke-based, 20px wide) -->
+  <polyline
+    points="0,70 40,70 40,90 20,90 20,10 60,10 60,50 40,50 40,30 80,30 80,90 60,90 60,70
+            120,70 160,70 160,90 140,90 140,10 180,10 180,50 160,50 160,30 200,30 200,90 180,90 180,70
+            240,70 280,70 280,90 260,90 260,10 300,10 300,50 280,50 280,30 320,30 320,90 300,90 300,70
+            360,70 400,70"
+    fill="none" stroke="#2c3e50" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- Bottom row: clean meander (no grid) -->
+  <rect x="0" y="110" width="400" height="80" fill="#ede8de"/>
+  <polyline
+    points="0,170 40,170 40,190 20,190 20,120 60,120 60,150 40,150 40,130 80,130 80,190 60,190 60,170
+            120,170 160,170 160,190 140,190 140,120 180,120 180,150 160,150 160,130 200,130 200,190 180,190 180,170
+            240,170 280,170 280,190 260,190 260,120 300,120 300,150 280,150 280,130 320,130 320,190 300,190 300,170
+            360,170 400,170"
+    fill="none" stroke="#2c3e50" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- Label top row -->
+  <text x="2" y="10" font-family="serif" font-size="9" fill="#8b7355">with 20px construction grid</text>
+  <!-- Label bottom row -->
+  <text x="2" y="122" font-family="serif" font-size="9" fill="#8b7355">clean band</text>
+
+  <!-- Period annotation -->
+  <line x1="0" y1="96" x2="80" y2="96" stroke="#c0392b" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="80" y1="96" x2="0"  y2="96" stroke="#c0392b" stroke-width="1"/>
+  <text x="40" y="108" text-anchor="middle" font-family="serif" font-size="9" fill="#c0392b">period = 4 units</text>
+
+  <!-- Footer -->
+  <text x="200" y="196" text-anchor="middle" font-family="serif" font-size="10" fill="#7a6a54">
+    Greek Meander · Continuous Right-Angle Path · Period = 4 Grid Units
+  </text>
+</svg>

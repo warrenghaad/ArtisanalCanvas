@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" width="600" height="280"
+  role="img" aria-label="China cloud scroll placeholder: annotated single scroll (left) and interlocking field (right)">
+  <title>Cloud Scroll Placeholder — Compositional Layout Guide</title>
+  <rect width="600" height="280" fill="#f5f0e8"/>
+
+  <!-- Left panel: single annotated cloud scroll -->
+  <rect x="5" y="5" width="280" height="240" fill="#fffdf8" stroke="#ccc" stroke-width="1"/>
+  <text x="145" y="258" text-anchor="middle" font-family="serif" font-size="10" fill="#888">annotated single unit</text>
+
+  <!-- Cloud scroll form (S-curve comma) -->
+  <!-- Outer arc: starts thin at right, swells at top, lifts at left -->
+  <path d="M80,120 C80,60 180,40 220,80 C260,120 240,180 180,200 C120,220 80,200 80,160"
+    fill="none" stroke="#2a1a08" stroke-width="4" stroke-linecap="round"
+    style="stroke-width:4"/>
+  <!-- Inner compression curve -->
+  <path d="M140,120 C140,90 175,75 190,95 C205,115 190,140 170,150 C150,160 130,150 130,135"
+    fill="none" stroke="#2a1a08" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Stroke direction arrows -->
+  <text x="222" y="75" font-family="serif" font-size="9" fill="#c0392b">enter ↓</text>
+  <text x="232" y="185" font-family="serif" font-size="9" fill="#c0392b">↑ swell</text>
+  <text x="60"  y="130" font-family="serif" font-size="9" fill="#c0392b">lift →</text>
+  <text x="140" y="100" font-family="serif" font-size="9" fill="#5a2a00">compression</text>
+  <text x="60"  y="175" font-family="serif" font-size="9" fill="#5a2a00">open arc</text>
+
+  <!-- Right panel: interlocking cloud scroll field -->
+  <rect x="305" y="5" width="280" height="240" fill="#fffdf8" stroke="#ccc" stroke-width="1"/>
+  <text x="445" y="258" text-anchor="middle" font-family="serif" font-size="10" fill="#888">interlocking field (3–5 units)</text>
+
+  <!-- Three interlocking scrolls (simplified placeholder shapes) -->
+  <path d="M330,120 C330,70 410,50 440,85 C470,120 455,165 410,180 C365,195 330,175 330,145"
+    fill="none" stroke="#2a1a08" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M400,160 C400,120 460,110 480,135 C500,160 490,195 460,205 C430,215 395,200 395,180"
+    fill="none" stroke="#2a1a08" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M460,80 C460,50 520,45 535,70 C550,95 535,125 510,135 C485,145 455,130 455,110"
+    fill="none" stroke="#2a1a08" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M340,50 C340,30 380,25 395,45 C410,65 400,85 380,90 C360,95 335,80 335,65"
+    fill="none" stroke="#2a1a08" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M440,195 C440,180 470,175 480,188 C490,202 482,218 465,222 C448,226 436,215 436,205"
+    fill="none" stroke="#2a1a08" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Footer note -->
+  <text x="300" y="272" text-anchor="middle" font-family="serif" font-size="9" fill="#888">
+    PLACEHOLDER — Replace with artist brush linework (WebP). See .brief.md.
+  </text>
+</svg>

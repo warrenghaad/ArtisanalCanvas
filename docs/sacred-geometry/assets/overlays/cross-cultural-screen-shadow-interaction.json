@@ -1,0 +1,207 @@
+{
+  "_type": "canvas-interaction",
+  "_version": "1.0",
+  "id": "cross-cultural-screen-shadow-interaction",
+  "conceptIds": [
+    "islamic-jali-screen",
+    "south-asia-jali",
+    "china-lattice-window",
+    "north-africa-mashrabiya-screen"
+  ],
+  "title": "Screen and Shadow — Cross-Cultural Lattice Comparison",
+  "description": "An interactive canvas layer for comparing four cultural traditions of geometric screen design and their shadow-casting behavior. Toggle individual cultural screens, adjust light angle, compare mark-density logic, and overlay shadow projections.",
+  "interactionType": "compare-cultures",
+  "baseEnvironment": {
+    "backgroundFill": "#f0ede4",
+    "lightSourcePosition": { "x": 0.5, "y": 0.1 },
+    "lightSourceAngle": 35,
+    "shadowColor": "rgba(40,30,20,0.55)",
+    "groundPlane": { "y": 0.75, "perspective": "one-point" }
+  },
+  "screens": [
+    {
+      "id": "islamic-jali",
+      "culture": "Islamic (Mughal India)",
+      "label": "Islamic Jali Screen",
+      "assetRef": "vectors/islamic-jali-lattice-cutout.svg",
+      "placeholderPattern": {
+        "type": "8-star-lattice",
+        "starPoints": 8,
+        "unitSize": 60,
+        "fillColor": "#d4c5a0",
+        "strokeColor": "#8b7355",
+        "cutoutFill": "transparent"
+      },
+      "shadowPattern": {
+        "type": "derived-from-cutouts",
+        "softness": 2
+      },
+      "culturalNote": "Jali (perforated stone screen) in Mughal architecture. Geometric lattice of intersecting arcs and stars. Shadow pattern changes with solar angle throughout the day, animating interior spaces.",
+      "defaultVisible": true
+    },
+    {
+      "id": "south-asia-jali",
+      "culture": "South Asia (Rajasthan)",
+      "label": "South Asian Jali Screen",
+      "assetRef": "vectors/south-asia-jali-light-shadow.svg",
+      "placeholderPattern": {
+        "type": "square-circle-lattice",
+        "unitSize": 55,
+        "fillColor": "#c8bfa0",
+        "strokeColor": "#7a6840",
+        "cutoutFill": "transparent"
+      },
+      "shadowPattern": {
+        "type": "derived-from-cutouts",
+        "softness": 2
+      },
+      "culturalNote": "Stone or wooden jali in Rajasthani havelis and temples. Often uses circular and lozenge cutouts within a square grid. Admits light while maintaining privacy — a key architectural function.",
+      "defaultVisible": false
+    },
+    {
+      "id": "china-lattice",
+      "culture": "China",
+      "label": "Chinese Wooden Lattice Window",
+      "assetRef": "vectors/china-lattice-window-cutout.svg",
+      "placeholderPattern": {
+        "type": "swastika-fret-lattice",
+        "unitSize": 50,
+        "fillColor": "#c8a870",
+        "strokeColor": "#5a3a10",
+        "cutoutFill": "transparent"
+      },
+      "shadowPattern": {
+        "type": "derived-from-cutouts",
+        "softness": 1
+      },
+      "culturalNote": "Chinese wooden lattice (棂格 língé) windows use interlocking right-angle fret patterns. The shadow cast is a precise geometric negative of the positive lattice, creating a second pattern on the interior floor.",
+      "defaultVisible": false
+    },
+    {
+      "id": "mashrabiya",
+      "culture": "North Africa / Middle East",
+      "label": "Mashrabiya Screen",
+      "assetRef": "vectors/north-africa-mashrabiya-light-grid.svg",
+      "placeholderPattern": {
+        "type": "turned-wood-sphere-grid",
+        "unitSize": 45,
+        "fillColor": "#d4b880",
+        "strokeColor": "#704020",
+        "cutoutFill": "transparent"
+      },
+      "shadowPattern": {
+        "type": "derived-from-cutouts",
+        "softness": 4
+      },
+      "culturalNote": "Mashrabiya (مشربية) is a projecting oriel window with turned wooden lattice. The sphere-shaped turned elements create a graduated shadow — denser at sphere equators, lighter at poles. This produces a soft atmospheric screen, unlike the harder geometric shadows of flat-cut jali.",
+      "defaultVisible": false
+    }
+  ],
+  "toggleLayers": [
+    {
+      "id": "islamic-jali",
+      "label": "Islamic Jali",
+      "groupKey": "screen",
+      "defaultVisible": true
+    },
+    {
+      "id": "south-asia-jali",
+      "label": "South Asian Jali",
+      "groupKey": "screen",
+      "defaultVisible": false
+    },
+    {
+      "id": "china-lattice",
+      "label": "Chinese Lattice",
+      "groupKey": "screen",
+      "defaultVisible": false
+    },
+    {
+      "id": "mashrabiya",
+      "label": "Mashrabiya",
+      "groupKey": "screen",
+      "defaultVisible": false
+    },
+    {
+      "id": "shadow-projection",
+      "label": "Show Shadow Projection",
+      "groupKey": "effect",
+      "defaultVisible": true
+    },
+    {
+      "id": "light-angle-control",
+      "label": "Light Angle Control",
+      "groupKey": "effect",
+      "defaultVisible": true
+    },
+    {
+      "id": "overlay-compare",
+      "label": "Overlay Two Screens",
+      "groupKey": "compare",
+      "defaultVisible": false
+    }
+  ],
+  "controls": [
+    {
+      "id": "light-angle",
+      "type": "slider",
+      "label": "Light Angle (°)",
+      "min": 5,
+      "max": 85,
+      "default": 35,
+      "step": 5,
+      "affects": "shadow-projection"
+    },
+    {
+      "id": "shadow-opacity",
+      "type": "slider",
+      "label": "Shadow Opacity",
+      "min": 0.1,
+      "max": 0.9,
+      "default": 0.55,
+      "step": 0.05,
+      "affects": "shadow-projection"
+    },
+    {
+      "id": "culture-a",
+      "type": "select",
+      "label": "Screen A",
+      "options": ["islamic-jali", "south-asia-jali", "china-lattice", "mashrabiya"],
+      "default": "islamic-jali",
+      "affects": "overlay-compare"
+    },
+    {
+      "id": "culture-b",
+      "type": "select",
+      "label": "Screen B",
+      "options": ["islamic-jali", "south-asia-jali", "china-lattice", "mashrabiya"],
+      "default": "china-lattice",
+      "affects": "overlay-compare"
+    }
+  ],
+  "interactionHints": [
+    "Press 1–4 to switch between cultural screens",
+    "Press S to toggle shadow projection",
+    "Press O to overlay two screens for comparison",
+    "Drag the light source dot to change shadow angle",
+    "Press Space to cycle through all four screens"
+  ],
+  "keyboardShortcuts": {
+    "1": "show islamic-jali only",
+    "2": "show south-asia-jali only",
+    "3": "show china-lattice only",
+    "4": "show mashrabiya only",
+    "s": "toggle shadow-projection",
+    "o": "toggle overlay-compare",
+    "Space": "cycle screens",
+    "ArrowLeft": "decrease light-angle by 5",
+    "ArrowRight": "increase light-angle by 5"
+  },
+  "curriculumLinks": [
+    "islamic-jali-screen",
+    "south-asia-jali",
+    "china-lattice-window",
+    "north-africa-mashrabiya-screen",
+    "cross-cultural-screen-shadow"
+  ]
+}

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400"
+  role="img" aria-label="North African zellij 8-pointed star tile repeat: the classic star-and-cross tessellation used in Moroccan tilework">
+  <title>North Africa Zellij — Eight-Point Star Tile Repeat</title>
+  <desc>The North African zellij tilework star-cross tessellation: 8-pointed stars surrounded by cross-shaped and rhombus tiles. Two-by-two cell repeat shown with alternate coloring to distinguish tile families. Flat-construction-vector asset.</desc>
+
+  <rect width="400" height="400" fill="#f0ebe0"/>
+
+  <!--
+    Zellij 8-star repeat: the classic p4m tiling.
+    Repeat unit = 100×100px. The pattern uses:
+      - 8-pointed star (center of each cell)
+      - 4 cross arms extending from star
+      - 4 small square tiles at corners
+      - 4 rhombus tiles in between
+
+    I'll use an adapted octagon-square base (same as Rome mosaic)
+    but fill alternate regions to show the zellij color logic.
+    
+    Octagon in 100×100: corner cut = 21
+    Vertices: (21,0)(79,0)(100,21)(100,79)(79,100)(21,100)(0,79)(0,21)
+    
+    Within each octagon, draw the 8-point star:
+    Star inner radius ≈ 50*(√2-1)/2 ≈ 10.4 for this scale.
+    
+    For a cleaner diagram, I'll draw the zellij as:
+    - Large octagon (terracotta)
+    - 8-point star clipped inside (white/cream)
+    - Square at each corner junction (dark blue)
+    - Cross arm tiles (light blue-gray)
+  -->
+
+  <defs>
+    <!-- The 8-point star polygon centered at 50,50 within 100×100 cell -->
+    <!-- Outer points at r=28 at 0°,45°,90°,135°,180°,225°,270°,315° + top -->
+    <!-- Inner concave at r=20 offset 22.5° -->
+    <!-- Using approximate values: outer R=28, inner r=11.6 -->
+    <!-- Outer: 22.5° steps from 90°(top): -->
+    <!-- k=0 top:       (50,22) -->
+    <!-- k=1 at 67.5°: (50+11.6*0.38,50-11.6*0.92)=(54.4,39.3) -->
+    <!-- k=2 at 45°:   (50+19.8,50-19.8)=(69.8,30.2) -->
+    <!-- k=3 at 22.5°: (50+10.7,50-4.4)=(60.7,45.6) -->
+    <!-- k=4 right:    (78,50) -->
+    <!-- k=5 at -22.5°: (60.7,54.4) -->
+    <!-- k=6 at -45°:  (69.8,69.8) -->
+    <!-- k=7 at -67.5°: (54.4,60.7) -->
+    <!-- k=8 bottom:   (50,78) -->
+    <!-- etc. -->
+    <symbol id="star8" viewBox="0 0 100 100">
+      <!-- 8-pointed star -->
+      <polygon
+        points="50,22 54.4,39.3 69.8,30.2 60.7,45.6 78,50 60.7,54.4 69.8,69.8 54.4,60.7 50,78 45.6,60.7 30.2,69.8 39.3,54.4 22,50 39.3,45.6 30.2,30.2 45.6,39.3"
+        fill="#faf0d8" stroke="#8b6914" stroke-width="1"/>
+    </symbol>
+
+    <!-- One tile cell: octagon background + star -->
+    <symbol id="cell" viewBox="0 0 100 100">
+      <!-- Octagon fill -->
+      <polygon points="21,0 79,0 100,21 100,79 79,100 21,100 0,79 0,21"
+        fill="#c87941" stroke="#8b5a2b" stroke-width="1"/>
+      <!-- Star on top -->
+      <use href="#star8" width="100" height="100"/>
+    </symbol>
+
+    <!-- Corner square (21×21) -->
+    <symbol id="csq" viewBox="0 0 21 21">
+      <rect x="0" y="0" width="21" height="21" fill="#1a4a7a" stroke="#0d2a4a" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <!-- 4×4 grid of cells -->
+  <g>
+    <use href="#cell" x="0"   y="0"   width="100" height="100"/>
+    <use href="#cell" x="100" y="0"   width="100" height="100"/>
+    <use href="#cell" x="200" y="0"   width="100" height="100"/>
+    <use href="#cell" x="300" y="0"   width="100" height="100"/>
+
+    <use href="#cell" x="0"   y="100" width="100" height="100"/>
+    <use href="#cell" x="100" y="100" width="100" height="100"/>
+    <use href="#cell" x="200" y="100" width="100" height="100"/>
+    <use href="#cell" x="300" y="100" width="100" height="100"/>
+
+    <use href="#cell" x="0"   y="200" width="100" height="100"/>
+    <use href="#cell" x="100" y="200" width="100" height="100"/>
+    <use href="#cell" x="200" y="200" width="100" height="100"/>
+    <use href="#cell" x="300" y="200" width="100" height="100"/>
+
+    <use href="#cell" x="0"   y="300" width="100" height="100"/>
+    <use href="#cell" x="100" y="300" width="100" height="100"/>
+    <use href="#cell" x="200" y="300" width="100" height="100"/>
+    <use href="#cell" x="300" y="300" width="100" height="100"/>
+  </g>
+
+  <!-- Corner squares at every 100px grid junction -->
+  <g>
+    <use href="#csq" x="89"  y="89"  width="21" height="21"/>
+    <use href="#csq" x="189" y="89"  width="21" height="21"/>
+    <use href="#csq" x="289" y="89"  width="21" height="21"/>
+    <use href="#csq" x="389" y="89"  width="21" height="21"/>
+
+    <use href="#csq" x="89"  y="189" width="21" height="21"/>
+    <use href="#csq" x="189" y="189" width="21" height="21"/>
+    <use href="#csq" x="289" y="189" width="21" height="21"/>
+    <use href="#csq" x="389" y="189" width="21" height="21"/>
+
+    <use href="#csq" x="89"  y="289" width="21" height="21"/>
+    <use href="#csq" x="189" y="289" width="21" height="21"/>
+    <use href="#csq" x="289" y="289" width="21" height="21"/>
+    <use href="#csq" x="389" y="289" width="21" height="21"/>
+
+    <use href="#csq" x="89"  y="389" width="21" height="21"/>
+    <use href="#csq" x="189" y="389" width="21" height="21"/>
+    <use href="#csq" x="289" y="389" width="21" height="21"/>
+    <use href="#csq" x="389" y="389" width="21" height="21"/>
+  </g>
+
+  <!-- Repeat unit bracket -->
+  <rect x="1" y="1" width="100" height="100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="4" y="12" font-family="serif" font-size="9" fill="#c0392b">unit</text>
+
+  <!-- Footer -->
+  <text x="200" y="414" text-anchor="middle" font-family="serif" font-size="10" fill="#7a6a54">
+    North Africa Zellij · Eight-Point Star Tile Repeat · p4m Symmetry
+  </text>
+</svg>

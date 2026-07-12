@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180" width="500" height="180"
+  role="img" aria-label="The five Islamic girih tiles: decagon, elongated hexagon, bowtie, rhombus, and pentagon">
+  <title>Islamic Girih Tile Set</title>
+  <desc>The five girih tiles used in Islamic geometric patterns. Each tile is defined by interior angles. The tiles interlock to produce star-and-polygon lattice patterns without overlap or gap. Flat-construction-vector asset.</desc>
+
+  <rect width="500" height="180" fill="#faf7f2"/>
+
+  <!-- Tile 1: Regular Decagon  (center 50,90, r=38) -->
+  <!-- 10 vertices at 90°+k*36° -->
+  <!-- k=0..9: angles 90,126,162,198,234,270,306,342,18,54 degrees -->
+  <!-- x = 50 + 38*cos(theta), y = 90 - 38*sin(theta) -->
+  <!-- 90°:(50,52) 126°:(27.6,61.3) 162°:(13.8,78.2) 198°:(13.8,101.8) 234°:(27.6,118.7) 270°:(50,128) 306°:(72.4,118.7) 342°:(86.2,101.8) 18°:(86.2,78.2) 54°:(72.4,61.3) -->
+  <polygon
+    points="50,52 27.6,61.3 13.8,78.2 13.8,101.8 27.6,118.7 50,128 72.4,118.7 86.2,101.8 86.2,78.2 72.4,61.3"
+    fill="rgba(184,134,11,0.18)" stroke="#8b6914" stroke-width="1.8"/>
+  <text x="50" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#4a3520">decagon</text>
+
+  <!-- Tile 2: Elongated hexagon (center 150,90) -->
+  <!-- An elongated hexagon with angles 72,144,144,72,144,144 -->
+  <!-- Using approximate proportions: tall hexagon 26 wide, 50 tall -->
+  <polygon
+    points="150,55 170,68 170,112 150,125 130,112 130,68"
+    fill="rgba(184,134,11,0.18)" stroke="#8b6914" stroke-width="1.8"/>
+  <text x="150" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#4a3520">el. hexagon</text>
+
+  <!-- Tile 3: Bowtie / acute hexagon (center 250,90) -->
+  <!-- A concave hexagon shaped like a bowtie: angles 72,72,216,72,72,216 -->
+  <polygon
+    points="250,62 275,85 298,72 275,95 298,118 275,105 250,128 225,105 202,118 225,95 202,72 225,85"
+    fill="rgba(184,134,11,0.18)" stroke="#8b6914" stroke-width="1.8"/>
+  <text x="250" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#4a3520">bowtie</text>
+
+  <!-- Tile 4: Rhombus (center 355,90, 72° angle) -->
+  <!-- Rhombus with 72° and 108° angles, half-diagonals approx 20 and 33 -->
+  <polygon
+    points="355,57 388,90 355,123 322,90"
+    fill="rgba(184,134,11,0.18)" stroke="#8b6914" stroke-width="1.8"/>
+  <text x="355" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#4a3520">rhombus</text>
+
+  <!-- Tile 5: Pentagon (center 450,90, r=34) -->
+  <!-- Regular pentagon, flat base down: angles 108° -->
+  <!-- vertices at 90°+k*72°, k=0..4 -->
+  <!-- 90°:(450,56) 162°:(429,67) 198°:(422,97) 234°:(436,122) [approx] 306°:(464,97) 342°:(471,67) -->
+  <!-- More precisely: r=34 -->
+  <!-- k=0: 90° → (450+34*0,90-34)=(450,56) -->
+  <!-- k=1: 162° → (450+34*cos162°,90-34*sin162°)=(450-32.3,90-10.5)=(417.7,79.5) -->
+  <!-- k=2: 234° → (450+34*cos234°,90-34*sin234°)=(450-19.9,90+27.5)=(430.1,117.5) -->
+  <!-- k=3: 306° → (450+34*cos306°,90-34*sin306°)=(450+19.9,90+27.5)=(469.9,117.5) -->
+  <!-- k=4: 18° → (450+34*cos18°,90-34*sin18°)=(450+32.3,90-10.5)=(482.3,79.5) -->
+  <polygon
+    points="450,56 417.7,79.5 430.1,117.5 469.9,117.5 482.3,79.5"
+    fill="rgba(184,134,11,0.18)" stroke="#8b6914" stroke-width="1.8"/>
+  <text x="450" y="148" text-anchor="middle" font-family="serif" font-size="10" fill="#4a3520">pentagon</text>
+
+  <!-- Title -->
+  <text x="250" y="168" text-anchor="middle" font-family="serif" font-size="10" fill="#7a6a54">
+    Islamic Girih Tile Set · Five Interlocking Tile Types · Angles: 36°–144°
+  </text>
+</svg>

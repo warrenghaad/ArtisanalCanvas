@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400"
+  role="img" aria-label="Roman mosaic tessellation repeat unit: octagon-square tiling pattern used in Roman floor mosaics">
+  <title>Rome Mosaic — Octagon-Square Tessellation Repeat Unit</title>
+  <desc>The classic Roman mosaic tessellation unit: regular octagons surrounded by small squares, forming an infinite tiling. Two-by-two repeat shown. Flat-construction-vector asset.</desc>
+
+  <rect width="400" height="400" fill="#f5f0e8"/>
+
+  <!-- Construction grid lines (light) -->
+  <g stroke="#cbbfa8" stroke-width="0.5" stroke-dasharray="3 3">
+    <line x1="0" y1="100" x2="400" y2="100"/>
+    <line x1="0" y1="200" x2="400" y2="200"/>
+    <line x1="0" y1="300" x2="400" y2="300"/>
+    <line x1="100" y1="0" x2="100" y2="400"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/>
+  </g>
+
+  <!--
+    Octagon-square tessellation:
+    Each octagon fits in a 100×100 cell with the corners cut at 45°.
+    Corner cut = 100/(2+√2) ≈ 29.3 → use 29 for clarity.
+    Octagon vertices (in cell starting at 0,0):
+      (29,0),(71,0),(100,29),(100,71),(71,100),(29,100),(0,71),(0,29)
+    Small squares fill the corner gaps (29×29 squares at each corner).
+    We tile 3×3 (9 octagons) plus partial to fill 400×400.
+  -->
+
+  <!-- Macro unit = 100px. Draw 4×4 grid of octagons (only inner cells visible, rest clip) -->
+  <defs>
+    <clipPath id="frame">
+      <rect x="0" y="0" width="400" height="400"/>
+    </clipPath>
+    <!-- One octagon tile at origin -->
+    <symbol id="oct" viewBox="0 0 100 100">
+      <polygon points="29,0 71,0 100,29 100,71 71,100 29,100 0,71 0,29"
+        fill="#e8dcc8" stroke="#8b7355" stroke-width="1.5"/>
+    </symbol>
+    <!-- Corner square -->
+    <symbol id="sq" viewBox="0 0 29 29">
+      <rect x="0" y="0" width="29" height="29"
+        fill="#d4c5a9" stroke="#8b7355" stroke-width="1"/>
+    </symbol>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <!-- Row 0 -->
+    <use href="#oct" x="0"   y="0"   width="100" height="100"/>
+    <use href="#oct" x="100" y="0"   width="100" height="100"/>
+    <use href="#oct" x="200" y="0"   width="100" height="100"/>
+    <use href="#oct" x="300" y="0"   width="100" height="100"/>
+    <!-- Row 1 -->
+    <use href="#oct" x="0"   y="100" width="100" height="100"/>
+    <use href="#oct" x="100" y="100" width="100" height="100"/>
+    <use href="#oct" x="200" y="100" width="100" height="100"/>
+    <use href="#oct" x="300" y="100" width="100" height="100"/>
+    <!-- Row 2 -->
+    <use href="#oct" x="0"   y="200" width="100" height="100"/>
+    <use href="#oct" x="100" y="200" width="100" height="100"/>
+    <use href="#oct" x="200" y="200" width="100" height="100"/>
+    <use href="#oct" x="300" y="200" width="100" height="100"/>
+    <!-- Row 3 -->
+    <use href="#oct" x="0"   y="300" width="100" height="100"/>
+    <use href="#oct" x="100" y="300" width="100" height="100"/>
+    <use href="#oct" x="200" y="300" width="100" height="100"/>
+    <use href="#oct" x="300" y="300" width="100" height="100"/>
+
+    <!-- Corner squares at tile junctions (29×29 at every 100px grid intersection) -->
+    <!-- The corner squares are the regions clipped off the octagon corners -->
+    <!-- They appear at (71,71) of each tile = absolute positions at each 100px crossing -->
+    <g fill="#d4c5a9" stroke="#8b7355" stroke-width="1">
+      <!-- Junction squares at x=100, y=100 etc. (centered on grid crossings) -->
+      <!-- Top-left corner of the 29×29 square = (grid_x - 0, grid_y - 0) but shifted -->
+      <!-- Corner square center = junction point; size = 29×29; top-left = (jx-14.5, jy-14.5) -->
+      <rect x="85.5"  y="85.5"  width="29" height="29"/>
+      <rect x="185.5" y="85.5"  width="29" height="29"/>
+      <rect x="285.5" y="85.5"  width="29" height="29"/>
+      <rect x="85.5"  y="185.5" width="29" height="29"/>
+      <rect x="185.5" y="185.5" width="29" height="29"/>
+      <rect x="285.5" y="185.5" width="29" height="29"/>
+      <rect x="85.5"  y="285.5" width="29" height="29"/>
+      <rect x="185.5" y="285.5" width="29" height="29"/>
+      <rect x="285.5" y="285.5" width="29" height="29"/>
+    </g>
+
+    <!-- Repeat unit bracket (shows the minimal tile) -->
+    <rect x="2" y="2" width="100" height="100" fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5 3"/>
+    <text x="5" y="14" font-family="serif" font-size="9" fill="#c0392b">repeat unit</text>
+  </g>
+
+  <!-- Title -->
+  <text x="200" y="394" text-anchor="middle" font-family="serif" font-size="10" fill="#7a6a54">
+    Roman Mosaic · Octagon-Square Tessellation · Repeat Unit at Top Left
+  </text>
+</svg>
