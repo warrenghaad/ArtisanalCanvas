@@ -108,7 +108,8 @@ Two React routes (wouter), additive to the Academy shell:
   (`geometric / sacred / figure / other`), each cell showing its construction
   steps, prompt fragment, and reuse cases.
 
-Generated images are served from the local asset store at `/assets/**`.
+Generated images are served from the local asset store at `/assets/generated/**`
+(only generated images are exposed; ingested references and manifests stay private).
 
 ## Environment
 

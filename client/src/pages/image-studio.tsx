@@ -270,8 +270,15 @@ export default function ImageStudio() {
                     {result.generatedImages.map((g, i) => (
                       <div key={i} className="space-y-1">
                         <Badge variant="outline" className="capitalize">{g.purpose.replace(/_/g, " ")}</Badge>
-                        {g.generated && g.imagePath?.startsWith("assets/") ? (
-                          <img src={`/${g.imagePath}`} alt={g.purpose} className="w-full rounded-md border" />
+                        {g.generated && g.imagePath ? (
+                          // Generated PNGs always live in the generated dir served
+                          // at /assets/generated, regardless of ASSET_DIR, so the
+                          // filename alone yields a valid URL.
+                          <img
+                            src={`/assets/generated/${g.imagePath.split("/").pop()}`}
+                            alt={g.purpose}
+                            className="w-full rounded-md border"
+                          />
                         ) : (
                           <p className="text-xs text-muted-foreground">
                             {g.error ? `Error: ${g.error}` : "Not generated (set OPENAI_API_KEY to render)."}

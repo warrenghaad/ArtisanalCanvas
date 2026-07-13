@@ -7,7 +7,7 @@ import { z } from "zod";
 import express from "express";
 import { studioRouter } from "./studio/routes";
 import { seedStudioPrimitives } from "./studio/seed";
-import { ASSET_DIR } from "./studio/assetStore";
+import { ASSET_SUBDIRS } from "./studio/assetStore";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Initialize database storage with demo user
@@ -15,8 +15,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Mount the Primitive Cell Studio surface (additive; preserves the Academy).
   app.use("/api/studio", studioRouter);
-  // Serve locally-stored studio assets (generated images) so the UI can show them.
-  app.use("/assets", express.static(ASSET_DIR));
+  // Serve ONLY generated images publicly (not ingested references or manifests).
+  app.use("/assets/generated", express.static(ASSET_SUBDIRS.generated));
   // Seed the base geometric + sacred primitive library (best-effort, idempotent).
   seedStudioPrimitives().catch((err) =>
     console.error("[studio] primitive seeding skipped:", err),
