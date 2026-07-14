@@ -8,6 +8,8 @@ import ETextbookExplorer from "@/pages/etextbook-explorer";
 import CurriculumDashboard from "@/pages/curriculum-dashboard";
 import LearningHub from "@/pages/learning-hub";
 import AnalyticsDashboard from "@/pages/analytics-dashboard";
+import ImageStudio from "@/pages/image-studio";
+import PrimitiveLibrary from "@/pages/primitive-library";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -19,6 +21,8 @@ function Router() {
       <Route path="/curriculum" component={CurriculumDashboard} />
       <Route path="/learning" component={LearningHub} />
       <Route path="/analytics" component={AnalyticsDashboard} />
+      <Route path="/image-studio" component={ImageStudio} />
+      <Route path="/primitive-library" component={PrimitiveLibrary} />
       <Route component={NotFound} />
     </Switch>
   );

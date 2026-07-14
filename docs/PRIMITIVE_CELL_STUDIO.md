@@ -96,6 +96,21 @@ curl -X POST localhost:5000/api/studio/images/generate-with-swarm \
        "learningGoal":"facial expression through primitive construction"}'
 ```
 
+## Client surfaces
+
+Two React routes (wouter), additive to the Academy shell:
+
+- **`/image-studio`** — the swarm cockpit: enter subject/goal/level/style/outputs,
+  run *Generate plan* (no image) or *Run full swarm*, and see the primitive
+  manifest, image prompts, generated images, reusable cells, practice card,
+  critique, and graph edges.
+- **`/primitive-library`** — the reusable-cell library, filterable by category
+  (`geometric / sacred / figure / other`), each cell showing its construction
+  steps, prompt fragment, and reuse cases.
+
+Generated images are served from the local asset store at `/assets/generated/**`
+(only generated images are exposed; ingested references and manifests stay private).
+
 ## Environment
 
 ```
