@@ -12,3 +12,14 @@ assets/generated/*
 assets/manifests/*
 !assets/manifests/.gitkeep
 .env
+
+# CanonForge local runtime state
+.canonforge/
+
+# Python build and test artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/

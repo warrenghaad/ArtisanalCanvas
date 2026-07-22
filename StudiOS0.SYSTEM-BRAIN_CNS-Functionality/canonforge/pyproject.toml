@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "canonforge"
+version = "0.2.0"
+description = "Local, review-first knowledge ingestion console for ArtisanalCanvas"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic>=2.7,<3",
+  "PyYAML>=6.0,<7",
+  "rich>=13.7,<15",
+  "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2,<9",
+  "ruff>=0.5,<1",
+]
+
+[project.scripts]
+canonforge = "canonforge.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/canonforge"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
