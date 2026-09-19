@@ -79,3 +79,14 @@ Use SVG for clean geometry. Use raster or layered Canvas assets for line depth, 
 - Generate clean SVG diagrams for all `svg-suitable` assets.
 - Generate raster worksheets for material-rich topics such as Kuba raffia, zellij tile, manuscript illumination, carved stone jali, and mudcloth.
 - Add a `/studio` surface later without changing current Academy routes.
+
+## Symmetry curriculum study
+
+The curriculum translation of John H. Conway, Heidi Burgiel, and Chaim Goodman-Strauss’s *The Symmetries of Things* adds a braided historical progression, K–8 grade analysis, eight studio lesson sequences, and the Primitive Engine Rosetta Stone.
+
+- [Curriculum study](symmetries-of-things-curriculum-study.md)
+- [Primitive Engine Rosetta Stone schema](primitive-engine-rosetta-stone.schema.json)
+- [Curriculum concept map](assets/raster/symmetry-curriculum-concept-map.webp)
+- [Rosetta Stone relationship map](assets/raster/primitive-engine-rosetta-stone-map.png)
+
+The schema treats cross-disciplinary terms as aliases around a canonical geometric construct while preserving construction recipes, invariants, evidence status, carrier constraints, and grade-readiness signals.
