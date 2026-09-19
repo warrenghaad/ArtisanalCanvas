@@ -1,0 +1,314 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Primitive Engine Rosetta Stone",
+  "description": "A cross-disciplinary translation layer that identifies a geometric element, records discipline-specific names, and preserves the construction procedure and invariants.",
+  "governingChain": [
+    "primitive",
+    "motif",
+    "transformation",
+    "fundamental_region",
+    "field",
+    "carrier",
+    "color_rule",
+    "deliberate_defect",
+    "explanation"
+  ],
+  "evidenceLanes": [
+    {
+      "id": "historical_fact",
+      "rule": "Attribute artifact, date, place, material, and documented use."
+    },
+    {
+      "id": "developmental_evidence",
+      "rule": "State what research or standards support; do not turn grade bands into ceilings."
+    },
+    {
+      "id": "design_hypothesis",
+      "rule": "Mark proposed lessons and interpretations as pedagogical choices."
+    }
+  ],
+  "entities": [
+    {
+      "id": "source_artifact",
+      "type": "evidence_object",
+      "required": [
+        "title",
+        "date_or_range",
+        "place_or_people",
+        "carrier",
+        "source_url",
+        "rights_note"
+      ]
+    },
+    {
+      "id": "primitive_concept",
+      "type": "canonical_geometry",
+      "required": [
+        "canonical_name",
+        "definition",
+        "dimensionality",
+        "invariants"
+      ]
+    },
+    {
+      "id": "discipline_term",
+      "type": "alias",
+      "required": [
+        "discipline",
+        "term",
+        "construction_emphasis"
+      ]
+    },
+    {
+      "id": "construction_recipe",
+      "type": "procedure",
+      "required": [
+        "ordered_operations",
+        "prerequisites",
+        "verification_tests",
+        "failure_signals",
+        "recovery_moves"
+      ]
+    },
+    {
+      "id": "transformation",
+      "type": "operation",
+      "required": [
+        "operation_family",
+        "parameters",
+        "preserves",
+        "changes"
+      ]
+    },
+    {
+      "id": "primitive_cell",
+      "type": "generative_seed",
+      "required": [
+        "boundary",
+        "edge_rules",
+        "repeat_vectors"
+      ]
+    },
+    {
+      "id": "field",
+      "type": "generated_structure",
+      "required": [
+        "local_rule",
+        "global_extent",
+        "seams"
+      ]
+    },
+    {
+      "id": "carrier",
+      "type": "material_surface",
+      "required": [
+        "material",
+        "topology",
+        "production_constraints"
+      ]
+    },
+    {
+      "id": "lesson",
+      "type": "curriculum_object",
+      "required": [
+        "best_home",
+        "readiness_signals",
+        "artifact_lane",
+        "math_lane",
+        "studio_cycle",
+        "assessment"
+      ]
+    },
+    {
+      "id": "visual_asset",
+      "type": "raster_evidence",
+      "required": [
+        "slug",
+        "mime_type",
+        "sha256",
+        "width",
+        "height",
+        "source_note"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "source_artifact",
+      "type": "evidences",
+      "to": "primitive_concept"
+    },
+    {
+      "from": "discipline_term",
+      "type": "aliases_without_collapsing",
+      "to": "primitive_concept"
+    },
+    {
+      "from": "construction_recipe",
+      "type": "constructs",
+      "to": "primitive_concept"
+    },
+    {
+      "from": "transformation",
+      "type": "acts_on",
+      "to": "primitive_cell"
+    },
+    {
+      "from": "primitive_cell",
+      "type": "generates",
+      "to": "field"
+    },
+    {
+      "from": "carrier",
+      "type": "constrains",
+      "to": "field"
+    },
+    {
+      "from": "lesson",
+      "type": "stages",
+      "to": "construction_recipe"
+    },
+    {
+      "from": "lesson",
+      "type": "uses",
+      "to": "source_artifact"
+    },
+    {
+      "from": "visual_asset",
+      "type": "renders",
+      "to": "construction_recipe"
+    }
+  ],
+  "crosswalk": [
+    {
+      "canonical": "axis",
+      "geometry": "line of reflection or rotational axis",
+      "drawing": "construction line or centerline",
+      "design": "datum",
+      "architecture": "organizing axis",
+      "computation": "reference frame",
+      "construction": [
+        "place anchors",
+        "fit or choose line",
+        "test correspondences"
+      ]
+    },
+    {
+      "canonical": "reflection",
+      "geometry": "distance-preserving orientation-reversing isometry",
+      "drawing": "mirror pair",
+      "design": "bilateral organization",
+      "movement": "partner mirroring",
+      "computation": "reflection transform",
+      "construction": [
+        "choose axis",
+        "measure perpendicular offset",
+        "place partner point at equal offset",
+        "connect and verify"
+      ]
+    },
+    {
+      "canonical": "rotation",
+      "geometry": "turn about a fixed center by an angle",
+      "drawing": "radial repeat",
+      "design": "rosette",
+      "movement": "pivot",
+      "computation": "rotation transform",
+      "construction": [
+        "choose center",
+        "choose order or angle",
+        "preserve radius",
+        "repeat until closure"
+      ]
+    },
+    {
+      "canonical": "translation",
+      "geometry": "move every point by one vector",
+      "drawing": "repeat or offset",
+      "design": "pattern step",
+      "printmaking": "registration interval",
+      "computation": "translation transform",
+      "construction": [
+        "choose vector",
+        "copy every anchor equally",
+        "verify direction and distance"
+      ]
+    },
+    {
+      "canonical": "glide_reflection",
+      "geometry": "reflection composed with translation along the mirror line",
+      "drawing": "alternating footprint repeat",
+      "design": "offset flip",
+      "movement": "step and switch",
+      "computation": "composed affine transforms",
+      "construction": [
+        "choose line",
+        "reflect",
+        "slide along line",
+        "track handedness"
+      ]
+    },
+    {
+      "canonical": "primitive_cell",
+      "geometry": "fundamental region or generating domain",
+      "drawing": "smallest repeatable seed",
+      "design": "module",
+      "textile": "repeat block",
+      "computation": "tile or kernel",
+      "construction": [
+        "locate shortest repeat vectors",
+        "propose boundary",
+        "test all edges",
+        "minimize without losing information"
+      ]
+    },
+    {
+      "canonical": "field",
+      "geometry": "orbit or tessellated plane",
+      "drawing": "all-over pattern",
+      "design": "surface system",
+      "textile": "yardage repeat",
+      "computation": "generated instance set",
+      "construction": [
+        "apply local rule",
+        "propagate in permitted directions",
+        "resolve seams",
+        "inspect global behavior"
+      ]
+    },
+    {
+      "canonical": "carrier",
+      "geometry": "plane sphere or other surface",
+      "drawing": "support",
+      "design": "substrate",
+      "architecture": "building surface",
+      "computation": "mesh or canvas",
+      "construction": [
+        "identify topology",
+        "identify production limits",
+        "map cell",
+        "adapt at seams or curvature"
+      ]
+    },
+    {
+      "canonical": "deliberate_defect",
+      "geometry": "symmetry breaking or perturbation",
+      "drawing": "accent or interruption",
+      "design": "exception state",
+      "music": "syncopated variation",
+      "computation": "controlled mutation",
+      "construction": [
+        "establish rule",
+        "change one variable",
+        "observe attention shift",
+        "recover coherence"
+      ]
+    }
+  ],
+  "curriculumMapping": {
+    "coreHome": "Grades 4–8",
+    "entry": "K–3 through perception, movement, stamping, folding, and composition",
+    "extension": "Grades 9–12 through functions, matrices, groups, orbifolds, topology, and proof",
+    "readinessOverAge": true
+  }
+}
