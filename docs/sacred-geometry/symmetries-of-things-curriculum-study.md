@@ -6,7 +6,7 @@
 
 Symmetry is not sameness. It is a promise between parts: a line that remembers its partner, a center that gathers a turn, a path that carries a motif forward, a field that grows from a seed, and a surface that changes the rule as it bends. Learners should see, move, make, break, and recover the rule before formal language compresses it.
 
-![Original motif progression from seed to reflection rosette field defect and sphere](assets/raster/symmetry-plumage-plate.png)
+![Original motif progression from seed to reflection rosette field defect and sphere](assets/raster/symmetry-plumage-plate.webp)
 
 ## Curriculum verdict
 
@@ -16,7 +16,7 @@ Symmetry is not sameness. It is a promise between parts: a line that remembers i
 - **Spine:** primitive → motif → transformation → fundamental region → field → carrier → color rule → deliberate defect → explanation.
 - **Placement:** readiness signals outrank age ceilings.
 
-![Curriculum concept map](assets/raster/symmetry-curriculum-concept-map.png)
+![Curriculum concept map](assets/raster/symmetry-curriculum-concept-map.webp)
 
 ## Evidence lanes
 
