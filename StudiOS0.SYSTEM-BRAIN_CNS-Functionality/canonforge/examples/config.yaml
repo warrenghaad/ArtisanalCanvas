@@ -1,0 +1,14 @@
+workspace:
+  name: ArtisanalCanvas
+  root: .
+
+modes:
+  default_write_mode: patch_review
+  default_output_level: structure
+
+paths:
+  inbox: .canonforge/inbox
+  logs: .canonforge/logs
+  patches: .canonforge/patches
+  cache: .canonforge/cache
+  runs_db: .canonforge/runs.sqlite
