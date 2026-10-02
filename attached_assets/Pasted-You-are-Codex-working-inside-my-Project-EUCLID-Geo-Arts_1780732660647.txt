@@ -828,5 +828,3 @@ Priority:
 3. Clear merge/update behavior.
     
 4. Historical nesting graph.
-    
-5. Future-ready for Obsidian, Notion, and visual graph export.
