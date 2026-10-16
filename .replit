@@ -18,6 +18,11 @@ externalPort = 80
 localPort = 5001
 externalPort = 3001
 
+[[ports]]
+localPort = 9222
+externalPort = 3002
+exposeLocalhost = true
+
 [env]
 PORT = "5000"
 

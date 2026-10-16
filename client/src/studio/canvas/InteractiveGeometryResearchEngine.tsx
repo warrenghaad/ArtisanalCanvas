@@ -1,11 +1,10 @@
-import { useMemo, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Html, Line, OrbitControls, Stars } from "@react-three/drei";
+import { useRef, useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Bounds, Html, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 import { Plus, RotateCcw, Trash2, X } from "lucide-react";
 
 type Primitive = "ring" | "sphere" | "cone" | "cube";
-type Significance = "central" | "marginal" | "indeterminate";
 type Position3 = [number, number, number];
 
 type GeometryNode = {
@@ -13,58 +12,42 @@ type GeometryNode = {
   label: string;
   primitive: Primitive;
   position: Position3;
-  significance: Significance;
-  properties: string[];
+  rotation: Position3;
+  scale: Position3;
 };
 
 const initialNodes: GeometryNode[] = [
   {
-    id: "origin",
-    label: "Origin",
+    id: "sphere",
+    label: "Sphere",
     primitive: "sphere",
     position: [0, 0, 0],
-    significance: "indeterminate",
-    properties: ["3D coordinate", "reference point"],
+    rotation: [0, 0, 0],
+    scale: [1, 1, 1],
   },
   {
     id: "circle",
-    label: "Circle Primitive",
+    label: "Ring",
     primitive: "ring",
     position: [-3.4, 0.8, 0.5],
-    significance: "indeterminate",
-    properties: ["radius", "circumference", "area"],
+    rotation: [0, 0, 0],
+    scale: [1, 1, 1],
   },
   {
     id: "radial",
-    label: "Radial Operator",
+    label: "Cone",
     primitive: "cone",
     position: [3.2, 1.1, -1.2],
-    significance: "indeterminate",
-    properties: ["angle", "distance", "origin"],
+    rotation: [0, 0, 0],
+    scale: [1, 1, 1],
   },
   {
     id: "enclosure",
-    label: "Enclosure Operator",
+    label: "Cube",
     primitive: "cube",
     position: [-2.6, -1.5, -2.2],
-    significance: "indeterminate",
-    properties: ["bounds", "width", "height", "depth"],
-  },
-  {
-    id: "partition",
-    label: "Partition",
-    primitive: "cone",
-    position: [2.5, -1.6, 2.2],
-    significance: "indeterminate",
-    properties: ["splits", "ratio", "axis"],
-  },
-  {
-    id: "sun-disk",
-    label: "Sun Disk",
-    primitive: "ring",
-    position: [5.1, 0.1, 1.4],
-    significance: "indeterminate",
-    properties: ["culture", "period", "symbolism"],
+    rotation: [0, 0, 0],
+    scale: [1, 1, 1],
   },
 ];
 
@@ -75,11 +58,23 @@ const primitiveNames: Record<Primitive, string> = {
   cube: "Cube",
 };
 
-const significanceColors: Record<Significance, string> = {
-  central: "#c4b5fd",
-  marginal: "#67e8f9",
-  indeterminate: "#fbbf24",
+const primitiveColors: Record<Primitive, string> = {
+  sphere: "#c4b5fd",
+  ring: "#67e8f9",
+  cone: "#fbbf24",
+  cube: "#86efac",
 };
+
+function supportsWebGL2() {
+  try {
+    const context = document.createElement("canvas").getContext("webgl2");
+    if (!context) return false;
+    context.getExtension("WEBGL_lose_context")?.loseContext();
+    return true;
+  } catch {
+    return false;
+  }
+}
 
 function GeometryMesh({
   node,
@@ -90,18 +85,11 @@ function GeometryMesh({
   selected: boolean;
   onSelect: () => void;
 }) {
-  const groupRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState(false);
-  const color = significanceColors[node.significance];
-
-  useFrame(({ clock }, delta) => {
-    if (!groupRef.current) return;
-    groupRef.current.rotation.y += delta * 0.16;
-    groupRef.current.rotation.x = Math.sin(clock.elapsedTime * 0.25 + node.position[0]) * 0.08;
-  });
+  const color = primitiveColors[node.primitive];
 
   return (
-    <group ref={groupRef} position={node.position} scale={selected ? 1.2 : hovered ? 1.08 : 1}>
+    <group position={node.position} rotation={node.rotation} scale={node.scale}>
       <mesh
         onClick={(event) => {
           event.stopPropagation();
@@ -157,36 +145,8 @@ function GeometryMesh({
   );
 }
 
-function GraphEdges({
-  nodes,
-  selectedId,
-}: {
-  nodes: GeometryNode[];
-  selectedId: string | null;
-}) {
-  const edges = useMemo(() => {
-    const center = nodes.find((node) => node.significance === "central") ?? nodes[0];
-    if (!center) return [];
-    return nodes.filter((node) => node.id !== center.id).map((node) => ({ center, node }));
-  }, [nodes]);
-
-  return (
-    <group>
-      {edges.map(({ center, node }) => (
-        <Line
-          key={`${center.id}-${node.id}`}
-          points={[center.position, node.position]}
-          color={selectedId === center.id || selectedId === node.id ? "#a5f3fc" : "#58738f"}
-          transparent
-          opacity={selectedId === center.id || selectedId === node.id ? 0.72 : 0.28}
-          lineWidth={1}
-        />
-      ))}
-    </group>
-  );
-}
-
 export default function InteractiveGeometryResearchEngine() {
+  const [webGLAvailable] = useState(supportsWebGL2);
   const [nodes, setNodes] = useState<GeometryNode[]>(initialNodes);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [primitive, setPrimitive] = useState<Primitive>("ring");
@@ -208,18 +168,21 @@ export default function InteractiveGeometryResearchEngine() {
         ((count % 3) - 1) * 0.7,
         Math.sin(angle) * radius,
       ],
-      significance: "indeterminate",
-      properties: ["3D position", "editable significance"],
+      rotation: [0, 0, 0],
+      scale: [1, 1, 1],
     };
     setNodes((current) => [...current, node]);
     setSelectedId(id);
   };
 
-  const setSignificance = (significance: Significance) => {
-    if (!selectedId) return;
-    setNodes((current) =>
-      current.map((node) => (node.id === selectedId ? { ...node, significance } : node)),
-    );
+  const updateTransform = (field: "position" | "rotation" | "scale", axis: number, value: number) => {
+    if (!selectedId || !Number.isFinite(value)) return;
+    setNodes((current) => current.map((node) => {
+      if (node.id !== selectedId) return node;
+      const values: Position3 = [...node[field]];
+      values[axis] = field === "scale" ? Math.max(0.1, value) : value;
+      return { ...node, [field]: values };
+    }));
   };
 
   const removeSelected = () => {
@@ -230,7 +193,7 @@ export default function InteractiveGeometryResearchEngine() {
 
   return (
     <main className="fixed inset-0 h-dvh w-screen overflow-hidden bg-[#050913] text-slate-100">
-      <Canvas
+      {webGLAvailable ? <Canvas
         key={viewKey}
         dpr={[1, 1.5]}
         camera={{ position: [0, 3, 12], fov: 46 }}
@@ -244,24 +207,33 @@ export default function InteractiveGeometryResearchEngine() {
         <pointLight position={[-7, -2, -5]} intensity={18} color="#a78bfa" />
         <gridHelper args={[80, 80, "#26364a", "#142033"]} position={[0, -3.5, 0]} />
         <Stars radius={70} depth={45} count={900} factor={2} saturation={0.15} fade speed={0.15} />
-        <GraphEdges nodes={nodes} selectedId={selectedId} />
-        {nodes.map((node) => (
-          <GeometryMesh
-            key={node.id}
-            node={node}
-            selected={selectedId === node.id}
-            onSelect={() => setSelectedId(node.id)}
-          />
-        ))}
+        <Bounds fit clip observe margin={1.3}>
+          {nodes.map((node) => (
+            <GeometryMesh
+              key={node.id}
+              node={node}
+              selected={selectedId === node.id}
+              onSelect={() => setSelectedId(node.id)}
+            />
+          ))}
+        </Bounds>
         <OrbitControls
           makeDefault
           enableDamping
           dampingFactor={0.08}
           minDistance={3}
           maxDistance={45}
-          target={[0, 0, 0]}
         />
-      </Canvas>
+      </Canvas> : (
+        <div role="alert" className="absolute inset-0 grid place-items-center px-6">
+          <div className="max-w-sm border border-white/15 bg-slate-950/80 p-5 text-center">
+            <h2 className="mb-2 font-mono text-sm text-white">WebGL 2 is unavailable</h2>
+            <p className="text-sm leading-relaxed text-slate-400">
+              The 3D engine needs WebGL 2. Open this page in a browser with hardware acceleration and WebGL enabled.
+            </p>
+          </div>
+        </div>
+      )}
 
       <header className="absolute inset-x-0 top-0 z-20 flex min-h-14 flex-wrap items-center justify-between gap-3 border-b border-white/10 bg-[#050913]/80 px-3 py-2 backdrop-blur-md sm:px-5">
         <div className="flex min-w-0 items-center gap-3">
@@ -273,7 +245,7 @@ export default function InteractiveGeometryResearchEngine() {
               Geometry Engine
             </h1>
             <p className="font-mono text-[9px] uppercase tracking-wider text-slate-500">
-              {nodes.length} nodes · {Math.max(nodes.length - 1, 0)} links
+              {nodes.length} objects · perspective
             </p>
           </div>
         </div>
@@ -283,6 +255,7 @@ export default function InteractiveGeometryResearchEngine() {
           <select
             id="primitive-type"
             value={primitive}
+            disabled={!webGLAvailable}
             onChange={(event) => setPrimitive(event.target.value as Primitive)}
             className="h-9 max-w-28 border border-white/15 bg-slate-950 px-2 font-mono text-[10px] uppercase tracking-wide text-slate-200 outline-none focus:border-cyan-200/60 sm:max-w-none sm:px-3"
           >
@@ -293,7 +266,8 @@ export default function InteractiveGeometryResearchEngine() {
           <button
             type="button"
             onClick={addNode}
-            className="inline-flex h-9 items-center gap-1.5 border border-cyan-200/35 bg-cyan-200/10 px-2.5 font-mono text-[10px] uppercase tracking-wide text-cyan-100 transition hover:bg-cyan-200/20 sm:px-3"
+            disabled={!webGLAvailable}
+            className="inline-flex h-9 items-center gap-1.5 border border-cyan-200/35 bg-cyan-200/10 px-2.5 font-mono text-[10px] uppercase tracking-wide text-cyan-100 transition hover:bg-cyan-200/20 disabled:cursor-not-allowed disabled:opacity-40 sm:px-3"
           >
             <Plus className="h-3.5 w-3.5" />
             Add
@@ -301,6 +275,7 @@ export default function InteractiveGeometryResearchEngine() {
           <button
             type="button"
             onClick={() => setViewKey((key) => key + 1)}
+            disabled={!webGLAvailable}
             aria-label="Reset 3D view"
             title="Reset 3D view"
             className="grid h-9 w-9 place-items-center border border-white/15 text-slate-300 transition hover:border-white/40 hover:text-white"
@@ -311,7 +286,7 @@ export default function InteractiveGeometryResearchEngine() {
       </header>
 
       {selectedNode && (
-        <aside className="absolute right-3 top-[4.75rem] z-20 w-[min(19rem,calc(100vw-1.5rem))] border border-white/15 bg-[#08111f]/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:right-5">
+        <aside className="absolute bottom-12 right-3 z-20 max-h-[60dvh] w-[min(19rem,calc(100vw-1.5rem))] overflow-auto border border-white/15 bg-[#08111f]/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:bottom-auto sm:right-5 sm:top-[4.75rem]">
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
               <p className="mb-1 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">
@@ -322,47 +297,42 @@ export default function InteractiveGeometryResearchEngine() {
             <button
               type="button"
               onClick={() => setSelectedId(null)}
-              aria-label="Close node details"
+              aria-label="Close object details"
               className="grid h-7 w-7 shrink-0 place-items-center text-slate-400 hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
 
-          <div className="mb-4 border-y border-white/10 py-3">
-            <p className="mb-2 font-mono text-[9px] uppercase tracking-wider text-slate-500">
-              Significance
-            </p>
-            <div className="grid grid-cols-3 gap-1">
-              {(["central", "marginal", "indeterminate"] as const).map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  aria-pressed={selectedNode.significance === value}
-                  onClick={() => setSignificance(value)}
-                  className={`border px-1 py-2 font-mono text-[9px] uppercase tracking-wide transition ${
-                    selectedNode.significance === value
-                      ? "border-white/35 bg-white/10 text-white"
-                      : "border-white/10 text-slate-500 hover:border-white/25 hover:text-slate-200"
-                  }`}
-                  style={{ color: selectedNode.significance === value ? significanceColors[value] : undefined }}
-                >
-                  {value}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <p className="mb-2 font-mono text-[9px] uppercase tracking-wider text-slate-500">
-            Properties
-          </p>
-          <ul className="space-y-1">
-            {selectedNode.properties.map((property) => (
-              <li key={property} className="font-mono text-[10px] text-slate-300">
-                <span className="mr-2 text-cyan-200/60">—</span>{property}
-              </li>
+          <div className="space-y-4 border-y border-white/10 py-3">
+            {(["position", "rotation", "scale"] as const).map((field) => (
+              <fieldset key={field}>
+                <legend className="mb-2 font-mono text-[9px] uppercase tracking-wider text-slate-500">
+                  {field}{field === "rotation" ? " (degrees)" : ""}
+                </legend>
+                <div className="grid grid-cols-3 gap-2">
+                  {(["X", "Y", "Z"] as const).map((axis, index) => (
+                    <label key={axis} className="flex items-center gap-1.5 border border-white/10 bg-slate-950/60 px-2 py-1.5">
+                      <span className="font-mono text-[9px] text-slate-500">{axis}</span>
+                      <input
+                        type="number"
+                        aria-label={`${field} ${axis}`}
+                        step={field === "rotation" ? 5 : 0.1}
+                        min={field === "scale" ? 0.1 : undefined}
+                        value={Number((field === "rotation" ? THREE.MathUtils.radToDeg(selectedNode[field][index]) : selectedNode[field][index]).toFixed(2))}
+                        onChange={(event) => {
+                          if (event.target.value === "") return;
+                          const value = event.target.valueAsNumber;
+                          updateTransform(field, index, field === "rotation" ? THREE.MathUtils.degToRad(value) : value);
+                        }}
+                        className="min-w-0 w-full bg-transparent font-mono text-[10px] text-slate-200 outline-none"
+                      />
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
             ))}
-          </ul>
+          </div>
 
           <button
             type="button"
@@ -370,7 +340,7 @@ export default function InteractiveGeometryResearchEngine() {
             className="mt-4 inline-flex items-center gap-1.5 border border-rose-300/20 px-2.5 py-1.5 font-mono text-[9px] uppercase tracking-wide text-rose-200/80 transition hover:border-rose-300/50 hover:text-rose-100"
           >
             <Trash2 className="h-3 w-3" />
-            Remove node
+            Remove object
           </button>
         </aside>
       )}

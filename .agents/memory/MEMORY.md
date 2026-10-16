@@ -1,0 +1,2 @@
+- [Workspace scope](workspace-scope.md) — exclude Obsidian systems and proposals; keep the 3D workspace free of extra surrounding whitespace.
+- [WebGL verification](webgl-verification.md) — screenshot capture may lack WebGL even when the engine runs; verify rendering in a graphics-capable browser.
