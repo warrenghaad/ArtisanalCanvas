@@ -90,3 +90,13 @@ The curriculum translation of John H. Conway, Heidi Burgiel, and Chaim Goodman-S
 - [Rosetta Stone relationship map](assets/raster/primitive-engine-rosetta-stone-map.png)
 
 The schema treats cross-disciplinary terms as aliases around a canonical geometric construct while preserving construction recipes, invariants, evidence status, carrier constraints, and grade-readiness signals.
+
+## Geometry and ornament starter library
+
+The [Geometry & Ornament Library](geometry-ornament-library/README.md) adds twelve reusable drawing cells, eleven situated artifact records, five comparisons, ten historical episodes and four geometry/invention studies. New entries remain research candidates and retain the distinction between source attribution, observation, interpretation and studio construction.
+
+- [Portable catalog](geometry-ornament-library/catalog.json)
+- [Layered construction plate](geometry-ornament-library/assets/layering-plate.png)
+- [Connected collection map](geometry-ornament-library/assets/concept-map.png)
+- [Rosetta Stone crosswalk](geometry-ornament-library/uml-crosswalk.json)
+

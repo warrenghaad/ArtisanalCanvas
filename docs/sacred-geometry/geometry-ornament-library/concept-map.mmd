@@ -1,0 +1,21 @@
+flowchart TB
+  subgraph Inventory["Candidate inventory"]
+    Term["Term"] -->|names in context| Form["Geometric form"]
+    Form -->|selected as| Cell["Studio cell"]
+    Cell -->|placed or transformed| Layer["Layer instance"]
+    Layer -->|combines into| Arrangement["Arrangement"]
+  end
+  subgraph Evidence["Situated evidence"]
+    Source["Source"] -->|attributes| Artifact["Artifact and image"]
+    Artifact -->|supports| Reading["Region reading and claims"]
+    Reading -->|proposes a link| Form
+    Reading -->|compares| History["Comparisons and historical episodes"]
+  end
+  Arrangement -->|appears on or shapes| Host["Carrier or invention"]
+  Host -->|constrains| Arrangement
+  Host -->|enables| Making["Making and reproduction"]
+  Making -->|changes possibilities| Host
+  Making -->|distributes| Encounter["Circulation and encounter"]
+  Encounter -->|may prompt reworking| Cell
+  Host -->|offers new surfaces| Layer
+  History -->|tests evidence for| Encounter

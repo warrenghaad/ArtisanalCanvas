@@ -1,0 +1,104 @@
+{
+  "id": "1c2475a1-4ba4-5843-bd25-309605940105",
+  "version": "0.1.0",
+  "status": "candidate",
+  "existing_schema": "../primitive-engine-rosetta-stone.schema.json",
+  "existing_map": "../assets/raster/primitive-engine-rosetta-stone-map.png",
+  "primitive_studio": "../../PRIMITIVE_CELL_STUDIO.md",
+  "existing_concept_ids": {
+    "axis": "66fa8314-8bc1-462e-9129-90b29b083222",
+    "carrier": "3ea94373-a151-436b-b2a7-7edd7670fcd7",
+    "color_rule": "cb7866df-6ad1-4f31-b7e2-78712f0d5a2e",
+    "deliberate_defect": "6654bb08-73be-47d7-bc6b-6de73e353c0c",
+    "field": "0c4baf02-288f-47cc-8716-a4afcb883538",
+    "glide_reflection": "5093d945-27f3-41a9-b9d5-b7c9f57e16a3",
+    "primitive_cell": "bf642ce2-44d9-4f52-8aac-083adc517130",
+    "reflection": "8c7ef4c7-866c-4e7a-ad2e-2873b4f65048",
+    "rotation": "077cdd79-706b-491c-bb5d-434b8f325c4b",
+    "translation": "07c7a70f-40da-4ca5-8ba7-381e2f17230b"
+  },
+  "related_study_id": "097559c0-849e-4f23-87ea-6e3c3a2bff55",
+  "relations": [
+    {
+      "new": "artifact",
+      "relation": "maps_to",
+      "existing": "source_artifact",
+      "note": "Retain identity, source and region readings."
+    },
+    {
+      "new": "form",
+      "relation": "scoped_crosswalk",
+      "existing": "primitive_concept",
+      "note": "Link existing concepts without replacing definitions."
+    },
+    {
+      "new": "term",
+      "relation": "typed_term_link",
+      "existing": "discipline_term",
+      "note": "Narrower, broader and analogous links are not synonyms."
+    },
+    {
+      "new": "studio_cell",
+      "relation": "broader_than",
+      "existing": "primitive_cell",
+      "note": "A working unit can be a mark or layer; the older field-generating region is a specialized use."
+    },
+    {
+      "new": "making_study",
+      "relation": "proposes",
+      "existing": "construction_recipe",
+      "note": "A modern exercise is not evidence of an ancient procedure."
+    },
+    {
+      "new": "host",
+      "relation": "cross_references",
+      "existing": "carrier",
+      "note": "Keep abstract prim distinct from material preparation."
+    },
+    {
+      "new": "image",
+      "relation": "maps_to",
+      "existing": "visual_asset",
+      "note": "Reference image and original diagram retain separate provenance."
+    },
+    {
+      "new": "layer_instance",
+      "relation": "proposed_extension",
+      "existing": null,
+      "note": "Proposed implementation: cell reference, position, scale, rotation, ordering and optional mask."
+    },
+    {
+      "new": "comparison",
+      "relation": "proposed_extension",
+      "existing": null,
+      "note": "Records shared question, controls, differences and limits."
+    },
+    {
+      "new": "epoch_episode",
+      "relation": "proposed_extension",
+      "existing": null,
+      "note": "Links production, carrier, circulation and re-articulation with evidence per edge."
+    }
+  ],
+  "distinctions": [
+    {
+      "a": "planar spiral cell",
+      "b": "server/studio/seed.ts spiral",
+      "relation": "different_constructions",
+      "note": "Existing seed uses an axis/cone/ribbon system."
+    },
+    {
+      "a": "compositional predicate",
+      "b": "F(ge)",
+      "relation": "distinct_roles",
+      "note": "Organizing a composition does not replace physical-function recording."
+    },
+    {
+      "a": "source-supported observation",
+      "b": "accepted profile",
+      "relation": "requires_review",
+      "note": "Inspection alone does not grant canon status."
+    }
+  ],
+  "persistence_note": "Research crosswalk only; this file performs no migrations and establishes no automatic app/Supabase synchronization."
+}

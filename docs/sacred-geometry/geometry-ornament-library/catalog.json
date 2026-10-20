@@ -1,0 +1,2744 @@
+{
+  "id": "55fdf512-87fb-5075-beab-afc663ca1f2a",
+  "title": "Geometry & Ornament Library",
+  "version": "0.1.0",
+  "date": "2026-10-20",
+  "status": "candidate",
+  "description": "Studio cells, situated artifacts, comparisons, ornament episodes and reciprocal geometry–invention cases.",
+  "source_scope": {
+    "private_source": "Aligned with user-provided FGE-Syntax.txt; complete private text is not included.",
+    "claims": "Museum attributions, visual observations and proposed readings remain separate.",
+    "acceptance": "No new record is automatically canon.",
+    "images": "Original studio cells are exercises, not reconstructions of historical artifacts."
+  },
+  "cells": [
+    {
+      "id": "fce87f29-8b5c-5a56-acf8-6f896751dbfb",
+      "slug": "dot",
+      "status": "candidate",
+      "code": "C01",
+      "name": "Dot / point mark",
+      "title": "Dot / point mark",
+      "form_id": "586b9a80-10e8-51df-9a6c-bb9cc69e3882",
+      "term_ids": [
+        "66ead9ee-e0c5-5c56-833c-6bc03a889f36"
+      ],
+      "image_file": "assets/cells/c01-dot.png",
+      "geometry": "A bounded mark representing a location; a drawn dot has area, unlike an ideal point.",
+      "parameters": [
+        "diameter",
+        "spacing",
+        "density",
+        "grouping"
+      ],
+      "making": "Place a mark with chosen pressure and repeat at intentional intervals.",
+      "math": "Position, distance, counting; point versus visible mark.",
+      "observe": "Find isolated marks and clusters.",
+      "rebuild": "Place six marks at comparable intervals.",
+      "redesign": "Change spacing to create two focal groups.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Locate; punctuate; group.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Locate; punctuate; group.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "f69c90fe-3178-5e66-93e0-f46940a2df41",
+      "slug": "line-segment",
+      "status": "candidate",
+      "code": "C02",
+      "name": "Line segment",
+      "title": "Line segment",
+      "form_id": "ae40d670-b054-5535-9608-e580845b7361",
+      "term_ids": [
+        "bc1f96af-f6ea-5715-977b-1c564a702981"
+      ],
+      "image_file": "assets/cells/c02-line-segment.png",
+      "geometry": "A straight bounded path joining two endpoints.",
+      "parameters": [
+        "length",
+        "orientation",
+        "weight",
+        "termination"
+      ],
+      "making": "Choose endpoints, rehearse the movement, then commit to a stroke.",
+      "math": "Length, orientation, parallelism, perpendicularity and intersection.",
+      "observe": "Compare directions and endpoints.",
+      "rebuild": "Draw a family between paired endpoints.",
+      "redesign": "Change direction while preserving length.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Direct; align; divide.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Direct; align; divide.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "84fe63cc-e6e9-5bd5-b665-bf69811e578d",
+      "slug": "arc",
+      "status": "candidate",
+      "code": "C03",
+      "name": "Arc",
+      "title": "Arc",
+      "form_id": "e31089c4-3f94-5983-bda2-f31e46c7c2a9",
+      "term_ids": [
+        "0d2fda2b-b020-52e5-859e-54a51d71787f"
+      ],
+      "image_file": "assets/cells/c03-arc.png",
+      "geometry": "A connected portion of a curve; this study selects circular arcs with an explicit center and radius.",
+      "parameters": [
+        "radius",
+        "sweep angle",
+        "orientation",
+        "weight"
+      ],
+      "making": "Make one continuous turning stroke or construct an arc; repeat its sweep.",
+      "math": "For circular arcs: radius, central angle, chord and arc length.",
+      "observe": "Identify where a boundary turns and stops.",
+      "rebuild": "Repeat one circular arc using a guide.",
+      "redesign": "Use related arcs to describe a rounded surface.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Turn; wrap; connect.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Turn; wrap; connect.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "28495e76-9835-59aa-abfd-f112c0a24962",
+      "slug": "circle",
+      "status": "candidate",
+      "code": "C04",
+      "name": "Circle / disk",
+      "title": "Circle / disk",
+      "form_id": "82684c50-5fef-5adf-8b6c-6e1319d18b09",
+      "term_ids": [
+        "d8d4547d-f4ea-5d1d-8207-e9c1318c72b6"
+      ],
+      "image_file": "assets/cells/c04-circle.png",
+      "geometry": "A circle is the boundary at a fixed distance from a center; a disk includes the interior.",
+      "parameters": [
+        "radius",
+        "outline or fill",
+        "weight",
+        "overlap"
+      ],
+      "making": "Trace, freehand or compass-construct a closed boundary; compare outline and fill.",
+      "math": "Center, radius, diameter, circumference and area.",
+      "observe": "Distinguish boundary and filled region.",
+      "rebuild": "Make three circles with equal radii.",
+      "redesign": "Keep radii fixed while changing overlap and placement.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Enclose; center; frame.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Enclose; center; frame.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "8203a307-28d9-5173-8ea3-3dc8de2d23c1",
+      "slug": "crescent",
+      "status": "candidate",
+      "code": "C05",
+      "name": "Crescent",
+      "title": "Crescent",
+      "form_id": "22bc70a1-c797-5372-8b41-2faeb17dd81e",
+      "term_ids": [
+        "de35f4dc-64ef-5b48-808b-fd6e372d43a1"
+      ],
+      "image_file": "assets/cells/c05-crescent.png",
+      "geometry": "A region between two curved edges; this exercise uses the difference of overlapping circular disks.",
+      "parameters": [
+        "outer radius",
+        "inner radius",
+        "offset",
+        "orientation"
+      ],
+      "making": "Construct two circles and retain a selected crescent-shaped difference.",
+      "math": "Intersection, set difference, displacement and relative radii.",
+      "observe": "Compare both boundaries and the narrowest area.",
+      "rebuild": "Recreate one chosen offset.",
+      "redesign": "Vary only the offset and compare openings.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Partly enclose; orient an opening.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Partly enclose; orient an opening.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "b490da77-ba93-5d02-baf9-190a1aaaba10",
+      "slug": "triangle",
+      "status": "candidate",
+      "code": "C06",
+      "name": "Triangle",
+      "title": "Triangle",
+      "form_id": "e89ae908-9469-537b-83f4-1214789423fc",
+      "term_ids": [
+        "e4aec80a-dc13-5835-878c-72efa9dcaa55"
+      ],
+      "image_file": "assets/cells/c06-triangle.png",
+      "geometry": "A polygon with three straight sides and three vertices.",
+      "parameters": [
+        "side lengths",
+        "angles",
+        "orientation",
+        "fill"
+      ],
+      "making": "Place three vertices, connect them, and compare the resulting area.",
+      "math": "Angles, congruence, similarity and area.",
+      "observe": "Find corners, bases and orientations.",
+      "rebuild": "Keep a base fixed while varying height.",
+      "redesign": "Arrange triangular masses in a bounded field.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Point; divide; organize a mass.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Point; divide; organize a mass.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "3beefb73-64c4-5547-91b3-425e233fa6b5",
+      "slug": "square",
+      "status": "candidate",
+      "code": "C07",
+      "name": "Square / rectangular frame",
+      "title": "Square / rectangular frame",
+      "form_id": "9a1e5efc-9e3c-50d1-a088-391c29537b4b",
+      "term_ids": [
+        "0d63083f-1cde-5d98-b016-1502df88852c"
+      ],
+      "image_file": "assets/cells/c07-square.png",
+      "geometry": "A square has equal sides and right angles; rectangular framing is a related, distinct variant.",
+      "parameters": [
+        "side length",
+        "frame width",
+        "subdivision",
+        "rectangular variant"
+      ],
+      "making": "Establish perpendicular edges and equal sides before subdividing.",
+      "math": "Parallelism, perpendicularity, ratios, area and subdivision.",
+      "observe": "Compare boundary, margin and partitions.",
+      "rebuild": "Construct a square and divide it equally.",
+      "redesign": "Keep the outside fixed while changing interior divisions.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Frame; partition; align.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Frame; partition; align.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "5a66d0b0-7902-5941-a02f-3289e03e98f4",
+      "slug": "wave",
+      "status": "candidate",
+      "code": "C08",
+      "name": "Wave",
+      "title": "Wave",
+      "form_id": "0684ca8e-d1ee-5559-b75d-0819ffc3ae06",
+      "term_ids": [
+        "a3ab8304-2ed4-5d7b-96ca-301ac5150a52"
+      ],
+      "image_file": "assets/cells/c08-wave.png",
+      "geometry": "A path with recurring rises and falls; a sinusoid is one model, not every wavy mark.",
+      "parameters": [
+        "amplitude",
+        "wavelength",
+        "phase",
+        "regularity"
+      ],
+      "making": "Sustain repeated turns, using marked crest positions if helpful.",
+      "math": "Periodicity, amplitude and phase for an explicitly chosen model.",
+      "observe": "Compare crest intervals and height.",
+      "rebuild": "Draw four cycles at a chosen interval.",
+      "redesign": "Offset a second wave while preserving the first.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Alternate; connect; establish rhythm.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Alternate; connect; establish rhythm.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "9b018366-635d-5b02-9b67-48f59e89cea5",
+      "slug": "spiral",
+      "status": "candidate",
+      "code": "C09",
+      "name": "Planar spiral",
+      "title": "Planar spiral",
+      "form_id": "f0281c1d-0ea7-5fa6-a976-057f706cd062",
+      "term_ids": [
+        "56ec5681-c735-5486-bbfb-7e923d692b27"
+      ],
+      "image_file": "assets/cells/c09-spiral.png",
+      "geometry": "A planar curve turns about a center while distance from that center changes by a chosen rule.",
+      "parameters": [
+        "turn direction",
+        "turn spacing",
+        "growth rule",
+        "extent"
+      ],
+      "making": "Maintain a turning movement while controlling gaps between successive turns.",
+      "math": "Polar relationships; equal turn spacing differs from multiplicative radial growth.",
+      "observe": "Compare gaps between turns.",
+      "rebuild": "Follow one chosen spacing rule.",
+      "redesign": "Fit the same rule inside two boundaries.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Coil; guide a turning path.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Coil; guide a turning path.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "ea70c7f0-9227-5911-b1f2-6e05dc4b9dfa",
+      "slug": "star",
+      "status": "candidate",
+      "code": "C10",
+      "name": "Star / radial point motif",
+      "title": "Star / radial point motif",
+      "form_id": "43b29b0d-c25a-59fc-9b89-7a4afbabeca2",
+      "term_ids": [
+        "7c7133b2-e6dc-5e7c-b8a4-f4dd127b8eab"
+      ],
+      "image_file": "assets/cells/c10-star.png",
+      "geometry": "A family of pointed radial constructions; alternating-radius outlines differ from regular star polygons and overlapping squares.",
+      "parameters": [
+        "point count",
+        "inner radius",
+        "outer radius",
+        "angular offset"
+      ],
+      "making": "Divide directions, alternate inner and outer points, and connect by the chosen rule.",
+      "math": "Angular division, rotational symmetry and polygon construction.",
+      "observe": "Count points and separate outer contour from interior intersections.",
+      "rebuild": "Construct an eight-point alternating-radius outline.",
+      "redesign": "Keep point count while changing the radius ratio.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Radiate; articulate a perimeter.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Radiate; articulate a perimeter.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "f7abe5ad-2ce3-5b4b-a098-56cc87065071",
+      "slug": "hatch",
+      "status": "candidate",
+      "code": "C11",
+      "name": "Hatch field",
+      "title": "Hatch field",
+      "form_id": "676fb41b-82a1-5997-8704-1b821702e8b6",
+      "term_ids": [
+        "72f270d0-1a21-5b4b-b5c1-6027b41043b6"
+      ],
+      "image_file": "assets/cells/c11-hatch.png",
+      "geometry": "A family of strokes used together to build texture, value or surface direction.",
+      "parameters": [
+        "spacing",
+        "length",
+        "weight",
+        "direction",
+        "curvature"
+      ],
+      "making": "Repeat strokes with intentional intervals; change density or follow a surface.",
+      "math": "Spacing, density and local direction; freehand hatching need not have translation symmetry.",
+      "observe": "Compare dense and sparse areas and stroke direction.",
+      "rebuild": "Make a sparse-to-dense progression.",
+      "redesign": "Wrap hatching around a form while controlling value.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Model a surface; weight a region.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Model a surface; weight a region.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    },
+    {
+      "id": "8ef597dc-ce35-587b-90ab-b516fc1eabad",
+      "slug": "cross-hatch",
+      "status": "candidate",
+      "code": "C12",
+      "name": "Crossed hatch field",
+      "title": "Crossed hatch field",
+      "form_id": "b8340e74-2034-5528-925d-04a599b19efb",
+      "term_ids": [
+        "acc650fa-ad20-50ea-85ee-5b1124746825"
+      ],
+      "image_file": "assets/cells/c12-cross-hatch.png",
+      "geometry": "Overlapping stroke families whose intersections and densities build a composite field.",
+      "parameters": [
+        "family count",
+        "crossing angle",
+        "spacing",
+        "layer order"
+      ],
+      "making": "Overlay a second family without losing control of its direction.",
+      "math": "Intersection angle, local subdivision and density; not inherently fractal.",
+      "observe": "Separate the contributing families.",
+      "rebuild": "Overlay two families at a chosen angle.",
+      "redesign": "Darken selected regions by adding one layer.",
+      "roles": {
+        "object": "A visible instance of this geometry.",
+        "compositional_predicate": "Build value; differentiate regions.",
+        "predicate_status": "possible studio use, not a universal effect"
+      },
+      "admitted_to_prim_library": false,
+      "experience_rhetoric": {
+        "intended_visual_action": "Build value; differentiate regions.",
+        "attention_motion_value_question": "What changes in grouping, apparent motion, enclosure or value when one parameter changes?",
+        "viewer_response": [],
+        "context": null,
+        "evidence": {
+          "status": "open studio inquiry",
+          "source_ids": []
+        },
+        "interpretation_rule": "Describe and compare responses; do not assign fixed universal affect."
+      }
+    }
+  ],
+  "forms": [
+    {
+      "id": "586b9a80-10e8-51df-9a6c-bb9cc69e3882",
+      "slug": "dot",
+      "status": "candidate",
+      "name": "Dot / point mark",
+      "definition": "A bounded mark representing a location; a drawn dot has area, unlike an ideal point.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "ae40d670-b054-5535-9608-e580845b7361",
+      "slug": "line-segment",
+      "status": "candidate",
+      "name": "Line segment",
+      "definition": "A straight bounded path joining two endpoints.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "e31089c4-3f94-5983-bda2-f31e46c7c2a9",
+      "slug": "arc",
+      "status": "candidate",
+      "name": "Arc",
+      "definition": "A connected portion of a curve; this study selects circular arcs with an explicit center and radius.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "82684c50-5fef-5adf-8b6c-6e1319d18b09",
+      "slug": "circle",
+      "status": "candidate",
+      "name": "Circle / disk",
+      "definition": "A circle is the boundary at a fixed distance from a center; a disk includes the interior.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "22bc70a1-c797-5372-8b41-2faeb17dd81e",
+      "slug": "crescent",
+      "status": "candidate",
+      "name": "Crescent",
+      "definition": "A region between two curved edges; this exercise uses the difference of overlapping circular disks.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "e89ae908-9469-537b-83f4-1214789423fc",
+      "slug": "triangle",
+      "status": "candidate",
+      "name": "Triangle",
+      "definition": "A polygon with three straight sides and three vertices.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "9a1e5efc-9e3c-50d1-a088-391c29537b4b",
+      "slug": "square",
+      "status": "candidate",
+      "name": "Square / rectangular frame",
+      "definition": "A square has equal sides and right angles; rectangular framing is a related, distinct variant.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "0684ca8e-d1ee-5559-b75d-0819ffc3ae06",
+      "slug": "wave",
+      "status": "candidate",
+      "name": "Wave",
+      "definition": "A path with recurring rises and falls; a sinusoid is one model, not every wavy mark.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "f0281c1d-0ea7-5fa6-a976-057f706cd062",
+      "slug": "spiral",
+      "status": "candidate",
+      "name": "Planar spiral",
+      "definition": "A planar curve turns about a center while distance from that center changes by a chosen rule.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "43b29b0d-c25a-59fc-9b89-7a4afbabeca2",
+      "slug": "star",
+      "status": "candidate",
+      "name": "Star / radial point motif",
+      "definition": "A family of pointed radial constructions; alternating-radius outlines differ from regular star polygons and overlapping squares.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "676fb41b-82a1-5997-8704-1b821702e8b6",
+      "slug": "hatch",
+      "status": "candidate",
+      "name": "Hatch field",
+      "definition": "A family of strokes used together to build texture, value or surface direction.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    },
+    {
+      "id": "b8340e74-2034-5528-925d-04a599b19efb",
+      "slug": "cross-hatch",
+      "status": "candidate",
+      "name": "Crossed hatch field",
+      "definition": "Overlapping stroke families whose intersections and densities build a composite field.",
+      "exactness": "Specified mathematical construction; drawing and artifact instances may approximate it."
+    }
+  ],
+  "terms": [
+    {
+      "id": "66ead9ee-e0c5-5c56-833c-6bc03a889f36",
+      "slug": "dot",
+      "status": "candidate",
+      "term": "Dot / point mark",
+      "field": "studio / geometry",
+      "definition": "A bounded mark representing a location; a drawn dot has area, unlike an ideal point.",
+      "form_id": "586b9a80-10e8-51df-9a6c-bb9cc69e3882",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "bc1f96af-f6ea-5715-977b-1c564a702981",
+      "slug": "line-segment",
+      "status": "candidate",
+      "term": "Line segment",
+      "field": "studio / geometry",
+      "definition": "A straight bounded path joining two endpoints.",
+      "form_id": "ae40d670-b054-5535-9608-e580845b7361",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "0d2fda2b-b020-52e5-859e-54a51d71787f",
+      "slug": "arc",
+      "status": "candidate",
+      "term": "Arc",
+      "field": "studio / geometry",
+      "definition": "A connected portion of a curve; this study selects circular arcs with an explicit center and radius.",
+      "form_id": "e31089c4-3f94-5983-bda2-f31e46c7c2a9",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "d8d4547d-f4ea-5d1d-8207-e9c1318c72b6",
+      "slug": "circle",
+      "status": "candidate",
+      "term": "Circle / disk",
+      "field": "studio / geometry",
+      "definition": "A circle is the boundary at a fixed distance from a center; a disk includes the interior.",
+      "form_id": "82684c50-5fef-5adf-8b6c-6e1319d18b09",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "de35f4dc-64ef-5b48-808b-fd6e372d43a1",
+      "slug": "crescent",
+      "status": "candidate",
+      "term": "Crescent",
+      "field": "studio / geometry",
+      "definition": "A region between two curved edges; this exercise uses the difference of overlapping circular disks.",
+      "form_id": "22bc70a1-c797-5372-8b41-2faeb17dd81e",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "e4aec80a-dc13-5835-878c-72efa9dcaa55",
+      "slug": "triangle",
+      "status": "candidate",
+      "term": "Triangle",
+      "field": "studio / geometry",
+      "definition": "A polygon with three straight sides and three vertices.",
+      "form_id": "e89ae908-9469-537b-83f4-1214789423fc",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "0d63083f-1cde-5d98-b016-1502df88852c",
+      "slug": "square",
+      "status": "candidate",
+      "term": "Square / rectangular frame",
+      "field": "studio / geometry",
+      "definition": "A square has equal sides and right angles; rectangular framing is a related, distinct variant.",
+      "form_id": "9a1e5efc-9e3c-50d1-a088-391c29537b4b",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "a3ab8304-2ed4-5d7b-96ca-301ac5150a52",
+      "slug": "wave",
+      "status": "candidate",
+      "term": "Wave",
+      "field": "studio / geometry",
+      "definition": "A path with recurring rises and falls; a sinusoid is one model, not every wavy mark.",
+      "form_id": "0684ca8e-d1ee-5559-b75d-0819ffc3ae06",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "56ec5681-c735-5486-bbfb-7e923d692b27",
+      "slug": "spiral",
+      "status": "candidate",
+      "term": "Planar spiral",
+      "field": "studio / geometry",
+      "definition": "A planar curve turns about a center while distance from that center changes by a chosen rule.",
+      "form_id": "f0281c1d-0ea7-5fa6-a976-057f706cd062",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "7c7133b2-e6dc-5e7c-b8a4-f4dd127b8eab",
+      "slug": "star",
+      "status": "candidate",
+      "term": "Star / radial point motif",
+      "field": "studio / geometry",
+      "definition": "A family of pointed radial constructions; alternating-radius outlines differ from regular star polygons and overlapping squares.",
+      "form_id": "43b29b0d-c25a-59fc-9b89-7a4afbabeca2",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "72f270d0-1a21-5b4b-b5c1-6027b41043b6",
+      "slug": "hatch",
+      "status": "candidate",
+      "term": "Hatch field",
+      "field": "studio / geometry",
+      "definition": "A family of strokes used together to build texture, value or surface direction.",
+      "form_id": "676fb41b-82a1-5997-8704-1b821702e8b6",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "acc650fa-ad20-50ea-85ee-5b1124746825",
+      "slug": "cross-hatch",
+      "status": "candidate",
+      "term": "Crossed hatch field",
+      "field": "studio / geometry",
+      "definition": "Overlapping stroke families whose intersections and densities build a composite field.",
+      "form_id": "b8340e74-2034-5528-925d-04a599b19efb",
+      "equivalence": "scoped usage"
+    },
+    {
+      "id": "b4020203-2e4f-5023-9ad3-b14add6cc0f6",
+      "slug": "source-ubaid-bowl",
+      "status": "candidate",
+      "term": "double half-moons",
+      "field": "motif",
+      "definition": "Catalogue description of paired curved painted forms; no lunar-deity meaning is assigned.",
+      "artifact_id": "b9a6466f-b698-4ce0-96c8-f2ffd956460a",
+      "source_ids": [
+        "92c8ef5e-7dce-550d-8af0-6b13fb87cf14"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "2cdfc828-a401-55ce-a8b8-e3eb6318ec55",
+      "slug": "source-old-syrian-seal",
+      "status": "candidate",
+      "term": "guilloche",
+      "field": "ornament",
+      "definition": "The source names a looping band in this seal.",
+      "artifact_id": "774f3316-81d6-455b-a9bb-53aeb235257e",
+      "source_ids": [
+        "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "18388d07-903f-58eb-a264-d4c4cc915876",
+      "slug": "source-kudurru",
+      "status": "candidate",
+      "term": "kudurru",
+      "field": "artifact",
+      "definition": "A named Babylonian stone document type; this object records a land grant.",
+      "artifact_id": "0c613b35-a893-4990-87b0-2dac57650e38",
+      "source_ids": [
+        "73d62c31-c26e-56c7-9299-78cd758b9964"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "ff6733e5-4ab3-5092-9230-9cd1ceb84c1a",
+      "slug": "source-luster-star-tile",
+      "status": "candidate",
+      "term": "luster-painted",
+      "field": "technique",
+      "definition": "Recorded surface-making process for the selected glazed tile.",
+      "artifact_id": "c0ba88c6-e613-4a5b-9f5e-6331283f3ada",
+      "source_ids": [
+        "79d8f713-97bc-49f6-af4a-6e1d631f6412"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "17f5cd3b-461b-5a4b-8cd2-fb91a0539a0d",
+      "slug": "source-mihrab",
+      "status": "candidate",
+      "term": "mihrab",
+      "field": "architecture",
+      "definition": "Prayer niche; the selected source relates it to the direction of Mecca.",
+      "artifact_id": "c350e8ec-2f71-445d-ba96-db0f5ed814d9",
+      "source_ids": [
+        "2cfad933-0916-4f87-bd88-dc86325d02f8"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "b06b3af6-ebba-5a7b-b1d2-0a86d1499836",
+      "slug": "source-parfleche",
+      "status": "candidate",
+      "term": "parfleche",
+      "field": "artifact",
+      "definition": "Portable folded container; this object is attributed to Apsaalooke makers.",
+      "artifact_id": "a9935a37-cde9-4f54-b668-b416b0cd3d5b",
+      "source_ids": [
+        "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+        "0d7f0649-6690-4a5e-acc5-889e7bb38137"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "73d47d50-bee1-5109-b2fa-9664bf777aee",
+      "slug": "source-strawberry-thief",
+      "status": "candidate",
+      "term": "discharge printed",
+      "field": "technique",
+      "definition": "Recorded printing process for the selected cotton textile.",
+      "artifact_id": "fb9a4e1c-57f0-4295-a14f-d5bfdb44e0df",
+      "source_ids": [
+        "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+        "9def7abb-48f9-4768-ace4-af569c45a2c8",
+        "71dd8945-ad37-4825-8d39-80e489a044a5"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    },
+    {
+      "id": "66aa20a8-8b8e-5fce-b7ff-9b506839f12f",
+      "slug": "source-grammar-of-ornament",
+      "status": "candidate",
+      "term": "chromolithography",
+      "field": "technique",
+      "definition": "Color lithographic reproduction used in the printed sourcebook.",
+      "artifact_id": "f40ac080-a165-4edd-a97a-aa151b9ea772",
+      "source_ids": [
+        "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+        "581c4720-be13-4693-9a8d-858419627cfa"
+      ],
+      "equivalence": "source-scoped; no universal equivalence implied"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "b9a6466f-b698-4ce0-96c8-f2ffd956460a",
+      "slug": "ubaid-bowl",
+      "title": "Bowl",
+      "date": "mid 6th–5th millennium BCE",
+      "culture": "Ubaid",
+      "place": "Mesopotamia, Eridu (modern Abu Shahrein)",
+      "medium": "Ceramic",
+      "technique": "Dark painted decoration on ceramic; exact brush/tool construction unrecorded here",
+      "source_url": "https://www.metmuseum.org/art/collection/search/324086",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "49.133.2",
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Gift of Egypt Exploration Fund, by exchange, 1949",
+      "source_attribution": "The museum describes three concentric rings and three groups of double half-moons facing the center; its account says Ubaid painted pottery spread from southern Mesopotamia north and west.",
+      "visible_observation": "A shallow circular vessel bears dark bands following its inner rim and grouped, filled curved forms nearer the center. Cracks and oblique camera angle limit exact tracing.",
+      "uncertainty": "The page does not assign a lunar meaning to these half-moon motifs. A visual analogy with a crescent does not establish the same symbol as later Sin iconography.",
+      "interpretation": "Compare circular vessel structure with circular painted organization, and a small curved cell with its repeated arrangement.",
+      "context": "Excavated in Ubaid Cemetery, Grave 136, Eridu",
+      "image_file": "assets/references/ubaid-bowl.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "92c8ef5e-7dce-550d-8af0-6b13fb87cf14"
+      ],
+      "reading_ids": [
+        "f5329309-c833-5acd-8218-01dd573de52e"
+      ],
+      "image_id": "5b8aac39-8fd3-5e94-8e32-e7f72cf7c1be",
+      "cell_slugs": [
+        "circle",
+        "arc",
+        "crescent"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "104f9f73-1930-4eca-9611-abeab350e8a8",
+      "slug": "naqada-bowl",
+      "title": "White cross-lined ware bowl with geometric patterns",
+      "date": "ca. 3700–3650 BCE",
+      "culture": "Predynastic Egypt, Naqada I",
+      "place": "Egypt",
+      "medium": "Pottery, paint",
+      "technique": "Painted light lines on reddish pottery; exact production tools not identified by this record",
+      "source_url": "https://www.metmuseum.org/art/collection/search/547264",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "10.130.1174",
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Gift of Helen Miller Gould, 1910",
+      "source_attribution": "The museum titles and dates the object as a Naqada I bowl with geometric patterns.",
+      "visible_observation": "Light bundles of angular strokes form repeated V- and W-like units down the wall, with long vertical strokes between fields. Individual marks are visibly freehand.",
+      "uncertainty": "No specific symbolic interpretation is supplied by the object record. Do not call the painted units a universal sign or infer transmission from similar chevrons.",
+      "interpretation": "A single line becomes an angular cell, then a repeated band; the curved vessel can host an emphatically angular design.",
+      "context": "Specific ancient use/find context not supplied in this record",
+      "image_file": "assets/references/naqada-bowl.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "f2b09e79-2eb8-54cb-9b78-b743070d1d4e"
+      ],
+      "reading_ids": [
+        "f310b418-189c-524d-b036-f5f1a424b122"
+      ],
+      "image_id": "ea6a1907-725d-5689-9adb-751d0b15049d",
+      "cell_slugs": [
+        "line-segment",
+        "triangle"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "b7d5261a-22e3-4e53-a330-cb1f1c902d81",
+      "slug": "majiayao-jar",
+      "title": "Jar (Hu)",
+      "date": "ca. 2650–2350 BCE",
+      "culture": "China, Neolithic, Majiayao culture, Banshan phase",
+      "place": "Northwest China (museum audio identifies upper Yellow River basin)",
+      "medium": "Earthenware with painted decoration",
+      "technique": "Painted decoration; museum audio notes visible individual hand-painted brushstrokes",
+      "source_url": "https://www.metmuseum.org/art/collection/search/44723",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "1992.165.9",
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Charlotte C. and John C. Weber Collection, Gift of Charlotte C. and John C. Weber, 1992",
+      "source_attribution": "Object details give Majiayao, Banshan phase and ca. 2650–2350 BCE.",
+      "visible_observation": "Bundles of curved dark and red lines sweep around circular unpainted centers across the broad shoulder. Angular forms occupy the neck, while the lower vessel remains largely unpainted.",
+      "uncertainty": "Use the object-details date. The audio transcript says second millennium BCE, inconsistent with those details; do not repeat that transcript date. Do not force curves into an exact named mathematical spiral.",
+      "interpretation": "Compare the same rounded host with Ubaid concentric organization and Egyptian angular repetition; contrast curved shoulder patterns against angular neck patterns within one work.",
+      "context": "Specific ancient use/find context not supplied in this record",
+      "image_file": "assets/references/majiayao-jar.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "1d5bec79-dd9c-5947-ac62-c2dcac4d8d89"
+      ],
+      "reading_ids": [
+        "ca3abc4a-52db-57bc-af51-7b0a301b11b6"
+      ],
+      "image_id": "3fbcd27e-d4b9-5c57-aa4a-bfedde402c57",
+      "cell_slugs": [
+        "arc",
+        "circle",
+        "triangle"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "c25a0db0-e210-466f-9b5b-ff67bef8c188",
+      "slug": "old-babylonian-seal",
+      "title": "Cylinder seal and modern impression: worshiper and the sun god; king; bull-man and a lion-man",
+      "date": "ca. 18th century BCE",
+      "culture": "Babylonian, Old Babylonian",
+      "place": "Mesopotamia or Syria",
+      "medium": "Hematite",
+      "technique": "Carved cylinder intended for rolling impressions in clay",
+      "source_url": "https://www.metmuseum.org/art/collection/search/327455",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "1991.368.1",
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Purchase, Raymond and Beverly Sackler Gift, 1991",
+      "source_attribution": "The museum identifies Shamash by the saw in his hand and describes a series of standing figures and smaller figures/items in the surrounding field.",
+      "visible_observation": "The cylinder is displayed beside a flattened modern impression. The impression presents a row of standing figures across a horizontal field.",
+      "uncertainty": "Main image is only 500 pixels wide, so fine marks should be studied from the museum source before detailed tracing. Geometry of rolling does not prove the ancient designer began with a flat sketch.",
+      "interpretation": "A strong contemporary comparison with the Old Syrian seal: similar date, same material and reproductive tool, different organization and iconographic selections.",
+      "context": "Museum explains sealing jars, doors, baskets and tablets as ownership/identification practices; modern impression shown",
+      "image_file": "assets/references/old-babylonian-seal.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "169c2bb0-452b-5bd4-92a3-df0b6e883ee3"
+      ],
+      "reading_ids": [
+        "9abb714c-0204-5dcb-9915-2fdb44755741"
+      ],
+      "image_id": "9b884651-ad26-5d2f-83c6-bde3c3f12283",
+      "cell_slugs": [
+        "line-segment"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "774f3316-81d6-455b-a9bb-53aeb235257e",
+      "slug": "old-syrian-seal",
+      "title": "Cylinder seal and modern impression: royal worshiper before a god on a throne; human-headed bulls below",
+      "date": "ca. 1820–1730 BCE",
+      "culture": "Old Syrian",
+      "place": "Syria",
+      "medium": "Hematite",
+      "technique": "Carved cylinder intended for rolling impressions in clay",
+      "source_url": "https://www.metmuseum.org/art/collection/search/327459",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "1991.368.5",
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Purchase, Raymond and Beverly Sackler Gift, 1991",
+      "source_attribution": "Museum identifies a winged rosette disk with crescent, two stars, an ankh, a guilloche, and figures with Egyptian/Anatolian comparanda.",
+      "visible_observation": "A centrally placed disk and crescent appear above the figures; stars flank that area. Looping bands occupy side fields, and the composition stacks figures vertically as well as horizontally.",
+      "uncertainty": "Preserve local object attribution; museum-specified Egyptian elements are firmer evidence than resemblance alone. Not every star in every culture has the same deity or affective meaning.",
+      "interpretation": "Links cells, compound motifs, figural arrangement, tool geometry, and a specific cross-cultural iconographic combination without reducing the whole design to abstract geometry.",
+      "context": "Museum explains ownership/identification and transaction uses; modern impression shown",
+      "image_file": "assets/references/old-syrian-seal.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+      ],
+      "reading_ids": [
+        "7bf55af5-e1b1-542a-b1c6-862ae06d941a"
+      ],
+      "image_id": "35204b63-a3bc-5f3c-a013-220ca96fdf34",
+      "cell_slugs": [
+        "circle",
+        "crescent",
+        "star",
+        "arc"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "0c613b35-a893-4990-87b0-2dac57650e38",
+      "slug": "kudurru",
+      "title": "Boundary stone (kudurru)",
+      "date": "1125–1100 BCE",
+      "culture": "Middle Babylonian",
+      "place": "South Babylonia; land grant in district of Edina",
+      "medium": "Limestone",
+      "technique": "Carved imagery and cuneiform inscription",
+      "source_url": "https://artsandculture.google.com/asset/boundary-stone-kudurru/bQGp47h1MZdloA",
+      "institution": "The British Museum (record published through Google Arts & Culture)",
+      "accession": "1907,1014.1",
+      "rights": "Photo: © Trustees of the British Museum. This record does not supply an explicit reuse license.",
+      "credit": "Photo: © Trustees of the British Museum",
+      "source_attribution": "Museum identifies Shamash with solar disk, Sin with crescent, and Ishtar with eight-pointed star; square boxes represent altars. It also identifies Marduk’s triangular spade and Nabu’s wedge-shaped stylus.",
+      "visible_observation": "Three large emblems occupy the arched upper field; smaller emblems sit on box-like bases below, above a cuneiform text block.",
+      "uncertainty": "Direct British Museum page returned 403; the BM-authored Google Arts & Culture record supplied these details. This is a legal-religious elite document, not evidence by itself for equal participation across society.",
+      "interpretation": "Connect geometry as iconography to legal material culture and represented tools: a triangle is simultaneously a geometric reading and part of a named spade emblem.",
+      "context": "Land grant by Eanna-shum-iddina to Gula-eresh; the record names surveyor and officials and invokes divine protection",
+      "image_file": null,
+      "status": "candidate",
+      "source_ids": [
+        "73d62c31-c26e-56c7-9299-78cd758b9964"
+      ],
+      "reading_ids": [
+        "773703bc-2ad3-507e-8dbb-24e2149da6ec"
+      ],
+      "image_id": null,
+      "cell_slugs": [
+        "circle",
+        "crescent",
+        "star",
+        "square",
+        "triangle"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "c0ba88c6-e613-4a5b-9f5e-6331283f3ada",
+      "slug": "luster-star-tile",
+      "title": "Luster Star-Shaped Tile",
+      "date": "608 AH / 1211–12 CE",
+      "culture": "Iranian; attributed to Kashan",
+      "place": "Iran, Kashan",
+      "medium": "Stonepaste; luster-painted on opaque glaze with inglaze painting",
+      "technique": "Stonepaste; luster-painted on opaque glaze with inglaze painting",
+      "source_url": "https://www.metmuseum.org/art/collection/search/450358",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "40.181.1",
+      "rights": "Public Domain, explicitly stated on object page",
+      "credit": "H.O. Havemeyer Collection, Gift of Horace Havemeyer, 1940",
+      "source_attribution": "The catalogue identifies a sultan with court members, framed by Persian poetry. The date is recorded on the tile.",
+      "visible_observation": "Eight-pointed star outline; border follows angular perimeter. Human figures occupy an interior field; fine curls fill multiple surface regions.",
+      "interpretation": "A useful layered case: geometric carrier + framed image + fine curvilinear ornament. The eight-point contour does not establish shared meaning with Mesopotamian astral stars.",
+      "uncertainty": "The source describes medium and luster process, not the exact tool or template used to lay out this outline.",
+      "host": "architectural ceramic tile",
+      "image_file": "assets/references/luster-star-tile.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "79d8f713-97bc-49f6-af4a-6e1d631f6412"
+      ],
+      "reading_ids": [
+        "3109a194-d033-5437-8841-fb3b89d076e5"
+      ],
+      "image_id": "7e03ced0-63db-505a-a012-e8d6e110720c",
+      "cell_slugs": [
+        "star",
+        "arc"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "c350e8ec-2f71-445d-ba96-db0f5ed814d9",
+      "slug": "mihrab",
+      "title": "Mihrab (Prayer Niche)",
+      "date": "755 AH / 1354–55 CE",
+      "culture": "Iranian",
+      "place": "Iran, Isfahan; Madrasa Imami",
+      "medium": "Mosaic of polychrome-glazed cut tiles on stonepaste body; set into mortar",
+      "technique": "Mosaic of polychrome-glazed cut tiles on stonepaste body; set into mortar",
+      "source_url": "https://www.metmuseum.org/art/collection/search/449537",
+      "institution": "The Metropolitan Museum of Art",
+      "accession": "39.20",
+      "rights": "Public Domain, explicitly stated on object page",
+      "credit": "Harris Brisbane Dick Fund, 1939",
+      "source_attribution": "The museum identifies the niche as marking the direction of Mecca. Small glazed tiles are fitted together to form patterns and inscriptions.",
+      "visible_observation": "Nested rectangular frames surround a pointed arch and concave niche. Curved vegetal bands, polygonal arrangements, and inscriptions occupy different nested fields.",
+      "interpretation": "The physical tile can be a construction cell; the assembled ornament has larger reusable units. Architecture makes additional borders, corners, and curved surfaces available to design.",
+      "uncertainty": "This niche and the star tile belong to different centuries; no direct lineage is claimed.",
+      "host": "architectural niche",
+      "image_file": "assets/references/mihrab.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "2cfad933-0916-4f87-bd88-dc86325d02f8"
+      ],
+      "reading_ids": [
+        "9bbc3e60-686c-592d-a02d-d7e48c8962e3"
+      ],
+      "image_id": "df1e7cda-e823-582e-89b7-c8cbbd0de2a5",
+      "cell_slugs": [
+        "square",
+        "arc",
+        "line-segment"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "a9935a37-cde9-4f54-b668-b416b0cd3d5b",
+      "slug": "parfleche",
+      "title": "Parfleche",
+      "date": "c. 1900",
+      "culture": "Apsaalooke (Crow)",
+      "place": "Native North American Plains",
+      "medium": "Painted leather",
+      "technique": "Painted leather",
+      "source_url": "https://www.clevelandart.org/art/1937.848",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1937.848",
+      "rights": "Open access: object page explicitly permits copying, modification and distribution without permission",
+      "credit": "Gift of Amelia Elizabeth White",
+      "source_attribution": "Cleveland supplies the Apsaalooke attribution and approximate date. Nelson-Atkins describes parfleches as light, weather-resistant containers used for transport in Plains and Plateau mobile lifeways; that context is from a different Lakota example.",
+      "visible_observation": "Two rectangular flap fields close at a central seam. Yellow and green triangular fields, pale diagonal bands, red accents, and dark outlines repeat across the folds.",
+      "interpretation": "Compare how folding and closure organize a design. This is a mobile-society case, not proof that its makers had never settled or lived outside colonial history.",
+      "uncertainty": "Do not transfer Lakota motif meanings to this Apsaalooke object. Do not infer symbolic content from triangular resemblance.",
+      "host": "folded portable container",
+      "image_file": "assets/references/parfleche.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+        "0d7f0649-6690-4a5e-acc5-889e7bb38137"
+      ],
+      "reading_ids": [
+        "70f2be8a-33db-590d-8c82-7a727eaaa061"
+      ],
+      "image_id": "88dda364-cf6b-5739-a966-56541ceaca5f",
+      "cell_slugs": [
+        "triangle",
+        "square",
+        "line-segment"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "fb9a4e1c-57f0-4295-a14f-d5bfdb44e0df",
+      "slug": "strawberry-thief",
+      "title": "Strawberry Thief",
+      "date": "c. 1936 impression of design introduced in 1883",
+      "culture": "English; William Morris design",
+      "place": "England, Merton Abbey",
+      "medium": "Plain weave cotton, discharge printed",
+      "technique": "Plain weave cotton, discharge printed",
+      "source_url": "https://www.clevelandart.org/art/1937.696",
+      "institution": "Cleveland Museum of Art",
+      "accession": "1937.696",
+      "rights": "Open access: object page explicitly permits copying, modification and distribution without permission",
+      "credit": "Gift of Mrs. Henry Chisholm",
+      "source_attribution": "The indigo-discharge process involved dyeing the whole cloth blue, bleaching, and block printing. The William Morris Gallery identifies the 1883 design as expensive to produce but commercially popular.",
+      "visible_observation": "Paired birds and flowers repeat over a densely filled ground. Local bilateral arrangements interlock with a larger repeating field; curling stems weave around figurative motifs.",
+      "interpretation": "Geometry need not be the depicted subject: repeat, reflection, spacing, and registration organize figurative ornament. Skilled repeat production can increase circulation while remaining expensive.",
+      "uncertainty": "The design dates to 1883; this collection example dates to about 1936. Commercial success does not establish equitable access or measured saturation.",
+      "host": "furnishing textile",
+      "maker": "Designer: William Morris; printed example is posthumous",
+      "image_file": "assets/references/strawberry-thief.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+        "9def7abb-48f9-4768-ace4-af569c45a2c8",
+        "71dd8945-ad37-4825-8d39-80e489a044a5"
+      ],
+      "reading_ids": [
+        "68d15c1a-6eb2-5202-a7c3-a5954ce344a5"
+      ],
+      "image_id": "8ea18a18-1582-5b36-9090-b73c70d5cdae",
+      "cell_slugs": [
+        "arc",
+        "line-segment"
+      ],
+      "source_file": null
+    },
+    {
+      "id": "f40ac080-a165-4edd-a97a-aa151b9ea772",
+      "slug": "grammar-of-ornament",
+      "title": "The Grammar of Ornament",
+      "date": "Published 1856",
+      "culture": "British design publication; selected cross-cultural material",
+      "place": "Britain",
+      "medium": "Bound volume with 100 chromolithographic plates",
+      "technique": "Bound volume with 100 chromolithographic plates",
+      "source_url": "https://www.nga.gov/artworks/102555-grammar-ornament",
+      "institution": "National Gallery of Art",
+      "accession": "1997.109.1",
+      "rights": "Public domain media, explicitly stated by NGA",
+      "credit": "Mark J. Millard Architectural Collection",
+      "source_attribution": "The volume has 100 chromolithographic plates. V&A connects Jones’s study of Alhambra decoration, experimentation with chromolithography, design education, and publication for designers unable to access the originals.",
+      "visible_observation": "The displayed plate separates ornament into vertical and horizontal panels. Bilateral vegetal units, scrolling curves, and repeated motifs are arranged for comparison.",
+      "interpretation": "A sourcebook itself becomes an invention/host carrying copied geometries to new makers and media. Its historical selections and cultural labels remain the author’s framework, not a neutral global canon.",
+      "uncertainty": "The volume’s cultural taxonomy and selections belong to its nineteenth-century author, not a neutral global canon.",
+      "host": "printed design sourcebook",
+      "maker": "Owen Jones, author; Francis Bedford, lithographer",
+      "image_file": "assets/references/grammar-of-ornament.jpg",
+      "status": "candidate",
+      "source_ids": [
+        "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+        "581c4720-be13-4693-9a8d-858419627cfa"
+      ],
+      "reading_ids": [
+        "ea3a5f10-808a-5537-a02f-ba312dc3a942"
+      ],
+      "image_id": "e36dcec0-5a59-5263-92e4-7e669f09c297",
+      "cell_slugs": [
+        "arc",
+        "square",
+        "line-segment"
+      ],
+      "source_file": null
+    }
+  ],
+  "images": [
+    {
+      "id": "5b8aac39-8fd3-5e94-8e32-e7f72cf7c1be",
+      "slug": "ubaid-bowl",
+      "status": "candidate",
+      "artifact_id": "b9a6466f-b698-4ce0-96c8-f2ffd956460a",
+      "image_file": "assets/references/ubaid-bowl.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/324086/697828/main-image",
+      "source_ids": [
+        "92c8ef5e-7dce-550d-8af0-6b13fb87cf14"
+      ],
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Gift of Egypt Exploration Fund, by exchange, 1949",
+      "width": 1200,
+      "height": 1199,
+      "sha256": "784f7cf7d786b2f0809264b041006836f598d581112de88b59686b59628c3b6e",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "ea6a1907-725d-5689-9adb-751d0b15049d",
+      "slug": "naqada-bowl",
+      "status": "candidate",
+      "artifact_id": "104f9f73-1930-4eca-9611-abeab350e8a8",
+      "image_file": "assets/references/naqada-bowl.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/547264/1214876/main-image",
+      "source_ids": [
+        "f2b09e79-2eb8-54cb-9b78-b743070d1d4e"
+      ],
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Gift of Helen Miller Gould, 1910",
+      "width": 972,
+      "height": 1200,
+      "sha256": "0a419206d7eb9a3d9ffa1024a792cb30dad446681937fcbba37e6b04a85102b9",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "3fbcd27e-d4b9-5c57-aa4a-bfedde402c57",
+      "slug": "majiayao-jar",
+      "status": "candidate",
+      "artifact_id": "b7d5261a-22e3-4e53-a330-cb1f1c902d81",
+      "image_file": "assets/references/majiayao-jar.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/44723/190688/main-image",
+      "source_ids": [
+        "1d5bec79-dd9c-5947-ac62-c2dcac4d8d89"
+      ],
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Charlotte C. and John C. Weber Collection, Gift of Charlotte C. and John C. Weber, 1992",
+      "width": 900,
+      "height": 1200,
+      "sha256": "7ba6231ea2f2e49f8acc4ff93a62249c3181ff0ba191f1e6525ad804876f6e2b",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "9b884651-ad26-5d2f-83c6-bde3c3f12283",
+      "slug": "old-babylonian-seal",
+      "status": "candidate",
+      "artifact_id": "c25a0db0-e210-466f-9b5b-ff67bef8c188",
+      "image_file": "assets/references/old-babylonian-seal.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/327455/687569/main-image",
+      "source_ids": [
+        "169c2bb0-452b-5bd4-92a3-df0b6e883ee3"
+      ],
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Purchase, Raymond and Beverly Sackler Gift, 1991",
+      "width": 500,
+      "height": 314,
+      "sha256": "ef78d5f212b41298692de2c4a5bc118ec3b6df28bc5f02f61cf812fec7ebead1",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "35204b63-a3bc-5f3c-a013-220ca96fdf34",
+      "slug": "old-syrian-seal",
+      "status": "candidate",
+      "artifact_id": "774f3316-81d6-455b-a9bb-53aeb235257e",
+      "image_file": "assets/references/old-syrian-seal.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/327459/713367/main-image",
+      "source_ids": [
+        "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+      ],
+      "rights": "Public Domain (explicitly labeled on the object page)",
+      "credit": "Purchase, Raymond and Beverly Sackler Gift, 1991",
+      "width": 1200,
+      "height": 763,
+      "sha256": "77c498420c848b7213261b5d3d76206aebc8d1a70ee2c7fe1a39bae6d44e36df",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "7e03ced0-63db-505a-a012-e8d6e110720c",
+      "slug": "luster-star-tile",
+      "status": "candidate",
+      "artifact_id": "c0ba88c6-e613-4a5b-9f5e-6331283f3ada",
+      "image_file": "assets/references/luster-star-tile.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/450358/877653/main-image",
+      "source_ids": [
+        "79d8f713-97bc-49f6-af4a-6e1d631f6412"
+      ],
+      "rights": "Public Domain, explicitly stated on object page",
+      "credit": "H.O. Havemeyer Collection, Gift of Horace Havemeyer, 1940",
+      "width": 1080,
+      "height": 1037,
+      "sha256": "dec8daaad699ba3a3d517f2a0a39c1eef5072059707b56cb7675651ae4038885",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "df1e7cda-e823-582e-89b7-c8cbbd0de2a5",
+      "slug": "mihrab",
+      "status": "candidate",
+      "artifact_id": "c350e8ec-2f71-445d-ba96-db0f5ed814d9",
+      "image_file": "assets/references/mihrab.jpg",
+      "source_image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/449537/903322/main-image",
+      "source_ids": [
+        "2cfad933-0916-4f87-bd88-dc86325d02f8"
+      ],
+      "rights": "Public Domain, explicitly stated on object page",
+      "credit": "Harris Brisbane Dick Fund, 1939",
+      "width": 810,
+      "height": 1200,
+      "sha256": "d1484c09a5f25c962b166b5ca357ee75fbfe6c6fbe5630e6a28f1dca4501aba4",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "88dda364-cf6b-5739-a966-56541ceaca5f",
+      "slug": "parfleche",
+      "status": "candidate",
+      "artifact_id": "a9935a37-cde9-4f54-b668-b416b0cd3d5b",
+      "image_file": "assets/references/parfleche.jpg",
+      "source_image_url": "https://www.clevelandart.org/_next/image?q=75&url=https%3A%2F%2Fpiction.clevelandart.org%2Fcma%2Fump.di%3Fe%3DEBD37477CD1A8EC30782877B74CF8E37C2F82F6532D16A44C1B63C607183A383%26s%3D24247294%26se%3D116628280%26v%3D2%26f%3D1937.848_o5.jpg&w=640",
+      "source_ids": [
+        "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+        "0d7f0649-6690-4a5e-acc5-889e7bb38137"
+      ],
+      "rights": "Open access: object page explicitly permits copying, modification and distribution without permission",
+      "credit": "Gift of Amelia Elizabeth White",
+      "width": 640,
+      "height": 387,
+      "sha256": "98f3131308d99b9fb41a09104b283f26b886f4d1b665d3c9bff24dc4b71d4012",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "8ea18a18-1582-5b36-9090-b73c70d5cdae",
+      "slug": "strawberry-thief",
+      "status": "candidate",
+      "artifact_id": "fb9a4e1c-57f0-4295-a14f-d5bfdb44e0df",
+      "image_file": "assets/references/strawberry-thief.jpg",
+      "source_image_url": "https://www.clevelandart.org/_next/image?q=75&url=https%3A%2F%2Fpiction.clevelandart.org%2Fcma%2Fump.di%3Fe%3DEE2BB876F5C8A16F24B7B491514A41FBE1DEB41BFB998C8D96EC8023CB08719E%26s%3D24247294%26se%3D399313166%26v%3D0%26f%3D1937.696_o5.jpg&w=640",
+      "source_ids": [
+        "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+        "9def7abb-48f9-4768-ace4-af569c45a2c8",
+        "71dd8945-ad37-4825-8d39-80e489a044a5"
+      ],
+      "rights": "Open access: object page explicitly permits copying, modification and distribution without permission",
+      "credit": "Gift of Mrs. Henry Chisholm",
+      "width": 640,
+      "height": 572,
+      "sha256": "6cd5042d539fa5ce52e6490f726e9b3b760ec1b636b73f2e9e4e615d508b6c95",
+      "role": "historical reference; not a generated reconstruction"
+    },
+    {
+      "id": "e36dcec0-5a59-5263-92e4-7e669f09c297",
+      "slug": "grammar-of-ornament",
+      "status": "candidate",
+      "artifact_id": "f40ac080-a165-4edd-a97a-aa151b9ea772",
+      "image_file": "assets/references/grammar-of-ornament.jpg",
+      "source_image_url": "https://api.nga.gov/iiif/df00739f-b909-40a0-a8bc-3db3c3f546e0/full/%21800%2C800/0/default.jpg",
+      "source_ids": [
+        "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+        "581c4720-be13-4693-9a8d-858419627cfa"
+      ],
+      "rights": "Public domain media, explicitly stated by NGA",
+      "credit": "Mark J. Millard Architectural Collection",
+      "width": 525,
+      "height": 800,
+      "sha256": "7ccec4ca203e212d433a6c5f05b9333ef9f864e70b4901cdb988fbb877287c6d",
+      "role": "historical reference; not a generated reconstruction"
+    }
+  ],
+  "readings": [
+    {
+      "id": "f5329309-c833-5acd-8218-01dd573de52e",
+      "slug": "ubaid-bowl",
+      "status": "candidate",
+      "artifact_id": "b9a6466f-b698-4ce0-96c8-f2ffd956460a",
+      "image_id": "5b8aac39-8fd3-5e94-8e32-e7f72cf7c1be",
+      "source_ids": [
+        "92c8ef5e-7dce-550d-8af0-6b13fb87cf14"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "circle",
+        "arc",
+        "crescent"
+      ],
+      "claims": [
+        {
+          "id": "a32a5541-5b03-593b-b6bb-cdcdb7d97472",
+          "slug": "ubaid-bowl-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The museum describes three concentric rings and three groups of double half-moons facing the center; its account says Ubaid painted pottery spread from southern Mesopotamia north and west.",
+          "source_ids": [
+            "92c8ef5e-7dce-550d-8af0-6b13fb87cf14"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "33bd6121-6d6f-5056-9f67-a5ef04f6b4bf",
+          "slug": "ubaid-bowl-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "A shallow circular vessel bears dark bands following its inner rim and grouped, filled curved forms nearer the center. Cracks and oblique camera angle limit exact tracing.",
+          "source_ids": [],
+          "image_id": "5b8aac39-8fd3-5e94-8e32-e7f72cf7c1be",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "949cbf60-3dd6-5de0-be5c-887b8c7ff441",
+          "slug": "ubaid-bowl-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Compare circular vessel structure with circular painted organization, and a small curved cell with its repeated arrangement.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "The page does not assign a lunar meaning to these half-moon motifs. A visual analogy with a crescent does not establish the same symbol as later Sin iconography.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "f310b418-189c-524d-b036-f5f1a424b122",
+      "slug": "naqada-bowl",
+      "status": "candidate",
+      "artifact_id": "104f9f73-1930-4eca-9611-abeab350e8a8",
+      "image_id": "ea6a1907-725d-5689-9adb-751d0b15049d",
+      "source_ids": [
+        "f2b09e79-2eb8-54cb-9b78-b743070d1d4e"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "line-segment",
+        "triangle"
+      ],
+      "claims": [
+        {
+          "id": "2d5a8070-5d11-56c9-b35d-fa0a43ff6337",
+          "slug": "naqada-bowl-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The museum titles and dates the object as a Naqada I bowl with geometric patterns.",
+          "source_ids": [
+            "f2b09e79-2eb8-54cb-9b78-b743070d1d4e"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "16c1bc7e-722d-591b-ae88-5e3fdaa8d8ea",
+          "slug": "naqada-bowl-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Light bundles of angular strokes form repeated V- and W-like units down the wall, with long vertical strokes between fields. Individual marks are visibly freehand.",
+          "source_ids": [],
+          "image_id": "ea6a1907-725d-5689-9adb-751d0b15049d",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "0a1ff7e9-9895-581d-9c36-b386cff3a4dd",
+          "slug": "naqada-bowl-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "A single line becomes an angular cell, then a repeated band; the curved vessel can host an emphatically angular design.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "No specific symbolic interpretation is supplied by the object record. Do not call the painted units a universal sign or infer transmission from similar chevrons.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "ca3abc4a-52db-57bc-af51-7b0a301b11b6",
+      "slug": "majiayao-jar",
+      "status": "candidate",
+      "artifact_id": "b7d5261a-22e3-4e53-a330-cb1f1c902d81",
+      "image_id": "3fbcd27e-d4b9-5c57-aa4a-bfedde402c57",
+      "source_ids": [
+        "1d5bec79-dd9c-5947-ac62-c2dcac4d8d89"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "arc",
+        "circle",
+        "triangle"
+      ],
+      "claims": [
+        {
+          "id": "20b4a827-044a-588b-a57f-375cf414b995",
+          "slug": "majiayao-jar-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "Object details give Majiayao, Banshan phase and ca. 2650–2350 BCE.",
+          "source_ids": [
+            "1d5bec79-dd9c-5947-ac62-c2dcac4d8d89"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "eb16eb6c-0b60-531e-b193-7a2a7fd94e04",
+          "slug": "majiayao-jar-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Bundles of curved dark and red lines sweep around circular unpainted centers across the broad shoulder. Angular forms occupy the neck, while the lower vessel remains largely unpainted.",
+          "source_ids": [],
+          "image_id": "3fbcd27e-d4b9-5c57-aa4a-bfedde402c57",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "797f7826-f652-552b-af9a-f19c1ffeb18d",
+          "slug": "majiayao-jar-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Compare the same rounded host with Ubaid concentric organization and Egyptian angular repetition; contrast curved shoulder patterns against angular neck patterns within one work.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "Use the object-details date. The audio transcript says second millennium BCE, inconsistent with those details; do not repeat that transcript date. Do not force curves into an exact named mathematical spiral.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "9abb714c-0204-5dcb-9915-2fdb44755741",
+      "slug": "old-babylonian-seal",
+      "status": "candidate",
+      "artifact_id": "c25a0db0-e210-466f-9b5b-ff67bef8c188",
+      "image_id": "9b884651-ad26-5d2f-83c6-bde3c3f12283",
+      "source_ids": [
+        "169c2bb0-452b-5bd4-92a3-df0b6e883ee3"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "line-segment"
+      ],
+      "claims": [
+        {
+          "id": "00ab37bc-bccf-5a99-bd39-d07c4a9b96dd",
+          "slug": "old-babylonian-seal-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The museum identifies Shamash by the saw in his hand and describes a series of standing figures and smaller figures/items in the surrounding field.",
+          "source_ids": [
+            "169c2bb0-452b-5bd4-92a3-df0b6e883ee3"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "c4410db1-ce1a-5c75-9988-d610c2e70b58",
+          "slug": "old-babylonian-seal-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "The cylinder is displayed beside a flattened modern impression. The impression presents a row of standing figures across a horizontal field.",
+          "source_ids": [],
+          "image_id": "9b884651-ad26-5d2f-83c6-bde3c3f12283",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "f8c96d2f-997a-5fbe-ad6a-f22ab81effe8",
+          "slug": "old-babylonian-seal-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "A strong contemporary comparison with the Old Syrian seal: similar date, same material and reproductive tool, different organization and iconographic selections.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "Main image is only 500 pixels wide, so fine marks should be studied from the museum source before detailed tracing. Geometry of rolling does not prove the ancient designer began with a flat sketch.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "7bf55af5-e1b1-542a-b1c6-862ae06d941a",
+      "slug": "old-syrian-seal",
+      "status": "candidate",
+      "artifact_id": "774f3316-81d6-455b-a9bb-53aeb235257e",
+      "image_id": "35204b63-a3bc-5f3c-a013-220ca96fdf34",
+      "source_ids": [
+        "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "circle",
+        "crescent",
+        "star",
+        "arc"
+      ],
+      "claims": [
+        {
+          "id": "764f7abb-7bae-5e28-8fc3-4ddd3824dad5",
+          "slug": "old-syrian-seal-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "Museum identifies a winged rosette disk with crescent, two stars, an ankh, a guilloche, and figures with Egyptian/Anatolian comparanda.",
+          "source_ids": [
+            "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "a614bec9-1816-5583-8485-a3b2345bb358",
+          "slug": "old-syrian-seal-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "A centrally placed disk and crescent appear above the figures; stars flank that area. Looping bands occupy side fields, and the composition stacks figures vertically as well as horizontally.",
+          "source_ids": [],
+          "image_id": "35204b63-a3bc-5f3c-a013-220ca96fdf34",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "fc3a9ebb-2dd8-59ef-803e-62d2c2c2281f",
+          "slug": "old-syrian-seal-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Links cells, compound motifs, figural arrangement, tool geometry, and a specific cross-cultural iconographic combination without reducing the whole design to abstract geometry.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "Preserve local object attribution; museum-specified Egyptian elements are firmer evidence than resemblance alone. Not every star in every culture has the same deity or affective meaning.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "773703bc-2ad3-507e-8dbb-24e2149da6ec",
+      "slug": "kudurru",
+      "status": "candidate",
+      "artifact_id": "0c613b35-a893-4990-87b0-2dac57650e38",
+      "image_id": null,
+      "source_ids": [
+        "73d62c31-c26e-56c7-9299-78cd758b9964"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "circle",
+        "crescent",
+        "star",
+        "square",
+        "triangle"
+      ],
+      "claims": [
+        {
+          "id": "f643cad8-c6a7-5e56-9a75-f380e63666f1",
+          "slug": "kudurru-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "Museum identifies Shamash with solar disk, Sin with crescent, and Ishtar with eight-pointed star; square boxes represent altars. It also identifies Marduk’s triangular spade and Nabu’s wedge-shaped stylus.",
+          "source_ids": [
+            "73d62c31-c26e-56c7-9299-78cd758b9964"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "8b5a8697-739d-59a5-bfae-c4fb3a426fa7",
+          "slug": "kudurru-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Three large emblems occupy the arched upper field; smaller emblems sit on box-like bases below, above a cuneiform text block.",
+          "source_ids": [
+            "73d62c31-c26e-56c7-9299-78cd758b9964"
+          ],
+          "image_id": null,
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "5ef983d6-8a43-5ee2-bf70-0731eba9a2e9",
+          "slug": "kudurru-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Connect geometry as iconography to legal material culture and represented tools: a triangle is simultaneously a geometric reading and part of a named spade emblem.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "Direct British Museum page returned 403; the BM-authored Google Arts & Culture record supplied these details. This is a legal-religious elite document, not evidence by itself for equal participation across society.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "3109a194-d033-5437-8841-fb3b89d076e5",
+      "slug": "luster-star-tile",
+      "status": "candidate",
+      "artifact_id": "c0ba88c6-e613-4a5b-9f5e-6331283f3ada",
+      "image_id": "7e03ced0-63db-505a-a012-e8d6e110720c",
+      "source_ids": [
+        "79d8f713-97bc-49f6-af4a-6e1d631f6412"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "star",
+        "arc"
+      ],
+      "claims": [
+        {
+          "id": "a49bf7a3-ca1b-5bb3-bfe3-a22c5a486643",
+          "slug": "luster-star-tile-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The catalogue identifies a sultan with court members, framed by Persian poetry. The date is recorded on the tile.",
+          "source_ids": [
+            "79d8f713-97bc-49f6-af4a-6e1d631f6412"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "817682b3-df9a-5786-98b1-e3aa681e917f",
+          "slug": "luster-star-tile-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Eight-pointed star outline; border follows angular perimeter. Human figures occupy an interior field; fine curls fill multiple surface regions.",
+          "source_ids": [],
+          "image_id": "7e03ced0-63db-505a-a012-e8d6e110720c",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "060864bd-d80d-538c-9596-9760f0b91a25",
+          "slug": "luster-star-tile-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "A useful layered case: geometric carrier + framed image + fine curvilinear ornament. The eight-point contour does not establish shared meaning with Mesopotamian astral stars.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "The source describes medium and luster process, not the exact tool or template used to lay out this outline.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "9bbc3e60-686c-592d-a02d-d7e48c8962e3",
+      "slug": "mihrab",
+      "status": "candidate",
+      "artifact_id": "c350e8ec-2f71-445d-ba96-db0f5ed814d9",
+      "image_id": "df1e7cda-e823-582e-89b7-c8cbbd0de2a5",
+      "source_ids": [
+        "2cfad933-0916-4f87-bd88-dc86325d02f8"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "square",
+        "arc",
+        "line-segment"
+      ],
+      "claims": [
+        {
+          "id": "d5b37632-eb49-55a9-8e01-3c0b31a13837",
+          "slug": "mihrab-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The museum identifies the niche as marking the direction of Mecca. Small glazed tiles are fitted together to form patterns and inscriptions.",
+          "source_ids": [
+            "2cfad933-0916-4f87-bd88-dc86325d02f8"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "35f95b5d-d666-56b8-b6d5-c8d65b2db8f0",
+          "slug": "mihrab-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Nested rectangular frames surround a pointed arch and concave niche. Curved vegetal bands, polygonal arrangements, and inscriptions occupy different nested fields.",
+          "source_ids": [],
+          "image_id": "df1e7cda-e823-582e-89b7-c8cbbd0de2a5",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "3f4e4ad3-03a4-5cab-9d42-2b44df7c3f62",
+          "slug": "mihrab-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "The physical tile can be a construction cell; the assembled ornament has larger reusable units. Architecture makes additional borders, corners, and curved surfaces available to design.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "This niche and the star tile belong to different centuries; no direct lineage is claimed.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "70f2be8a-33db-590d-8c82-7a727eaaa061",
+      "slug": "parfleche",
+      "status": "candidate",
+      "artifact_id": "a9935a37-cde9-4f54-b668-b416b0cd3d5b",
+      "image_id": "88dda364-cf6b-5739-a966-56541ceaca5f",
+      "source_ids": [
+        "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+        "0d7f0649-6690-4a5e-acc5-889e7bb38137"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "triangle",
+        "square",
+        "line-segment"
+      ],
+      "claims": [
+        {
+          "id": "e39055ea-19fa-5f02-93ed-14f1ff253166",
+          "slug": "parfleche-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "Cleveland supplies the Apsaalooke attribution and approximate date. Nelson-Atkins describes parfleches as light, weather-resistant containers used for transport in Plains and Plateau mobile lifeways; that context is from a different Lakota example.",
+          "source_ids": [
+            "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+            "0d7f0649-6690-4a5e-acc5-889e7bb38137"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "02fb87a3-6a9f-56fc-b870-08fdd0636c2d",
+          "slug": "parfleche-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Two rectangular flap fields close at a central seam. Yellow and green triangular fields, pale diagonal bands, red accents, and dark outlines repeat across the folds.",
+          "source_ids": [],
+          "image_id": "88dda364-cf6b-5739-a966-56541ceaca5f",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "32207e3d-e9a6-583b-9f19-00225e9926bc",
+          "slug": "parfleche-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Compare how folding and closure organize a design. This is a mobile-society case, not proof that its makers had never settled or lived outside colonial history.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "Do not transfer Lakota motif meanings to this Apsaalooke object. Do not infer symbolic content from triangular resemblance.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "68d15c1a-6eb2-5202-a7c3-a5954ce344a5",
+      "slug": "strawberry-thief",
+      "status": "candidate",
+      "artifact_id": "fb9a4e1c-57f0-4295-a14f-d5bfdb44e0df",
+      "image_id": "8ea18a18-1582-5b36-9090-b73c70d5cdae",
+      "source_ids": [
+        "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+        "9def7abb-48f9-4768-ace4-af569c45a2c8",
+        "71dd8945-ad37-4825-8d39-80e489a044a5"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "arc",
+        "line-segment"
+      ],
+      "claims": [
+        {
+          "id": "8d18aab9-60be-5b86-8f70-89bb14071042",
+          "slug": "strawberry-thief-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The indigo-discharge process involved dyeing the whole cloth blue, bleaching, and block printing. The William Morris Gallery identifies the 1883 design as expensive to produce but commercially popular.",
+          "source_ids": [
+            "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+            "9def7abb-48f9-4768-ace4-af569c45a2c8",
+            "71dd8945-ad37-4825-8d39-80e489a044a5"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "e722ba24-a192-5aa6-91b5-be27a2d2f011",
+          "slug": "strawberry-thief-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "Paired birds and flowers repeat over a densely filled ground. Local bilateral arrangements interlock with a larger repeating field; curling stems weave around figurative motifs.",
+          "source_ids": [],
+          "image_id": "8ea18a18-1582-5b36-9090-b73c70d5cdae",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "7157d60e-73b2-5416-8dc2-0976577ba743",
+          "slug": "strawberry-thief-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "Geometry need not be the depicted subject: repeat, reflection, spacing, and registration organize figurative ornament. Skilled repeat production can increase circulation while remaining expensive.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "The design dates to 1883; this collection example dates to about 1936. Commercial success does not establish equitable access or measured saturation.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    },
+    {
+      "id": "ea3a5f10-808a-5537-a02f-ba312dc3a942",
+      "slug": "grammar-of-ornament",
+      "status": "candidate",
+      "artifact_id": "f40ac080-a165-4edd-a97a-aa151b9ea772",
+      "image_id": "e36dcec0-5a59-5263-92e4-7e669f09c297",
+      "source_ids": [
+        "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+        "581c4720-be13-4693-9a8d-858419627cfa"
+      ],
+      "region": "Displayed object; relevant motif fields specified in the observation.",
+      "cell_slugs": [
+        "arc",
+        "square",
+        "line-segment"
+      ],
+      "claims": [
+        {
+          "id": "69bb939c-984a-58b9-822b-e035455cf6ad",
+          "slug": "grammar-of-ornament-source_attribution",
+          "status": "candidate",
+          "kind": "source_attribution",
+          "text": "The volume has 100 chromolithographic plates. V&A connects Jones’s study of Alhambra decoration, experimentation with chromolithography, design education, and publication for designers unable to access the originals.",
+          "source_ids": [
+            "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+            "581c4720-be13-4693-9a8d-858419627cfa"
+          ],
+          "image_id": null,
+          "evidence_status": "source_supported"
+        },
+        {
+          "id": "e89e9365-e20e-5e72-a8dc-24e1d31b8566",
+          "slug": "grammar-of-ornament-visible_observation",
+          "status": "candidate",
+          "kind": "visible_observation",
+          "text": "The displayed plate separates ornament into vertical and horizontal panels. Bilateral vegetal units, scrolling curves, and repeated motifs are arranged for comparison.",
+          "source_ids": [],
+          "image_id": "e36dcec0-5a59-5263-92e4-7e669f09c297",
+          "evidence_status": "visually_inspected"
+        },
+        {
+          "id": "93a8b594-ea6a-5558-829b-1d24aabf86f8",
+          "slug": "grammar-of-ornament-research_interpretation",
+          "status": "candidate",
+          "kind": "research_interpretation",
+          "text": "A sourcebook itself becomes an invention/host carrying copied geometries to new makers and media. Its historical selections and cultural labels remain the author’s framework, not a neutral global canon.",
+          "source_ids": [],
+          "image_id": null,
+          "evidence_status": "proposed_reading"
+        }
+      ],
+      "uncertainty": "The volume’s cultural taxonomy and selections belong to its nineteenth-century author, not a neutral global canon.",
+      "experience_rhetoric": {
+        "intended_action": null,
+        "observed_response": [],
+        "viewer_context": null,
+        "evidence_status": "not yet studied",
+        "question": "Which visual features can be pointed to, and which experience or rhetorical reading would require contextual or viewer evidence?"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "92c8ef5e-7dce-550d-8af0-6b13fb87cf14",
+      "slug": "ubaid-bowl",
+      "status": "candidate",
+      "title": "Bowl",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/324086",
+      "kind": "museum_object_catalogue",
+      "evidence": "The museum describes three concentric rings and three groups of double half-moons facing the center; its account says Ubaid painted pottery spread from southern Mesopotamia north and west.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "f2b09e79-2eb8-54cb-9b78-b743070d1d4e",
+      "slug": "naqada-bowl",
+      "status": "candidate",
+      "title": "White cross-lined ware bowl with geometric patterns",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/547264",
+      "kind": "museum_object_catalogue",
+      "evidence": "The museum titles and dates the object as a Naqada I bowl with geometric patterns.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "1d5bec79-dd9c-5947-ac62-c2dcac4d8d89",
+      "slug": "majiayao-jar",
+      "status": "candidate",
+      "title": "Jar (Hu)",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/44723",
+      "kind": "museum_object_catalogue",
+      "evidence": "Object details give Majiayao, Banshan phase and ca. 2650–2350 BCE.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "169c2bb0-452b-5bd4-92a3-df0b6e883ee3",
+      "slug": "old-babylonian-seal",
+      "status": "candidate",
+      "title": "Cylinder seal and modern impression: worshiper and the sun god; king; bull-man and a lion-man",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/327455",
+      "kind": "museum_object_catalogue",
+      "evidence": "The museum identifies Shamash by the saw in his hand and describes a series of standing figures and smaller figures/items in the surrounding field.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "94cac579-f22e-5fdc-9d7e-9faf1d433eda",
+      "slug": "old-syrian-seal",
+      "status": "candidate",
+      "title": "Cylinder seal and modern impression: royal worshiper before a god on a throne; human-headed bulls below",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/327459",
+      "kind": "museum_object_catalogue",
+      "evidence": "Museum identifies a winged rosette disk with crescent, two stars, an ankh, a guilloche, and figures with Egyptian/Anatolian comparanda.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "73d62c31-c26e-56c7-9299-78cd758b9964",
+      "slug": "kudurru",
+      "status": "candidate",
+      "title": "Boundary stone (kudurru)",
+      "institution": "The British Museum (record published through Google Arts & Culture)",
+      "url": "https://artsandculture.google.com/asset/boundary-stone-kudurru/bQGp47h1MZdloA",
+      "kind": "museum_object_catalogue",
+      "evidence": "Museum identifies Shamash with solar disk, Sin with crescent, and Ishtar with eight-pointed star; square boxes represent altars. It also identifies Marduk’s triangular spade and Nabu’s wedge-shaped stylus.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "79d8f713-97bc-49f6-af4a-6e1d631f6412",
+      "slug": "s-tile",
+      "status": "candidate",
+      "title": "Luster Star-Shaped Tile",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/450358",
+      "kind": "museum_object_catalogue",
+      "evidence": "Catalogue identifies the dated star-shaped tile, material, courtly scene and Persian poetry.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "2cfad933-0916-4f87-bd88-dc86325d02f8",
+      "slug": "s-mihrab",
+      "status": "candidate",
+      "title": "Mihrab (Prayer Niche)",
+      "institution": "The Metropolitan Museum of Art",
+      "url": "https://www.metmuseum.org/art/collection/search/449537",
+      "kind": "museum_object_catalogue",
+      "evidence": "Catalogue identifies the prayer niche, date and glazed pieces assembled into patterns and inscriptions.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "13bc40e3-c6e0-4b77-ae23-10bcca1e329f",
+      "slug": "s-parfleche",
+      "status": "candidate",
+      "title": "Parfleche",
+      "institution": "Cleveland Museum of Art",
+      "url": "https://www.clevelandart.org/art/1937.848",
+      "kind": "museum_object_catalogue",
+      "evidence": "Catalogue supplies the Apsaalooke attribution, approximate date, medium and image.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "0d7f0649-6690-4a5e-acc5-889e7bb38137",
+      "slug": "s-lakota-context",
+      "status": "candidate",
+      "title": "Parfleche Envelope",
+      "institution": "The Nelson-Atkins Museum of Art",
+      "url": "https://art.nelson-atkins.org/objects/55634/parfleche-envelope",
+      "kind": "museum_object_catalogue_context_only",
+      "evidence": "General container-family context from a separate Lakota object; not a source for Apsaalooke motif meanings.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "0b87bb0f-0515-47a0-a64b-843ca2b8f460",
+      "slug": "s-morris-open",
+      "status": "candidate",
+      "title": "Strawberry Thief",
+      "institution": "Cleveland Museum of Art",
+      "url": "https://www.clevelandart.org/art/1937.696",
+      "kind": "museum_object_catalogue",
+      "evidence": "Catalogue dates this textile example to about 1936 and identifies cotton, discharge printing and the Morris design.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "9def7abb-48f9-4768-ace4-af569c45a2c8",
+      "slug": "s-morris-making",
+      "status": "candidate",
+      "title": "Strawberry Thief",
+      "institution": "William Morris Gallery",
+      "url": "https://wmgallery.org.uk/object/strawberry-thief/",
+      "kind": "museum_object_catalogue",
+      "evidence": "Gallery dates the design to 1883 and describes its costly process and commercial success.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "71dd8945-ad37-4825-8d39-80e489a044a5",
+      "slug": "s-morris-process",
+      "status": "candidate",
+      "title": "William Morris textiles",
+      "institution": "Victoria and Albert Museum",
+      "url": "https://www.vam.ac.uk/articles/willam-morris-textiles",
+      "kind": "museum_research_article",
+      "evidence": "The V&A explains indigo-discharge and block printing in Morris textile production.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "a64b47ed-5b34-4248-aed0-f07c5bdbfa9f",
+      "slug": "s-jones",
+      "status": "candidate",
+      "title": "The Grammar of Ornament",
+      "institution": "National Gallery of Art",
+      "url": "https://www.nga.gov/artworks/102555-grammar-ornament",
+      "kind": "museum_object_catalogue",
+      "evidence": "Catalogue identifies the 1856 volume and its 100 chromolithographic plates.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "581c4720-be13-4693-9a8d-858419627cfa",
+      "slug": "s-jones-context",
+      "status": "candidate",
+      "title": "Owen Jones and the Grammar of Ornament",
+      "institution": "Victoria and Albert Museum",
+      "url": "https://www.vam.ac.uk/articles/owen-jones-and-the-grammar-of-ornament",
+      "kind": "museum_research_article",
+      "evidence": "V&A connects ornament studies, reproduction experiments, publication and design education.",
+      "accessed": "2026-10-20"
+    },
+    {
+      "id": "d35f9bc1-4709-4ab4-bcb3-761851765cc5",
+      "slug": "s-morris-circulation",
+      "status": "candidate",
+      "title": "Morris Mania",
+      "institution": "William Morris Gallery",
+      "url": "https://www.wmgallery.org.uk/morris-mania/",
+      "kind": "museum_exhibition_invitation",
+      "evidence": "A lead for tracing later uses of Morris designs; not a quantitative circulation dataset.",
+      "accessed": "2026-10-20"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "7db65e3a-25c0-5158-b7dc-627ddf19dcc3",
+      "slug": "comparison-1",
+      "status": "candidate",
+      "code": "P01",
+      "title": "Rounded carrier, different painted choices",
+      "artifact_slugs": [
+        "ubaid-bowl",
+        "naqada-bowl",
+        "majiayao-jar"
+      ],
+      "comparison_type": "diachronic cross-cultural",
+      "held_in_view": "Ceramic vessel; painted geometric decoration; display role of rim, wall, and shoulder",
+      "differences": "Concentric rings and curved pairs; repeated angular line bundles; sweeping curvilinear bands with angular neck motifs",
+      "limits": "Direct diffusion or a shared symbolic meaning. These examples are not contemporary.",
+      "prompt": "Locate one visible similarity and one production/context difference before proposing a historical explanation."
+    },
+    {
+      "id": "0121a9dc-4412-52e3-90eb-06d58fb5f0a6",
+      "slug": "comparison-2",
+      "status": "candidate",
+      "code": "P02",
+      "title": "Same period and reproductive tool, different organization",
+      "artifact_slugs": [
+        "old-babylonian-seal",
+        "old-syrian-seal"
+      ],
+      "comparison_type": "approximately contemporary",
+      "held_in_view": "Early second millennium BCE, hematite cylinders, rolling impressions",
+      "differences": "Predominantly standing figure sequence versus tiered seating, astral cluster and looping side motifs",
+      "limits": "An inherent difference between entire civilizations, since each selection is a single example.",
+      "prompt": "Locate one visible similarity and one production/context difference before proposing a historical explanation."
+    },
+    {
+      "id": "6632ddc4-15e9-5395-a4b3-30283e3071ba",
+      "slug": "comparison-3",
+      "status": "candidate",
+      "code": "P03",
+      "title": "Curved cell, cultural symbol, and institution",
+      "artifact_slugs": [
+        "ubaid-bowl",
+        "old-syrian-seal",
+        "kudurru"
+      ],
+      "comparison_type": "diachronic function contrast",
+      "held_in_view": "Comparable curved/disk-like forms",
+      "differences": "Painted bowl arrangement, combined seal iconography, and named divine emblems on a land-grant record",
+      "limits": "That a Ubaid half-moon motif already meant the lunar deity Sin.",
+      "prompt": "Locate one visible similarity and one production/context difference before proposing a historical explanation."
+    },
+    {
+      "id": "9fed9c90-1f7f-519e-adda-7c68f8875d20",
+      "slug": "comparison-4",
+      "status": "candidate",
+      "code": "P04",
+      "title": "Single shaped tile / architectural mosaic",
+      "artifact_slugs": [
+        "luster-star-tile",
+        "mihrab"
+      ],
+      "comparison_type": "bounded cross-object comparison",
+      "held_in_view": [
+        "ceramic architectural decoration",
+        "Iranian examples"
+      ],
+      "differences": [
+        "whole star-shaped host vs cut pieces assembled into patterns",
+        "small standalone surface vs bodily scale niche"
+      ],
+      "limits": "different centuries and functions; not a controlled contemporaneous comparison or lineage proof",
+      "prompt": "Compare the constraints of seams, folds, borders and repetition."
+    },
+    {
+      "id": "f5d460c6-7b10-5d38-be6e-e573a1a23e91",
+      "slug": "comparison-5",
+      "status": "candidate",
+      "code": "P05",
+      "title": "Portable painted container / repeat-printed furnishing",
+      "artifact_slugs": [
+        "parfleche",
+        "strawberry-thief"
+      ],
+      "comparison_type": "bounded cross-object comparison",
+      "held_in_view": [
+        "pattern organized across bounded flexible surfaces"
+      ],
+      "differences": [
+        "fold/closure constrains symmetry",
+        "continuous cloth permits field repeat"
+      ],
+      "limits": "different manufacture dates and social purposes; compare formal affordances, not entire cultures or universal meanings",
+      "prompt": "Compare the constraints of seams, folds, borders and repetition."
+    }
+  ],
+  "cycles": [
+    {
+      "id": "3eb28dc1-12cf-567a-b408-8120f749bbb7",
+      "slug": "seal",
+      "status": "candidate",
+      "code": "E01",
+      "title": "Cylinder, impression, circulation, new reading",
+      "artifact_slugs": [
+        "old-babylonian-seal",
+        "old-syrian-seal"
+      ],
+      "source_ids": [
+        "169c2bb0-452b-5bd4-92a3-df0b6e883ee3",
+        "94cac579-f22e-5fdc-9d7e-9faf1d433eda"
+      ],
+      "stages": [
+        "Carved cylindrical surface",
+        "Rolling over clay makes a planar impression",
+        "Impressions identify ownership/authority on closures and transaction documents"
+      ],
+      "evidenced": [
+        "Carved cylindrical surface",
+        "Rolling over clay makes a planar impression",
+        "Impressions identify ownership/authority on closures and transaction documents"
+      ],
+      "proposed": [
+        "A flat drawing can prototype a cylindrical design (modern exercise; ancient sketch stage not established here)",
+        "Repeated use can circulate imagery across transactions; quantify distribution from actual sealing corpora before calling it saturation"
+      ],
+      "math": "For an ideal cylinder rolling without slipping, one revolution advances a length equal to its circumference, 2πr; the unwrapped lateral surface is a rectangle of height h and length 2πr. This is a geometric model, not an exact measurement of these objects.",
+      "limits": "The host invention is also the production tool here; pottery and architecture may instead be receiving surfaces.",
+      "reciprocal_question": "How does a cylindrical carrier shape the scene, and how might a desired continuous scene shape carrier choice?",
+      "saturation_status": "Unmeasured; requires evidence from sealing corpora."
+    },
+    {
+      "id": "46665a4d-facf-475c-9a53-ad9931804cba",
+      "slug": "tiles",
+      "status": "candidate",
+      "code": "E02",
+      "title": "Ceramic unit to architectural field",
+      "artifact_slugs": [
+        "luster-star-tile",
+        "mihrab"
+      ],
+      "source_ids": [
+        "79d8f713-97bc-49f6-af4a-6e1d631f6412",
+        "2cfad933-0916-4f87-bd88-dc86325d02f8"
+      ],
+      "stages": [
+        "Shape and surface pattern",
+        "Ceramic production and glazing",
+        "Modular or cut pieces assembled on architecture",
+        "New corners, borders, scales and curved fields available for ornament"
+      ],
+      "evidence_status": "source-supported components; linking formulation is research interpretation",
+      "limits": "Do not claim the 1211–12 tile is a direct ancestor of the 1354–55 niche. They are contrasting cases of modular and cut-tile production.",
+      "reciprocal_question": "How do a shaped unit and an architectural field each constrain the other?",
+      "saturation_status": "Open question; no volume, affordability or household-penetration estimate is supplied."
+    },
+    {
+      "id": "f331fde1-dfbf-4162-a78d-86963ab0a93b",
+      "slug": "morris",
+      "status": "candidate",
+      "code": "E03",
+      "title": "Drawing, repeat printing, furnishing, recirculation",
+      "artifact_slugs": [
+        "strawberry-thief"
+      ],
+      "source_ids": [
+        "9def7abb-48f9-4768-ace4-af569c45a2c8",
+        "71dd8945-ad37-4825-8d39-80e489a044a5",
+        "d35f9bc1-4709-4ab4-bcb3-761851765cc5"
+      ],
+      "stages": [
+        "Observed garden motif and design",
+        "Printing trials and dye/process control",
+        "Repeat production on cloth",
+        "Commercial furnishing circulation",
+        "Later reuse on other objects"
+      ],
+      "evidence_status": "well-supported process; saturation is a hypothesis to quantify",
+      "limits": "Commercial success and familiarity do not imply equal access. Track retail cost, audience, production volume, range of hosts, locations and decades of use separately.",
+      "reciprocal_question": "How do drawing and printing trials change each other, and how does the repeat adapt to a new host?",
+      "saturation_status": "Open question; no volume, affordability or household-penetration estimate is supplied."
+    },
+    {
+      "id": "22fc2290-74f4-4563-89cd-454d11332da9",
+      "slug": "sourcebook",
+      "status": "candidate",
+      "code": "E04",
+      "title": "Ornament to documentation to new ornament",
+      "artifact_slugs": [
+        "grammar-of-ornament"
+      ],
+      "source_ids": [
+        "581c4720-be13-4693-9a8d-858419627cfa"
+      ],
+      "stages": [
+        "Existing architecture and ornament",
+        "Drawings and plaster casts",
+        "Color-print experimentation",
+        "Published sourcebook and teaching",
+        "Designs for multiple media"
+      ],
+      "evidence_status": "documented design-publication pathway",
+      "limits": "Copying and circulation can strip motifs of original meaning or encode colonial hierarchies. Retain source objects and cultures alongside abstractions.",
+      "reciprocal_question": "How does documentation select geometry, and how do printed abstractions enable subsequent ornament?",
+      "saturation_status": "Open question; no volume, affordability or household-penetration estimate is supplied."
+    }
+  ],
+  "history": [
+    {
+      "id": "e4c4a190-bd95-5f13-94a2-1e52191ba3a3",
+      "slug": "ubaid",
+      "status": "candidate",
+      "date": "mid 6th–5th millennium BCE",
+      "title": "Painted geometry on a shaped ceramic host",
+      "artifact_slugs": [
+        "ubaid-bowl"
+      ],
+      "branches": [
+        "ceramics",
+        "painted arrangement"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "6ca54f3f-9444-5745-9911-ac8ece7513f3",
+      "slug": "naqada",
+      "status": "candidate",
+      "date": "ca. 3700–3650 BCE",
+      "title": "Angular mark families on a curved vessel",
+      "artifact_slugs": [
+        "naqada-bowl"
+      ],
+      "branches": [
+        "ceramics",
+        "painted arrangement"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "b0597fd7-0d4c-5877-b266-aba53ae26c11",
+      "slug": "banshan",
+      "status": "candidate",
+      "date": "ca. 2650–2350 BCE",
+      "title": "Curved shoulder fields and angular neck fields",
+      "artifact_slugs": [
+        "majiayao-jar"
+      ],
+      "branches": [
+        "ceramics",
+        "surface zoning"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "2c0cbd42-a5cf-59db-9472-0adc85e1f4cf",
+      "slug": "seals",
+      "status": "candidate",
+      "date": "early 2nd millennium BCE",
+      "title": "Carved surface becomes repeatable impression",
+      "artifact_slugs": [
+        "old-babylonian-seal",
+        "old-syrian-seal"
+      ],
+      "branches": [
+        "reproductive tools",
+        "iconography"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "ee6bcafd-d0d8-53c2-9f07-1166cca09c77",
+      "slug": "kudurru",
+      "status": "candidate",
+      "date": "1125–1100 BCE",
+      "title": "Named emblems on a land-grant document",
+      "artifact_slugs": [
+        "kudurru"
+      ],
+      "branches": [
+        "iconography",
+        "institutional documents"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "9ffe7339-844e-5898-ab7f-dd4f4dae3f02",
+      "slug": "luster",
+      "status": "candidate",
+      "date": "1211–12 CE",
+      "title": "A shaped tile carries imagery and writing",
+      "artifact_slugs": [
+        "luster-star-tile"
+      ],
+      "branches": [
+        "architectural ornament",
+        "ceramics"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "6410876b-c789-55dc-a878-487109cb1282",
+      "slug": "mosaic",
+      "status": "candidate",
+      "date": "1354–55 CE",
+      "title": "Cut pieces organize an architectural niche",
+      "artifact_slugs": [
+        "mihrab"
+      ],
+      "branches": [
+        "architectural ornament",
+        "assembly"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "ceb6788a-c611-57c1-ace4-9401ed12780a",
+      "slug": "sourcebook",
+      "status": "candidate",
+      "date": "1856",
+      "title": "Color reproduction makes ornament a portable reference",
+      "artifact_slugs": [
+        "grammar-of-ornament"
+      ],
+      "branches": [
+        "reproductive tools",
+        "design education"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "9fdd969e-4754-5d66-9002-9ff94ab012ca",
+      "slug": "morris",
+      "status": "candidate",
+      "date": "1883 design; selected object c. 1936",
+      "title": "Repeat design recurs in later textile production",
+      "artifact_slugs": [
+        "strawberry-thief"
+      ],
+      "branches": [
+        "reproductive tools",
+        "furnishings",
+        "revival"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    },
+    {
+      "id": "99ab3b86-5a05-5570-8cde-9963252cdd01",
+      "slug": "parfleche",
+      "status": "candidate",
+      "date": "c. 1900",
+      "title": "Portable-container closure organizes a painted field",
+      "artifact_slugs": [
+        "parfleche"
+      ],
+      "branches": [
+        "portable carriers",
+        "mobile lifeways"
+      ],
+      "relationship": "Chronological browsing and shared questions; neither ancestry nor a developmental ladder is asserted."
+    }
+  ],
+  "activities": [
+    {
+      "id": "8a9b693c-d979-5ead-8376-1b2a817aaa2f",
+      "slug": "first-study",
+      "status": "candidate",
+      "title": "One cell, three roles, two carriers",
+      "artifact_slugs": [
+        "ubaid-bowl",
+        "naqada-bowl",
+        "majiayao-jar"
+      ],
+      "cell_slugs": [
+        "arc",
+        "line-segment",
+        "circle",
+        "triangle"
+      ],
+      "observe": "Choose a vessel. Identify a stroke, a repeated unit and a larger arrangement. Separate visible marks from your proposed construction.",
+      "rebuild": "Make one neutral cell on paper and rebuild a short arrangement. Retain the layers. Wrap a copy around a paper cylinder and compare spacing and seam.",
+      "redesign": "Keep one geometric condition fixed and change one variable. Describe both the visual change and the making action.",
+      "evidence_to_keep": [
+        "reference and credit",
+        "initial drawing",
+        "held invariant",
+        "changed variable",
+        "tool/carrier notes",
+        "learner response"
+      ],
+      "readiness": "Record observation, tool execution and design choice independently. No fixed ages or measured learning gains are claimed.",
+      "fge_note": "F(ge) of the making action remains distinct from M(ge) of the image. A classroom construction does not establish an ancient procedure."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "fcf0d822-072f-5bb3-892e-d3047ec6730e",
+      "slug": "wave-evidence",
+      "status": "candidate",
+      "title": "Direct wave exemplar",
+      "detail": "The wave cell is an original studio proposal. No selected artifact is asserted to demonstrate a sourced, named wave motif."
+    },
+    {
+      "id": "0d252a08-fa19-5a75-90ac-2bcb4db5ebe6",
+      "slug": "geometry-fit",
+      "status": "candidate",
+      "title": "Exact mathematical families",
+      "detail": "Measure before naming an artifact curve logarithmic, a photographed rectangle square, or freehand repetition exactly periodic."
+    },
+    {
+      "id": "74d449a5-81e6-5587-81ac-dbe9b48842bd",
+      "slug": "geography",
+      "status": "candidate",
+      "title": "Broader geographic coverage",
+      "detail": "Add South Asian, African, Oceanian and American examples through specific object/community records; this is not a representative global sample."
+    },
+    {
+      "id": "e856087d-6c65-59c0-83a5-2727456456ac",
+      "slug": "mobile-histories",
+      "status": "candidate",
+      "title": "More histories of mobile societies",
+      "detail": "One Apsaalooke container cannot establish an unbroken history of never-settled society. Seek community-authored accounts and earlier dated material."
+    },
+    {
+      "id": "6f0db152-fc3e-5a39-9854-5455883e659e",
+      "slug": "circulation",
+      "status": "candidate",
+      "title": "Evidence for concept saturation",
+      "detail": "Collect volume, price relative to income, ownership restrictions, visibility, geographic reach, duration, cross-medium reuse and tool access."
+    },
+    {
+      "id": "4ed51835-58d6-5be7-9cff-5ad5f5b5df90",
+      "slug": "drawing-evidence",
+      "status": "candidate",
+      "title": "Artist and technique evidence",
+      "detail": "Add object-specific studies of hatching, brushstroke geometry and composition. Earlier generalizations about Monet and Picasso are not established sources here."
+    },
+    {
+      "id": "fa25ca4c-6880-55ad-b84c-f4203d63a23c",
+      "slug": "acceptance",
+      "status": "candidate",
+      "title": "Admission and profile review",
+      "detail": "No candidate is automatically a stabilized GEM or an accepted prim profile."
+    }
+  ],
+  "fge_alignment": {
+    "prim": "Abstract selectable geometry; includes atomic elements and accepted stabilized GEMs under the user’s syntax. No material, force or duration is attached to prim.",
+    "ge.s": "A GEM; compound geometry can be considered at another working scale while retaining its components.",
+    "prepared_prim": "Attaches a carrier to prim.",
+    "F(ge)": "Physical function through PFMD; distinct from a compositional verb or perceived effect.",
+    "M(ge)": "Coequal aesthetic, semiotic and metaphorical reading situated in context.",
+    "prim(tool)": "Tool decomposition into primitives.",
+    "ge(tool)": "Broader geometric reading may include contours, negative spaces and paths.",
+    "epoch_recursion": "A return through new artifact, tool, carrier and social contexts; not a claim of mathematical fractality.",
+    "grammar_status": "GECD.FGE is treated as grammar, not as a proven execution engine.",
+    "profile_status": "Profile only after acceptance; image collection retains neutral observations and candidates."
+  },
+  "saturation_research": {
+    "status": "hypothesis to investigate",
+    "description": "Familiarity, production scale and equitable participation are separate dimensions.",
+    "metrics": [
+      "production volume",
+      "affordability relative to income",
+      "who may use or own",
+      "public visibility",
+      "geographic circulation",
+      "household penetration",
+      "cross-medium reuse",
+      "duration and revival",
+      "artisan access to tools"
+    ],
+    "values": "not measured in this seed collection"
+  },
+  "identity_rules": [
+    "Keep terms, forms, cells, artifacts, images, readings and claims independently addressable.",
+    "A cell can be simple or compound at the current working scale.",
+    "Similarity does not establish common meaning or transmission.",
+    "New studio cells are not synonymous with every existing primitive_cell record."
+  ],
+  "existing_crosswalk": "uml-crosswalk.json",
+  "concept_map": "concept-map.mmd",
+  "layer_study": {
+    "status": "original proposed exercise",
+    "stages": [
+      "single 120-degree C03 arc",
+      "mirrored two-arc petal",
+      "six rotated petals",
+      "nested arrangement",
+      "border"
+    ],
+    "meaning": "Reusing the same cell and compound unit at successive working scales; no historical transmission or literal fractality is claimed."
+  },
+  "counts": {
+    "cells": 12,
+    "forms": 12,
+    "terms": 20,
+    "artifacts": 11,
+    "images": 10,
+    "readings": 11,
+    "sources": 16,
+    "comparisons": 5,
+    "cycles": 4,
+    "history": 10,
+    "activities": 1
+  }
+}
