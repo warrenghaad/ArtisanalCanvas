@@ -5,18 +5,8 @@ import * as THREE from "three";
 import { Move, Plus, Rotate3D, RotateCcw, Scaling, Trash2, X } from "lucide-react";
 import { GeometryTransform, type TransformMode } from "./GeometryTransform";
 import { GeometrySceneBounds } from "./GeometrySceneBounds";
-
-type Primitive = "ring" | "sphere" | "cone" | "cube";
-type Position3 = [number, number, number];
-
-type GeometryNode = {
-  id: string;
-  label: string;
-  primitive: Primitive;
-  position: Position3;
-  rotation: Position3;
-  scale: Position3;
-};
+import type { GeometryNode, Position3, Primitive } from "./sceneStorage";
+import { useSavedScene } from "./useSavedScene";
 
 const initialNodes: GeometryNode[] = [
   {
@@ -156,7 +146,7 @@ function GeometryMesh({
 
 export default function InteractiveGeometryResearchEngine() {
   const [webGLAvailable] = useState(supportsWebGL2);
-  const [nodes, setNodes] = useState<GeometryNode[]>(initialNodes);
+  const { nodes, setNodes, error: storageError, status: saveStatus, blocked, resetScene, retrySave } = useSavedScene(initialNodes);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [primitive, setPrimitive] = useState<Primitive>("ring");
   const [viewKey, setViewKey] = useState(0);
@@ -166,12 +156,11 @@ export default function InteractiveGeometryResearchEngine() {
   // A handle drag may end over empty canvas or another mesh. Its trailing
   // click must not deselect/switch objects. Reset before the next gesture.
   const handleGesture = useRef(false);
-  const nextId = useRef(1);
   const selectedNode = nodes.find((node) => node.id === selectedId) ?? null;
 
   const addNode = () => {
     const count = nodes.length;
-    const id = `node-${nextId.current++}`;
+    const id = `node-${crypto.randomUUID()}`;
     const angle = count * 2.399963;
     const radius = 3 + Math.sqrt(count) * 0.8;
     const node: GeometryNode = {
@@ -309,6 +298,18 @@ export default function InteractiveGeometryResearchEngine() {
           </button>
           <button
             type="button"
+            onClick={() => {
+              if (resetScene()) {
+                setSelectedId(null);
+                setViewKey((key) => key + 1);
+              }
+            }}
+            className="h-9 border border-white/15 px-2 font-mono text-[10px] uppercase tracking-wide text-slate-300 transition hover:border-rose-300/50 hover:text-rose-100"
+          >
+            Reset saved scene
+          </button>
+          <button
+            type="button"
             onClick={() => setViewKey((key) => key + 1)}
             disabled={!webGLAvailable}
             aria-label="Reset 3D view"
@@ -319,6 +320,17 @@ export default function InteractiveGeometryResearchEngine() {
           </button>
         </div>
       </header>
+
+      {storageError && (
+        <div role="alert" className="absolute bottom-16 left-3 right-3 z-30 max-w-lg border border-amber-300/40 bg-slate-950/95 p-3 text-xs leading-relaxed text-amber-100 sm:left-5">
+          <p>{storageError}</p>
+          {!blocked && (
+            <button type="button" onClick={retrySave} className="mt-2 border border-amber-200/40 px-3 py-1 font-mono text-[10px] uppercase hover:bg-amber-200/10">
+              Retry saving
+            </button>
+          )}
+        </div>
+      )}
 
       {selectedNode && (
         <aside className="absolute bottom-12 right-3 z-20 max-h-[60dvh] w-[min(19rem,calc(100vw-1.5rem))] overflow-auto border border-white/15 bg-[#08111f]/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:bottom-auto sm:right-5 sm:top-[4.75rem]">
@@ -420,6 +432,7 @@ export default function InteractiveGeometryResearchEngine() {
       )}
 
       <div className="pointer-events-none absolute bottom-3 left-3 z-10 font-mono text-[9px] uppercase tracking-wider text-slate-500 sm:bottom-4 sm:left-5">
+        <p role="status" className={storageError ? "mb-1 text-amber-200" : "mb-1"}>{saveStatus}</p>
         <span className="hidden sm:inline">Drag empty space to orbit · scroll to zoom · right-drag to pan</span>
         <span className="sm:hidden">Drag to orbit · pinch to zoom · two fingers to pan</span>
       </div>
