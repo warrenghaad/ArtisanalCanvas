@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Bounds, Html, OrbitControls, Stars } from "@react-three/drei";
+import { Html, OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
-import { Plus, RotateCcw, Trash2, X } from "lucide-react";
+import { Move, Plus, Rotate3D, RotateCcw, Scaling, Trash2, X } from "lucide-react";
+import { GeometryTransform, type TransformMode } from "./GeometryTransform";
+import { GeometrySceneBounds } from "./GeometrySceneBounds";
 
 type Primitive = "ring" | "sphere" | "cone" | "cube";
 type Position3 = [number, number, number];
@@ -80,16 +82,23 @@ function GeometryMesh({
   node,
   selected,
   onSelect,
+  onSelectedObject,
 }: {
   node: GeometryNode;
   selected: boolean;
   onSelect: () => void;
+  onSelectedObject: (object: THREE.Group | null) => void;
 }) {
   const [hovered, setHovered] = useState(false);
   const color = primitiveColors[node.primitive];
 
   return (
-    <group position={node.position} rotation={node.rotation} scale={node.scale}>
+    <group
+      ref={selected ? onSelectedObject : undefined}
+      position={node.position}
+      rotation={node.rotation}
+      scale={node.scale}
+    >
       <mesh
         onClick={(event) => {
           event.stopPropagation();
@@ -151,6 +160,12 @@ export default function InteractiveGeometryResearchEngine() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [primitive, setPrimitive] = useState<Primitive>("ring");
   const [viewKey, setViewKey] = useState(0);
+  const [transformMode, setTransformMode] = useState<TransformMode>("translate");
+  const [selectedObject, setSelectedObject] = useState<THREE.Group | null>(null);
+  const [inspectorExpanded, setInspectorExpanded] = useState(false);
+  // A handle drag may end over empty canvas or another mesh. Its trailing
+  // click must not deselect/switch objects. Reset before the next gesture.
+  const handleGesture = useRef(false);
   const nextId = useRef(1);
   const selectedNode = nodes.find((node) => node.id === selectedId) ?? null;
 
@@ -198,7 +213,11 @@ export default function InteractiveGeometryResearchEngine() {
         dpr={[1, 1.5]}
         camera={{ position: [0, 3, 12], fov: 46 }}
         gl={{ antialias: true, alpha: false }}
-        onPointerMissed={() => setSelectedId(null)}
+        className="touch-none!"
+        onPointerDownCapture={() => { handleGesture.current = false; }}
+        onPointerMissed={(event) => {
+          if (event.type === "click" && !handleGesture.current) setSelectedId(null);
+        }}
       >
         <color attach="background" args={["#050913"]} />
         <fog attach="fog" args={["#050913", 24, 65]} />
@@ -207,16 +226,32 @@ export default function InteractiveGeometryResearchEngine() {
         <pointLight position={[-7, -2, -5]} intensity={18} color="#a78bfa" />
         <gridHelper args={[80, 80, "#26364a", "#142033"]} position={[0, -3.5, 0]} />
         <Stars radius={70} depth={45} count={900} factor={2} saturation={0.15} fade speed={0.15} />
-        <Bounds fit clip observe margin={1.3}>
+        <GeometrySceneBounds>
           {nodes.map((node) => (
             <GeometryMesh
               key={node.id}
               node={node}
               selected={selectedId === node.id}
-              onSelect={() => setSelectedId(node.id)}
+              onSelectedObject={setSelectedObject}
+              onSelect={() => {
+                if (!handleGesture.current) setSelectedId(node.id);
+              }}
             />
           ))}
-        </Bounds>
+        </GeometrySceneBounds>
+        {selectedNode && selectedObject && (
+          <GeometryTransform
+            key={selectedNode.id}
+            object={selectedObject}
+            mode={transformMode}
+            onDragStart={() => { handleGesture.current = true; }}
+            onTransform={(values) => {
+              setNodes((current) => current.map((node) =>
+                node.id === selectedNode.id ? { ...node, ...values } : node,
+              ));
+            }}
+          />
+        )}
         <OrbitControls
           makeDefault
           enableDamping
@@ -287,7 +322,7 @@ export default function InteractiveGeometryResearchEngine() {
 
       {selectedNode && (
         <aside className="absolute bottom-12 right-3 z-20 max-h-[60dvh] w-[min(19rem,calc(100vw-1.5rem))] overflow-auto border border-white/15 bg-[#08111f]/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-xl sm:bottom-auto sm:right-5 sm:top-[4.75rem]">
-          <div className="mb-4 flex items-start justify-between gap-3">
+          <div className="mb-2 flex items-center justify-between gap-3">
             <div>
               <p className="mb-1 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-500">
                 {primitiveNames[selectedNode.primitive]} · {selectedNode.id}
@@ -298,13 +333,51 @@ export default function InteractiveGeometryResearchEngine() {
               type="button"
               onClick={() => setSelectedId(null)}
               aria-label="Close object details"
-              className="grid h-7 w-7 shrink-0 place-items-center text-slate-400 hover:text-white"
+              className="grid h-11 w-11 shrink-0 place-items-center text-slate-400 hover:text-white"
             >
               <X className="h-4 w-4" />
             </button>
           </div>
 
-          <div className="space-y-4 border-y border-white/10 py-3">
+          <div role="group" aria-label="Transform mode" className="grid grid-cols-3 gap-1">
+            {([
+              { mode: "translate", label: "Move", Icon: Move },
+              { mode: "rotate", label: "Rotate", Icon: Rotate3D },
+              { mode: "scale", label: "Scale", Icon: Scaling },
+            ] as const).map(({ mode, label, Icon }) => (
+              <button
+                key={mode}
+                type="button"
+                aria-pressed={transformMode === mode}
+                onClick={() => setTransformMode(mode)}
+                className={`flex min-h-11 items-center justify-center gap-1.5 border font-mono text-[10px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200 ${
+                  transformMode === mode
+                    ? "border-cyan-200/50 bg-cyan-200/10 text-cyan-100"
+                    : "border-white/10 text-slate-400 hover:border-white/40 hover:text-white"
+                }`}
+              >
+                <Icon className="h-3.5 w-3.5" />
+                {label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-2 font-mono text-[9px] leading-relaxed text-slate-400">
+            {transformMode === "translate" && "Drag arrows or planes to move."}
+            {transformMode === "rotate" && "Drag a colored ring to rotate."}
+            {transformMode === "scale" && "Drag colored boxes to resize; white boxes scale all axes."}
+            {" "}X red · Y green · Z blue
+          </p>
+          <button
+            type="button"
+            aria-expanded={inspectorExpanded}
+            aria-controls="transform-values"
+            onClick={() => setInspectorExpanded((expanded) => !expanded)}
+            className="mt-2 min-h-11 w-full border border-white/10 font-mono text-[10px] text-slate-300 sm:hidden"
+          >
+            {inspectorExpanded ? "Hide values" : "Show values"}
+          </button>
+          <div id="transform-values" className={`${inspectorExpanded ? "block" : "hidden"} sm:block`}>
+          <div className="mt-3 space-y-4 border-y border-white/10 py-3">
             {(["position", "rotation", "scale"] as const).map((field) => (
               <fieldset key={field}>
                 <legend className="mb-2 font-mono text-[9px] uppercase tracking-wider text-slate-500">
@@ -325,7 +398,7 @@ export default function InteractiveGeometryResearchEngine() {
                           const value = event.target.valueAsNumber;
                           updateTransform(field, index, field === "rotation" ? THREE.MathUtils.degToRad(value) : value);
                         }}
-                        className="min-w-0 w-full bg-transparent font-mono text-[10px] text-slate-200 outline-none"
+                        className="min-h-8 min-w-0 w-full bg-transparent font-mono text-base text-slate-200 outline-none sm:min-h-0 sm:text-[10px]"
                       />
                     </label>
                   ))}
@@ -342,11 +415,13 @@ export default function InteractiveGeometryResearchEngine() {
             <Trash2 className="h-3 w-3" />
             Remove object
           </button>
+          </div>
         </aside>
       )}
 
       <div className="pointer-events-none absolute bottom-3 left-3 z-10 font-mono text-[9px] uppercase tracking-wider text-slate-500 sm:bottom-4 sm:left-5">
-        Drag to orbit · scroll to zoom · right-drag to pan
+        <span className="hidden sm:inline">Drag empty space to orbit · scroll to zoom · right-drag to pan</span>
+        <span className="sm:hidden">Drag to orbit · pinch to zoom · two fingers to pan</span>
       </div>
     </main>
   );
