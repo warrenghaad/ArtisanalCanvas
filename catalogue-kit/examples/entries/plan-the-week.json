@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "plan-the-week",
+  "title": "Plan the week's meals",
+  "userGoal": "Decide in one sitting what to cook each day this week.",
+  "audience": ["home cooks"],
+  "claimType": "source-stated",
+  "applicability": "reference-only",
+  "description": "The redesign file proposes a seven-day board where saved recipes are dragged or chosen into days. Nothing like it exists in the app source.",
+  "inputs": ["Saved recipes"],
+  "actions": ["Choose a recipe for a day (design shows drag; a button alternative is not yet designed)"],
+  "outputs": ["A week plan (proposed)"],
+  "surfaces": ["Figma: Meal plan page, frame 'Week board'"],
+  "related": [{ "id": "save-a-recipe", "relation": "depends-on" }],
+  "status": {
+    "state": "not-built",
+    "asOf": "2026-01-11",
+    "reviewer": "lead-agent",
+    "evidenceIds": ["figma-week-board"],
+    "note": "Reference design only. Not part of the app, so it is not 'broken'."
+  },
+  "evidence": [
+    {
+      "id": "figma-week-board",
+      "kind": "figma-node",
+      "locator": "https://www.figma.com/design/EXAMPLE/Recipe-Redesign?node-id=12-40",
+      "checkedOn": "2026-01-11",
+      "checkedBy": "lead-agent",
+      "shows": "Desktop and mobile variants of a seven-day board.",
+      "strength": "stated",
+      "limitations": "Prototype interactions not inspected."
+    }
+  ],
+  "caption": {
+    "text": "The redesign's week board would let a cook place saved recipes on days to produce a week plan. Design only; not in the app.",
+    "imageOrigin": "Figma node 12-40 (illustration)"
+  },
+  "designDecision": "proposed",
+  "openQuestions": ["Is weekly planning in scope for this app, or a separate idea?"],
+  "chapter": "Plan meals",
+  "illustrative": true,
+  "history": [{ "date": "2026-01-11", "by": "lead-agent", "change": "Created from Figma pilot read." }]
+}

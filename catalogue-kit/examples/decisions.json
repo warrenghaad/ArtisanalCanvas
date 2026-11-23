@@ -1,0 +1,20 @@
+[
+  {
+    "id": "group-by-cooking-goal",
+    "date": "2026-01-12",
+    "statement": "Group catalogue chapters by what the cook is trying to do, not by screen.",
+    "rationale": "The owner thinks in tasks (plan, cook, shop), not screens.",
+    "alternatives": ["Group by screen"],
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "review call 2026-01-12"
+  },
+  {
+    "id": "rename-saved-to-favorites",
+    "date": "2026-01-12",
+    "statement": "Call saved recipes 'Favorites' in the catalogue.",
+    "state": "proposed",
+    "decidedBy": "lead-agent",
+    "source": "checkpoint A notes"
+  }
+]

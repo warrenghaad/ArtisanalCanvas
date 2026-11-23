@@ -1,0 +1,30 @@
+[
+  {
+    "id": "app-main",
+    "kind": "branch",
+    "locator": "main",
+    "revision": "abc1234",
+    "scope": "Recipe screens and save/search code paths",
+    "state": "partially-inspected",
+    "limitations": "Settings and account screens not inspected.",
+    "inspectedOn": "2026-01-10",
+    "inspectedBy": "lead-agent"
+  },
+  {
+    "id": "figma-recipe-redesign",
+    "kind": "figma-file",
+    "locator": "https://www.figma.com/design/EXAMPLE/Recipe-Redesign",
+    "scope": "All pages",
+    "state": "inaccessible",
+    "reason": "No Figma access in this session. This is not evidence that the file is empty."
+  },
+  {
+    "id": "figma-recipe-redesign-meal-plan",
+    "kind": "figma-page",
+    "locator": "https://www.figma.com/design/EXAMPLE/Recipe-Redesign?node-id=12-0",
+    "scope": "Meal plan page, frames and variants",
+    "state": "inspected",
+    "inspectedOn": "2026-01-11",
+    "inspectedBy": "lead-agent"
+  }
+]

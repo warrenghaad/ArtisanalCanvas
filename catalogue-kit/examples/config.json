@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "name": "Recipe Box (sample)",
+    "summary": "An invented sample app used only to show the catalogue format. None of these records describe a real app.",
+    "owner": "sample-owner",
+    "audience": ["home cooks"]
+  },
+  "paths": {
+    "entries": "catalogue-kit/examples/entries",
+    "sources": "catalogue-kit/examples/sources.json",
+    "decisions": "catalogue-kit/examples/decisions.json",
+    "inventory": "catalogue-kit/examples/inventory"
+  },
+  "stage": "A-pilot-review",
+  "codeSources": [{ "ref": "main", "role": "primary" }],
+  "constraints": ["Example only: do not copy these facts into a real catalogue."]
+}
