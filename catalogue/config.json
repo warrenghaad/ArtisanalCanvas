@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "app": {
+    "name": "ArtisanalCanvas",
+    "summary": "A Renaissance Perspective Academy for learning to design, compose, and decompose images and art: drawing practice, curriculum, eTextbooks, analytics, AI drawing feedback, an image studio, and a primitive library, with a geometry studio arriving from another version of the project.",
+    "owner": "owner",
+    "audience": ["students", "teachers", "the owner (as builder and reviewer)"]
+  },
+  "paths": {
+    "entries": "catalogue/entries",
+    "sources": "catalogue/sources.json",
+    "decisions": "catalogue/decisions.json",
+    "inventory": "catalogue/inventory"
+  },
+  "stage": "0-setup",
+  "codeSources": [
+    { "ref": "main", "role": "primary", "note": "The current app. The Replit project runs this version." },
+    { "ref": "warrenghaad", "role": "incoming", "note": "A separate earlier Replit project with no git history in common with main: geometry studio, Prism cube, dock, curation dashboard. Browser-only, no server actions." }
+  ],
+  "constraints": [
+    "Do not change application code, routes, the app shell, database schemas, or stored user data during catalogue stages.",
+    "Do not merge or rewrite the warrenghaad branch; read it as incoming evidence only.",
+    "Do not build Prism, and do not use its workspace/row/column grid as catalogue chapters.",
+    "Do not present AI-generated images as the app or as a design.",
+    "Screenshots use sample data, never real student data or private uploads.",
+    "Keep catalogue records in this repository's catalogue/ folder; tool-local memory and task files may only point here.",
+    "The tier 1 template is seen only in Storybook until the owner approves wiring it into the app."
+  ]
+}

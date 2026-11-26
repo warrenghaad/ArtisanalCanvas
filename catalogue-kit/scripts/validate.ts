@@ -11,6 +11,7 @@
  *   - entry file names match entry ids; ids are unique
  *   - `related` links point at entries that exist
  *   - repo-path evidence points at a file that exists at the recorded commit
+ *   - entries convert into a valid tier-1 template collection (schema/adapter.ts)
  *   - (--recheck) repo-path evidence whose file changed between its commit and HEAD,
  *     so the claim can be marked for re-review. Earlier reviews are never edited by this script.
  *
@@ -28,6 +29,8 @@ import {
   SourceLedgerItem,
   SCHEMA_VERSION,
 } from "../schema/catalogue";
+import { Collection } from "../schema/template";
+import { entriesToCollection } from "../schema/adapter";
 
 const args = process.argv.slice(2);
 const flags = new Set(args.filter((a) => a.startsWith("--")));
@@ -117,6 +120,14 @@ for (const e of entries) {
       if (changed && changed.trim()) recheck.push(`${e.id}: evidence ${ev.id} (${ev.locator}) changed since ${ev.commit.slice(0, 7)}; re-review status "${e.status.state}"`);
     }
   }
+}
+
+// Tier 2 -> tier 1: entries must render as a valid template collection.
+if (entries.length && config) {
+  const col = Collection.safeParse(
+    entriesToCollection(entries, { id: "catalogue", title: config.app.name, intro: config.app.summary }),
+  );
+  if (!col.success) for (const i of col.error.issues) errors.push(`template mapping: ${i.path.join(".")} — ${i.message}`);
 }
 
 const counts = (xs: string[]) => xs.reduce<Record<string, number>>((m, x) => ((m[x] = (m[x] ?? 0) + 1), m), {});

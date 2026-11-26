@@ -9,7 +9,7 @@ The catalogue exists to answer, honestly and with evidence:
 3. **What is only intended, designed, or imagined?** (kept visibly separate)
 4. **How should all of that be explained and organized?** (decided with the owner)
 
-The owner is usually not a developer. Agents do the technical determination; the owner decides product intent, names, meaning, and tradeoffs.
+The owner is usually not a developer. The detailed thinking on research, order, summaries, imaging, layout, and reporting is in `CONSIDERATIONS.md`; this file is the rulebook. Agents do the technical determination; the owner decides product intent, names, meaning, and tradeoffs.
 
 ---
 
@@ -71,7 +71,7 @@ Consequences:
 
 ## 5. Writing entries
 
-Fields (see `schema/catalogue.ts`): id, title, user goal, audience, claim type, applicability, description, inputs, actions, outputs, surfaces, related functions, status (state, date, reviewer, evidence, note), evidence list, caption, design decision, open questions, optional provisional chapter, history.
+Fields (see `schema/catalogue.ts`): id, title, one-line summary, user goal, audience, claim type, applicability, description, inputs, actions, outputs, surfaces, related functions, status (state, date, reviewer, evidence, note), evidence list, caption, design decision, open questions, optional provisional chapter, history.
 
 - **Title**: what a person gets done, in everyday words ("Get AI feedback on a drawing"), not a component or route name.
 - **One function, many surfaces**: if two screens do the same job, that is one entry with two surfaces (`same-function-different-surface`). Keep the evidence for that judgment.

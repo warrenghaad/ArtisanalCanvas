@@ -11,6 +11,9 @@
  *
  * and one bundle shape, `CatalogueManifest`, for import/export between apps.
  *
+ * Tier 2 extends the tier-1 template (schema/template.ts): `adapter.ts` turns
+ * entries into template items, so the catalogue renders with the same screens.
+ *
  * Three ideas are deliberately kept separate and must never be merged:
  *   1. claimType       - observed / source-stated / proposed: what kind of claim is this?
  *   2. applicability   - in-app / incoming / reference-only / idea: where does it live?
@@ -137,14 +140,23 @@ export const Status = z.object({
   note: z.string().min(1),
 });
 
-export const Caption = z.object({
-  /** "[Surface] lets [user] [action] to produce [result]. [Limitation.]" */
-  text: z.string().min(1),
-  /** Path or URL of the image the caption describes, if any. */
-  imageRef: z.string().optional(),
-  /** Where the image came from: "app screenshot <date>", "Figma node …", "illustration". */
-  imageOrigin: z.string().optional(),
-});
+export const Caption = z
+  .object({
+    /** "[Surface] lets [user] [action] to produce [result]. [Limitation.]" */
+    text: z.string().min(1),
+    /** Path or URL of the image the caption describes, if any. */
+    imageRef: z.string().optional(),
+    /** Visible origin label: "App screenshot, 2026-11-26", "Figma design: <frame>", "Diagram". */
+    imageOrigin: z.string().optional(),
+    imageKind: z.enum(["screenshot", "design", "diagram", "illustration"]).optional(),
+    /** One sentence describing what the image shows (not what the function promises). */
+    alt: z.string().optional(),
+  })
+  .superRefine((c, ctx) => {
+    if (c.imageRef && (!c.imageOrigin || !c.alt || !c.imageKind)) {
+      ctx.addIssue({ code: "custom", path: ["imageRef"], message: "An image needs imageOrigin, imageKind and alt text." });
+    }
+  });
 
 export const HistoryItem = z.object({
   date: isoDate,
@@ -158,6 +170,8 @@ export const CatalogueEntry = z
     id: slug,
     /** Everyday-language name, e.g. "Get AI feedback on a drawing". */
     title: z.string().min(1),
+    /** One line for cards (template "summary" slot). */
+    summary: z.string().min(1),
     /** What the person is trying to get done, in their words. */
     userGoal: z.string().min(1),
     audience: z.array(z.string().min(1)).min(1),

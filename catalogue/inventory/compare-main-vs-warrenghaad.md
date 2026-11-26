@@ -5,6 +5,8 @@
 
 This is a structural source map produced by `catalogue-kit/scripts/inventory.ts`. A route, endpoint, or table existing is *indirect* evidence only. It does not show that a function works, and names that match may still behave differently.
 
+Known blind spots: endpoints on a mounted router appear without the mount prefix (for example `/concepts` may really be `/api/studio/concepts`), and `path:` matches can include non-route configuration such as `/vite-hmr`.
+
 ## Client routes (screens)
 
 | | count | items |

@@ -6,6 +6,11 @@
  * pages, environment variables, external AI/data services, and where docs sit.
  * Every item carries file + line, and the whole report carries the commit SHA.
  *
+ * Known blind spots (regex-based, no type analysis):
+ *   - Router mount prefixes are not applied: endpoints on a router mounted with
+ *     app.use("/api/x", router) appear without "/api/x".
+ *   - `path: "/…"` matches can include non-route config (e.g. "/vite-hmr").
+ *
  * This is a SOURCE MAP, not a catalogue. A route or endpoint existing is
  * "indirect" evidence at best; it never proves a function works.
  *
@@ -167,6 +172,8 @@ export function compareInventories(a: Inventory, b: Inventory): string {
   out.push(`- **${b.ref}** at \`${short(b.commit)}\` (${b.commitDate.slice(0, 10)}): ${b.totals.files} files, ${b.totals.codeFiles} code, ${b.totals.docFiles} docs`);
   out.push("");
   out.push("This is a structural source map produced by `catalogue-kit/scripts/inventory.ts`. A route, endpoint, or table existing is *indirect* evidence only. It does not show that a function works, and names that match may still behave differently.");
+  out.push("");
+  out.push("Known blind spots: endpoints on a mounted router appear without the mount prefix (for example `/concepts` may really be `/api/studio/concepts`), and `path:` matches can include non-route configuration such as `/vite-hmr`.");
   out.push("");
   const section = (title: string, key: "clientRoutes" | "serverEndpoints" | "dbTables" | "pages" | "envVars" | "externalServices", withDetail = false) => {
     const A = uniq(a[key], withDetail), B = uniq(b[key], withDetail);

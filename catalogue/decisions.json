@@ -1,0 +1,95 @@
+[
+  {
+    "id": "catalogue-before-merge",
+    "date": "2026-11-23",
+    "statement": "Build a catalogue of the app's functionality before combining the warrenghaad version with main.",
+    "rationale": "The owner needs to see what each version does to merge them successfully.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-23"
+  },
+  {
+    "id": "catalogue-across-repos",
+    "date": "2026-11-23",
+    "statement": "The same functionality catalogue approach should work across all of the owner's repositories and Replit projects.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-23"
+  },
+  {
+    "id": "etextbook-style-catalogue",
+    "date": "2026-11-23",
+    "statement": "The catalogue is presented like an eTextbook, built from the owner's Figma eTextbook file and Card Stack design.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-23"
+  },
+  {
+    "id": "three-tiers",
+    "date": "2026-11-23",
+    "statement": "Work in three tiers: a reusable template (Figma eTextbook + Card Stack), then a functionality catalogue built on it, then the ArtisanalCanvas catalogue.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-23"
+  },
+  {
+    "id": "claude-specifies-replit-builds",
+    "date": "2026-11-26",
+    "statement": "Claude writes the considerations, specifications, prompts, skills, constraints, and cross-repo tools, and reviews the results; Replit does the build work (template import, card stack, catalogue screens, app entries and screenshots).",
+    "rationale": "The owner doubts the Replit agent's ability to plan its own work, and the build work is straightforward.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-26 (plan approved)"
+  },
+  {
+    "id": "figma-plus-storybook",
+    "date": "2026-11-26",
+    "statement": "The tier 1 template is one combined Figma file (made by Claude through the Figma connector) plus a Storybook of built components linked to its frames.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Claude Code conversation 2026-11-26"
+  },
+  {
+    "id": "prism-deferred",
+    "date": "2026-11-23",
+    "statement": "Prism stays in the eventual integration scope, but is not built, and its workspace/row/column grid is not imposed, until the app's structure is inventoried and designed.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Recorded by the Replit agent in .agents/memory/prism-scope.md; consistent with task #12"
+  },
+  {
+    "id": "cube-no-ai-images",
+    "date": "2026-11-23",
+    "statement": "The drawing cube workspace uses real raster references only; no AI-generated, ASCII, or SVG visuals there.",
+    "state": "approved",
+    "decidedBy": "owner",
+    "source": "Recorded by the Replit agent in .agents/memory/cube-contract.md"
+  },
+  {
+    "id": "records-live-in-github",
+    "date": "2026-11-26",
+    "statement": "Catalogue records live in this repository's catalogue/ folder; Replit memory and task files only point to them.",
+    "rationale": "Replit's .agents and .local files are not in GitHub, so Claude, Codex, and other repos can't see them.",
+    "state": "proposed",
+    "decidedBy": "claude",
+    "source": "catalogue/RECONCILIATION.md C8"
+  },
+  {
+    "id": "move-warrenghaad-features-by-hand",
+    "date": "2026-11-26",
+    "statement": "Bring warrenghaad features into main one at a time, guided by the catalogue, instead of a git merge.",
+    "rationale": "The two versions share no git history and differ in about 31,000 files.",
+    "state": "proposed",
+    "decidedBy": "claude",
+    "source": "catalogue/inventory/compare-main-vs-warrenghaad.md"
+  },
+  {
+    "id": "replace-task-12",
+    "date": "2026-11-26",
+    "statement": "Replace Replit task #12 and the two paused catalogue tasks with the task sequence in catalogue/prompts/.",
+    "rationale": "Task #12's operating brief, skills, and templates now exist in catalogue-kit/; the paused tasks jump to building UI before the template and pilot.",
+    "state": "proposed",
+    "decidedBy": "claude",
+    "source": "catalogue/RECONCILIATION.md C6, C7"
+  }
+]
