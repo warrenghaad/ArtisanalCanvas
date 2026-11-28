@@ -1,0 +1,24 @@
+{
+  "lesson_id": "2026-11-27-invented-forms-shared-surface",
+  "project": "Learning to Drawu / Line All Richie",
+  "status": "proposed_practice_not_assessed",
+  "user_constraints": ["pen only", "nonliteral unfamiliar subjects", "practice multiple connected skills", "confident strokes", "forms related on a surface"],
+  "primary_target": "relational_composition_on_shared_surface",
+  "nodes": ["planned_stroke", "edge_or_axis", "contact_patch", "supporting_plane", "primitive_silhouette", "volumetric_form", "form_pair", "negative_space", "near_contour", "far_contour", "tilt_and_spacing", "expressive_relationship", "contact_accent", "form_surface_junction"],
+  "relations": [
+    {"subject": "planned_stroke", "predicate": "establishes", "object": "edge_or_axis"},
+    {"subject": "contact_patch", "predicate": "locates_form_on", "object": "supporting_plane"},
+    {"subject": "primitive_silhouette", "predicate": "gains_thickness_to_become", "object": "volumetric_form"},
+    {"subject": "form_pair", "predicate": "delimits", "object": "negative_space"},
+    {"subject": "near_contour", "predicate": "occludes", "object": "far_contour"},
+    {"subject": "tilt_and_spacing", "predicate": "varies_intended", "object": "expressive_relationship"},
+    {"subject": "contact_accent", "predicate": "clarifies", "object": "form_surface_junction"}
+  ],
+  "parallel_progressions": [["mark", "form"], ["form", "spatial_relation"], ["spatial_relation", "expressive_composition"]],
+  "existing_uml_link": "unresolved; no existing model modified",
+  "evidence": [
+    {"type": "user_request", "text": "What should I learn today. I only have pens. I still need confident strokes but I want to learn objects in relation on a surface."},
+    {"type": "user_clarification", "text": "I don’t want to use anything literal or what I see all the time. I always want to multitask."}
+  ],
+  "assessment": "No drawing supplied; no mastery or completion claim."
+}
