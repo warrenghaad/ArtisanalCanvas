@@ -20,7 +20,7 @@ This combines confident strokes, constructing volume, placing forms in depth, de
 
 ## 1. Establish the surface and the contact patches — 5 minutes
 
-Draw a shallow four-sided platform viewed from above and to one side. Place three small contact patches on it: two for the loop's feet and one for the wedge's base. These are the places where the forms meet the surface. Keep their orientations consistent with that surface. They do not all need to line up horizontally on the page.
+Draw a shallow four-sided platform viewed from above and to one side. Plan three small contact patches on it: two for the loop's feet and one for the wedge's base. These are the places where the forms meet the surface. With pen, mark only their nearest corners as tiny dots and imagine the full patches; the blue outlines in the diagram explain the construction and need not be drawn through the finished forms. Keep their orientations consistent with that surface. They do not all need to line up horizontally on the page.
 
 Use sparse dots to plan corners. Before a straight edge or curve, rehearse the movement just above the paper two or three times, then make the mark. Rotate the page to a comfortable direction. Practice three straight strokes and three broad arcs in the margin, using the same motions the forms will need. This adapts Drawabox's planning, preparation, and execution approach.[1]
 
