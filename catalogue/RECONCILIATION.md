@@ -1,0 +1,24 @@
+# Instruction reconciliation: ArtisanalCanvas
+
+Older instructions in this project sometimes disagree with the owner's current direction. This file lists each conflict, the proposed resolution, and whether the owner has approved it. **Nothing listed here has been deleted or rewritten in the original files.** Approved resolutions go into `decisions.json`.
+
+Checked on 2026-11-26 against `main` at `2d4492a` and the Replit project as read on 2026-11-23.
+
+| # | Where | What it says | Current direction | Proposed resolution | Status |
+|---|---|---|---|---|---|
+| C1 | `AGENTS.md` (Prism direction; First implementation loop) | Prism address is workspace × engine × functionality, with named workspaces, engines, and columns. Build the canvas → Prism → dock loop first. | Prism is deferred; don't impose its grid until the app structure is inventoried and designed (`decisions.json` → `prism-deferred`). | Treat those AGENTS.md sections as **proposals under review**. Catalogue work never uses them as chapters. A precedence note at the top of AGENTS.md points here. | Proposed |
+| C2 | `docs/CODEX_SWARM_DIRECTIONS.md` | inspect → infer → packetize → **build**; the first success target builds `/studio` with Prism and dock. | Catalogue stages stop at owner checkpoints; nothing is built until Checkpoint C. | Not used for catalogue work. Kept as historical direction for the future studio. | Proposed |
+| C3 | `.codex/agents/*.toml` (11 agents, incl. `prism-brain`) | A swarm of specialist agents. | One lead agent performs passes in sequence (`catalogue-kit/OPERATING_MODEL.md` §2); no swarm. These files don't run in Replit anyway. | Not used for catalogue work. | Proposed |
+| C4 | `replit.md` (System Architecture) | "In-memory storage implementation using Map data structures." | The code uses a Neon Postgres database (`server/storage.ts:68`, `server/studio/db.ts`). | Correct `replit.md`'s architecture section in a small Replit task. A factual fix, but it is Replit's memory file, so the owner approves. | Proposed |
+| C5 | Replit task "Catalogue This App's Functionality" | Build on the existing "feature-status / Work Needed" source of truth. | No such list exists in GitHub `main`. | Replit confirms whether it exists unpushed. If so, push it, and its items become catalogue entries; `catalogue/entries/` is the one status source. | Open: needs Replit's answer |
+| C6 | Replit tasks "Portable Functionality Catalogue" and "Catalogue This App's Functionality" | Go straight to building catalogue UI and a route. | Template first (tier 1), then catalogue screens (tier 2), then a pilot, with checkpoints. | Keep paused; replace with `catalogue/prompts/replit-task-1…3`. | Proposed (`replace-task-12`) |
+| C7 | Replit task #12 | Replit writes the operating brief, three skills, the entry template, the decision register, and the memory rules. | These now exist in `catalogue-kit/` (written by Claude, per `claude-specifies-replit-builds`). | Task #12 is superseded. Replit uses the kit and reports problems with it rather than writing its own. | Proposed (`replace-task-12`) |
+| C8 | Replit `.agents/memory/`, `.local/tasks/` | Project decisions and tasks recorded in Replit only. | Other tools (Claude, Codex) and other repos can't see them. | Canonical records in `catalogue/`; Replit memory keeps one-line pointers. The two owner decisions found there are copied into `decisions.json` with their source. | Proposed (`records-live-in-github`) |
+| C9 | `.agents/memory/cube-contract.md` vs `client/src/pages/image-studio.tsx`, `server/studio/openaiImages.ts` | No AI-generated visuals in the cube workspace; but the app has an AI image studio. | Probably not a conflict: different workspaces. | Ask the owner: does the no-AI-image rule cover only the cube workspace? The catalogue itself never presents AI images as the app either way. | Open: owner question |
+| C10 | `AGENTS.md` (Done criteria) | Don't claim success unless `npm run check` (or equivalent) passes. | `npm run check` currently fails with 7 errors that predate catalogue work. | Tasks report "no new type errors beyond the 7 existing" until a separate fix task clears them. | Proposed |
+| C11 | `line-all-richie/agent-swarm/SWARM_PROTOCOL.md` | Curriculum swarm: director, specialists, critic, librarian. | Unrelated to catalogue work; no conflict. | No change. The catalogue may later list its outputs as functions. | No conflict |
+
+## Questions for the owner
+
+1. **C9:** Does "no AI images" apply only to the drawing cube, or more widely? *Recommendation: only the cube, as written. The catalogue never uses AI images as evidence regardless.*
+2. **C1–C3:** May I add a short precedence note at the top of `AGENTS.md` and `replit.md` saying "for catalogue work, read `catalogue/README.md` first; newer owner decisions win"? *Recommendation: yes. It's additive and deletes nothing.*

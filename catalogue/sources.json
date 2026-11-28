@@ -1,0 +1,94 @@
+[
+  {
+    "id": "branch-main",
+    "kind": "branch",
+    "locator": "main",
+    "revision": "2d4492a",
+    "scope": "Structural inventory only: screens, server actions, database tables, services, environment variables.",
+    "state": "partially-inspected",
+    "limitations": "No function has been traced end to end or run yet. Mounted router prefixes are not applied in the inventory (studio endpoints are under /api/studio).",
+    "inspectedOn": "2026-11-23",
+    "inspectedBy": "claude"
+  },
+  {
+    "id": "branch-warrenghaad",
+    "kind": "branch",
+    "locator": "warrenghaad",
+    "revision": "84123e4",
+    "scope": "Structural inventory and file list.",
+    "state": "partially-inspected",
+    "limitations": "No function traced or run. Geometry registries (client/src/geometry/registry/*.json) and studio canvas code not read.",
+    "inspectedOn": "2026-11-23",
+    "inspectedBy": "claude"
+  },
+  {
+    "id": "running-app",
+    "kind": "running-app",
+    "locator": "Replit project 'ArtisanalCanvas - Image Decomposer and Composer teacher'",
+    "scope": "Exercising functions in the live app",
+    "state": "pending",
+    "reason": "Replit has the database; Claude's cloud environment cannot start the server without DATABASE_URL."
+  },
+  {
+    "id": "figma-etextbook",
+    "kind": "figma-file",
+    "locator": "Owner's Figma eTextbook file (Epoch library/scapes, desktop and mobile)",
+    "scope": "All pages, frames, components, variants, interactions",
+    "state": "inaccessible",
+    "reason": "The link has not been shared with Claude yet."
+  },
+  {
+    "id": "card-stack",
+    "kind": "asset",
+    "locator": "attached_assets/Card_Stack_(Community)_2_1795405724345.zip (Replit project only)",
+    "scope": "Stack interaction, motion, license, dependencies",
+    "state": "inaccessible",
+    "reason": "Only in the Replit project, not in GitHub; Replit file tools can't read zip files. Not yet known whether a Figma version exists."
+  },
+  {
+    "id": "replit-agent-memory",
+    "kind": "document",
+    "locator": "Replit project .agents/memory/ (MEMORY.md, prism-scope.md, cube-contract.md, database-http-bridge.md)",
+    "revision": "as read 2026-11-23",
+    "scope": "All four files",
+    "state": "inspected",
+    "inspectedOn": "2026-11-23",
+    "inspectedBy": "claude"
+  },
+  {
+    "id": "replit-tasks",
+    "kind": "document",
+    "locator": "Replit project .local/tasks/ and task #12 (pasted by the owner)",
+    "revision": "as read 2026-11-23",
+    "scope": "app-functionality-catalogue.md, portable-functionality-catalogue.md, task #12 text",
+    "state": "partially-inspected",
+    "limitations": "Other task files in .local/tasks were not listed or read.",
+    "inspectedOn": "2026-11-23",
+    "inspectedBy": "claude"
+  },
+  {
+    "id": "agent-instructions",
+    "kind": "document",
+    "locator": "AGENTS.md, replit.md, docs/CODEX_SWARM_DIRECTIONS.md, docs/agentic-flows/canonforge-cli-architecture.md, line-all-richie/agent-swarm/*, .codex/",
+    "revision": "2d4492a",
+    "scope": "AGENTS.md and replit.md in full; others by headings and key sections",
+    "state": "partially-inspected",
+    "limitations": "docs/INFINITE_CANVAS_PRISM_DIRECTIONS.md, docs/PRISM_CONTRACT_DOSSIER_GRAPHNODE_TO_RWI.md, and the .codex agent files were not read in full.",
+    "inspectedOn": "2026-11-23",
+    "inspectedBy": "claude"
+  },
+  {
+    "id": "etextbook-content",
+    "kind": "document",
+    "locator": "etextbooks/content/",
+    "scope": "eTextbook content shown in the app",
+    "state": "pending"
+  },
+  {
+    "id": "attached-curriculum-material",
+    "kind": "document",
+    "locator": "attached_assets/ (curriculum zips, spreadsheets, pasted notes)",
+    "scope": "Source-stated intent for curriculum features",
+    "state": "pending"
+  }
+]

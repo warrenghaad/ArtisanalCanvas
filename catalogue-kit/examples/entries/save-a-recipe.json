@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "id": "save-a-recipe",
+  "title": "Save a recipe to come back to",
+  "summary": "Tap the heart to keep a recipe in your Saved list.",
+  "userGoal": "Keep a recipe I like so I can find it again quickly.",
+  "audience": [
+    "home cooks"
+  ],
+  "claimType": "observed",
+  "applicability": "in-app",
+  "description": "On any recipe page the cook taps the heart. The recipe is stored with their account and appears in the Saved list.",
+  "inputs": [
+    "A recipe page"
+  ],
+  "actions": [
+    "Tap the heart button"
+  ],
+  "outputs": [
+    "The recipe appears in the Saved list",
+    "The heart turns solid"
+  ],
+  "surfaces": [
+    "Recipe page",
+    "Saved list"
+  ],
+  "related": [
+    {
+      "id": "plan-the-week",
+      "relation": "feeds",
+      "note": "Saved recipes are the planner's pick list in the design."
+    }
+  ],
+  "status": {
+    "state": "working",
+    "asOf": "2026-01-10",
+    "reviewer": "lead-agent",
+    "evidenceIds": [
+      "run-save",
+      "trace-save"
+    ],
+    "note": "Saved and reloaded correctly for a signed-in cook. Not checked offline."
+  },
+  "evidence": [
+    {
+      "id": "run-save",
+      "kind": "runtime-check",
+      "locator": "Ran the app; saved 'Lentil soup'; reloaded; it was in Saved.",
+      "checkedOn": "2026-01-10",
+      "checkedBy": "lead-agent",
+      "shows": "Saving persists across a reload.",
+      "strength": "direct"
+    },
+    {
+      "id": "trace-save",
+      "kind": "screenshot",
+      "locator": "catalogue/screens/save-a-recipe-2026-01-10.png",
+      "checkedOn": "2026-01-10",
+      "checkedBy": "lead-agent",
+      "shows": "Saved list after the reload.",
+      "strength": "direct"
+    }
+  ],
+  "caption": {
+    "text": "The recipe page lets a signed-in cook tap the heart to add the recipe to their Saved list. Not checked offline.",
+    "imageRef": "catalogue/screens/save-a-recipe-2026-01-10.png",
+    "imageOrigin": "app screenshot 2026-01-10",
+    "imageKind": "screenshot",
+    "alt": "The Saved list showing Lentil soup at the top."
+  },
+  "designDecision": "undecided",
+  "openQuestions": [
+    "Should this be called 'Saved' or 'Favorites' in the catalogue?"
+  ],
+  "chapter": "Find and keep recipes",
+  "illustrative": true,
+  "history": [
+    {
+      "date": "2026-01-10",
+      "by": "lead-agent",
+      "change": "Created from pilot audit."
+    }
+  ]
+}

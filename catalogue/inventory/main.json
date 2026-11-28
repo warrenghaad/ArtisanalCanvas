@@ -1,0 +1,571 @@
+{
+  "inventoryVersion": 1,
+  "ref": "origin/main",
+  "commit": "2d4492a86d3b426fd8323f39991d361c2e3b2384",
+  "commitDate": "2026-11-15T16:42:30-07:00",
+  "generatedAt": "2026-11-23T06:48:14.574Z",
+  "totals": {
+    "files": 31451,
+    "codeFiles": 99,
+    "docFiles": 15393
+  },
+  "areas": {
+    ".codex/agents": 11,
+    ".codex": 1,
+    ".github/ISSUE_TEMPLATE": 1,
+    ".gitignore": 1,
+    ".replit": 1,
+    "AGENTS.md": 1,
+    "README.md": 1,
+    "assets": 1,
+    "assets/generated": 1,
+    "assets/manifests": 1,
+    "assets/primitives": 1,
+    "assets/references": 1,
+    "attached_assets": 15,
+    "client": 1,
+    "client/src": 70,
+    "components.json": 1,
+    "docs": 5,
+    "docs/agentic-flows": 1,
+    "docs/sacred-geometry": 11,
+    "drizzle.config.ts": 1,
+    "etextbooks/content": 31208,
+    "learning-to-drawu/00_project_memory": 4,
+    "learning-to-drawu/01_learning_cube": 6,
+    "learning-to-drawu/02_general_progression": 12,
+    "learning-to-drawu/03_skill_fields": 15,
+    "learning-to-drawu/04_learning_styles": 7,
+    "learning-to-drawu/05_drills": 6,
+    "learning-to-drawu/06_visual_indices": 5,
+    "learning-to-drawu/07_projects": 4,
+    "learning-to-drawu/08_chat_exports": 10,
+    "learning-to-drawu/09_git_handoff": 3,
+    "learning-to-drawu": 2,
+    "line-all-richie": 3,
+    "line-all-richie/agent-swarm": 3,
+    "line-all-richie/progressions": 2,
+    "line-all-richie/templates": 1,
+    "package-lock.json": 1,
+    "package.json": 1,
+    "postcss.config.js": 1,
+    "replit.md": 1,
+    "scripts": 2,
+    "server": 4,
+    "server/services": 1,
+    "server/studio": 18,
+    "shared": 1,
+    "tailwind.config.ts": 1,
+    "tsconfig.json": 1,
+    "vite.config.ts": 1
+  },
+  "clientRoutes": [
+    {
+      "value": "/",
+      "file": "client/src/App.tsx",
+      "line": 18
+    },
+    {
+      "value": "/academy",
+      "file": "client/src/App.tsx",
+      "line": 19
+    },
+    {
+      "value": "/etextbooks",
+      "file": "client/src/App.tsx",
+      "line": 20
+    },
+    {
+      "value": "/curriculum",
+      "file": "client/src/App.tsx",
+      "line": 21
+    },
+    {
+      "value": "/learning",
+      "file": "client/src/App.tsx",
+      "line": 22
+    },
+    {
+      "value": "/analytics",
+      "file": "client/src/App.tsx",
+      "line": 23
+    },
+    {
+      "value": "/image-studio",
+      "file": "client/src/App.tsx",
+      "line": 24
+    },
+    {
+      "value": "/primitive-library",
+      "file": "client/src/App.tsx",
+      "line": 25
+    }
+  ],
+  "serverEndpoints": [
+    {
+      "value": "/api/user/by-username/:username",
+      "file": "server/routes.ts",
+      "line": 26,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/user/:id",
+      "file": "server/routes.ts",
+      "line": 49,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/user/:id/progress",
+      "file": "server/routes.ts",
+      "line": 72,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/user/:userId/phase/:phaseId/progress",
+      "file": "server/routes.ts",
+      "line": 86,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/practice-session",
+      "file": "server/routes.ts",
+      "line": 97,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/drawing/submit",
+      "file": "server/routes.ts",
+      "line": 120,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/drawing/assess",
+      "file": "server/routes.ts",
+      "line": 134,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/exercise/tips",
+      "file": "server/routes.ts",
+      "line": 168,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/user/:userId/drawings",
+      "file": "server/routes.ts",
+      "line": 179,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/curriculum/mappings/:gradeLevel",
+      "file": "server/routes.ts",
+      "line": 193,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/curriculum/mappings",
+      "file": "server/routes.ts",
+      "line": 204,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/historical-periods",
+      "file": "server/routes.ts",
+      "line": 215,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/historical-periods/:periodId",
+      "file": "server/routes.ts",
+      "line": 225,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/student-progress/:userId",
+      "file": "server/routes.ts",
+      "line": 240,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/student-progress",
+      "file": "server/routes.ts",
+      "line": 255,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/differentiated-content/:contentPath",
+      "file": "server/routes.ts",
+      "line": 267,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/differentiation-path/update",
+      "file": "server/routes.ts",
+      "line": 297,
+      "detail": "POST"
+    },
+    {
+      "value": "/api/analytics/dashboard",
+      "file": "server/routes.ts",
+      "line": 374,
+      "detail": "GET"
+    },
+    {
+      "value": "/api/analytics/student/:userId",
+      "file": "server/routes.ts",
+      "line": 397,
+      "detail": "GET"
+    },
+    {
+      "value": "/status",
+      "file": "server/studio/routes.ts",
+      "line": 26,
+      "detail": "GET"
+    },
+    {
+      "value": "/concepts",
+      "file": "server/studio/routes.ts",
+      "line": 36,
+      "detail": "GET"
+    },
+    {
+      "value": "/concepts/:id",
+      "file": "server/studio/routes.ts",
+      "line": 44,
+      "detail": "GET"
+    },
+    {
+      "value": "/concepts",
+      "file": "server/studio/routes.ts",
+      "line": 55,
+      "detail": "POST"
+    },
+    {
+      "value": "/concepts/:id",
+      "file": "server/studio/routes.ts",
+      "line": 65,
+      "detail": "PATCH"
+    },
+    {
+      "value": "/primitives",
+      "file": "server/studio/routes.ts",
+      "line": 78,
+      "detail": "GET"
+    },
+    {
+      "value": "/primitives/:id",
+      "file": "server/studio/routes.ts",
+      "line": 87,
+      "detail": "GET"
+    },
+    {
+      "value": "/primitives",
+      "file": "server/studio/routes.ts",
+      "line": 97,
+      "detail": "POST"
+    },
+    {
+      "value": "/primitives/:id",
+      "file": "server/studio/routes.ts",
+      "line": 107,
+      "detail": "PATCH"
+    },
+    {
+      "value": "/images/plan",
+      "file": "server/studio/routes.ts",
+      "line": 121,
+      "detail": "POST"
+    },
+    {
+      "value": "/images/generate",
+      "file": "server/studio/routes.ts",
+      "line": 132,
+      "detail": "POST"
+    },
+    {
+      "value": "/images/generate-with-swarm",
+      "file": "server/studio/routes.ts",
+      "line": 161,
+      "detail": "POST"
+    },
+    {
+      "value": "/images",
+      "file": "server/studio/routes.ts",
+      "line": 173,
+      "detail": "GET"
+    },
+    {
+      "value": "/images/:id",
+      "file": "server/studio/routes.ts",
+      "line": 181,
+      "detail": "GET"
+    },
+    {
+      "value": "/graph",
+      "file": "server/studio/routes.ts",
+      "line": 192,
+      "detail": "GET"
+    },
+    {
+      "value": "/sources",
+      "file": "server/studio/routes.ts",
+      "line": 213,
+      "detail": "GET"
+    },
+    {
+      "value": "/ingest/chat",
+      "file": "server/studio/routes.ts",
+      "line": 220,
+      "detail": "POST"
+    },
+    {
+      "value": "/ingest/reference",
+      "file": "server/studio/routes.ts",
+      "line": 221,
+      "detail": "POST"
+    },
+    {
+      "value": "/ingest/drawing",
+      "file": "server/studio/routes.ts",
+      "line": 222,
+      "detail": "POST"
+    }
+  ],
+  "dbTables": [
+    {
+      "value": "users",
+      "file": "shared/schema.ts",
+      "line": 6
+    },
+    {
+      "value": "user_progress",
+      "file": "shared/schema.ts",
+      "line": 16
+    },
+    {
+      "value": "practice_session",
+      "file": "shared/schema.ts",
+      "line": 29
+    },
+    {
+      "value": "drawing_submission",
+      "file": "shared/schema.ts",
+      "line": 40
+    },
+    {
+      "value": "curriculum_mapping",
+      "file": "shared/schema.ts",
+      "line": 111
+    },
+    {
+      "value": "historical_period_content",
+      "file": "shared/schema.ts",
+      "line": 132
+    },
+    {
+      "value": "student_content_progress",
+      "file": "shared/schema.ts",
+      "line": 155
+    },
+    {
+      "value": "studio_sources",
+      "file": "shared/schema.ts",
+      "line": 208
+    },
+    {
+      "value": "concepts",
+      "file": "shared/schema.ts",
+      "line": 219
+    },
+    {
+      "value": "primitive_cells",
+      "file": "shared/schema.ts",
+      "line": 232
+    },
+    {
+      "value": "concept_primitives",
+      "file": "shared/schema.ts",
+      "line": 250
+    },
+    {
+      "value": "generated_images",
+      "file": "shared/schema.ts",
+      "line": 258
+    },
+    {
+      "value": "graph_edges",
+      "file": "shared/schema.ts",
+      "line": 272
+    }
+  ],
+  "pages": [
+    {
+      "value": "academy.tsx",
+      "file": "client/src/pages/academy.tsx",
+      "line": 1
+    },
+    {
+      "value": "analytics-dashboard.tsx",
+      "file": "client/src/pages/analytics-dashboard.tsx",
+      "line": 1
+    },
+    {
+      "value": "curriculum-dashboard.tsx",
+      "file": "client/src/pages/curriculum-dashboard.tsx",
+      "line": 1
+    },
+    {
+      "value": "etextbook-explorer.tsx",
+      "file": "client/src/pages/etextbook-explorer.tsx",
+      "line": 1
+    },
+    {
+      "value": "image-studio.tsx",
+      "file": "client/src/pages/image-studio.tsx",
+      "line": 1
+    },
+    {
+      "value": "learning-hub.tsx",
+      "file": "client/src/pages/learning-hub.tsx",
+      "line": 1
+    },
+    {
+      "value": "not-found.tsx",
+      "file": "client/src/pages/not-found.tsx",
+      "line": 1
+    },
+    {
+      "value": "primitive-library.tsx",
+      "file": "client/src/pages/primitive-library.tsx",
+      "line": 1
+    }
+  ],
+  "envVars": [
+    {
+      "value": "DATABASE_URL",
+      "file": "drizzle.config.ts",
+      "line": 3
+    },
+    {
+      "value": "DATABASE_URL",
+      "file": "scripts/seed-curriculum-mappings.ts",
+      "line": 5
+    },
+    {
+      "value": "PORT",
+      "file": "server/index.ts",
+      "line": 63
+    },
+    {
+      "value": "OPENAI_API_KEY",
+      "file": "server/services/openai.ts",
+      "line": 6
+    },
+    {
+      "value": "OPENAI_API_KEY_ENV_VAR",
+      "file": "server/services/openai.ts",
+      "line": 6
+    },
+    {
+      "value": "DATABASE_URL",
+      "file": "server/storage.ts",
+      "line": 68
+    },
+    {
+      "value": "ASSET_DIR",
+      "file": "server/studio/assetStore.ts",
+      "line": 9
+    },
+    {
+      "value": "DATABASE_URL",
+      "file": "server/studio/db.ts",
+      "line": 7
+    },
+    {
+      "value": "OPENAI_API_KEY",
+      "file": "server/studio/llm.ts",
+      "line": 14
+    },
+    {
+      "value": "OPENAI_API_KEY_ENV_VAR",
+      "file": "server/studio/llm.ts",
+      "line": 14
+    },
+    {
+      "value": "OPENAI_API_KEY",
+      "file": "server/studio/openaiImages.ts",
+      "line": 8
+    },
+    {
+      "value": "OPENAI_API_KEY_ENV_VAR",
+      "file": "server/studio/openaiImages.ts",
+      "line": 8
+    },
+    {
+      "value": "NODE_ENV",
+      "file": "vite.config.ts",
+      "line": 10
+    },
+    {
+      "value": "REPL_ID",
+      "file": "vite.config.ts",
+      "line": 11
+    }
+  ],
+  "externalServices": [
+    {
+      "value": "@neondatabase/serverless",
+      "file": "scripts/seed-curriculum-mappings.ts",
+      "line": 1
+    },
+    {
+      "value": "openai",
+      "file": "server/services/openai.ts",
+      "line": 1
+    },
+    {
+      "value": "@neondatabase/serverless",
+      "file": "server/storage.ts",
+      "line": 25
+    },
+    {
+      "value": "@neondatabase/serverless",
+      "file": "server/studio/db.ts",
+      "line": 1
+    },
+    {
+      "value": "openai",
+      "file": "server/studio/llm.ts",
+      "line": 1
+    },
+    {
+      "value": "openai",
+      "file": "server/studio/openaiImages.ts",
+      "line": 1
+    }
+  ],
+  "agentInstructionFiles": [
+    ".codex/agents/accessibility-agent.toml",
+    ".codex/agents/assembler-agent.toml",
+    ".codex/agents/canon-keeper.toml",
+    ".codex/agents/dock-agent.toml",
+    ".codex/agents/frontend-final-use-agent.toml",
+    ".codex/agents/graphnode-agent.toml",
+    ".codex/agents/meta-build-agent.toml",
+    ".codex/agents/nash-room-agent.toml",
+    ".codex/agents/prism-brain.toml",
+    ".codex/agents/qa-audit-agent.toml",
+    ".codex/agents/rwi-agent.toml",
+    ".codex/config.toml",
+    "AGENTS.md",
+    "replit.md"
+  ],
+  "docs": {
+    "(root)": 3,
+    "assets": 1,
+    "docs": 11,
+    "etextbooks": 15302,
+    "learning-to-drawu": 67,
+    "line-all-richie": 9
+  }
+}

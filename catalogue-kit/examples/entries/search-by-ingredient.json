@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "search-by-ingredient",
+  "title": "Find recipes by what is in the fridge",
+  "summary": "Type ingredients to look for recipes that use them.",
+  "userGoal": "Cook something with the ingredients I already have.",
+  "audience": [
+    "home cooks"
+  ],
+  "claimType": "observed",
+  "applicability": "in-app",
+  "description": "A search box on the home screen sends ingredient words to a search endpoint. Nobody has yet run it to see whether the results match.",
+  "inputs": [
+    "One or more ingredient words"
+  ],
+  "actions": [
+    "Type ingredients",
+    "Press search"
+  ],
+  "outputs": [
+    "A list of recipes (expected)"
+  ],
+  "surfaces": [
+    "Home screen search box"
+  ],
+  "related": [],
+  "status": {
+    "state": "not-verified",
+    "asOf": "2026-01-10",
+    "reviewer": "lead-agent",
+    "evidenceIds": [],
+    "note": "The search box and endpoint exist (indirect evidence). Results were not exercised; the sample data may be empty."
+  },
+  "evidence": [
+    {
+      "id": "endpoint-exists",
+      "kind": "document",
+      "locator": "catalogue/inventory/main.json (GET /api/search)",
+      "checkedOn": "2026-01-10",
+      "checkedBy": "lead-agent",
+      "shows": "A search endpoint is registered.",
+      "strength": "indirect",
+      "limitations": "An endpoint existing does not show that it returns sensible results."
+    }
+  ],
+  "caption": {
+    "text": "The home screen search box lets a cook type ingredients to request matching recipes. Results not yet checked."
+  },
+  "designDecision": "undecided",
+  "openQuestions": [],
+  "chapter": "Find and keep recipes",
+  "illustrative": true,
+  "history": [
+    {
+      "date": "2026-01-10",
+      "by": "lead-agent",
+      "change": "Created from pilot audit."
+    }
+  ]
+}

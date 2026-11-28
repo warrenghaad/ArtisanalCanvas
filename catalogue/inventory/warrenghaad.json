@@ -1,0 +1,138 @@
+{
+  "inventoryVersion": 1,
+  "ref": "origin/warrenghaad",
+  "commit": "84123e46fddb7689353e57f7b9fb51af0d915504",
+  "commitDate": "2026-11-06T09:29:14+00:00",
+  "generatedAt": "2026-11-23T06:48:15.563Z",
+  "totals": {
+    "files": 135,
+    "codeFiles": 94,
+    "docFiles": 4
+  },
+  "areas": {
+    ".agents": 1,
+    ".agents/memory": 4,
+    ".gitignore": 1,
+    ".replit": 1,
+    "attached_assets/generated_images": 4,
+    "client": 1,
+    "client/public": 15,
+    "client/src": 91,
+    "components.json": 1,
+    "drizzle.config.ts": 1,
+    "package-lock.json": 1,
+    "package.json": 1,
+    "postcss.config.js": 1,
+    "script": 3,
+    "server": 5,
+    "shared": 1,
+    "tsconfig.json": 1,
+    "vite-plugin-meta-images.ts": 1,
+    "vite.config.ts": 1
+  },
+  "clientRoutes": [
+    {
+      "value": "/",
+      "file": "client/src/App.tsx",
+      "line": 13
+    },
+    {
+      "value": "/dashboard",
+      "file": "client/src/App.tsx",
+      "line": 14
+    },
+    {
+      "value": "/vite-hmr",
+      "file": "server/vite.ts",
+      "line": 14
+    }
+  ],
+  "serverEndpoints": [],
+  "dbTables": [
+    {
+      "value": "users",
+      "file": "shared/schema.ts",
+      "line": 6
+    }
+  ],
+  "pages": [
+    {
+      "value": "Curation.tsx",
+      "file": "client/src/pages/Curation.tsx",
+      "line": 1
+    },
+    {
+      "value": "Dashboard.tsx",
+      "file": "client/src/pages/Dashboard.tsx",
+      "line": 1
+    },
+    {
+      "value": "not-found.tsx",
+      "file": "client/src/pages/not-found.tsx",
+      "line": 1
+    }
+  ],
+  "envVars": [
+    {
+      "value": "DATABASE_URL",
+      "file": "drizzle.config.ts",
+      "line": 3
+    },
+    {
+      "value": "NODE_ENV",
+      "file": "script/build.ts",
+      "line": 56
+    },
+    {
+      "value": "REPLIT_DEV_DOMAIN",
+      "file": "script/test-scene-browser.mjs",
+      "line": 91
+    },
+    {
+      "value": "NODE_ENV",
+      "file": "server/index.ts",
+      "line": 76
+    },
+    {
+      "value": "PORT",
+      "file": "server/index.ts",
+      "line": 87
+    },
+    {
+      "value": "REPLIT_INTERNAL_APP_DOMAIN",
+      "file": "vite-plugin-meta-images.ts",
+      "line": 59
+    },
+    {
+      "value": "REPLIT_DEV_DOMAIN",
+      "file": "vite-plugin-meta-images.ts",
+      "line": 65
+    },
+    {
+      "value": "NODE_ENV",
+      "file": "vite-plugin-meta-images.ts",
+      "line": 75
+    },
+    {
+      "value": "NODE_ENV",
+      "file": "vite.config.ts",
+      "line": 14
+    },
+    {
+      "value": "REPL_ID",
+      "file": "vite.config.ts",
+      "line": 15
+    }
+  ],
+  "externalServices": [],
+  "agentInstructionFiles": [
+    ".agents/agent_assets_metadata.toml",
+    ".agents/memory/MEMORY.md",
+    ".agents/memory/dependency-restoration.md",
+    ".agents/memory/webgl-verification.md",
+    ".agents/memory/workspace-scope.md"
+  ],
+  "docs": {
+    ".agents": 4
+  }
+}
